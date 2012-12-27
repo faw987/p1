@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		Log.i("MAIN", "made it into p1 MainActivity.");
+		Log.i("MAIN", "version 1.021 .");
 		System.out.println("Yo, starting MainActivity.");
 
 		setContentView(R.layout.activity_main);
