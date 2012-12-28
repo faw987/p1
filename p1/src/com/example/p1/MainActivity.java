@@ -6,6 +6,7 @@ import java.util.Locale;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -31,7 +32,6 @@ public class MainActivity extends Activity {
 		startButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				EditText text1 = (EditText) findViewById(R.id.editText1);
 				String et1 = text1.getText().toString();
 
@@ -46,9 +46,25 @@ public class MainActivity extends Activity {
 						"yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.US);
 				String theDate = sdf.format(new Date());
 				Log.i("MAIN", "theDate:" + theDate + " Name: " + et1);
-				System.out.println("Yo, about to exit onClick for button1. Name:"
+				System.out
+				.println("Yo, about to exit onClick for button1. Name:"
 						+ et1);
-				// startWork1();
+			}
+		});
+
+		Button startVend = (Button) findViewById(R.id.btnVend);
+		startVend.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View v) {
+				startVend();
+			}
+		});
+		
+		Button startPlan = (Button) findViewById(R.id.btnPlan);
+		startPlan.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View v) {
+				startPlan();
 			}
 		});
 
@@ -64,4 +80,19 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
 	}
+
+	private void startVend() {
+		Intent workerIntent = new Intent(this, VendActivity.class);
+		startActivity(workerIntent);
+	}
+	
+	private void startPlan() {
+		Intent workerIntent = new Intent(this, PlanActivity.class);
+		startActivity(workerIntent);
+	}
+
+//	private void startAnActivity(Intent i, Bundle b) {
+//		Intent workerIntent = new Intent(i, b);
+//		startActivity(workerIntent);
+//	}
 }
