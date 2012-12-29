@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.p1"
     android:versionCode="1"
-    android:versionName="1.022" >
+    android:versionName="1.024" >
 
     <uses-sdk
         android:minSdkVersion="3"

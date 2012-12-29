@@ -7,6 +7,8 @@ import java.util.Locale;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -23,10 +25,21 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		Log.i("MAIN", "made it into p1 MainActivity.");
-		Log.i("MAIN", "version 1.022 .");
+		// int versionName =
+		// getPackageManager();getPackageInfo(getPackageName(), 0).versionCode;
+		String version = "?";
+		try {
+			PackageInfo manager = getPackageManager().getPackageInfo(
+					getPackageName(), 0);
+			version = manager.versionName;
+		} catch (NameNotFoundException e) {
+		}
+		Log.i("MAIN", "version " + version);
 		System.out.println("Yo, starting MainActivity.");
 
 		setContentView(R.layout.activity_main);
+		String t = getTitle().toString();
+		setTitle(t + " version " + version);
 
 		Button startButton = (Button) findViewById(R.id.button1);
 		startButton.setOnClickListener(new View.OnClickListener() {
@@ -47,8 +60,8 @@ public class MainActivity extends Activity {
 				String theDate = sdf.format(new Date());
 				Log.i("MAIN", "theDate:" + theDate + " Name: " + et1);
 				System.out
-				.println("Yo, about to exit onClick for button1. Name:"
-						+ et1);
+						.println("Yo, about to exit onClick for button1. Name:"
+								+ et1);
 			}
 		});
 
@@ -59,7 +72,7 @@ public class MainActivity extends Activity {
 				startVend();
 			}
 		});
-		
+
 		Button startPlan = (Button) findViewById(R.id.btnPlan);
 		startPlan.setOnClickListener(new View.OnClickListener() {
 
@@ -85,14 +98,14 @@ public class MainActivity extends Activity {
 		Intent workerIntent = new Intent(this, VendActivity.class);
 		startActivity(workerIntent);
 	}
-	
+
 	private void startPlan() {
 		Intent workerIntent = new Intent(this, PlanActivity.class);
 		startActivity(workerIntent);
 	}
 
-//	private void startAnActivity(Intent i, Bundle b) {
-//		Intent workerIntent = new Intent(i, b);
-//		startActivity(workerIntent);
-//	}
+	// private void startAnActivity(Intent i, Bundle b) {
+	// Intent workerIntent = new Intent(i, b);
+	// startActivity(workerIntent);
+	// }
 }
