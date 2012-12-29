@@ -45,4 +45,14 @@
         android:layout_marginTop="27dp"
         android:layout_toRightOf="@+id/textView1" />
 
+    <EditText
+        android:id="@+id/stuffToDo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/calculator"
+        android:layout_alignTop="@+id/calculator"
+        android:layout_toRightOf="@+id/calculator"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
 </RelativeLayout>
