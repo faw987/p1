@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,7 +13,36 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="46dp"
         android:layout_marginTop="44dp"
-        android:text="PLAN" />
-        <requestFocus />
-        
+        android:text="PLAN"
+        android:textColor="#ff00ff" />
+
+    <requestFocus />
+
+    <Button
+        android:id="@+id/search1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:text="Search" />
+
+    <Button
+        android:id="@+id/select1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/search1"
+        android:layout_alignBottom="@+id/search1"
+        android:layout_marginRight="63dp"
+        android:layout_toLeftOf="@+id/search1"
+        android:text="Select" />
+
+    <WebView
+        android:id="@+id/calculator"
+        android:layout_width="600dp"
+        android:layout_height="300dp"
+        android:layout_below="@+id/search1"
+        android:layout_marginTop="27dp"
+        android:layout_toRightOf="@+id/textView1" />
+
 </RelativeLayout>
