@@ -11,44 +11,53 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="46dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginLeft="27dp"
         android:text="PLAN"
         android:textColor="#ff00ff" />
 
-    <requestFocus />
-
-    <Button
-        android:id="@+id/search1"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:text="Search" />
+        android:layout_height="wrap_content" >
 
-    <Button
-        android:id="@+id/select1"
+        <EditText
+            android:id="@+id/searchInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10" />
+
+        <requestFocus />
+
+        <Button
+            android:id="@+id/search1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search" />
+
+        <Button
+            android:id="@+id/select1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/search1"
-        android:layout_alignBottom="@+id/search1"
-        android:layout_marginRight="63dp"
-        android:layout_toLeftOf="@+id/search1"
-        android:text="Select" />
+        android:layout_height="wrap_content" >
+    </LinearLayout>
 
     <WebView
         android:id="@+id/calculator"
         android:layout_width="600dp"
         android:layout_height="300dp"
-        android:layout_below="@+id/search1"
-        android:layout_marginTop="27dp"
-        android:layout_toRightOf="@+id/textView1" />
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_centerVertical="true" />
 
     <EditText
         android:id="@+id/stuffToDo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:layout_alignBottom="@+id/calculator"
         android:layout_alignTop="@+id/calculator"
         android:layout_toRightOf="@+id/calculator"

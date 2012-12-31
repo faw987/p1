@@ -52,8 +52,14 @@ public class PlanActivity extends Activity {
 			public void onClick(View v) {
 				Log.i(TAG, "===== ENTER btnSearch clicked =====");
 				// startVend();
+				// http://www.google.com/search?as_q=nintendo
 				//				// browser.loadUrl("http://www.clevelandart.org/visit/plan-your-visit/admission-and-hours");
-				browser.loadUrl("http://www.google.com");
+				//browser.loadUrl("http://www.google.com");
+				EditText text1 = (EditText) findViewById(R.id.searchInput);
+				String et1 = text1.getText().toString();
+				String searchInput = "http://www.google.com/search?as_q=" + et1;
+				Log.i(TAG, "===== ENTER btnSearch clicked ===== search for:" + searchInput);
+				browser.loadUrl(searchInput);
 			}
 		});
 
