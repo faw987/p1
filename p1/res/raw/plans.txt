@@ -1,0 +1,1 @@
+{"plans":[{"name": "plan01","desc": "Desc of plan 01","notes": {"notesitem": [{"value": "New", "person": "frank"},{"value": "Open"},{"value": "Close"} ]}},{"name": "plan02","desc": "Desc of plan 02","notes": {"notesitem": [{"value": "blah blah blah"},{"value": "Close"} ]}}]}

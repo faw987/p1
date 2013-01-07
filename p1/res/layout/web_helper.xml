@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+	android:layout_height="match_parent" tools:context=".PlanActivity">
+
+	<TextView android:id="@+id/textView1" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_alignParentLeft="true"
+		android:layout_alignParentTop="true" android:layout_marginLeft="27dp"
+		android:text="Planner ... " android:textColor="#ff00ff" />
+
+	<LinearLayout android:id="@+id/linearLayout2"
+		android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+		<TextView android:id="@+id/textView1" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_alignParentLeft="true"
+			android:layout_alignParentTop="true" android:layout_marginLeft="27dp"
+			android:text="Input: " android:textColor="#ff00ff" />
+		<EditText android:id="@+id/searchInput" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:ems="10" />
+
+		<requestFocus />
+
+		<Button android:id="@+id/search1" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="Search" />
+
+		<Button android:id="@+id/select1" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="Select" />
+	</LinearLayout>
+
+
+	<LinearLayout android:id="@+id/LinearLayout03"
+		android:layout_width="wrap_content" android:layout_height="300dp"
+		android:layout_below="@+id/linearLayout2">
+
+		<WebView android:id="@+id/calculator" android:layout_width="600dp"
+			android:layout_height="300dp" android:layout_alignLeft="@+id/textView1"
+			android:layout_centerVertical="true" />
+
+		<!-- <EditText android:id="@+id/stuffToDo" android:layout_width="wrap_content" 
+			android:layout_height="300dp" android:layout_alignBottom="@+id/calculator" 
+			android:layout_alignTop="@+id/calculator" android:layout_toRightOf="@+id/calculator" 
+			android:ems="10" android:inputType="textMultiLine" /> -->
+		<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:overScrollMode="always" android:isScrollContainer="true"
+			android:scrollbarAlwaysDrawVerticalTrack="true"
+			android:scrollbarStyle="outsideInset" android:scrollbars="vertical">
+			<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:id="@+id/recTable" style="@style/RecomSummaryStyle"
+				android:layout_width="300dp" android:layout_height="fill_parent"
+				android:scrollbars="vertical" />
+		</ScrollView>
+
+	</LinearLayout>
+
+	<Button
+	    android:id="@+id/add1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/LinearLayout03"
+	    android:layout_marginLeft="43dp"
+	    android:layout_toRightOf="@+id/linearLayout2"
+	    android:text="Add" />
+
+</RelativeLayout>

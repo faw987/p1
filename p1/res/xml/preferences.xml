@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Plans Category" >
+        <EditTextPreference
+            android:name="Plans 1"
+            android:defaultValue="{}"
+            android:key="plans1"
+            android:summary="JSON of users plans."
+            android:title="Plans 1" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Tasks Category" >
+        <EditTextPreference
+            android:name="Tasks 1"
+            android:defaultValue="{}"
+            android:key="tasks1"
+            android:summary="JSON of users tasks."
+            android:title="Tasks 1" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

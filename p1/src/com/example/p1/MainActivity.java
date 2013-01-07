@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -37,6 +38,19 @@ public class MainActivity extends Activity {
 		Log.i("MAIN", "version " + version);
 		System.out.println("Yo, starting MainActivity.");
 
+//		Intent globals = new Intent(this, Globals.class);
+//		startActivity(globals);
+		
+//		GlobalApp appState = ((GlobalApp)getApplicationContext());
+//	   //String state = GlobalApp.getState();
+		
+		Globals.delay1 = "abcdefg";
+		// String x = Globals.getState();
+		
+		Globals g = Globals.getInstance();
+		g.setState("test1");
+		String s = g.getState();
+//		
 		setContentView(R.layout.activity_main);
 		String t = getTitle().toString();
 		setTitle(t + " version " + version);
@@ -80,6 +94,17 @@ public class MainActivity extends Activity {
 				startPlan();
 			}
 		});
+		
+		Button prefBtn = (Button) findViewById(R.id.btnPrefs);
+		prefBtn.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View v) {
+				Intent settingsActivity = new Intent(getBaseContext(),
+                        Preferences.class);
+				startActivity(settingsActivity);			}
+		});
+		
+		
 
 		Log.i("MAIN", "about to exit MainActivity.");
 		System.out.println("Yo, exiting MainActivity.");
@@ -108,4 +133,16 @@ public class MainActivity extends Activity {
 	// Intent workerIntent = new Intent(i, b);
 	// startActivity(workerIntent);
 	// }
+	
+	public class MyApp extends Application {
+		private String myState;
+
+		  public String getState(){
+		    return myState;
+		  }
+		  public void setState(String s){
+		    myState = s;
+		  }
+	}
+	
 }

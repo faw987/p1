@@ -1,0 +1,77 @@
+{
+   "tasks":[
+      {
+         "name":"task01",
+         "plan":"",
+         "desc":"Desc of task 01",
+         "notes":{
+            "notesitem":[
+               {
+                  "value":"New",
+                  "person":"frank"
+               },
+               {
+                  "value":"Open"
+               },
+               {
+                  "value":"Close"
+               }
+            ]
+         }
+      },
+      {
+         "name":"task02",
+         "plan":"",
+         "desc":"Desc of task 02",
+         "notes":{
+            "notesitem":[
+               {
+                  "value":"blah blah blah"
+               },
+               {
+                  "value":"Close"
+               }
+            ]
+         }},
+         
+         {
+         "name":"task03",
+         "plan":"",
+         "desc":"Desc of task 03",
+         "notes":{
+            "notesitem":[
+               {
+                  "value":"New",
+                  "person":"frank"
+               },
+               {
+                  "value":"Open"
+               },
+               {
+                  "value":"Close"
+               }
+            ]
+         }
+      },
+      {
+         "name":"task04",
+         "plan":"",
+         "desc":"Desc of task 04",
+         "notes":{
+            "notesitem":[
+               {
+                  "value":"blah blah blah"
+               },
+               {
+                  "value":"Close"
+               }
+            ]
+         }
+         
+         
+         
+         
+         
+      }
+   ]
+}
