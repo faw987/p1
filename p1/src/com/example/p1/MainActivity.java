@@ -37,20 +37,13 @@ public class MainActivity extends Activity {
 		}
 		Log.i("MAIN", "version " + version);
 		System.out.println("Yo, starting MainActivity.");
-
-//		Intent globals = new Intent(this, Globals.class);
-//		startActivity(globals);
-		
-//		GlobalApp appState = ((GlobalApp)getApplicationContext());
-//	   //String state = GlobalApp.getState();
 		
 		Globals.delay1 = "abcdefg";
-		// String x = Globals.getState();
 		
 		Globals g = Globals.getInstance();
 		g.setState("test1");
 		String s = g.getState();
-//		
+		
 		setContentView(R.layout.activity_main);
 		String t = getTitle().toString();
 		setTitle(t + " version " + version);

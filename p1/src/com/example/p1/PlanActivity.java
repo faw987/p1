@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.ClipboardManager;
@@ -36,42 +37,9 @@ public class PlanActivity extends Activity {
 		System.out.println("      Plan Act");
 		setContentView(R.layout.activity_plan);
 
-//		SharedPreferences sharedPrefs = PreferenceManager
-//				.getDefaultSharedPreferences(this);
-//
-//		String plans = sharedPrefs.getString("plans1", "no-plans");
-//		System.out.println("PlanActivity -- plans1=" + plans);
-//
-//		String s = Utilities.donotdisturb(plans);
-//		System.out.println("PlanActivity -- s=" + s);
-
-		
-//		
-//		String r = Utilities
-//				.getArrayPlanStrings(getApplicationContext(), plans);
-//		System.out.println("PlanActivity -- r=" + r);
-
-		
 		Utilities.readPlansTasks(getApplicationContext());
-	
-//		try {
-//			Utilities.getSamplePlans(getApplicationContext());
-//		}
-//		catch (Exception e) {
-//			System.out.println("PlanActivity -- plans e=" + e);
-//		};
-//		
-//		
-//		try {
-//			String s = Utilities.jsonToStringFromAssetFolder(R.raw.plans, getApplicationContext());
-//			System.out.println("PlanActivity -- plans s=" + s);
-//			 s = Utilities.jsonToStringFromAssetFolder(R.raw.tasks, getApplicationContext());
-//			System.out.println("PlanActivity -- tasks s=" + s);
-//
-//		}
-//		catch (Exception e) {
-//			System.out.println("PlanActivity -- plans e=" + e);
-//		};
+		
+		// 
 		
 		spinner2 = (Spinner) findViewById(R.id.planslist);
 		List<String> list = new ArrayList<String>();
@@ -148,7 +116,14 @@ public class PlanActivity extends Activity {
 
 			}
 		});
+		Button btnAddPlan = (Button) findViewById(R.id.addPlan);
+		btnAddPlan.setOnClickListener(new View.OnClickListener() {
 
+			public void onClick(View v) {
+				Log.i(TAG, "===== ENTER btnAddPlan clicked =====");
+				startAddPlanActivity();
+			}
+		});
 	}
 
 	public void addRecRow(TableLayout tl, String rowData) {
@@ -182,30 +157,9 @@ public class PlanActivity extends Activity {
 				Toast.makeText(getApplicationContext(),
 						"Thanks for the Edit button press. Data: " + s,
 						Toast.LENGTH_SHORT).show();
-				//
-				// com.faw.proto2.TMWActivity.dcatSelect(Globals.bid, "[" + s +
-				// "]"); // so call DCAT to select the rec as per the Buy button
-				// pressed
-				//
-				// String newQos =
-				// com.faw.proto2.TMWActivity.extractQosFromRec(s);
-				//
-				// System.out.println("      newQos = " + newQos); // so this IS
-				// what we select via DCAT
-				//
-				// com.faw.proto2.TMWActivity.setSubPlanOperation(Globals.subscriberId,
-				// newQos); // FIX THIS UP to use rec name TO DO
-				//
-				// startTMWVideoPlayer(); // finlly let em wath the flick
-				//
-				// tl2.removeAllViews();
-
 			}
 		});
 
-		// LayoutParams lp = new
-		// LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
-		// LinearLayout.LayoutParams.WRAP_CONTENT);
 		LayoutParams lp = new LayoutParams(
 				LinearLayout.LayoutParams.FILL_PARENT,
 				LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -304,5 +258,11 @@ public class PlanActivity extends Activity {
 
 		// });
 	}
+
+	private void startAddPlanActivity() {
+		Intent workerIntent = new Intent(this, AddPlanActivity.class);
+		startActivity(workerIntent);
+	}
+
 
 }

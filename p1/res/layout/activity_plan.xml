@@ -86,4 +86,13 @@
 	    </TableLayout>
 	</ScrollView>
 
+	<Button
+	    android:id="@+id/addPlan"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/add1"
+	    android:layout_marginLeft="57dp"
+	    android:layout_toRightOf="@+id/add1"
+	    android:text="Add Plan" />
+
 </RelativeLayout>
