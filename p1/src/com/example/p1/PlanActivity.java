@@ -79,12 +79,16 @@ public class PlanActivity extends Activity {
 		Globals g = Globals.getInstance();
 		int sz = g.plansSize();
 		System.out.println("PlanActivity -- plans sz=" + sz);
+
+		g.sortPlans();
+
 		ArrayList<Plan> planz = g.getPlansArray();
 
 		for (Plan x : planz) {
 			list.add(x.name);
 		};
 
+		
 		ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, list);
 		dataAdapter

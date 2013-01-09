@@ -1,6 +1,8 @@
 package com.example.p1;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import android.app.Application;
 import android.util.Log;
@@ -27,6 +29,19 @@ public class Globals extends Application {
 
 	public void addPlan(Plan p) {
 		plans.add(p);
+	}
+	
+	 public void sortPlans() {
+		Collections.sort(plans, new MyIntComparable());
+	}
+	 
+	public class MyIntComparable implements Comparator<Plan>{
+		 
+	    @Override
+	    public int compare(Plan o1, Plan o2) {
+	      //  return (o1.name>o2.name ? -1 : (o1.name==o2.name ? 0 : 1));
+	        return (o1.name.compareTo(o2.name));
+	    }
 	}
 	public int plansSize() {
 		return plans.size();
