@@ -37,8 +37,6 @@ public class PlanActivity extends Activity {
 		System.out.println("      Plan Act");
 		setContentView(R.layout.activity_plan);
 
-		Utilities.readPlansTasks(getApplicationContext());
-		
 		// 
 		
 		spinner2 = (Spinner) findViewById(R.id.planslist);

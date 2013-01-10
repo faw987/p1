@@ -23,6 +23,8 @@ public class AddPlanActivity extends Activity {
 				p.desc = "Description of " + et1;
 				Globals g = Globals.getInstance();
 				g.addPlan(p);
+				v.invalidate();
+				finish();
 			}
 		});
 	}

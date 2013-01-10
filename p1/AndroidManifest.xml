@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.example.p1" android:versionCode="1" android:versionName="1.037">
+	package="com.example.p1" android:versionCode="1" android:versionName="1.039">
 
 	<uses-sdk android:minSdkVersion="3" android:targetSdkVersion="17" />
 
@@ -36,7 +36,12 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		
+		<activity android:name=".AddPlanActivity" android:label="@string/app_name"
+			android:launchMode="singleTask">
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
 		<activity android:name=".Preferences" android:label="@string/app_name" />
 
 		<activity android:name=".ShowSettingsActivity" android:label="@string/app_name" />

@@ -35,6 +35,12 @@ public class MainActivity extends Activity {
 			version = manager.versionName;
 		} catch (NameNotFoundException e) {
 		}
+		
+		SimpleDateFormat sdf = new SimpleDateFormat(
+				"yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.US);
+		String theDate = sdf.format(new Date());
+		Log.i("MAIN", "theDate:" + theDate);
+		
 		Log.i("MAIN", "version " + version);
 		System.out.println("Yo, starting MainActivity.");
 		
@@ -44,6 +50,8 @@ public class MainActivity extends Activity {
 		g.setState("test1");
 		String s = g.getState();
 		
+		Utilities.readPlansTasks(getApplicationContext());
+
 		setContentView(R.layout.activity_main);
 		String t = getTitle().toString();
 		setTitle(t + " version " + version);
@@ -59,16 +67,8 @@ public class MainActivity extends Activity {
 				imm.hideSoftInputFromWindow(text1.getWindowToken(), 0);
 
 				Toast.makeText(getApplicationContext(),
-						"Happy holidays " + et1 + ".", Toast.LENGTH_SHORT)
+						"Greetings, " + et1 + ".", Toast.LENGTH_SHORT)
 						.show();
-
-				SimpleDateFormat sdf = new SimpleDateFormat(
-						"yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.US);
-				String theDate = sdf.format(new Date());
-				Log.i("MAIN", "theDate:" + theDate + " Name: " + et1);
-				System.out
-						.println("Yo, about to exit onClick for button1. Name:"
-								+ et1);
 			}
 		});
 
