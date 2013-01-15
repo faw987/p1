@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+
 public class AddPlanActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

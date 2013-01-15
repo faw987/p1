@@ -2,7 +2,7 @@
    "tasks":[
       {
          "name":"task01",
-         "plan":"",
+         "plan":"plan01",
          "desc":"Desc of task 01",
          "notes":{
             "notesitem":[
@@ -21,7 +21,7 @@
       },
       {
          "name":"task02",
-         "plan":"",
+         "plan":"plan01",
          "desc":"Desc of task 02",
          "notes":{
             "notesitem":[
@@ -32,11 +32,11 @@
                   "value":"Close"
                }
             ]
-         }},
-         
-         {
+         }
+      },
+      {
          "name":"task03",
-         "plan":"",
+         "plan":"plan02",
          "desc":"Desc of task 03",
          "notes":{
             "notesitem":[
@@ -67,11 +67,6 @@
                }
             ]
          }
-         
-         
-         
-         
-         
       }
    ]
 }

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -37,22 +38,121 @@ public class Utilities {
 		return new String(data);
 	}
 
-	static public void getSamplePlans(Context myContext) throws IOException {
-		AssetManager mngr = myContext.getResources().getAssets();
-		InputStream is = mngr.open("/res/raw/plans.txt");
-		InputStreamReader isr = new InputStreamReader(is);
-		BufferedReader br = new BufferedReader(isr);
-		String read = br.readLine();
+//	static public void getSamplePlans(Context myContext) throws IOException {
+//		AssetManager mngr = myContext.getResources().getAssets();
+//		InputStream is = mngr.open("/res/raw/plans.txt");
+//		InputStreamReader isr = new InputStreamReader(is);
+//		BufferedReader br = new BufferedReader(isr);
+//		String read = br.readLine();
+//
+//		while (read != null) {
+//			System.out.println(read);
+//			// sb.append(read);
+//			read = br.readLine();
+//
+//		}
 
-		while (read != null) {
-			System.out.println(read);
-			// sb.append(read);
-			read = br.readLine();
+//	}
 
+	static public JSONObject plansToJSON() {
+		Globals g = Globals.getInstance();
+		int sz = g.plansSize();
+		System.out.println("PlanActivity -- plans sz=" + sz);
+
+//		Utilities.addHardCodedPlan("plana");
+//		Utilities.addHardCodedPlan("planb");
+
+		g.sortPlans();
+
+		ArrayList<Plan> planz = g.getPlansArray();
+		JSONObject jsonObj = null;
+		JSONArray list = new JSONArray();
+		for (Plan x : planz) {
+
+			try {
+				JSONObject jo = new JSONObject();
+
+				jo.put("name", x.name);
+				jo.put("desc", x.desc);
+				list.put(jo);
+				// JSONArray plans = jsonObj.getJSONArray("plans"); }
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			;
 		}
+
+		try {
+			System.out.println("list: " + list.toString(5));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		;
+		jsonObj = new JSONObject();
+		try {
+			jsonObj.put("plans", list);
+			System.out.println("jsonObj: " + jsonObj.toString(5));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		;
+		return jsonObj;
+	};
+	static public JSONObject tasksToJSON() {
+		Globals g = Globals.getInstance();
+		int sz = g.tasksSize();
+		System.out.println("PlanActivity -- tasks sz=" + sz);
+
+		g.sortTasks();
+
+		ArrayList<Task> taskz = g.getTasksArray();
+		JSONObject jsonObj = null;
+		JSONArray list = new JSONArray();
+		for (Task x : taskz) {
+
+			try {
+				JSONObject jo = new JSONObject();
+
+				jo.put("name", x.name);
+				jo.put("desc", x.desc);
+				jo.put("plan", x.plan);
+				list.put(jo);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			;
+		}
+
+		try {
+			System.out.println("tasks list: " + list.toString(5));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		;
+		jsonObj = new JSONObject();
+		try {
+			jsonObj.put("tasks", list);
+			System.out.println("tasks jsonObj: " + jsonObj.toString(5));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		;
+		return jsonObj;
+	};
+
+	static public void addHardCodedPlan(String s) {
+		Plan p = new Plan();
+		p.name = s;
+		p.desc = "Description of " + s;
+		Globals g = Globals.getInstance();
+		g.addPlan(p);
 
 	}
 
+	// obj.put("messages", list);
+	
 	static public String getArrayPlanStrings(Context ac, String input) {
 
 		String result = "";
@@ -71,13 +171,13 @@ public class Utilities {
 			JSONArray plans = jsonObj.getJSONArray("plans");
 			for (int i = 0; i < plans.length(); i++) {
 				// printing the values to the logcat
-				System.out.println("ShowSettingsActivity: i:" + i);
+				System.out.println("Utilities: i:" + i);
 
 				String name = plans.getJSONObject(i).getString("name")
 						.toString();
 
-				System.out.println("ShowSettingsActivity: name:" + name);
-				System.out.println("ShowSettingsActivity: name:"
+				System.out.println("Utilities: name:" + name);
+				System.out.println("Utilities: desc:"
 						+ plans.getJSONObject(i).getString("desc").toString());
 				result = result + name + ",";
 
@@ -92,7 +192,12 @@ public class Utilities {
 
 	static public void readPlansTasks(Context c) {
 		String sampleplans = null, sampletasks = null;
+		
+		Globals g = Globals.getInstance();
+
 		try {
+			// sampleplans = Utilities.jsonToStringFromAssetFolder(R.raw.plans,
+			// c);
 			sampleplans = Utilities.jsonToStringFromAssetFolder(R.raw.plans, c);
 			System.out.println("PlanActivity -- plans sampleplans="
 					+ sampleplans);
@@ -104,13 +209,22 @@ public class Utilities {
 			System.out.println("PlanActivity -- plans e=" + e);
 		}
 		;
+		
+		SharedPreferences sharedPrefs = PreferenceManager
+				.getDefaultSharedPreferences(c);
 
+		String plansStr = sharedPrefs.getString("plans1", sampleplans);
+		String tasksStr = sharedPrefs.getString("tasks1", sampletasks);
 		JSONObject jsonObj = null;
 
+		g.plansClear();
+		g.tasksClear();
+		
+		
 		// plans follow
 
 		try {
-			jsonObj = new JSONObject(sampleplans);
+			jsonObj = new JSONObject(plansStr);
 
 			JSONArray plans = jsonObj.getJSONArray("plans");
 			for (int i = 0; i < plans.length(); i++) {
@@ -125,7 +239,6 @@ public class Utilities {
 				Plan p = new Plan();
 				p.name = plans.getJSONObject(i).getString("name").toString();
 				p.desc = plans.getJSONObject(i).getString("desc").toString();
-				Globals g = Globals.getInstance();
 				g.addPlan(p);
 
 			}
@@ -137,7 +250,9 @@ public class Utilities {
 		// tasks follow
 
 		try {
-			jsonObj = new JSONObject(sampletasks);
+			jsonObj = new JSONObject(tasksStr);
+			
+			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> tasksStr: " + tasksStr);
 
 			JSONArray tasks = jsonObj.getJSONArray("tasks");
 			for (int i = 0; i < tasks.length(); i++) {
@@ -152,7 +267,7 @@ public class Utilities {
 				Task t = new Task();
 				t.name = tasks.getJSONObject(i).getString("name").toString();
 				t.desc = tasks.getJSONObject(i).getString("desc").toString();
-				Globals g = Globals.getInstance();
+				t.plan = tasks.getJSONObject(i).getString("plan").toString();
 				g.addTask(t);
 
 			}
@@ -162,38 +277,32 @@ public class Utilities {
 		}
 	}
 
-	static public String callHttp(String url ) {
+	static public void writePlansTasks(Context c) {
+		String plansjson = Utilities.plansToJSON().toString();
+		String tasksjson = Utilities.tasksToJSON().toString();
+
+		SharedPreferences prefs = PreferenceManager
+				.getDefaultSharedPreferences(c);
+		prefs.edit().putString("plans1", plansjson).commit();
+		 
+		prefs.edit().putString("tasks1", tasksjson).commit();
+	}
+
+	static public String callHttp(String url) {
 
 		HttpClient httpclient = new DefaultHttpClient();
 
-
 		System.out.println(" == postParam:" + url);
 
-//		HttpPost httppost = new HttpPost(postParam);
-		HttpGet httppost = new HttpGet(url);
-
-	//	httppost.setHeader("Content-Type", "application/x-www-form-urlencoded");
+		HttpGet httpget = new HttpGet(url);
 
 		try {
 
-//			String inputString = "<getIn><input1>" + input
-//					+ "</input1></getIn>";
-//
-//			StringEntity myEntity = new StringEntity(inputString, "UTF-8");
-//
-//			System.out.println("===============================");
-//			System.out.println(myEntity.getContentType());
-//			System.out.println(myEntity.getContentLength());
-//			System.out.println("inputString:" + inputString);
-//			System.out.println("myEntity:" + myEntity);
-//
-//			httppost.setEntity(myEntity);
-
 			HttpResponse response;
 
-			response = httpclient.execute(httppost);
+			response = httpclient.execute(httpget);
 
-			System.out.println(" == httppost:" + httppost);
+			System.out.println(" == httppost:" + httpget);
 			System.out.println(" == response:" + response);
 
 			BufferedReader in = null;
@@ -215,13 +324,9 @@ public class Utilities {
 
 		} catch (ClientProtocolException e) {
 
-			// TODO Auto-generated catch block
-
 			e.printStackTrace();
 
 		} catch (IOException e) {
-
-			// TODO Auto-generated catch block
 
 			e.printStackTrace();
 

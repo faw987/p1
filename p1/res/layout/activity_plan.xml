@@ -1,98 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-	android:layout_height="match_parent" tools:context=".PlanActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlanActivity" >
 
-	<TextView android:id="@+id/textView1" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:layout_alignParentLeft="true"
-		android:layout_alignParentTop="true" android:layout_marginLeft="27dp"
-		android:text="Planner ... " android:textColor="#ff00ff" />
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
-	<LinearLayout android:id="@+id/linearLayout2"
-		android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00008B"
+            android:text="Adventure Planner"
+            android:textColor="#00FF7F"
+            android:textSize="42px" />
 
-		<requestFocus />
-	</LinearLayout>
+    </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout2"
+        android:orientation="vertical" >
 
-	<LinearLayout android:id="@+id/LinearLayout03"
-		android:layout_width="wrap_content" android:layout_height="300dp"
-		android:layout_below="@+id/linearLayout2">
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00008B"
+            android:text="Plans"
+            android:textColor="#00FF7F"
+            android:textSize="42px" />
 
-		<!-- <EditText android:id="@+id/stuffToDo" android:layout_width="wrap_content" 
-			android:layout_height="300dp" android:layout_alignBottom="@+id/calculator" 
-			android:layout_alignTop="@+id/calculator" android:layout_toRightOf="@+id/calculator" 
-			android:ems="10" android:inputType="textMultiLine" /> -->
+        <Spinner
+            android:id="@+id/planslist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-	</LinearLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00008B"
+            android:text="Activities"
+            android:textColor="#00FF7F"                    
+            android:textSize="42px" />
 
-	<Button
-	    android:id="@+id/search1"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignParentBottom="true"
-	    android:layout_marginBottom="33dp"
-	    android:layout_toRightOf="@+id/LinearLayout03"
-	    android:text="Search" />
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:isScrollContainer="true"
+            android:overScrollMode="always"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarStyle="outsideInset"
+            android:scrollbars="vertical" >
 
-	<Button
-	    android:id="@+id/select1"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignBaseline="@+id/search1"
-	    android:layout_alignBottom="@+id/search1"
-	    android:layout_marginLeft="24dp"
-	    android:layout_toRightOf="@+id/search1"
-	    android:text="Select" />
+            <TableLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/recTable"
+                style="@style/RecomSummaryStyle"
+                android:layout_width="600dp"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical" />
+        </ScrollView>
+    </LinearLayout>
 
-	<Button
-	    android:id="@+id/add1"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignBaseline="@+id/select1"
-	    android:layout_alignBottom="@+id/select1"
-	    android:layout_marginLeft="33dp"
-	    android:layout_toRightOf="@+id/select1"
-	    android:text="Add" />
+    <LinearLayout
+        android:id="@+id/LinearLayout5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout4" >
 
-	<Spinner
-	    android:id="@+id/planslist"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignParentLeft="true"
-	    android:layout_alignTop="@+id/LinearLayout03"
-	    android:layout_marginTop="27dp" />
+        <Button
+            android:id="@+id/addPlan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Plan" />
 
-	<ScrollView
-	    xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:layout_width="fill_parent"
-	    android:layout_height="300dp"
-	    android:layout_alignParentLeft="true"
-	    android:layout_below="@+id/planslist"
-	    android:layout_marginTop="29dp"
-	    android:isScrollContainer="true"
-	    android:overScrollMode="always"
-	    android:scrollbarAlwaysDrawVerticalTrack="true"
-	    android:scrollbarStyle="outsideInset"
-	    android:scrollbars="vertical" >
+        <Button
+            android:id="@+id/addActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Activity" />
 
-	    <TableLayout
-	        xmlns:android="http://schemas.android.com/apk/res/android"
-	        android:id="@+id/recTable"
-	        style="@style/RecomSummaryStyle"
-	        android:layout_width="300dp"
-	        android:layout_height="fill_parent"
-	        android:scrollbars="vertical" >
-	    </TableLayout>
-	</ScrollView>
-
-	<Button
-	    android:id="@+id/addPlan"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignBottom="@+id/add1"
-	    android:layout_marginLeft="57dp"
-	    android:layout_toRightOf="@+id/add1"
-	    android:text="Add Plan" />
+        <Button
+            android:id="@+id/refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Refresh" />
+    </LinearLayout>
 
 </RelativeLayout>

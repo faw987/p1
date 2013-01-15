@@ -8,9 +8,11 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -20,36 +22,46 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+	private final String TAG = "MainActivity";
+
+	public void onRestart(Bundle savedInstanceState) {
+		super.onResume(); // Always call the superclass method first
+		System.out
+				.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MainActivity >>>> onResume");
+		Log.i("MainActivity",
+				">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MainActivity >>>> onResume");
+		// / PlanActivity.redoTaskList();
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		Log.i("MAIN", "made it into p1 MainActivity.");
-		// int versionName =
-		// getPackageManager();getPackageInfo(getPackageName(), 0).versionCode;
 		String version = "?";
 		try {
 			PackageInfo manager = getPackageManager().getPackageInfo(
 					getPackageName(), 0);
 			version = manager.versionName;
 		} catch (NameNotFoundException e) {
+			Log.i("MAIN", "NameNotFoundException e:" + e);
 		}
-		
+
 		SimpleDateFormat sdf = new SimpleDateFormat(
 				"yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.US);
 		String theDate = sdf.format(new Date());
 		Log.i("MAIN", "theDate:" + theDate);
-		
+
 		Log.i("MAIN", "version " + version);
 		System.out.println("Yo, starting MainActivity.");
-		
+
+		// experimenting
+
 		Globals.delay1 = "abcdefg";
-		
+
 		Globals g = Globals.getInstance();
 		g.setState("test1");
 		String s = g.getState();
-		
+
 		Utilities.readPlansTasks(getApplicationContext());
 
 		setContentView(R.layout.activity_main);
@@ -67,8 +79,7 @@ public class MainActivity extends Activity {
 				imm.hideSoftInputFromWindow(text1.getWindowToken(), 0);
 
 				Toast.makeText(getApplicationContext(),
-						"Greetings, " + et1 + ".", Toast.LENGTH_SHORT)
-						.show();
+						"Greetings, " + et1 + ".", Toast.LENGTH_SHORT).show();
 			}
 		});
 
@@ -87,17 +98,34 @@ public class MainActivity extends Activity {
 				startPlan();
 			}
 		});
-		
+
 		Button prefBtn = (Button) findViewById(R.id.btnPrefs);
 		prefBtn.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
 				Intent settingsActivity = new Intent(getBaseContext(),
-                        Preferences.class);
-				startActivity(settingsActivity);			}
+						Preferences.class);
+				startActivity(settingsActivity);
+			}
 		});
-		
-		
+
+		Button x1Btn = (Button) findViewById(R.id.btnX1);
+		x1Btn.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View v) {
+				System.out.println("{ \"plans\":[ ");
+				for (int i = 0; i < 30; i++) {
+					System.out.println("{\"name\":\"plan" + i
+							+ "\", \"desc\":\"Desc of plan " + i + "\"}, ");
+
+					// // {"name":"plan01", "desc":"Desc of plan 01"},
+					// // {"name":"plan02", "desc":"Desc of plan 02"}
+				}
+				;
+				System.out.println(" ] }");
+			}
+
+		});
 
 		Log.i("MAIN", "about to exit MainActivity.");
 		System.out.println("Yo, exiting MainActivity.");
@@ -112,6 +140,23 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	@Override
+	protected void onPause() {
+
+		Utilities.writePlansTasks(getApplicationContext());
+		Log.i("MAIN", "==MainActivity== onPause. -- just saved data in prefs.");
+		super.onPause();
+
+	}
+
+	@Override
+	protected void onStop() {
+
+		Log.i("MAIN", "==MainActivity== onStop. -- just saved data in prefs.");
+		super.onStop();
+
+	}
+
 	private void startVend() {
 		Intent workerIntent = new Intent(this, VendActivity.class);
 		startActivity(workerIntent);
@@ -121,21 +166,4 @@ public class MainActivity extends Activity {
 		Intent workerIntent = new Intent(this, PlanActivity.class);
 		startActivity(workerIntent);
 	}
-
-	// private void startAnActivity(Intent i, Bundle b) {
-	// Intent workerIntent = new Intent(i, b);
-	// startActivity(workerIntent);
-	// }
-	
-	public class MyApp extends Application {
-		private String myState;
-
-		  public String getState(){
-		    return myState;
-		  }
-		  public void setState(String s){
-		    myState = s;
-		  }
-	}
-	
 }

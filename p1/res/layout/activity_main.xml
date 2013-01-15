@@ -4,35 +4,35 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
-    <Button
-        android:id="@+id/btnPlan"
+    <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnVend"
-        android:layout_alignBottom="@+id/btnVend"
-        android:layout_marginLeft="27dp"
-        android:layout_toRightOf="@+id/btnVend"
-        android:text="Plan" />
+        android:layout_height="wrap_content" >
 
-    <Button
-        android:id="@+id/btnPrefs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnPlan"
-        android:layout_alignBottom="@+id/btnPlan"
-        android:layout_marginLeft="39dp"
-        android:layout_toRightOf="@+id/btnPlan"
-        android:text="Prefs" />
+        <Button
+            android:id="@+id/btnPlan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plan" />
 
-    <Button
-        android:id="@+id/btnVend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="34dp"
-        android:layout_marginTop="70dp"
-        android:text="Vend" />
+        <Button
+            android:id="@+id/btnPrefs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prefs" />
+
+        <Button
+            android:id="@+id/btnVend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vend" />
+
+        <Button
+            android:id="@+id/btnX1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X1" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView1"
@@ -40,8 +40,11 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/btnVend"
         android:layout_below="@+id/btnPlan"
-        android:layout_marginTop="42dp"
-        android:text="@string/hello_world" />
+        android:layout_marginTop="64dp"
+        android:background="#00008B"
+        android:text="@string/hello_world"
+        android:textColor="#00FF7F"
+        android:textSize="42px" />
 
     <EditText
         android:id="@+id/editText1"
@@ -50,8 +53,6 @@
         android:layout_alignLeft="@+id/btnVend"
         android:layout_below="@+id/textView1"
         android:ems="10" >
-
-        <requestFocus />
     </EditText>
 
     <Button

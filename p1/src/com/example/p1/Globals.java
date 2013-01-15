@@ -12,6 +12,7 @@ public class Globals extends Application {
 	private static Globals sInstance;
 	static ArrayList<Plan> plans = new ArrayList<Plan>();
 	static ArrayList<Task> tasks = new ArrayList<Task>();
+	static String currentPlanName = "";
 
 	public static Globals getInstance() {
 		return sInstance;
@@ -49,16 +50,32 @@ public class Globals extends Application {
 	public ArrayList<Plan> getPlansArray() {
 		return plans;
 	}
-	
-	
-	public void addTask(Task p) {
-		tasks.add(p);
+	public void plansClear() {
+		 plans = new ArrayList<Plan>();
+	}
+	public void addTask(Task t) {
+		tasks.add(t);
 	}
 	public int tasksSize() {
 		return tasks.size();
 	}
-	public ArrayList<Task> getTaskArray() {
+	public ArrayList<Task> getTasksArray() {
 		return tasks;
+	}
+	public void tasksClear() {
+		 tasks = new ArrayList<Task>();
+	}
+	public void sortTasks() {
+		Collections.sort(tasks, new MyIntComparableTasks());
+	}
+	 
+	public class MyIntComparableTasks implements Comparator<Task>{
+		 
+	    @Override
+	    public int compare(Task o1, Task o2) {
+	      //  return (o1.name>o2.name ? -1 : (o1.name==o2.name ? 0 : 1));
+	        return (o1.name.compareTo(o2.name));
+	    }
 	}
 	
 	@Override
