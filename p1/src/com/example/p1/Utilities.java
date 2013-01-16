@@ -82,16 +82,16 @@ public class Utilities {
 			;
 		}
 
-		try {
-			System.out.println("list: " + list.toString(5));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		;
+//		try {
+//			System.out.println("list: " + list.toString(5));
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		;
 		jsonObj = new JSONObject();
 		try {
 			jsonObj.put("plans", list);
-			System.out.println("jsonObj: " + jsonObj.toString(5));
+	//		System.out.println("jsonObj: " + jsonObj.toString(5));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -100,8 +100,10 @@ public class Utilities {
 		return jsonObj;
 	};
 	static public JSONObject tasksToJSON() {
+		
 		Globals g = Globals.getInstance();
 		int sz = g.tasksSize();
+		
 		System.out.println("PlanActivity -- tasks sz=" + sz);
 
 		g.sortTasks();
@@ -124,16 +126,16 @@ public class Utilities {
 			;
 		}
 
-		try {
-			System.out.println("tasks list: " + list.toString(5));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		;
+//		try {
+//			System.out.println("tasks list: " + list.toString(5));
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		;
 		jsonObj = new JSONObject();
 		try {
 			jsonObj.put("tasks", list);
-			System.out.println("tasks jsonObj: " + jsonObj.toString(5));
+		//	System.out.println("tasks jsonObj: " + jsonObj.toString(5));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -171,14 +173,14 @@ public class Utilities {
 			JSONArray plans = jsonObj.getJSONArray("plans");
 			for (int i = 0; i < plans.length(); i++) {
 				// printing the values to the logcat
-				System.out.println("Utilities: i:" + i);
+//				System.out.println("Utilities: i:" + i);
 
 				String name = plans.getJSONObject(i).getString("name")
 						.toString();
 
-				System.out.println("Utilities: name:" + name);
-				System.out.println("Utilities: desc:"
-						+ plans.getJSONObject(i).getString("desc").toString());
+//				System.out.println("Utilities: name:" + name);
+//				System.out.println("Utilities: desc:"
+//						+ plans.getJSONObject(i).getString("desc").toString());
 				result = result + name + ",";
 
 			}
@@ -196,14 +198,15 @@ public class Utilities {
 		Globals g = Globals.getInstance();
 
 		try {
-			// sampleplans = Utilities.jsonToStringFromAssetFolder(R.raw.plans,
-			// c);
-			sampleplans = Utilities.jsonToStringFromAssetFolder(R.raw.plans, c);
-			System.out.println("PlanActivity -- plans sampleplans="
-					+ sampleplans);
-			sampletasks = Utilities.jsonToStringFromAssetFolder(R.raw.tasks, c);
-			System.out.println("PlanActivity -- tasks sampletasks="
-					+ sampletasks);
+		
+	//--		sampleplans = Utilities.jsonToStringFromAssetFolder(R.raw.plans, c);
+			sampleplans = Utilities.jsonToStringFromAssetFolder(R.raw.plansmedium, c);
+//			System.out.println("PlanActivity -- plans sampleplans="
+//					+ sampleplans);
+	//--		sampletasks = Utilities.jsonToStringFromAssetFolder(R.raw.tasks, c);
+			sampletasks = Utilities.jsonToStringFromAssetFolder(R.raw.tasksmedium, c);
+//			System.out.println("PlanActivity -- tasks sampletasks="
+//					+ sampletasks);
 
 		} catch (Exception e) {
 			System.out.println("PlanActivity -- plans e=" + e);
@@ -229,12 +232,12 @@ public class Utilities {
 			JSONArray plans = jsonObj.getJSONArray("plans");
 			for (int i = 0; i < plans.length(); i++) {
 				// printing the values to the logcat
-				System.out.println("ShowSettingsActivity: i:" + i);
-
-				System.out.println("ShowSettingsActivity: name:"
-						+ plans.getJSONObject(i).getString("name").toString());
-				System.out.println("ShowSettingsActivity: name:"
-						+ plans.getJSONObject(i).getString("desc").toString());
+//				System.out.println("ShowSettingsActivity: i:" + i);
+//
+//				System.out.println("ShowSettingsActivity: name:"
+//						+ plans.getJSONObject(i).getString("name").toString());
+//				System.out.println("ShowSettingsActivity: name:"
+//						+ plans.getJSONObject(i).getString("desc").toString());
 
 				Plan p = new Plan();
 				p.name = plans.getJSONObject(i).getString("name").toString();
@@ -252,17 +255,17 @@ public class Utilities {
 		try {
 			jsonObj = new JSONObject(tasksStr);
 			
-			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> tasksStr: " + tasksStr);
+//			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> tasksStr: " + tasksStr);
 
 			JSONArray tasks = jsonObj.getJSONArray("tasks");
 			for (int i = 0; i < tasks.length(); i++) {
 				// printing the values to the logcat
-				System.out.println("ShowSettingsActivity: i:" + i);
-
-				System.out.println("ShowSettingsActivity: name:"
-						+ tasks.getJSONObject(i).getString("name").toString());
-				System.out.println("ShowSettingsActivity: name:"
-						+ tasks.getJSONObject(i).getString("desc").toString());
+//				System.out.println("ShowSettingsActivity: i:" + i);
+//
+//				System.out.println("ShowSettingsActivity: name:"
+//						+ tasks.getJSONObject(i).getString("name").toString());
+//				System.out.println("ShowSettingsActivity: name:"
+//						+ tasks.getJSONObject(i).getString("desc").toString());
 
 				Task t = new Task();
 				t.name = tasks.getJSONObject(i).getString("name").toString();

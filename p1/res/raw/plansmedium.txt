@@ -1,0 +1,22 @@
+{ "plans":[
+{"name":"plan00", "desc":"Desc of plan 00"},
+{"name":"plan01", "desc":"Desc of plan 01"},
+{"name":"plan02", "desc":"Desc of plan 02"},
+{"name":"plan03", "desc":"Desc of plan 03"},
+{"name":"plan04", "desc":"Desc of plan 04"},
+{"name":"plan05", "desc":"Desc of plan 05"},
+{"name":"plan06", "desc":"Desc of plan 06"},
+{"name":"plan07", "desc":"Desc of plan 07"},
+{"name":"plan08", "desc":"Desc of plan 08"},
+{"name":"plan09", "desc":"Desc of plan 09"},
+{"name":"plan10", "desc":"Desc of plan 10"},
+{"name":"plan11", "desc":"Desc of plan 11"},
+{"name":"plan12", "desc":"Desc of plan 12"},
+{"name":"plan13", "desc":"Desc of plan 13"},
+{"name":"plan14", "desc":"Desc of plan 14"},
+{"name":"plan15", "desc":"Desc of plan 15"},
+{"name":"plan16", "desc":"Desc of plan 16"},
+{"name":"plan17", "desc":"Desc of plan 17"},
+{"name":"plan18", "desc":"Desc of plan 18"},
+{"name":"plan19", "desc":"Desc of plan 19"}
+ ] }

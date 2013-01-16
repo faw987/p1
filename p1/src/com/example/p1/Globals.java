@@ -6,6 +6,7 @@ import java.util.Comparator;
 
 import android.app.Application;
 import android.util.Log;
+import android.view.View;
 
 public class Globals extends Application {
 	static String delay1;
@@ -13,6 +14,7 @@ public class Globals extends Application {
 	static ArrayList<Plan> plans = new ArrayList<Plan>();
 	static ArrayList<Task> tasks = new ArrayList<Task>();
 	static String currentPlanName = "";
+//	static View planView ;
 
 	public static Globals getInstance() {
 		return sInstance;

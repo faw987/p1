@@ -61,6 +61,7 @@ public class MainActivity extends Activity {
 		Globals g = Globals.getInstance();
 		g.setState("test1");
 		String s = g.getState();
+		
 
 		Utilities.readPlansTasks(getApplicationContext());
 
@@ -114,12 +115,29 @@ public class MainActivity extends Activity {
 
 			public void onClick(View v) {
 				System.out.println("{ \"plans\":[ ");
-				for (int i = 0; i < 30; i++) {
-					System.out.println("{\"name\":\"plan" + i
-							+ "\", \"desc\":\"Desc of plan " + i + "\"}, ");
+				for (int i = 0; i < 20; i++) {
+					String rjzf1 = ("000" + i);
+					String rjzf = rjzf1.substring(rjzf1.length()-2,rjzf1.length());
+					String insertComma = i == 29 ? "" : "," ;
+					System.out.println("{\"name\":\"plan" + rjzf
+							+ "\", \"desc\":\"Desc of plan " + rjzf + "\"}" + insertComma);
+			// {"name":"plan01", "desc":"Desc of plan 01"},
+				}
+				;
+				System.out.println(" ] }");
+				
+				
+				System.out.println("{ \"tasks\":[ ");
+				for (int i = 0; i < 200; i++) {
+					String rjzf1 = ("000" + i);
+					String rjzf = rjzf1.substring(rjzf1.length()-3,rjzf1.length());
+					String plan = rjzf1.substring(rjzf1.length()-3,rjzf1.length()-1);
+				String insertComma = i == 199 ? "" : "," ;
 
-					// // {"name":"plan01", "desc":"Desc of plan 01"},
-					// // {"name":"plan02", "desc":"Desc of plan 02"}
+					System.out.println("{\"name\":\"task" + rjzf + 
+							 "\", \"plan\":\"plan" + plan +
+							 "\", \"desc\":\"Desc of task " + rjzf + "\"}" + insertComma);
+			// {"name":"plan01", "desc":"Desc of plan 01"},
 				}
 				;
 				System.out.println(" ] }");

@@ -30,13 +30,10 @@ public class PlanActivity extends Activity {
 	String et1;
 	Spinner spinner1, spinner2;
 
-	public void onRestart(Bundle savedInstanceState) {
+	public void onResume() {
+
 		super.onResume(); // Always call the superclass method first
-		System.out
-				.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PlanActivity >>>> onResume");
-		Log.i(TAG,
-				">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PlanActivity >>>> onResume");
-		// refreshPlansTasks();
+		refreshPlansTasks();
 	}
 
 	@Override
@@ -47,6 +44,8 @@ public class PlanActivity extends Activity {
 
 		System.out.println("      Plan Act");
 		setContentView(R.layout.activity_plan);
+
+		addListenerOnSpinnerItemSelection();
 
 		refreshPlansTasks();
 
@@ -68,19 +67,6 @@ public class PlanActivity extends Activity {
 				startAddPlanActivity();
 			}
 		});
-
-		Button btnRefresh = (Button) findViewById(R.id.refresh);
-		btnRefresh.setOnClickListener(new View.OnClickListener() {
-
-			public void onClick(View v) {
-				Log.i(TAG, "===== ENTER btnAddPlan btnRefresh =====");
-
-				// add stuff for plan list too
-
-				refreshPlansTasks();
-			}
-		});
-
 	}
 
 	public void addRecRow(TableLayout tl, String rowData) {
@@ -88,7 +74,7 @@ public class PlanActivity extends Activity {
 
 		Button btnSelect = new Button(this);
 		btnSelect.setText("Edit");
-		btnSelect.setTextSize(10.0f);
+		btnSelect.setTextSize(8.0f);
 		btnSelect.setTextColor(Color.BLACK);
 
 		// 1 Drawable sBackground =
@@ -125,7 +111,7 @@ public class PlanActivity extends Activity {
 
 		Button btnInfo = new Button(this);
 		btnInfo.setText("Info");
-		btnInfo.setTextSize(10.0f);
+		btnInfo.setTextSize(8.0f);
 		btnInfo.setTextColor(Color.BLACK);
 		// 1 btnInfo.setBackgroundDrawable(sBackground);
 		btnInfo.setLayoutParams(lp);
@@ -167,14 +153,9 @@ public class PlanActivity extends Activity {
 
 	public void addListenerOnSpinnerItemSelection() {
 		spinner1 = (Spinner) findViewById(R.id.planslist);
-
-		spinner1.setOnItemSelectedListener(
-
-		new CustomOnItemSelectedListener());
+		spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
 	}
 
-	// get the selected dropdown list value    ????
-	
 	public void addListenerOnButton() {
 
 		spinner1 = (Spinner) findViewById(R.id.planslist);
@@ -204,11 +185,11 @@ public class PlanActivity extends Activity {
 
 			Globals g = Globals.getInstance();
 			g.currentPlanName = plan;
+			refreshTasks();
 		}
 
 		@Override
 		public void onNothingSelected(AdapterView<?> arg0) {
-			// TODO Auto-generated method stub
 		}
 
 	}
@@ -235,16 +216,19 @@ public class PlanActivity extends Activity {
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner2.setAdapter(dataAdapter);
 
-		addListenerOnSpinnerItemSelection();
-
-		// String name = model.getName();
 		int index = list.indexOf(g.currentPlanName);
 		if (index != -1) {
 			spinner2.setSelection(index);
 		} else {
 			spinner2.setSelection(0);
-		};
+		}
+		;
 
+		refreshTasks();
+	}
+
+	public void refreshTasks() {
+		Globals g = Globals.getInstance();
 		tl2 = (TableLayout) findViewById(R.id.recTable);
 		tl2.removeAllViews();
 		tl2.setVerticalScrollBarEnabled(true);
@@ -252,11 +236,6 @@ public class PlanActivity extends Activity {
 		int tsz = g.tasksSize();
 		System.out.println("PlanActivity -- activities tsz=" + tsz);
 		ArrayList<Task> taskz = g.getTasksArray();
-
-		for (Task x : taskz) {
-			Log.i(TAG, "===== currentPlanName set x.name:" + x.name);
-		}
-		;
 
 		for (Task x : taskz) {
 			if (g.currentPlanName.equals(x.plan)) {

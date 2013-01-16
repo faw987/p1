@@ -1,8 +1,10 @@
 package com.example.p1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -24,9 +26,25 @@ public class AddPlanActivity extends Activity {
 				p.desc = "Description of " + et1;
 				Globals g = Globals.getInstance();
 				g.addPlan(p);
-				v.invalidate();
+				
+ 				g.currentPlanName = p.name;
+				
+//				v.invalidate();
+//				
+//				View vv = Globals.planView;
+//				System.out.println(" ********************** vv=" + vv);
+//
+// 				vv.invalidate();
+				
+			//	startPlan();
+				
 				finish();
 			}
 		});
 	}
+	private void startPlan() {
+		Intent workerIntent = new Intent(this, PlanActivity.class);
+		startActivity(workerIntent);
+	}
+
 }
