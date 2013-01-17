@@ -1,18 +1,16 @@
 package com.example.p1;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
 import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -64,6 +62,15 @@ public class MainActivity extends Activity {
 		
 
 		Utilities.readPlansTasks(getApplicationContext());
+
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> before ----------------");
+
+		Utilities.createByTaskArray();
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> after ----------------");
+
+		
+		ArrayList<Task> tal = g.getPlanTaskAL("plan01");
+		System.out.println("tal.size=" + tal.size());
 
 		setContentView(R.layout.activity_main);
 		String t = getTitle().toString();
