@@ -14,9 +14,8 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#00008B"
-            android:text="Adventure Planner"
-            android:textColor="#00FF7F"
+             android:text="Adventure Planner"
+             style="@style/App_EditTextStyle"
             android:textSize="42px" />
     </LinearLayout>
 

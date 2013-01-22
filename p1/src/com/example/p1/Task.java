@@ -5,4 +5,7 @@ public class Task {
 	public String plan;		// if associated this is corresponding plan
 							// 
 	public String desc;
+	public int seq;
+	public String duration;
+
 }

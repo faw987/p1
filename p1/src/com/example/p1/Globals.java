@@ -14,9 +14,11 @@ public class Globals extends Application {
 	static ArrayList<Plan> plans = new ArrayList<Plan>();
 	static ArrayList<Task> tasks = new ArrayList<Task>();
 	static String currentPlanName = "";
+	static String currentTaskName = "";		// HACK - is this unique enough ??
 	// static View planView ;
 
 	HashMap<String, Plan> planMap = new HashMap<String, Plan>();
+	HashMap<String, Task> taskMap = new HashMap<String, Task>();
 
 	public static Globals getInstance() {
 		return sInstance;
@@ -48,14 +50,13 @@ public class Globals extends Application {
 	public ArrayList<Task> getPlanTaskAL(String ps) {
 		Plan p = getPlan(ps);
 		System.out.println("getPlanTaskAL -- ps=" + ps);
-
-		if (p.arrayListOfTasks != null) {
-			System.out.println("getPlanTaskAL -- not null");
-
-			ArrayList<Task> t = (ArrayList<Task>) p.arrayListOfTasks;
-			return t;
+		ArrayList<Task> a = p.arrayListOfTasks;
+ 
+ 	//	if (a != null && !a.isEmpty()) {
+			if (a != null ) {
+  			return a;
 		} else {
-			return null;
+ 			return new ArrayList<Task>();
 		}
 	}
 
@@ -86,8 +87,17 @@ public class Globals extends Application {
 
 	public void addTask(Task t) {
 		tasks.add(t);
+		ArrayList<Task> a = getPlanTaskAL(t.plan);
+		a.add(t);
+		int ti = tasks.size() - 1;
+		taskMap.put(t.name, tasks.get(ti));
 	}
+	
+	public Task getTask(String t) {
+		return taskMap.get(t);
 
+	}
+	
 	public int tasksSize() {
 		return tasks.size();
 	}

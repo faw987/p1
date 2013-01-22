@@ -249,7 +249,7 @@ public class Utilities {
 				Plan p = new Plan();
 				p.name = plans.getJSONObject(i).getString("name").toString();
 				p.desc = plans.getJSONObject(i).getString("desc").toString();
-				p.arrayListOfTasks = null;
+				p.arrayListOfTasks = new ArrayList<Task>();
 				g.addPlan(p);
 
 			}
@@ -379,10 +379,12 @@ public class Utilities {
 
 		for (Plan x : planz) {
 			ArrayList<Task> tasks = new ArrayList<Task>();
+			ArrayList<Task> a = (ArrayList<Task>)x.arrayListOfTasks;
 
-			if (x.arrayListOfTasks == null) {
+			if (a.isEmpty()) {
 				populateTasks(x.name, tasks);
-				x.arrayListOfTasks = (Object) tasks;
+			//	x.arrayListOfTasks = (Object) tasks;
+				x.arrayListOfTasks =   tasks;
 				System.out.println("PlanActivity -- create list for plan");
 
 			} else {
@@ -395,8 +397,9 @@ public class Utilities {
 		for (Plan x : planz) {
 			ArrayList<Task> tasks = new ArrayList<Task>();
 			System.out.println("PlanActivity -- recap for plan: " + x.name);
+			ArrayList<Task> a = (ArrayList<Task>)x.arrayListOfTasks;
 
-			if (x.arrayListOfTasks == null) {
+			if (a.isEmpty()) {
 				
 				System.out.println("PlanActivity -- create list for plan = null");
 

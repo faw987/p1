@@ -59,16 +59,16 @@ public class MainActivity extends Activity {
 		Globals g = Globals.getInstance();
 		g.setState("test1");
 		String s = g.getState();
-		
 
 		Utilities.readPlansTasks(getApplicationContext());
 
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> before ----------------");
+		System.out
+				.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> before ----------------");
 
 		Utilities.createByTaskArray();
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> after ----------------");
+		System.out
+				.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> after ----------------");
 
-		
 		ArrayList<Task> tal = g.getPlanTaskAL("plan01");
 		System.out.println("tal.size=" + tal.size());
 
@@ -121,33 +121,13 @@ public class MainActivity extends Activity {
 		x1Btn.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
-				System.out.println("{ \"plans\":[ ");
-				for (int i = 0; i < 20; i++) {
-					String rjzf1 = ("000" + i);
-					String rjzf = rjzf1.substring(rjzf1.length()-2,rjzf1.length());
-					String insertComma = i == 29 ? "" : "," ;
-					System.out.println("{\"name\":\"plan" + rjzf
-							+ "\", \"desc\":\"Desc of plan " + rjzf + "\"}" + insertComma);
-			// {"name":"plan01", "desc":"Desc of plan 01"},
-				}
-				;
-				System.out.println(" ] }");
-				
-				
-				System.out.println("{ \"tasks\":[ ");
-				for (int i = 0; i < 200; i++) {
-					String rjzf1 = ("000" + i);
-					String rjzf = rjzf1.substring(rjzf1.length()-3,rjzf1.length());
-					String plan = rjzf1.substring(rjzf1.length()-3,rjzf1.length()-1);
-				String insertComma = i == 199 ? "" : "," ;
 
-					System.out.println("{\"name\":\"task" + rjzf + 
-							 "\", \"plan\":\"plan" + plan +
-							 "\", \"desc\":\"Desc of task " + rjzf + "\"}" + insertComma);
-			// {"name":"plan01", "desc":"Desc of plan 01"},
-				}
-				;
-				System.out.println(" ] }");
+				// printSampleJSON();
+
+				Intent settingsActivity = new Intent(getBaseContext(),
+						DriveActivity.class);
+				startActivity(settingsActivity);
+
 			}
 
 		});
@@ -164,6 +144,8 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
 	}
+
+  
 
 	@Override
 	protected void onPause() {
@@ -191,4 +173,37 @@ public class MainActivity extends Activity {
 		Intent workerIntent = new Intent(this, PlanActivity.class);
 		startActivity(workerIntent);
 	}
+
+	private void printSampleJSON() {
+		System.out.println("{ \"plans\":[ ");
+		for (int i = 0; i < 20; i++) {
+			String rjzf1 = ("000" + i);
+			String rjzf = rjzf1.substring(rjzf1.length() - 2, rjzf1.length());
+			String insertComma = i == 29 ? "" : ",";
+			System.out.println("{\"name\":\"plan" + rjzf
+					+ "\", \"desc\":\"Desc of plan " + rjzf + "\"}"
+					+ insertComma);
+			// {"name":"plan01", "desc":"Desc of plan 01"},
+		}
+		;
+		System.out.println(" ] }");
+
+		System.out.println("{ \"tasks\":[ ");
+		for (int i = 0; i < 200; i++) {
+			String rjzf1 = ("000" + i);
+			String rjzf = rjzf1.substring(rjzf1.length() - 3, rjzf1.length());
+			String plan = rjzf1.substring(rjzf1.length() - 3,
+					rjzf1.length() - 1);
+			String insertComma = i == 199 ? "" : ",";
+
+			System.out.println("{\"name\":\"task" + rjzf
+					+ "\", \"plan\":\"plan" + plan
+					+ "\", \"desc\":\"Desc of task " + rjzf + "\"}"
+					+ insertComma);
+			// {"name":"plan01", "desc":"Desc of plan 01"},
+		}
+		;
+		System.out.println(" ] }");
+	}
+
 }

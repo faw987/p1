@@ -14,31 +14,33 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int LinearLayout03=0x7f090015;
-        public static final int add1=0x7f090017;
-        public static final int addActivity=0x7f09000f;
-        public static final int addPlan=0x7f09000b;
-        public static final int btnPlan=0x7f090005;
-        public static final int btnPrefs=0x7f090006;
-        public static final int btnVend=0x7f090003;
-        public static final int btnX1=0x7f090007;
-        public static final int button1=0x7f090008;
-        public static final int calculator=0x7f090016;
-        public static final int editText1=0x7f090001;
-        public static final int linearLayout2=0x7f090009;
-        public static final int linearLayout4=0x7f090004;
-        public static final int linearLayout6=0x7f09000d;
-        public static final int menu_settings=0x7f090018;
-        public static final int ok=0x7f090002;
-        public static final int planslist=0x7f09000c;
-        public static final int recTable=0x7f090011;
-        public static final int removeActivity=0x7f090010;
-        public static final int search1=0x7f090013;
-        public static final int searchInput=0x7f090012;
-        public static final int select1=0x7f090014;
+        public static final int LinearLayout03=0x7f090017;
+        public static final int add1=0x7f090019;
+        public static final int addActivity=0x7f090011;
+        public static final int addPlan=0x7f09000d;
+        public static final int btnPlan=0x7f090007;
+        public static final int btnPrefs=0x7f090008;
+        public static final int btnVend=0x7f090005;
+        public static final int btnX1=0x7f090009;
+        public static final int button1=0x7f09000a;
+        public static final int calculator=0x7f090018;
+        public static final int duration=0x7f090002;
+        public static final int editText1=0x7f090004;
+        public static final int linearLayout2=0x7f09000b;
+        public static final int linearLayout4=0x7f090006;
+        public static final int linearLayout6=0x7f09000f;
+        public static final int menu_settings=0x7f09001a;
+        public static final int ok=0x7f090003;
+        public static final int planslist=0x7f09000e;
+        public static final int recTable=0x7f090013;
+        public static final int removeActivity=0x7f090012;
+        public static final int search1=0x7f090015;
+        public static final int searchInput=0x7f090014;
+        public static final int select1=0x7f090016;
+        public static final int taskName=0x7f090001;
         public static final int textView1=0x7f090000;
-        public static final int textView2=0x7f09000a;
-        public static final int textView3=0x7f09000e;
+        public static final int textView2=0x7f09000c;
+        public static final int textView3=0x7f090010;
     }
     public static final class layout {
         public static final int activity_addacty=0x7f030000;
@@ -92,6 +94,9 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f060002;
+        public static final int App_EditTextStyle=0x7f060004;
+        public static final int App_EditTextStyle1=0x7f060005;
+        public static final int App_Theme=0x7f060003;
         public static final int RecomSummaryStyle=0x7f060000;
     }
     public static final class xml {

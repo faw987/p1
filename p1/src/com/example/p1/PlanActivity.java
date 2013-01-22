@@ -138,7 +138,7 @@ if (c.isChecked()) System.out.println("      row i = checked");
 		tr2.addView(btnSelect);
 
 		Button btnInfo = new Button(this);
-		btnInfo.setText("Info");
+		btnInfo.setText("Open");
 		btnInfo.setTextSize(8.0f);
 		btnInfo.setTextColor(Color.BLACK);
 		// 1 btnInfo.setBackgroundDrawable(sBackground);
@@ -158,6 +158,11 @@ if (c.isChecked()) System.out.println("      row i = checked");
 				Toast.makeText(getApplicationContext(),
 						"Thanks for the Info button press. Data: " + s,
 						Toast.LENGTH_SHORT).show();
+				
+				Globals g = Globals.getInstance();
+
+				g.currentTaskName = s;			// HACK - for now use row as simple task name 
+				startAddActyActivity();
 			}
 		});
 
