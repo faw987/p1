@@ -62,7 +62,7 @@ public class DriveActivity extends Activity {
 	protected void onActivityResult(final int requestCode,
 			final int resultCode, final Intent data) {
 
-		System.out.println("      onActivityResult (requestCode,resultCode)= "
+		System.out.println("  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    onActivityResult (requestCode,resultCode)= "
 				+ requestCode + "," + resultCode);
 
 		switch (requestCode) {
@@ -73,15 +73,7 @@ public class DriveActivity extends Activity {
 						.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
 
 				System.out.println("      accountName = " + accountName);
-//				try {
-//					System.out.println("      credential.getToken() = "
-//							+ credential.getToken());
-//				} catch (Exception e) {
-//					 e.printStackTrace();
-//				}
-//				;
-
-				if (accountName != null) {
+ 				if (accountName != null) {
 					credential.setSelectedAccountName(accountName);
 					service = getDriveService(credential);
 					// startCameraIntent();
@@ -128,45 +120,19 @@ public class DriveActivity extends Activity {
 		Thread t = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				
-			      System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>              writeFileToDrive");
-			      try {
-						System.out.println("      credential.getToken() = "
-								+ credential.getToken());
-					} catch (Exception e) {
-						 e.printStackTrace();
-					}
-					;
-					try {String token = GoogleAuthUtil.getToken(getApplicationContext(), accountName, AUTHTOKENSCOPE_DRIVE);
-					System.out.println("      token = "
-							+ token);}
-					catch (Exception e) {e.printStackTrace();}
-
-				
+							
 				// File's metadata.
 			    File body = new File();
 			    body.setTitle("f1.txt");
 			    body.setDescription("");
 			    body.setMimeType("text/plain");
-//			    String documentsAuthToken;
-//			    try {
-//			        documentsAuthToken = AccountManager.get(getApplicationContext()).blockingGetAuthToken(
-//			        		credential.setSelectedAccountName(accountName), "authtoken", false);
-//		 
-//			      } catch (OperationCanceledException e) {
-//			        Log.d(TAG, "Unable to get auth token", e);
-//			       // return retryTask();
-//			      } catch (AuthenticatorException e) {
-//			        Log.d(TAG, "Unable to get auth token", e);
-//			     //   return retryTask();
-//			      } catch (IOException e) {
-//			        Log.d(TAG, "Unable to get auth token", e);
-//			     //   return retryTask();
-//			      };
-//			    
 				
 			    java.io.File fileContent = new java.io.File("/storage/emulated/legacy/Download/f1.txt");
 			    FileContent mediaContent = new FileContent("text/plain", fileContent);
+
+			    System.out.println("fileContent =/" + fileContent + "/");
+			    System.out.println("mediaContent =/" + mediaContent + "/");
+
 			    try {
 			      File file = service.files().insert(body, mediaContent).execute();
 
@@ -174,9 +140,14 @@ public class DriveActivity extends Activity {
 			      System.out.println("File ID: %s" + file.getId());
 
 			    //  return file;
+				} catch (UserRecoverableAuthIOException e) {
+				    System.out.println("An UserRecoverableAuthIOException occured: " + e);
+				    
+					startActivityForResult(e.getIntent(), REQUEST_AUTHORIZATION);
+					
 			    } catch (IOException e) {
 				      System.out.println("An error occured: " + e);
-				      System.out.println("An error occured cause: " + e.getCause());
+				      System.out.println("    error  cause: " + e.getCause());
 			  //    return null;
 			    }
 			}
@@ -190,8 +161,12 @@ public class DriveActivity extends Activity {
 			public void run() {
 				try {
 					// File's binary content
+				      System.out.println("saveFileToDrive1");
+
 					java.io.File fileContent = new java.io.File(fileUri
 							.getPath());
+				      System.out.println("saveFileToDrive2");
+
 					FileContent mediaContent = new FileContent("image/jpeg",
 							fileContent);
 
@@ -219,42 +194,44 @@ public class DriveActivity extends Activity {
 	}
 
 	private Drive getDriveService(GoogleAccountCredential credential) {
-//		return new Drive.Builder(AndroidHttp.newCompatibleTransport(),
-//				new GsonFactory(), "481231366281.apps.googleusercontent.com","0s-U40-bN5XPx3azley8aMv7",credential).build();
-		try {
-//	        GoogleAccountCredential credential =
-//	            GoogleAccountCredential.usingOAuth2(mContext, DriveScopes.DRIVE_FILE);
-	        credential.setSelectedAccountName(accountName);
-	        // Trying to get a token right away to see if we are authorized
-	        credential.getToken();
-	       service = new Drive.Builder(AndroidHttp.newCompatibleTransport(),
-	                        new GsonFactory(), credential).build();
-	                        } catch (Exception e) {
-	                                Log.e(TAG, "Failed to get token");
-	                                // If the Exception is User Recoverable, we display a notification that will trigger the
-	                                // intent to fix the issue.
-	                                if (e instanceof UserRecoverableAuthException) {
-	                                        UserRecoverableAuthException exception = (UserRecoverableAuthException) e;
-	                                        NotificationManager notificationManager = (NotificationManager) mContext
-	                                            .getSystemService(Context.NOTIFICATION_SERVICE);
-	                                        Intent authorizationIntent = exception.getIntent();
-	                                        authorizationIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).addFlags(
-	                                            Intent.FLAG_FROM_BACKGROUND);
-	                                        PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 0,
-	                                            authorizationIntent, 0);
-	                                        Notification notification = new Notification.Builder(mContext)
-	                                            .setSmallIcon(android.R.drawable.ic_dialog_alert)
-	                                            .setTicker("Permission requested")
-	                                            .setContentTitle("Permission requested")
-	                                            .setContentText("for account " + accountName)
-	                                            .setContentIntent(pendingIntent).setAutoCancel(true).build();
-	                                        notificationManager.notify(0, notification);
-	                                } else {
-	                                        e.printStackTrace();
-	                                }
-	                        }
-		return service;
-	}
+		 return new Drive.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), credential)
+	        .build();
+	  }
+//			new GsonFactory(), "481231366281.apps.googleusercontent.com","0s-U40-bN5XPx3azley8aMv7",credential).build();
+//		try {
+////	        GoogleAccountCredential credential =
+////	            GoogleAccountCredential.usingOAuth2(mContext, DriveScopes.DRIVE_FILE);
+//	        credential.setSelectedAccountName(accountName);
+//	        // Trying to get a token right away to see if we are authorized
+//	        credential.getToken();
+//	       service = new Drive.Builder(AndroidHttp.newCompatibleTransport(),
+//	                        new GsonFactory(), credential).build();
+//	                        } catch (Exception e) {
+//	                                Log.e(TAG, "Failed to get token");
+//	                                // If the Exception is User Recoverable, we display a notification that will trigger the
+//	                                // intent to fix the issue.
+//	                                if (e instanceof UserRecoverableAuthException) {
+//	                                        UserRecoverableAuthException exception = (UserRecoverableAuthException) e;
+//	                                        NotificationManager notificationManager = (NotificationManager) mContext
+//	                                            .getSystemService(Context.NOTIFICATION_SERVICE);
+//	                                        Intent authorizationIntent = exception.getIntent();
+//	                                        authorizationIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).addFlags(
+//	                                            Intent.FLAG_FROM_BACKGROUND);
+//	                                        PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 0,
+//	                                            authorizationIntent, 0);
+//	                                        Notification notification = new Notification.Builder(mContext)
+//	                                            .setSmallIcon(android.R.drawable.ic_dialog_alert)
+//	                                            .setTicker("Permission requested")
+//	                                            .setContentTitle("Permission requested")
+//	                                            .setContentText("for account " + accountName)
+//	                                            .setContentIntent(pendingIntent).setAutoCancel(true).build();
+//	                                        notificationManager.notify(0, notification);
+//	                                } else {
+//	                                        e.printStackTrace();
+//	                                }
+//	                        }
+//		return service;
+	
 
 	public void showToast(final String toast) {
 		runOnUiThread(new Runnable() {

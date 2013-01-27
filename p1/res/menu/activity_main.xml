@@ -1,9 +1,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/menu_settings"
+        android:id="@+id/menu_settings1"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/menu_settings"/>
+        android:title="Play Asset ..."/>
+    
+    <item
+        android:id="@+id/menu_settings2"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="m2"/>
+    
+    <item
+        android:id="@+id/menu_settings3"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="m3"/>
 
 </menu>

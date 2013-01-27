@@ -4,6 +4,9 @@
          "name":"task01",
          "plan":"plan01",
          "desc":"Desc of task 01",
+         "duration":"10",
+         "urls":"",         
+         "location":"",         
          "notes":{
             "notesitem":[
                {
@@ -23,6 +26,9 @@
          "name":"task02",
          "plan":"plan01",
          "desc":"Desc of task 02",
+         "duration":"20",   
+         "urls":"",      
+         "location":"",         
          "notes":{
             "notesitem":[
                {
@@ -38,6 +44,9 @@
          "name":"task03",
          "plan":"plan02",
          "desc":"Desc of task 03",
+         "duration":"30",        
+         "urls":"", 
+         "location":"",                          
          "notes":{
             "notesitem":[
                {
@@ -57,6 +66,9 @@
          "name":"task04",
          "plan":"",
          "desc":"Desc of task 04",
+         "duration":"40",
+         "urls":"",
+         "location":"",         
          "notes":{
             "notesitem":[
                {

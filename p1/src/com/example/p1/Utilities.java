@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,9 +18,8 @@ import org.json.JSONObject;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.util.Log;
-import android.widget.Spinner;
 
+ 
 public class Utilities {
 
 	static public String donotdisturb(String input) {
@@ -108,7 +106,7 @@ public class Utilities {
 		Globals g = Globals.getInstance();
 		int sz = g.tasksSize();
 
-		System.out.println("PlanActivity -- tasks sz=" + sz);
+		System.out.println("tasksToJSON -- tasks sz=" + sz);
 
 		g.sortTasks();
 
@@ -117,12 +115,21 @@ public class Utilities {
 		JSONArray list = new JSONArray();
 		for (Task x : taskz) {
 
+			System.out.println("tasksToJSON -- get task next -  x.name="
+					+ x.name);
+
+			Task x1 = g.getTask(x.name); // HACK HACK HACK
+
 			try {
 				JSONObject jo = new JSONObject();
 
-				jo.put("name", x.name);
-				jo.put("desc", x.desc);
-				jo.put("plan", x.plan);
+				jo.put("name", x1.name);
+				jo.put("desc", x1.desc);
+				jo.put("plan", x1.plan);
+				jo.put("duration", x1.duration);
+				jo.put("urls", x1.urls);
+				jo.put("location", x1.location);
+
 				list.put(jo);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -203,16 +210,25 @@ public class Utilities {
 
 		try {
 
-			sampleplans = Utilities.jsonToStringFromAssetFolder(R.raw.plans, c);
-			// sampleplans = Utilities.jsonToStringFromAssetFolder(
-			// R.raw.plansmedium, c);
-			// System.out.println("PlanActivity -- plans sampleplans="
-			// + sampleplans);
-			sampletasks = Utilities.jsonToStringFromAssetFolder(R.raw.tasks, c);
-			// sampletasks = Utilities.jsonToStringFromAssetFolder(
-			// R.raw.tasksmedium, c);
-			// System.out.println("PlanActivity -- tasks sampletasks="
-			// + sampletasks);
+			if (true) {
+				sampleplans = Utilities.jsonToStringFromAssetFolder(
+						R.raw.plans, c);
+				sampletasks = Utilities.jsonToStringFromAssetFolder(
+						R.raw.tasks, c);
+			} else {
+				sampleplans = Utilities.jsonToStringFromAssetFolder(
+						R.raw.plansmedium, c);
+				sampletasks = Utilities.jsonToStringFromAssetFolder(
+						R.raw.tasksmedium, c);
+			}
+			;
+
+			if (Globals.debugVerbose()) {
+				System.out.println("PlanActivity -- plans sampleplans="
+						+ sampleplans);
+				System.out.println("PlanActivity -- tasks sampletasks="
+						+ sampletasks);
+			}
 
 		} catch (Exception e) {
 			System.out.println("PlanActivity -- plans e=" + e);
@@ -263,23 +279,17 @@ public class Utilities {
 		try {
 			jsonObj = new JSONObject(tasksStr);
 
-			// System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> tasksStr: "
-			// + tasksStr);
-
 			JSONArray tasks = jsonObj.getJSONArray("tasks");
 			for (int i = 0; i < tasks.length(); i++) {
-				// printing the values to the logcat
-				// System.out.println("ShowSettingsActivity: i:" + i);
-				//
-				// System.out.println("ShowSettingsActivity: name:"
-				// + tasks.getJSONObject(i).getString("name").toString());
-				// System.out.println("ShowSettingsActivity: name:"
-				// + tasks.getJSONObject(i).getString("desc").toString());
 
 				Task t = new Task();
 				t.name = tasks.getJSONObject(i).getString("name").toString();
 				t.desc = tasks.getJSONObject(i).getString("desc").toString();
 				t.plan = tasks.getJSONObject(i).getString("plan").toString();
+				t.duration = tasks.getJSONObject(i).getString("duration")
+						.toString();
+				t.urls = tasks.getJSONObject(i).getString("urls").toString();
+				t.location = tasks.getJSONObject(i).getString("location").toString();
 				g.addTask(t);
 
 			}
@@ -347,8 +357,8 @@ public class Utilities {
 		return null;
 
 	}
+
 	static private void populateTasks(String planName, ArrayList<Task> tasks) {
-		//	for (Task x : (ArrayList<Task>) arrayListOfTasks) {
 		System.out.println("populateTasks for: " + planName);
 		Globals g = Globals.getInstance();
 
@@ -356,60 +366,66 @@ public class Utilities {
 
 		for (Task x : taskz) {
 			if (planName.equals(x.plan)) {
-				System.out.println("found task for: " + planName + " task name:" + x.name);
+				System.out.println("found task for: " + planName
+						+ " task name:" + x.name);
 				tasks.add(x);
 			} else {
 				System.out.println("task NOT for: " + planName);
-
 			}
 			;
 		}
 		;
-		//}
 	}
+
 	static public void createByTaskArray() {
-		
+
 		Globals g = Globals.getInstance();
 		List<String> list = new ArrayList<String>();
 
 		int sz = g.plansSize();
-		System.out.println("PlanActivity -- plans sz=" + sz);
+		System.out.println("createByTaskArray -- plans sz=" + sz);
 
 		ArrayList<Plan> planz = g.getPlansArray();
 
 		for (Plan x : planz) {
 			ArrayList<Task> tasks = new ArrayList<Task>();
-			ArrayList<Task> a = (ArrayList<Task>)x.arrayListOfTasks;
+			ArrayList<Task> a = (ArrayList<Task>) x.arrayListOfTasks;
 
 			if (a.isEmpty()) {
 				populateTasks(x.name, tasks);
-			//	x.arrayListOfTasks = (Object) tasks;
-				x.arrayListOfTasks =   tasks;
-				System.out.println("PlanActivity -- create list for plan");
+				// x.arrayListOfTasks = (Object) tasks;
+				x.arrayListOfTasks = tasks;
+				System.out.println("createByTaskArray -- create list for plan");
 
 			} else {
 				tasks = (ArrayList<Task>) x.arrayListOfTasks;
-				int szt=tasks.size();
-				System.out.println("PlanActivity -- have list, size:" + szt);
+				int szt = tasks.size();
+				System.out.println("createByTaskArray -- have list, size:"
+						+ szt);
 			}
 			;
-		};
+		}
+		;
 		for (Plan x : planz) {
 			ArrayList<Task> tasks = new ArrayList<Task>();
-			System.out.println("PlanActivity -- recap for plan: " + x.name);
-			ArrayList<Task> a = (ArrayList<Task>)x.arrayListOfTasks;
+			System.out
+			.println("createByTaskArray -- recap for plan: " + x.name);
+			ArrayList<Task> a = (ArrayList<Task>) x.arrayListOfTasks;
 
 			if (a.isEmpty()) {
-				
-				System.out.println("PlanActivity -- create list for plan = null");
+
+				System.out
+				.println("createByTaskArray -- create list for plan = null");
 
 			} else {
 				tasks = (ArrayList<Task>) x.arrayListOfTasks;
-				int szt=tasks.size();
-				System.out.println("PlanActivity -- have list, size:" + szt);
+				int szt = tasks.size();
+				System.out.println("createByTaskArray -- have list, size:"
+						+ szt);
 			}
 			;
-		};
+		}
+		;
 
 	}
 }

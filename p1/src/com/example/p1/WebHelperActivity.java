@@ -2,6 +2,7 @@ package com.example.p1;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.ClipboardManager;
 import android.util.Log;
@@ -30,10 +31,10 @@ public class WebHelperActivity extends Activity {
 		Log.i(TAG, "===== ENTER onCreate =====");
 
 		System.out.println("      Plan Act");
-		setContentView(R.layout.activity_plan);
+		setContentView(R.layout.web_helper);
 		browser = (WebView) findViewById(R.id.calculator);
 		// set a webview client to override the default functionality
-	//    ??? how to fix ?? 	browser.setWebViewClient(new wvClient());
+		// ??? how to fix ?? browser.setWebViewClient(new wvClient());
 
 		// get settings so we can config our WebView instance
 		WebSettings settings = browser.getSettings();
@@ -69,7 +70,27 @@ public class WebHelperActivity extends Activity {
 				Log.i(TAG, "===== ENTER btnSearch clicked ===== search for:"
 						+ searchInput);
 				browser.loadUrl(searchInput);
+			}});
+		
+		browser.setWebViewClient(new WebViewClient() {
+			public void onPageStarted(WebView view, String url, Bitmap favicon) {
+				// String fragment = "#access_token=";
+				// int start = url.indexOf(fragment);
+				// if (start > -1) {
+				// // You can use the accessToken for api calls now.
+				// String accessToken = url.substring(start + fragment.length(),
+				// url.length());
+				//
+				// Log.v(TAG, "OAuth complete, token: [" + accessToken + "].");
+				//
+				// Toast.makeText(getApplicationContext(), "Token: " +
+				// accessToken, Toast.LENGTH_SHORT).show();
+				// }
+				//
+				System.out.println(">>>>>>>>>>>>>>>> onPageStarted url=" + url);
+
 			}
+
 		});
 
 		Button btnSelect = (Button) findViewById(R.id.select1);
@@ -90,16 +111,20 @@ public class WebHelperActivity extends Activity {
 
 			}
 		});
-		
+
 		final class wvClient extends WebViewClient {
 			public void onPageFinished(WebView view, String url) {
-				// when our web page is loaded, let's call a function that is contained within the page
-				// this is functionally equivalent to placing an onload attribute in the <body> tag
-				// whenever the loadUrl method is used, we are essentially "injecting" code into the page when it is prefixed with "javascript:"
+				// when our web page is loaded, let's call a function that is
+				// contained within the page
+				// this is functionally equivalent to placing an onload
+				// attribute in the <body> tag
+				// whenever the loadUrl method is used, we are essentially
+				// "injecting" code into the page when it is prefixed with
+				// "javascript:"
 				// browser.loadUrl("javascript:startup()");
 			}
 		}
+		;
 
-		
 	};
 }

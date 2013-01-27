@@ -1,33 +1,48 @@
 package com.example.p1;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.model.LatLng;
+
 public class MainActivity extends Activity {
 	private final String TAG = "MainActivity";
 
+
+
 	public void onRestart(Bundle savedInstanceState) {
 		super.onResume(); // Always call the superclass method first
-		System.out
-				.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MainActivity >>>> onResume");
-		Log.i("MainActivity",
-				">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MainActivity >>>> onResume");
+		System.out.println(">>>>>>>>>>>>>>>> MainActivity >>>> onResume");
+		Log.i(TAG, ">>>>>>>>>>>>>>>> MainActivity >>>> onResume");
 		// / PlanActivity.redoTaskList();
 	}
 
@@ -41,18 +56,20 @@ public class MainActivity extends Activity {
 					getPackageName(), 0);
 			version = manager.versionName;
 		} catch (NameNotFoundException e) {
-			Log.i("MAIN", "NameNotFoundException e:" + e);
+			Log.i(TAG, "NameNotFoundException e:" + e);
 		}
 
 		SimpleDateFormat sdf = new SimpleDateFormat(
 				"yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.US);
 		String theDate = sdf.format(new Date());
-		Log.i("MAIN", "theDate:" + theDate);
+		Log.i(TAG, "theDate:" + theDate);
 
-		Log.i("MAIN", "version " + version);
-		System.out.println("Yo, starting MainActivity.");
+		Log.i(TAG, "version " + version);
+		System.out.println(">>>>>>>>>>>>>>>> Starting MainActivity.");
 
 		// experimenting
+
+		Acty.proto1(1, getApplicationContext());
 
 		Globals.delay1 = "abcdefg";
 
@@ -62,17 +79,37 @@ public class MainActivity extends Activity {
 
 		Utilities.readPlansTasks(getApplicationContext());
 
-		System.out
-				.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> before ----------------");
-
 		Utilities.createByTaskArray();
-		System.out
-				.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> after ----------------");
 
 		ArrayList<Task> tal = g.getPlanTaskAL("plan01");
-		System.out.println("tal.size=" + tal.size());
+		System.out.println("for PLAN01  Task array list size=" + tal.size());
 
 		setContentView(R.layout.activity_main);
+
+
+		//		InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+		//		imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+		//	
+		//		
+
+		getWindow().setSoftInputMode(
+				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+
+		// gets the activity's default ActionBar
+
+		ActionBar actionBar = getActionBar();
+
+		actionBar.show();
+
+
+
+		// set the app icon as an action to go home
+
+		// we are home so we don't need it
+
+		actionBar.setDisplayHomeAsUpEnabled(true);
+
 		String t = getTitle().toString();
 		setTitle(t + " version " + version);
 
@@ -122,18 +159,51 @@ public class MainActivity extends Activity {
 
 			public void onClick(View v) {
 
-				// printSampleJSON();
+				// DOES NOT WORK -- NPE -- listAssets();
 
-				Intent settingsActivity = new Intent(getBaseContext(),
-						DriveActivity.class);
-				startActivity(settingsActivity);
+				processAssets();
+				Intent act = new Intent(getBaseContext(),
+						MapActivity.class);
+				act.putExtra("LAT", "40.5840");		// PWAY
+				act.putExtra("LON", "-74.522");
+				startActivity(act);
 
+			}
+
+			private void processAssets() {
+				AssetManager am = getApplicationContext().getAssets();
+
+				try {
+					InputStream ist = am
+							.open("Chipmunks - Happy Birthday to You!!!.mp4.mp3");
+					AssetFileDescriptor fd = am
+							.openFd("Chipmunks - Happy Birthday to You!!!.mp4.mp3");
+					ist = am.open("test.txt");
+
+					InputStreamReader is = new InputStreamReader(ist);
+					StringBuilder sb = new StringBuilder();
+					BufferedReader br = new BufferedReader(is);
+					String read = br.readLine();
+
+					while (read != null) {
+						System.out.println(read);
+						sb.append(read);
+						read = br.readLine();
+
+					}
+
+					// return sb.toString();
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				;
 			}
 
 		});
 
-		Log.i("MAIN", "about to exit MainActivity.");
-		System.out.println("Yo, exiting MainActivity.");
+		Log.i(TAG, "Exiting MainActivity.");
+		System.out.println(TAG + " -- Exiting MainActivity.");
 
 	}
 
@@ -145,13 +215,33 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-  
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// same as using a normal menu
+		switch (item.getItemId()) {
+		case R.id.menu_settings1:
+			makeToast("menu_settings1...");
+			Intent settingsActivity = new Intent(getBaseContext(),
+					PlayActivity.class);
+			startActivity(settingsActivity);
+
+			break;
+		case R.id.menu_settings2:
+			makeToast("menu_settings2...");
+			break;
+		}
+		return true;
+	}
+	public void makeToast(String message) {	
+		// with jam obviously		 
+		Toast.makeText(this, message, Toast.LENGTH_SHORT).show();		 
+	}
 
 	@Override
 	protected void onPause() {
 
 		Utilities.writePlansTasks(getApplicationContext());
-		Log.i("MAIN", "==MainActivity== onPause. -- just saved data in prefs.");
+		Log.i(TAG, "==MainActivity== onPause. -- just saved data in prefs.");
 		super.onPause();
 
 	}
@@ -159,7 +249,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onStop() {
 
-		Log.i("MAIN", "==MainActivity== onStop. -- just saved data in prefs.");
+		Log.i(TAG, "==MainActivity== onStop. -- do nothing.");
 		super.onStop();
 
 	}
@@ -205,5 +295,50 @@ public class MainActivity extends Activity {
 		;
 		System.out.println(" ] }");
 	}
+
+	private List<String> listAssets() {
+
+		List<String> it = new ArrayList<String>();
+		File f = new File("file:///android_asset");
+		//File f = new File("file:///sdcard/");
+		File[] files = f.listFiles();
+		Log.d(TAG, "list assets");
+		System.out.println("files=" + files);
+
+		for (int i = 0; i < files.length; i++) {
+			File file = files[i];
+			// if(getImageFile(file.getPath()))
+			// it.add(file.getPath());
+			System.out.println("file=" + file.getPath());
+		}
+		return it;
+
+	}
+
+	private void dispLocation(){
+		LocationManager service = (LocationManager) getSystemService(LOCATION_SERVICE);
+		Criteria criteria = new Criteria();
+		String provider = service.getBestProvider(criteria, false);
+		Location location = service.getLastKnownLocation(provider);
+		LatLng userLocation = new LatLng(location.getLatitude(),location.getLongitude());
+	}
+	
+	private boolean getImageFile(String fName) {
+		boolean re;
+
+		String end = fName
+				.substring(fName.lastIndexOf(".") + 1, fName.length())
+				.toLowerCase();
+
+		if (end.equals("jpg") || end.equals("gif") || end.equals("png")
+				|| end.equals("jpeg") || end.equals("bmp")) {
+			re = true;
+		} else {
+			re = false;
+		}
+		return re;
+	};
+
+
 
 }

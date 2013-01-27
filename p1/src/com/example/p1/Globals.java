@@ -23,7 +23,11 @@ public class Globals extends Application {
 	public static Globals getInstance() {
 		return sInstance;
 	}
-
+	
+	public static Boolean debugVerbose() {			// HACK until put in preferences
+		return false;
+	}
+	
 	private String myState;
 
 	public String getState() {
@@ -91,10 +95,14 @@ public class Globals extends Application {
 		a.add(t);
 		int ti = tasks.size() - 1;
 		taskMap.put(t.name, tasks.get(ti));
+		System.out.println(" >>>>>>>>>>>>>>> added task=" + t.name);
+
 	}
 	
 	public Task getTask(String t) {
-		return taskMap.get(t);
+		Task r = taskMap.get(t);
+		System.out.println("*** getTask t=" + t + ", result=" + r);
+		return r;
 
 	}
 	

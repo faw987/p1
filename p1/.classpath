@@ -5,6 +5,11 @@
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry kind="con" path="com.google.gdt.eclipse.managedapis.MANAGED_API_CONTAINER/drive-v2r43lv1.12.0-beta"/>
-	<classpathentry exported="true" kind="lib" path="C:/adt/adt-bundle-windows-x86_64/sdk/extras/google/google_play_services/libproject/google-play-services_lib/libs/google-play-services.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Frank/workspace/google-play-services_lib/libs/google-play-services.jar"/>
+	<classpathentry kind="lib" path="C:/adt/adt-bundle-windows-x86_64/sdk/add-ons/addon-google_apis-google-17/libs/maps.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/adt/adt-bundle-windows-x86_64/sdk/add-ons/addon-google_apis-google-17/docs/reference"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
