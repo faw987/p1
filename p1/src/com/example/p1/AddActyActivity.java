@@ -13,7 +13,8 @@ public class AddActyActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		final Boolean isNewTask, isUpdateTask;
 		final Globals g = Globals.getInstance();
-		String taskName = g.currentTaskName;
+		final String taskName = g.currentTaskName;
+		
 		System.out.println("*** AddActyActivity taskName=" + taskName);
 
 		setContentView(R.layout.activity_addacty);
@@ -31,7 +32,7 @@ public class AddActyActivity extends Activity {
 			EditText urls = (EditText) findViewById(R.id.urls);
 			urls.setText(ta.urls);
 			EditText location = (EditText) findViewById(R.id.location);
-			urls.setText(ta.location);
+			location.setText(ta.location);
 
 		}
 		;
@@ -75,6 +76,9 @@ public class AddActyActivity extends Activity {
 			public void onClick(View v) {
 				Intent act = new Intent(getBaseContext(),
 						WebHelperActivity.class);
+				Task ta = g.getTask(taskName);
+
+				act.putExtra("URL", ta.urls);
 				startActivity(act);
 				v.invalidate();
 				finish();
@@ -90,8 +94,13 @@ public class AddActyActivity extends Activity {
 				
 				Intent act = new Intent(getBaseContext(),
 						MapActivity.class);
-				act.putExtra("LAT", "40.5840");		// PWAY
-				act.putExtra("LON", "-74.522");
+				
+				
+				Task ta = g.getTask(taskName);
+				
+				System.out.println("*** AddActyActivity ta.location=" + ta.location);
+
+				act.putExtra("LATLNG", ta.location);		// PWAY
 				startActivity(act);
 				
 				v.invalidate();

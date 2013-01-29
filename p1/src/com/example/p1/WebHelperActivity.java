@@ -1,5 +1,7 @@
 package com.example.p1;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -7,6 +9,7 @@ import android.os.Bundle;
 import android.text.ClipboardManager;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -32,6 +35,19 @@ public class WebHelperActivity extends Activity {
 
 		System.out.println("      Plan Act");
 		setContentView(R.layout.web_helper);
+		
+		getWindow().setSoftInputMode(
+				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+		
+		String surl = "";
+		Bundle extras = getIntent().getExtras();
+		if (extras != null) {
+		    surl = extras.getString("URL");
+			System.out.println(TAG + " -- surl=" + surl);
+		}
+		
+		
+		
 		browser = (WebView) findViewById(R.id.calculator);
 		// set a webview client to override the default functionality
 		// ??? how to fix ?? browser.setWebViewClient(new wvClient());
@@ -50,6 +66,10 @@ public class WebHelperActivity extends Activity {
 		// this is necessary for "alert()" to work
 		browser.setWebChromeClient(new WebChromeClient());
 
+		
+		if (!"".equals(surl))browser.loadUrl(surl);
+
+		
 		Button btnSearch = (Button) findViewById(R.id.search1);
 		btnSearch.setOnClickListener(new View.OnClickListener() {
 
@@ -108,20 +128,19 @@ public class WebHelperActivity extends Activity {
 
 				Toast.makeText(getApplicationContext(), "Your selection is:"
 						+ text1 + ".", Toast.LENGTH_SHORT);
-
+				
+				// add code to return url
+				
+				v.invalidate();
+				finish();
 			}
 		});
 
 		final class wvClient extends WebViewClient {
 			public void onPageFinished(WebView view, String url) {
-				// when our web page is loaded, let's call a function that is
-				// contained within the page
-				// this is functionally equivalent to placing an onload
-				// attribute in the <body> tag
-				// whenever the loadUrl method is used, we are essentially
-				// "injecting" code into the page when it is prefixed with
-				// "javascript:"
-				// browser.loadUrl("javascript:startup()");
+				
+				System.out.println(">>>>>>>>>>>>>>>> onPageFinished url=" + url);
+
 			}
 		}
 		;

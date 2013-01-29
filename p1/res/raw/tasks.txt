@@ -5,8 +5,8 @@
          "plan":"plan01",
          "desc":"Desc of task 01",
          "duration":"10",
-         "urls":"",         
-         "location":"",         
+         "urls":"http://www.metmuseum.org/",         
+         "location":"40.77830 -73.96299",         
          "notes":{
             "notesitem":[
                {
@@ -27,8 +27,8 @@
          "plan":"plan01",
          "desc":"Desc of task 02",
          "duration":"20",   
-         "urls":"",      
-         "location":"",         
+         "urls":"http://www.rockefellercenter.com/",      
+         "location":"40.75864 -73.98133",         
          "notes":{
             "notesitem":[
                {

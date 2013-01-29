@@ -10,7 +10,7 @@
         android:id="@+id/menu_settings2"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="m2"/>
+        android:title="Save to Google Drive ..."/>
     
     <item
         android:id="@+id/menu_settings3"

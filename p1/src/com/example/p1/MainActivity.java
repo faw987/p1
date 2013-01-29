@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
@@ -67,7 +68,13 @@ public class MainActivity extends Activity {
 		Log.i(TAG, "version " + version);
 		System.out.println(">>>>>>>>>>>>>>>> Starting MainActivity.");
 
-		// experimenting
+		//
+		// 					experimenting
+		//
+		
+		PackageManager pm = getApplicationContext().getPackageManager();
+
+		boolean hasGps = pm.hasSystemFeature(PackageManager.FEATURE_LOCATION_GPS);
 
 		Acty.proto1(1, getApplicationContext());
 
@@ -76,7 +83,11 @@ public class MainActivity extends Activity {
 		Globals g = Globals.getInstance();
 		g.setState("test1");
 		String s = g.getState();
-
+		
+		//
+		// 					END experimenting
+		//
+		
 		Utilities.readPlansTasks(getApplicationContext());
 
 		Utilities.createByTaskArray();
@@ -102,14 +113,12 @@ public class MainActivity extends Activity {
 
 		actionBar.show();
 
-
-
 		// set the app icon as an action to go home
-
 		// we are home so we don't need it
 
 		actionBar.setDisplayHomeAsUpEnabled(true);
 
+		
 		String t = getTitle().toString();
 		setTitle(t + " version " + version);
 
@@ -166,7 +175,8 @@ public class MainActivity extends Activity {
 						MapActivity.class);
 				act.putExtra("LAT", "40.5840");		// PWAY
 				act.putExtra("LON", "-74.522");
-				startActivity(act);
+				// 	startActivity(act);
+				startActivityForResult(act,1234);
 
 			}
 
@@ -228,6 +238,12 @@ public class MainActivity extends Activity {
 			break;
 		case R.id.menu_settings2:
 			makeToast("menu_settings2...");
+			Intent act = new Intent(getBaseContext(),
+					DriveActivity.class);
+			startActivity(act);
+			break;
+		case R.id.menu_settings3:
+			makeToast("menu_settings3...");
 			break;
 		}
 		return true;
@@ -322,7 +338,7 @@ public class MainActivity extends Activity {
 		Location location = service.getLastKnownLocation(provider);
 		LatLng userLocation = new LatLng(location.getLatitude(),location.getLongitude());
 	}
-	
+
 	private boolean getImageFile(String fName) {
 		boolean re;
 
@@ -339,6 +355,37 @@ public class MainActivity extends Activity {
 		return re;
 	};
 
+	@Override
+	protected void onActivityResult(
+			int aRequestCode, int aResultCode, Intent aData
+			) {
 
+		System.out.println("onActivityResult aRequestCode=" + aRequestCode + " aResultCode=" + aResultCode);
 
+		switch (aRequestCode) {
+		case 1234:
+			handleUserPickedImage(aData);
+			break;
+		case 2222:
+			handleSomethingElse(aData);
+			break;
+		}
+		super.onActivityResult(aRequestCode, aResultCode, aData);
+	}
+	private void handleUserPickedImage(Intent aData) {
+		if ((aData != null)  ) {
+ 			String extraData=aData.getStringExtra("ComingFrom")  ;
+			System.out.println("handleUserPickedImage extraData=" + extraData  );
+			// Do something neat with the image...
+		} else {
+			// We didn't receive an image...
+		}
+	}private void handleSomethingElse(Intent aData) {
+		if ((aData != null) && (aData.getData() != null)) {
+			//       Uri _imageUri = aData.getData();
+			// Do something neat with the image...
+		} else {
+			// We didn't receive an image...
+		}
+	}
 }
