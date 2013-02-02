@@ -21,8 +21,9 @@ import android.widget.TableLayout;
 import android.widget.Toast;
 
 public class WebHelperActivity extends Activity {
+	
 	private WebView browser = null;
-	private final String TAG = "PlanActivity";
+	private final String TAG = "WebHelperActivity";
 	int idNumber = 0;
 	TableLayout tl2;
 	String et1;
@@ -33,9 +34,11 @@ public class WebHelperActivity extends Activity {
 
 		Log.i(TAG, "===== ENTER onCreate =====");
 
-		System.out.println("      Plan Act");
+		System.out.println("      WebHelperActivity");
+		
 		setContentView(R.layout.web_helper);
 		
+
 		getWindow().setSoftInputMode(
 				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 		
@@ -49,10 +52,15 @@ public class WebHelperActivity extends Activity {
 		
 		
 		browser = (WebView) findViewById(R.id.calculator);
+		
+		browser.setHorizontalScrollBarEnabled(true);		// Experimental
+
+		
 		// set a webview client to override the default functionality
 		// ??? how to fix ?? browser.setWebViewClient(new wvClient());
 
 		// get settings so we can config our WebView instance
+		
 		WebSettings settings = browser.getSettings();
 
 		// JavaScript? Of course!
@@ -75,13 +83,10 @@ public class WebHelperActivity extends Activity {
 
 			public void onClick(View v) {
 				Log.i(TAG, "===== ENTER btnSearch clicked =====");
-				// startVend();
-				// http://www.google.com/search?as_q=nintendo
-				// //
-				// browser.loadUrl("http://www.clevelandart.org/visit/plan-your-visit/admission-and-hours");
-				// browser.loadUrl("http://www.google.com");
+			
 				EditText text1 = (EditText) findViewById(R.id.searchInput);
 				et1 = text1.getText().toString();
+				
 				String searchInput = "http://www.google.com/search?as_q=" + et1;
 
 				InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -89,24 +94,18 @@ public class WebHelperActivity extends Activity {
 
 				Log.i(TAG, "===== ENTER btnSearch clicked ===== search for:"
 						+ searchInput);
+				
 				browser.loadUrl(searchInput);
 			}});
 		
 		browser.setWebViewClient(new WebViewClient() {
 			public void onPageStarted(WebView view, String url, Bitmap favicon) {
+				
 				// String fragment = "#access_token=";
 				// int start = url.indexOf(fragment);
 				// if (start > -1) {
-				// // You can use the accessToken for api calls now.
-				// String accessToken = url.substring(start + fragment.length(),
-				// url.length());
 				//
-				// Log.v(TAG, "OAuth complete, token: [" + accessToken + "].");
-				//
-				// Toast.makeText(getApplicationContext(), "Token: " +
-				// accessToken, Toast.LENGTH_SHORT).show();
-				// }
-				//
+				
 				System.out.println(">>>>>>>>>>>>>>>> onPageStarted url=" + url);
 
 			}
@@ -117,7 +116,8 @@ public class WebHelperActivity extends Activity {
 		btnSelect.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
-				Log.i(TAG, "===== ENTER btnSearch clicked =====");
+				Log.i(TAG, "===== ENTER btnSelect clicked =====");
+				
 				// startVend();
 
 				ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);

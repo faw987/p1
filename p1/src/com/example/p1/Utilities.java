@@ -1,6 +1,8 @@
 package com.example.p1;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -428,4 +430,35 @@ public class Utilities {
 		;
 
 	}
-}
+	
+
+	static public void printFile(File f) {
+	// 	File sourceFile = new File (f);
+		String f_name=f.getName();
+		String f_path=f.getPath();
+        System.out.printf ("name= %s  path=%s \n", f_name, f_path);
+
+	      FileReader fr = null;
+	      try {
+	         fr = new FileReader (f);
+	         int inChar;
+
+	         while ( (inChar = fr.read()) != -1 ) {
+	            System.out.printf ("%c", inChar);
+	         }
+	      } catch (IOException e) {
+	         System.err.printf ("Failure while reading %s: %s\n",
+	                            f, e.getMessage());
+	         e.printStackTrace ();
+	      } finally {
+	         try {
+	            if (fr != null) { fr.close (); }
+	         } catch (IOException e) {
+	            System.err.printf ("Error closing file reader: %s\n",
+	                               e.getMessage());
+	            e.printStackTrace ();
+	         }
+	      }
+	   }
+	}
+

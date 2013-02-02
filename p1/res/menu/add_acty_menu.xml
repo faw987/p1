@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/ok"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom|withText"
+        android:textSize="16dp"
+        android:title="OK"/>
+    <item
+        android:id="@+id/browse"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom|withText"
+        android:title="Browse"/>
+    <item
+        android:id="@+id/map"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom|withText"
+        android:title="Map"/>
+    <item
+        android:id="@+id/foursquare"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom|withText"
+        android:title="Foursquare"/>
+    <item
+        android:id="@+id/yelp"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom|withText"
+        android:title="Yelp"/>
+    <item
+        android:id="@+id/cancel"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom|withText"
+        android:title="Cancel"/>
+
+</menu>

@@ -43,7 +43,7 @@ public class AddPlanActivity extends Activity {
 		});
 	}
 	private void startPlan() {
-		Intent workerIntent = new Intent(this, PlanActivity.class);
+		Intent workerIntent = new Intent(this, MainPlanActivity.class);
 		startActivity(workerIntent);
 	}
 

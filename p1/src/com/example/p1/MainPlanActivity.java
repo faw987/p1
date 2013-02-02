@@ -27,8 +27,9 @@ import android.widget.Toast;
  * @author Frank
  * 
  */
-public class PlanActivity extends Activity {
-	private final String TAG = "PlanActivity";
+public class MainPlanActivity extends Activity {
+	
+	private final String TAG = "MainPlanActivity";
 	int idNumber = 0;
 	TableLayout tl2;
 	String et1;
@@ -58,13 +59,8 @@ public class PlanActivity extends Activity {
 
 			public void onClick(View v) {
 				Log.i(TAG, "===== ENTER btnAdd clicked =====");
-
-				Globals g = Globals.getInstance();
-				g.currentTaskName = ""; // HACK ? clear taksName sfor add acty
-										// activity
-
+				Globals.currentTaskName = ""; 						// HACK ? clear taskName for add acty
 				startAddActyActivity();
-
 			}
 		});
 
@@ -74,23 +70,22 @@ public class PlanActivity extends Activity {
 			public void onClick(View v) {
 				Log.i(TAG, "===== ENTER btnRemoveActivity clicked =====");
 
-				System.out.println("      ------- forward");
 
 				int i = 0;
-				while (i < tl2.getChildCount()) {
-					if (tl2.getChildAt(i) != null) {
-						View row = tl2.getChildAt(i);
-						System.out.println("      row i = " + i);
-						System.out.println("      row i = cc="
-								+ ((ViewGroup) row).getChildCount());
-						CheckBox c = (CheckBox) ((ViewGroup) row).getChildAt(0);
-						if (c.isChecked())
-							System.out.println("      row i = checked");
-						i++;
-					}
-				}
-
-				System.out.println("      ------- reverse");
+//			
+//				System.out.println("      ------- forward");
+//				while (i < tl2.getChildCount()) {
+//					if (tl2.getChildAt(i) != null) {
+//						View row = tl2.getChildAt(i);
+//						CheckBox c = (CheckBox) ((ViewGroup) row).getChildAt(0);
+//						if (c.isChecked())
+//							System.out.println("      row i = checked");
+//						i++;
+//					}
+//				}
+//
+				
+//				System.out.println("      ------- reverse");
 
 				i = tl2.getChildCount() - 1;
 				Globals g = Globals.getInstance();
@@ -110,10 +105,13 @@ public class PlanActivity extends Activity {
 					}
 					i--;
 				}
-				for (Task a : tal) {
-					System.out.println("      name = " + a.name);
-
-				}
+				
+//				for (Task a : tal) {
+//					System.out.println("      name = " + a.name);
+//				}
+				
+				refreshTasks();
+				
 			}
 		});
 
@@ -132,28 +130,25 @@ public class PlanActivity extends Activity {
 
 		Button btnSelect = new CheckBox(this);
 		btnSelect.setText("Pick");
-		// btnSelect.setTextSize(8.0f);
-		// btnSelect.setTextColor(Color.BLACK);
-
-		// 1 Drawable sBackground =
+				
 		// getResources().getDrawable(R.drawable.round_button_background);
-		// 1 btnSelect.setBackgroundDrawable(sBackground);
+		// btnSelect.setBackgroundDrawable(sBackground);
 
 		btnSelect.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
 
-				View p = (View) v.getParent();
 				TableRow tr = (TableRow) v.getParent();
 				TextView c = (TextView) tr.getChildAt(2);
 
 				String s = c.getText().toString();
 
-				System.out.println("      s = " + s); // so this IS what we
+//				System.out.println("      s = " + s); // so this IS what we
 
-				Toast.makeText(getApplicationContext(),
-						"Thanks for the Edit button press. Data: " + s,
-						Toast.LENGTH_SHORT).show();
+//				Toast.makeText(getApplicationContext(),
+//						"Thanks for the Edit button press. Data: " + s,
+//						Toast.LENGTH_SHORT).show();
+				
 			}
 		});
 
@@ -162,37 +157,41 @@ public class PlanActivity extends Activity {
 				LinearLayout.LayoutParams.WRAP_CONTENT);
 		lp.setMargins(5, 5, 5, 5);
 
+		
+		LayoutParams lp2 = new LayoutParams(
+				LinearLayout.LayoutParams.FILL_PARENT,
+				LinearLayout.LayoutParams.WRAP_CONTENT);
+		lp2.setMargins(2, 2, 2, 2);
+
+		
 		btnSelect.setLayoutParams(lp);
 
 		/* Add Button to row. */
-		tr2.addView(btnSelect);
-
+		tr2.addView(btnSelect);		
+		
 		Button btnInfo = new Button(this);
 		btnInfo.setText("Open");
-		btnInfo.setTextSize(8.0f);
+		btnInfo.setTextSize(10.0f);
 		btnInfo.setTextColor(Color.BLACK);
-		// 1 btnInfo.setBackgroundDrawable(sBackground);
-		btnInfo.setLayoutParams(lp);
 
+		btnInfo.setBackgroundResource(R.color.yellow);
+			
+		
 		btnInfo.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
 
-				View p = (View) v.getParent();
 				TableRow tr = (TableRow) v.getParent();
 				TextView c = (TextView) tr.getChildAt(2);
 				String s = c.getText().toString();
 
-				System.out.println("      s = " + s); // so this IS what we
+//				System.out.println("      s = " + s); // so this IS what we
+//
+//				Toast.makeText(getApplicationContext(),
+//						"Thanks for the Info button press. Data: " + s,
+//						Toast.LENGTH_SHORT).show();
 
-				Toast.makeText(getApplicationContext(),
-						"Thanks for the Info button press. Data: " + s,
-						Toast.LENGTH_SHORT).show();
-
-				Globals g = Globals.getInstance();
-
-				g.currentTaskName = s; // HACK - for now use row as simple task
-										// name
+				Globals.currentTaskName = s; 				// HACK - for now ASSUME row IS A simple task name
 				startAddActyActivity();
 			}
 		});
@@ -210,8 +209,7 @@ public class PlanActivity extends Activity {
 		t1.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
 				LayoutParams.WRAP_CONTENT));
 
-		/* Add Button to row. */
-		tr2.addView(t1);
+		tr2.addView(t1);				// Add Button to row.
 
 	}
 
@@ -239,16 +237,10 @@ public class PlanActivity extends Activity {
 
 		public void onItemSelected(AdapterView<?> parent, View view, int pos,
 				long id) {
-			Toast.makeText(
-					parent.getContext(),
-					"OnItemSelectedListener : "
-							+ parent.getItemAtPosition(pos).toString(),
-					Toast.LENGTH_SHORT).show();
-
+			
 			String plan = parent.getItemAtPosition(pos).toString();
 
-			Globals g = Globals.getInstance();
-			g.currentPlanName = plan;
+			Globals.currentPlanName = plan;
 			refreshTasks();
 		}
 
@@ -264,7 +256,7 @@ public class PlanActivity extends Activity {
 		List<String> list = new ArrayList<String>();
 
 		int sz = g.plansSize();
-		System.out.println("PlanActivity -- plans sz=" + sz);
+		System.out.println(TAG + " refreshPlansTasks -- plans sz=" + sz);
 
 		g.sortPlans();
 
@@ -280,14 +272,17 @@ public class PlanActivity extends Activity {
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner2.setAdapter(dataAdapter);
 
-		int index = list.indexOf(g.currentPlanName);
+		int index = list.indexOf(Globals.currentPlanName);
 		if (index != -1) {
 			spinner2.setSelection(index);
 		} else {
 			spinner2.setSelection(0);
+			Globals.currentPlanName = spinner2.getItemAtPosition(0).toString();	// set current plan to whatever at 0
 		}
 		;
-		g.currentPlanName = "plan01"; // HACK
+		// Globals.currentPlanName = "plan01"; 					// HACK
+		System.out.println(TAG + " refreshPlansTasks -- Globals.currentPlanName=" + Globals.currentPlanName);
+
 		refreshTasks();
 	}
 
@@ -298,23 +293,11 @@ public class PlanActivity extends Activity {
 		tl2.setVerticalScrollBarEnabled(true);
 
 		int tsz = g.tasksSize();
-		System.out.println("PlanActivity -- activities tsz=" + tsz);
-		// ArrayList<Task> taskz = g.getTasksArray();
-		//
-		// for (Task x : taskz) {
-		// if (g.currentPlanName.equals(x.plan)) {
-		// addRecRow(tl2, x.name);
-		// } else {
-		// Log.i(TAG, "activity named: " + x.name
-		// + " is NOT part of plan:" + g.currentPlanName);
-		// }
-		// ;
-		// }
-		// ;
-		System.out.println("refreshTasks -- g.currentPlanName="
-				+ g.currentPlanName);
+		
+		System.out.println(TAG + " refreshTasks -- activities tsz=" + tsz);
+		System.out.println(TAG + " refreshTasks -- Globals.currentPlanName=" + Globals.currentPlanName);
 
-		ArrayList<Task> tal = g.getPlanTaskAL(g.currentPlanName);
+		ArrayList<Task> tal = g.getPlanTaskAL(Globals.currentPlanName);
 		for (Task x : tal) {
 			addRecRow(tl2, x.name);
 

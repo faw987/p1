@@ -36,16 +36,16 @@ import android.widget.Toast;
 import com.google.android.gms.maps.model.LatLng;
 
 public class MainActivity extends Activity {
+	
 	private final String TAG = "MainActivity";
 
-
-
 	public void onRestart(Bundle savedInstanceState) {
+		
 		super.onResume(); // Always call the superclass method first
+		
 		System.out.println(">>>>>>>>>>>>>>>> MainActivity >>>> onResume");
 		Log.i(TAG, ">>>>>>>>>>>>>>>> MainActivity >>>> onResume");
-		// / PlanActivity.redoTaskList();
-	}
+}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +58,7 @@ public class MainActivity extends Activity {
 			version = manager.versionName;
 		} catch (NameNotFoundException e) {
 			Log.i(TAG, "NameNotFoundException e:" + e);
+			e.printStackTrace();
 		}
 
 		SimpleDateFormat sdf = new SimpleDateFormat(
@@ -71,41 +72,37 @@ public class MainActivity extends Activity {
 		//
 		// 					experimenting
 		//
-		
+
 		PackageManager pm = getApplicationContext().getPackageManager();
 
 		boolean hasGps = pm.hasSystemFeature(PackageManager.FEATURE_LOCATION_GPS);
 
-		Acty.proto1(1, getApplicationContext());
+		ActyTest.proto1(1, getApplicationContext());
 
 		Globals.delay1 = "abcdefg";
 
 		Globals g = Globals.getInstance();
 		g.setState("test1");
 		String s = g.getState();
-		
+
 		//
 		// 					END experimenting
 		//
-		
+
 		Utilities.readPlansTasks(getApplicationContext());
 
 		Utilities.createByTaskArray();
 
 		ArrayList<Task> tal = g.getPlanTaskAL("plan01");
-		System.out.println("for PLAN01  Task array list size=" + tal.size());
+		System.out.println("\"Sanity check\" for PLAN01  Task array list size=" + tal.size());
 
 		setContentView(R.layout.activity_main);
 
-
 		//		InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-		//		imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
-		//	
-		//		
+		//		imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);		
 
 		getWindow().setSoftInputMode(
 				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-
 
 		// gets the activity's default ActionBar
 
@@ -118,7 +115,6 @@ public class MainActivity extends Activity {
 
 		actionBar.setDisplayHomeAsUpEnabled(true);
 
-		
 		String t = getTitle().toString();
 		setTitle(t + " version " + version);
 
@@ -134,14 +130,6 @@ public class MainActivity extends Activity {
 
 				Toast.makeText(getApplicationContext(),
 						"Greetings, " + et1 + ".", Toast.LENGTH_SHORT).show();
-			}
-		});
-
-		Button startVend = (Button) findViewById(R.id.btnVend);
-		startVend.setOnClickListener(new View.OnClickListener() {
-
-			public void onClick(View v) {
-				startVend();
 			}
 		});
 
@@ -199,7 +187,6 @@ public class MainActivity extends Activity {
 						System.out.println(read);
 						sb.append(read);
 						read = br.readLine();
-
 					}
 
 					// return sb.toString();
@@ -228,20 +215,41 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// same as using a normal menu
+		Intent act;
 		switch (item.getItemId()) {
 		case R.id.menu_settings1:
-			makeToast("menu_settings1...");
-			Intent settingsActivity = new Intent(getBaseContext(),
+			makeToast("PlayActivity is being started ...");
+			  act = new Intent(getBaseContext(),
 					PlayActivity.class);
-			startActivity(settingsActivity);
-
-			break;
-		case R.id.menu_settings2:
-			makeToast("menu_settings2...");
-			Intent act = new Intent(getBaseContext(),
-					DriveActivity.class);
 			startActivity(act);
 			break;
+			
+			
+		case R.id.listDrive:
+			makeToast("listDrive...");
+			  act = new Intent(getBaseContext(),
+					DriveActivity.class);
+ 				act.putExtra("FUNCTION", "L");
+			startActivity(act);
+			break;
+
+			
+		case R.id.writeDrive:
+			makeToast("writeDrive...");
+			  act = new Intent(getBaseContext(),
+					DriveActivity.class);
+			 act.putExtra("FUNCTION", "W"); 
+ 			startActivity(act);
+			break;
+
+		case R.id.readDrive:
+			makeToast("writeDrive...");
+			  act = new Intent(getBaseContext(),
+					DriveActivity.class);
+			act.putExtra("FUNCTION", "R");
+			startActivity(act);
+			break;
+
 		case R.id.menu_settings3:
 			makeToast("menu_settings3...");
 			break;
@@ -270,13 +278,8 @@ public class MainActivity extends Activity {
 
 	}
 
-	private void startVend() {
-		Intent workerIntent = new Intent(this, VendActivity.class);
-		startActivity(workerIntent);
-	}
-
 	private void startPlan() {
-		Intent workerIntent = new Intent(this, PlanActivity.class);
+		Intent workerIntent = new Intent(this, MainPlanActivity.class);
 		startActivity(workerIntent);
 	}
 
@@ -314,6 +317,8 @@ public class MainActivity extends Activity {
 
 	private List<String> listAssets() {
 
+		// NOT NOT NOT working
+		
 		List<String> it = new ArrayList<String>();
 		File f = new File("file:///android_asset");
 		//File f = new File("file:///sdcard/");
@@ -374,7 +379,7 @@ public class MainActivity extends Activity {
 	}
 	private void handleUserPickedImage(Intent aData) {
 		if ((aData != null)  ) {
- 			String extraData=aData.getStringExtra("ComingFrom")  ;
+			String extraData=aData.getStringExtra("ComingFrom")  ;
 			System.out.println("handleUserPickedImage extraData=" + extraData  );
 			// Do something neat with the image...
 		} else {
