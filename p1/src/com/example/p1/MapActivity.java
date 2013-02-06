@@ -1,7 +1,12 @@
 package com.example.p1;
 
+import java.util.List;
+import java.util.Locale;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -25,22 +30,7 @@ public class MapActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-
-
-		LatLng latlng = new LatLng(40.72467, -73.99422);		// SOHO
-		Bundle extras = getIntent().getExtras();
-		if (extras != null) {
-			String slatlng = extras.getString("LATLNG");
-			System.out.println(TAG + " -- slatlng=" + slatlng);
-			if (slatlng!=null){
-				String[] splits = slatlng.split(" ");
-				float lat = Float.parseFloat(splits[0]);
-				float lng = Float.parseFloat(splits[1]);
-				System.out.println(TAG + " -- lat=" + lat);
-				System.out.println(TAG + " -- lng=" + lng);
-
-				latlng=new LatLng(new Double(lat),new Double(lng));}
-		}
+		LatLng latlng = setLatLon();
 
 		setContentView(R.layout.activity_map);
 
@@ -50,23 +40,77 @@ public class MapActivity extends Activity {
 
 		map.setMyLocationEnabled(true);
 
-
 		if (map != null) {
-			//Marker hamburg = map.addMarker(new MarkerOptions().position(PWAY)
+			// Marker hamburg = map.addMarker(new MarkerOptions().position(PWAY)
 			Marker hamburg = map.addMarker(new MarkerOptions().position(latlng)
 					.title("Hamburg"));
 			Marker kiel = map.addMarker(new MarkerOptions()
-			.position(SOHO)
-			.title("SOHO")
-			.snippet("SOHO is cool")
-			.icon(BitmapDescriptorFactory
-					.fromResource(R.drawable.ic_launcher)));
+					.position(SOHO)
+					.title("SOHO")
+					.snippet("SOHO is cool")
+					.icon(BitmapDescriptorFactory
+							.fromResource(R.drawable.ic_launcher)));
 		}
 
-		Intent intent=new Intent();
+		Intent intent = new Intent();
 		intent.putExtra("ComingFrom", "Hello");
 		setResult(RESULT_OK, intent);
-		//		    finish();
+		// finish();
 
+	}
+
+	private LatLng setLatLon() {
+		LatLng latlng = null;
+		float lat = 0;
+		float lng = 0;
+		Bundle extras = getIntent().getExtras();
+		if (extras == null)
+			return null;
+		String slatlng = extras.getString("LATLNG");
+		System.out.println(TAG + " -- slatlng=" + slatlng);
+
+		if (slatlng == null)
+			return null;
+
+		if (slatlng.matches("[0123456789+-. ]*")) {
+
+			// Boolean looksLikeLatLon=true;
+			// for (int curs=slatlng.length()-1;curs>=0;curs--){
+			// if ( "+-0123467890. ".contains(slatlng.charAt(curs))) {} else
+			// {looksLikeLatLon=false;break;}
+			// }
+			String[] splits = slatlng.split(" ");
+			lat = Float.parseFloat(splits[0]);
+			lng = Float.parseFloat(splits[1]);
+	
+		} else {
+			try {
+				Geocoder gc = new Geocoder(this, Locale.US); // create new
+																// geocoder
+																// instance
+				List<Address> foundAdresses = gc.getFromLocationName(
+						slatlng, 3); // Search
+																		// addresses
+				for (Address a : foundAdresses) {
+					System.out.println(">>>>>>>>>>>>>>>>  a=" + a);
+					System.out
+							.println(">>>>>>>>>>>>>>>>  a=" + a.getLatitude());
+					System.out.println(">>>>>>>>>>>>>>>>  a="
+							+ a.getLongitude());
+					lat =  new Float(a.getLatitude()) ;
+					lng = new Float(a.getLongitude());
+				}
+				;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		;
+
+		System.out.println(TAG + " -- lat=" + lat);
+		System.out.println(TAG + " -- lng=" + lng);
+		latlng = new LatLng(new Double(lat), new Double(lng));
+
+		return latlng;
 	}
 }

@@ -13,8 +13,8 @@ public class ActyTest {
 
 		System.out.println(TAG + "======================================   START  ");
 		Acty a = new PlanActy();
-		a.name = "a";
-		BasicActy b = new BasicActy();
+		//												a.name = "a";
+		BasicActy b = new BasicActy("a");
 		b.name = "b";
 		AggActy c = new AggActy();
 		c.name = "c";

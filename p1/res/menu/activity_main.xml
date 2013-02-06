@@ -21,9 +21,19 @@
         android:showAsAction="never"
         android:title="Save to Google Drive ..."/>
     <item
-        android:id="@+id/menu_settings3"
+        android:id="@+id/postToWeb"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="m3"/>
+        android:title="Post to Web"/>
+     <item
+        android:id="@+id/preferences"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Preferences"/>
+      <item
+        android:id="@+id/x1"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="X1"/>
 
 </menu>

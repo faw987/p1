@@ -20,10 +20,13 @@ import org.json.JSONObject;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.widget.Toast;
 
  
 public class Utilities {
 
+	
+ 
 	static public String donotdisturb(String input) {
 
 		return input;
@@ -41,29 +44,11 @@ public class Utilities {
 		return new String(data);
 	}
 
-	// static public void getSamplePlans(Context myContext) throws IOException {
-	// AssetManager mngr = myContext.getResources().getAssets();
-	// InputStream is = mngr.open("/res/raw/plans.txt");
-	// InputStreamReader isr = new InputStreamReader(is);
-	// BufferedReader br = new BufferedReader(isr);
-	// String read = br.readLine();
-	//
-	// while (read != null) {
-	// System.out.println(read);
-	// // sb.append(read);
-	// read = br.readLine();
-	//
-	// }
-
-	// }
 
 	static public JSONObject plansToJSON() {
 		Globals g = Globals.getInstance();
 		int sz = g.plansSize();
 		System.out.println("PlanActivity -- plans sz=" + sz);
-
-		// Utilities.addHardCodedPlan("plana");
-		// Utilities.addHardCodedPlan("planb");
 
 		g.sortPlans();
 
@@ -85,12 +70,6 @@ public class Utilities {
 			;
 		}
 
-		// try {
-		// System.out.println("list: " + list.toString(5));
-		// } catch (Exception e) {
-		// e.printStackTrace();
-		// }
-		// ;
 		jsonObj = new JSONObject();
 		try {
 			jsonObj.put("plans", list);
@@ -156,17 +135,6 @@ public class Utilities {
 		;
 		return jsonObj;
 	};
-
-	static public void addHardCodedPlan(String s) {
-		Plan p = new Plan();
-		p.name = s;
-		p.desc = "Description of " + s;
-		Globals g = Globals.getInstance();
-		g.addPlan(p);
-
-	}
-
-	// obj.put("messages", list);
 
 	static public String getArrayPlanStrings(Context ac, String input) {
 
@@ -254,22 +222,13 @@ public class Utilities {
 
 			JSONArray plans = jsonObj.getJSONArray("plans");
 			for (int i = 0; i < plans.length(); i++) {
-				// printing the values to the logcat
-				// System.out.println("ShowSettingsActivity: i:" + i);
-				//
-				// System.out.println("ShowSettingsActivity: name:"
-				// + plans.getJSONObject(i).getString("name").toString());
-				// System.out.println("ShowSettingsActivity: name:"
-				// + plans.getJSONObject(i).getString("desc").toString());
-
-				// static ArrayList<Task> tasks = new ArrayList<Task>();
-
 				Plan p = new Plan();
 				p.name = plans.getJSONObject(i).getString("name").toString();
 				p.desc = plans.getJSONObject(i).getString("desc").toString();
 				p.arrayListOfTasks = new ArrayList<Task>();
 				g.addPlan(p);
-
+				
+				PlanActy pa =  new PlanActy(p.name);
 			}
 
 		} catch (Exception e) {

@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">p1</string>
-    <string name="hello_world">Hi. Enter your name and push the "Proceed" button</string>
+    <string name="hello_world">Welcome to PAPA</string>
     <string name="menu_settings">Settings</string>
     <string name="add_update_acty">Activity Info</string>
 

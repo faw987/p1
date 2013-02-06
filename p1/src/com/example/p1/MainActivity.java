@@ -19,7 +19,9 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
+import android.location.Address;
 import android.location.Criteria;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -36,16 +38,17 @@ import android.widget.Toast;
 import com.google.android.gms.maps.model.LatLng;
 
 public class MainActivity extends Activity {
-	
+
 	private final String TAG = "MainActivity";
+	private final String SPLAT = " ->->->->->->->->->-> ";
 
 	public void onRestart(Bundle savedInstanceState) {
-		
+
 		super.onResume(); // Always call the superclass method first
-		
+
 		System.out.println(">>>>>>>>>>>>>>>> MainActivity >>>> onResume");
-		Log.i(TAG, ">>>>>>>>>>>>>>>> MainActivity >>>> onResume");
-}
+		Log.i(TAG, SPLAT + "onResume");
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -67,15 +70,44 @@ public class MainActivity extends Activity {
 		Log.i(TAG, "theDate:" + theDate);
 
 		Log.i(TAG, "version " + version);
-		System.out.println(">>>>>>>>>>>>>>>> Starting MainActivity.");
+		System.out
+				.println(">>>>>>                                                            >>>>>>>>>> Starting MainActivity.");
 
 		//
-		// 					experimenting
+		// experimenting
 		//
-
-		PackageManager pm = getApplicationContext().getPackageManager();
-
-		boolean hasGps = pm.hasSystemFeature(PackageManager.FEATURE_LOCATION_GPS);
+		
+		
+		// try {
+		// Geocoder gc = new Geocoder(this, Locale.US); // create new geocoder
+		// instance
+		// List<Address> foundAdresses =
+		// gc.getFromLocationName("174 Rutgers Rd, Piscataway, Nj, 08854", 1);
+		// // Search addresses
+		// for (Address a : foundAdresses ){
+		// System.out.println(">>>>>>>>>>>>>>>>  a=" + a);
+		// System.out.println(">>>>>>>>>>>>>>>>  a=" + a.getLatitude());
+		// System.out.println(">>>>>>>>>>>>>>>>  a=" + a.getLongitude());
+		//
+		// };
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// }
+		// ;
+		// try {
+		// Geocoder gc = new Geocoder(this, Locale.US); // create new geocoder
+		// instance
+		// List<Address> foundAdresses = gc.getFromLocationName("08854", 1); //
+		// Search addresses
+		// for (Address a : foundAdresses ){
+		// System.out.println(">>>>>>>>>>>>>>>>  a=" + a);
+		// System.out.println(">>>>>>>>>>>>>>>>  a=" + a.getLatitude());
+		// System.out.println(">>>>>>>>>>>>>>>>  a=" + a.getLongitude());
+		// };
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// }
+		// ;
 
 		ActyTest.proto1(1, getApplicationContext());
 
@@ -86,20 +118,35 @@ public class MainActivity extends Activity {
 		String s = g.getState();
 
 		//
-		// 					END experimenting
+		// END experimenting
 		//
+
+		PackageManager pm = getApplicationContext().getPackageManager();
+
+		String haves;
+		boolean hasGps = pm
+				.hasSystemFeature(PackageManager.FEATURE_LOCATION_GPS);
+		if (hasGps) {
+			haves = "This device has a gps.";
+		} else {
+			haves = "This device does not have a gps.";
+		}
+		;
+		makeToast(haves);
 
 		Utilities.readPlansTasks(getApplicationContext());
 
 		Utilities.createByTaskArray();
 
 		ArrayList<Task> tal = g.getPlanTaskAL("plan01");
-		System.out.println("\"Sanity check\" for PLAN01  Task array list size=" + tal.size());
+		System.out.println("\"Sanity check\" for PLAN01  Task array list size="
+				+ tal.size());
 
 		setContentView(R.layout.activity_main);
 
-		//		InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-		//		imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);		
+		// InputMethodManager imm = (InputMethodManager)
+		// getSystemService(Context.INPUT_METHOD_SERVICE);
+		// imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
 
 		getWindow().setSoftInputMode(
 				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -118,20 +165,21 @@ public class MainActivity extends Activity {
 		String t = getTitle().toString();
 		setTitle(t + " version " + version);
 
-		Button startButton = (Button) findViewById(R.id.button1);
-		startButton.setOnClickListener(new View.OnClickListener() {
-
-			public void onClick(View v) {
-				EditText text1 = (EditText) findViewById(R.id.editText1);
-				String et1 = text1.getText().toString();
-
-				InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-				imm.hideSoftInputFromWindow(text1.getWindowToken(), 0);
-
-				Toast.makeText(getApplicationContext(),
-						"Greetings, " + et1 + ".", Toast.LENGTH_SHORT).show();
-			}
-		});
+		// Button startButton = (Button) findViewById(R.id.button1);
+		// startButton.setOnClickListener(new View.OnClickListener() {
+		//
+		// public void onClick(View v) {
+		// EditText text1 = (EditText) findViewById(R.id.editText1);
+		// String et1 = text1.getText().toString();
+		//
+		// InputMethodManager imm = (InputMethodManager)
+		// getSystemService(Context.INPUT_METHOD_SERVICE);
+		// imm.hideSoftInputFromWindow(text1.getWindowToken(), 0);
+		//
+		// Toast.makeText(getApplicationContext(),
+		// "Greetings, " + et1 + ".", Toast.LENGTH_SHORT).show();
+		// }
+		// });
 
 		Button startPlan = (Button) findViewById(R.id.btnPlan);
 		startPlan.setOnClickListener(new View.OnClickListener() {
@@ -139,64 +187,6 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				startPlan();
 			}
-		});
-
-		Button prefBtn = (Button) findViewById(R.id.btnPrefs);
-		prefBtn.setOnClickListener(new View.OnClickListener() {
-
-			public void onClick(View v) {
-				Intent settingsActivity = new Intent(getBaseContext(),
-						Preferences.class);
-				startActivity(settingsActivity);
-			}
-		});
-
-		Button x1Btn = (Button) findViewById(R.id.btnX1);
-		x1Btn.setOnClickListener(new View.OnClickListener() {
-
-			public void onClick(View v) {
-
-				// DOES NOT WORK -- NPE -- listAssets();
-
-				processAssets();
-				Intent act = new Intent(getBaseContext(),
-						MapActivity.class);
-				act.putExtra("LAT", "40.5840");		// PWAY
-				act.putExtra("LON", "-74.522");
-				// 	startActivity(act);
-				startActivityForResult(act,1234);
-
-			}
-
-			private void processAssets() {
-				AssetManager am = getApplicationContext().getAssets();
-
-				try {
-					InputStream ist = am
-							.open("Chipmunks - Happy Birthday to You!!!.mp4.mp3");
-					AssetFileDescriptor fd = am
-							.openFd("Chipmunks - Happy Birthday to You!!!.mp4.mp3");
-					ist = am.open("test.txt");
-
-					InputStreamReader is = new InputStreamReader(ist);
-					StringBuilder sb = new StringBuilder();
-					BufferedReader br = new BufferedReader(is);
-					String read = br.readLine();
-
-					while (read != null) {
-						System.out.println(read);
-						sb.append(read);
-						read = br.readLine();
-					}
-
-					// return sb.toString();
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				;
-			}
-
 		});
 
 		Log.i(TAG, "Exiting MainActivity.");
@@ -216,49 +206,94 @@ public class MainActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// same as using a normal menu
 		Intent act;
+
 		switch (item.getItemId()) {
 		case R.id.menu_settings1:
 			makeToast("PlayActivity is being started ...");
-			  act = new Intent(getBaseContext(),
-					PlayActivity.class);
-			startActivity(act);
-			break;
-			
-			
-		case R.id.listDrive:
-			makeToast("listDrive...");
-			  act = new Intent(getBaseContext(),
-					DriveActivity.class);
- 				act.putExtra("FUNCTION", "L");
+			act = new Intent(getBaseContext(), PlayActivity.class);
 			startActivity(act);
 			break;
 
-			
+		case R.id.listDrive:
+			makeToast("listDrive...");
+			act = new Intent(getBaseContext(), DriveActivity.class);
+			act.putExtra("FUNCTION", "L");
+			startActivity(act);
+			break;
+
 		case R.id.writeDrive:
 			makeToast("writeDrive...");
-			  act = new Intent(getBaseContext(),
-					DriveActivity.class);
-			 act.putExtra("FUNCTION", "W"); 
- 			startActivity(act);
+			act = new Intent(getBaseContext(), DriveActivity.class);
+			act.putExtra("FUNCTION", "W");
+			startActivity(act);
 			break;
 
 		case R.id.readDrive:
 			makeToast("writeDrive...");
-			  act = new Intent(getBaseContext(),
-					DriveActivity.class);
+			act = new Intent(getBaseContext(), DriveActivity.class);
 			act.putExtra("FUNCTION", "R");
 			startActivity(act);
 			break;
 
-		case R.id.menu_settings3:
-			makeToast("menu_settings3...");
+		case R.id.postToWeb:
+			makeToast("post to web...");
+			act = new Intent(getBaseContext(), DriveActivity.class);
+			act.putExtra("FUNCTION", "P");
+			startActivity(act);
+			break;
+
+		case R.id.preferences:
+			makeToast("Preferences...");
+			act = new Intent(getBaseContext(), Preferences.class);
+			startActivity(act);
+			break;
+
+		case R.id.x1:
+			makeToast("X1 ... ? ? ? ...");
+
+			// DOES NOT WORK -- NPE -- listAssets();
+
+			processAssets();
+			act = new Intent(getBaseContext(), MapActivity.class);
+			act.putExtra("LATLNG", "40.5840 -74.522"); 					// PWAY
+ 			// startActivity(act);
+			startActivityForResult(act, 1234);
+
 			break;
 		}
 		return true;
 	}
-	public void makeToast(String message) {	
-		// with jam obviously		 
-		Toast.makeText(this, message, Toast.LENGTH_SHORT).show();		 
+
+	private void processAssets() {
+		AssetManager am = getApplicationContext().getAssets();
+		final String BDAY_TUNE = "Chipmunks - Happy Birthday to You!!!.mp4.mp3";
+
+		try {
+			InputStream ist = am.open(BDAY_TUNE);
+			AssetFileDescriptor fd = am.openFd(BDAY_TUNE);
+			ist = am.open("test.txt");
+
+			InputStreamReader is = new InputStreamReader(ist);
+			StringBuilder sb = new StringBuilder();
+			BufferedReader br = new BufferedReader(is);
+			String read = br.readLine();
+
+			while (read != null) {
+				System.out.println(read);
+				sb.append(read);
+				read = br.readLine();
+			}
+
+			// return sb.toString();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		;
+	}
+
+	public void makeToast(String message) {
+		Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
 	}
 
 	@Override
@@ -318,10 +353,10 @@ public class MainActivity extends Activity {
 	private List<String> listAssets() {
 
 		// NOT NOT NOT working
-		
+
 		List<String> it = new ArrayList<String>();
 		File f = new File("file:///android_asset");
-		//File f = new File("file:///sdcard/");
+		// File f = new File("file:///sdcard/");
 		File[] files = f.listFiles();
 		Log.d(TAG, "list assets");
 		System.out.println("files=" + files);
@@ -336,12 +371,13 @@ public class MainActivity extends Activity {
 
 	}
 
-	private void dispLocation(){
+	private void dispLocation() {
 		LocationManager service = (LocationManager) getSystemService(LOCATION_SERVICE);
 		Criteria criteria = new Criteria();
 		String provider = service.getBestProvider(criteria, false);
 		Location location = service.getLastKnownLocation(provider);
-		LatLng userLocation = new LatLng(location.getLatitude(),location.getLongitude());
+		LatLng userLocation = new LatLng(location.getLatitude(),
+				location.getLongitude());
 	}
 
 	private boolean getImageFile(String fName) {
@@ -361,11 +397,11 @@ public class MainActivity extends Activity {
 	};
 
 	@Override
-	protected void onActivityResult(
-			int aRequestCode, int aResultCode, Intent aData
-			) {
+	protected void onActivityResult(int aRequestCode, int aResultCode,
+			Intent aData) {
 
-		System.out.println("onActivityResult aRequestCode=" + aRequestCode + " aResultCode=" + aResultCode);
+		System.out.println("onActivityResult aRequestCode=" + aRequestCode
+				+ " aResultCode=" + aResultCode);
 
 		switch (aRequestCode) {
 		case 1234:
@@ -377,17 +413,20 @@ public class MainActivity extends Activity {
 		}
 		super.onActivityResult(aRequestCode, aResultCode, aData);
 	}
+
 	private void handleUserPickedImage(Intent aData) {
-		if ((aData != null)  ) {
-			String extraData=aData.getStringExtra("ComingFrom")  ;
-			System.out.println("handleUserPickedImage extraData=" + extraData  );
+		if ((aData != null)) {
+			String extraData = aData.getStringExtra("ComingFrom");
+			System.out.println("handleUserPickedImage extraData=" + extraData);
 			// Do something neat with the image...
 		} else {
 			// We didn't receive an image...
 		}
-	}private void handleSomethingElse(Intent aData) {
+	}
+
+	private void handleSomethingElse(Intent aData) {
 		if ((aData != null) && (aData.getData() != null)) {
-			//       Uri _imageUri = aData.getData();
+			// Uri _imageUri = aData.getData();
 			// Do something neat with the image...
 		} else {
 			// We didn't receive an image...

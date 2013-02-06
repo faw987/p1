@@ -43,6 +43,8 @@ public class DriveActivity extends Activity {
 	static final int REQUEST_AUTHORIZATION = 2;
 	static final int CAPTURE_IMAGE = 3;
 	protected static final String TAG = "DriveActivity";
+	
+	static final String TEMP_LOCAL_STORAGE_DIR = "/storage/emulated/legacy/Download/";
 
 	private static Uri fileUri;
 	private static Drive service;
@@ -51,10 +53,11 @@ public class DriveActivity extends Activity {
 	private Context mContext;
 
 	public static final String AUTHTOKENSCOPE_DRIVE = "oauth2:https://www.googleapis.com/auth/drive";
+	
 	String function;
 
 	String fileidFromWrite;
-	public static String dlurl;
+	String token=null;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -77,14 +80,16 @@ public class DriveActivity extends Activity {
 	protected void onActivityResult(final int requestCode,
 			final int resultCode, final Intent data) {
 
-		System.out
-		.println("  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    onActivityResult (requestCode,resultCode)= "
+		System.out.println(TAG
+				+ "  >>>>>>>>>>    onActivityResult (requestCode,resultCode)= "
 				+ requestCode + "," + resultCode);
 
 		switch (requestCode) {
-		case REQUEST_ACCOUNT_PICKER:
+		case REQUEST_ACCOUNT_PICKER: {
+			System.out.println(TAG + "  >>>>>>>>>>   REQUEST_ACCOUNT_PICKER ");
+
 			if (resultCode == RESULT_OK && data != null
-			&& data.getExtras() != null) {
+					&& data.getExtras() != null) {
 				accountName = data
 						.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
 
@@ -95,23 +100,30 @@ public class DriveActivity extends Activity {
 					service = getDriveService(credential);
 					// startCameraIntent();
 					if ("W".equals(function))
-						writeFileToDrive();
+						writeFileToDrive("f1.txt");
 					if ("R".equals(function))
-						readFileFromDrive();
+						readFileFromDrive("f1.txt");
+					if ("P".equals(function))
+						postFileToWeb("f1.html");
 					if ("L".equals(function))
 						listFileToDrive();
 				}
 			}
 			break;
-		case REQUEST_AUTHORIZATION:
+		}
+		case REQUEST_AUTHORIZATION:{
+			System.out.println(TAG + "  >>>>>>>>>>   REQUEST_AUTHORIZATION ");
+
 			if (resultCode == Activity.RESULT_OK) {
 				saveFileToDrive();
 			} else {
 				startActivityForResult(credential.newChooseAccountIntent(),
 						REQUEST_ACCOUNT_PICKER);
 			}
-			break;
+			break;}
 		case CAPTURE_IMAGE:
+			System.out.println(TAG + "  >>>>>>>>>>   CAPTURE_IMAGE ");
+
 			if (resultCode == Activity.RESULT_OK) {
 				saveFileToDrive();
 			}
@@ -135,38 +147,41 @@ public class DriveActivity extends Activity {
 		startActivityForResult(cameraIntent, CAPTURE_IMAGE);
 	}
 
-	private void readFileFromDrive() {
+	private void readFileFromDrive(final String ftitle) {
 		Thread t = new Thread(new Runnable() {
 			@Override
 			public void run() {
 
-				String token = "?";
-				try {
-					token = credential.getToken();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				;
+				if (token==null){
+					try {
+						token = credential.getToken();
+					} catch (Exception e) {
+						e.printStackTrace();
+						token=null;
+					}
+					;}
 				System.out.println("      token = " + token);
 
 				java.io.File folder = new java.io.File("/papad");
 
-				List<File> files = retrieveAllFiles(service," and title = 'f1.txt'");
-				File f1 = files.get(0);		// HACK 
-				String id=f1.getId();
-				String url=f1.getDownloadUrl();
+				List<File> files = retrieveFilterQFiles(service, 
+						"mimeType = 'text/plain' and trashed = false" + 
+								" and title = '" + ftitle + "'");
+
+				File f1 = files.get(0); 									// HACK HACK HACK
+				String id = f1.getId();
+				String url = f1.getDownloadUrl();
+
 				System.out.println(" readFileFromDrive      id = " + id);
 				System.out.println(" readFileFromDrive      url = " + url);
 
-				
 				File gf = new File();
-				// gf.setTitle("f1.txt");
-				// gf.setMimeType("text/plain");
-				gf.setOriginalFilename("f1.txt");
-			//	gf.setId(fileidFromWrite);
+				gf.setTitle(ftitle);
 				gf.setId(id);
 				gf.setDownloadUrl(url);
-				System.out.println(" readFileFromDrive      gf = " + gf);
+				// gf.setMimeType("text/plain");
+				// gf.setOriginalFilename("f1.txt");
+ 				System.out.println(" readFileFromDrive      gf = " + gf);
 
 				try {
 					java.io.File f = downloadGFileToJFolder(service, token, gf,
@@ -181,24 +196,23 @@ public class DriveActivity extends Activity {
 		t.start();
 	}
 
-	private void writeFileToDrive() {
+	private void writeFileToDrive(final String ftitle) {
 		Thread t = new Thread(new Runnable() {
 			@Override
 			public void run() {
 
-				String token = "?";
-				try {
-					token = credential.getToken();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				;
+				if (token==null){
+					try {
+						token = credential.getToken();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					;}
 				System.out.println("      token = " + token);
 
 				try {
-					java.io.File myFile = new java.io.File(
-							"/storage/emulated/legacy/Download/f1.txt"); // /storage/emulated/legacy/Download/f1.txt
-
+				//	java.io.File myFile = new java.io.File(TEMP_LOCAL_STORAGE_DIR + "f1.txt");  
+					java.io.File myFile = new java.io.File(TEMP_LOCAL_STORAGE_DIR + ftitle);  
 					myFile.createNewFile();
 					FileOutputStream fOut = new FileOutputStream(myFile);
 					OutputStreamWriter myOutWriter = new OutputStreamWriter(
@@ -217,12 +231,12 @@ public class DriveActivity extends Activity {
 
 				// File's metadata.
 				File body = new File();
-				body.setTitle("f1.txt");
+				//body.setTitle("f1.txt");
+				body.setTitle(ftitle);
 				body.setDescription("");
 				body.setMimeType("text/plain");
 
-				java.io.File fileContent = new java.io.File(
-						"/storage/emulated/legacy/Download/f1.txt");
+				java.io.File fileContent = new java.io.File(TEMP_LOCAL_STORAGE_DIR + ftitle);
 				FileContent mediaContent = new FileContent("text/plain",
 						fileContent);
 
@@ -235,10 +249,7 @@ public class DriveActivity extends Activity {
 
 					// Uncomment the following line to print the File ID.
 					System.out.println("File ID: %s" + file.getId());
-					fileidFromWrite = file.getId();
-					dlurl = file.getDownloadUrl();
-					System.out.println("File " + file);
-					System.out.println("dlurl " + dlurl);
+ 					System.out.println("File " + file);
 
 					// return file;
 				} catch (UserRecoverableAuthIOException e) {
@@ -251,6 +262,7 @@ public class DriveActivity extends Activity {
 				} catch (IOException e) {
 					System.out.println("An error occured: " + e);
 					System.out.println("    error  cause: " + e.getCause());
+					e.printStackTrace();
 					// return null;
 				}
 			}
@@ -263,42 +275,56 @@ public class DriveActivity extends Activity {
 			@Override
 			public void run() {
 
-				String token="?";
-				try { token=credential.getToken(); } catch(Exception e) {e.printStackTrace();};
-				System.out.println("      token = " + 	token	);
+				if (token==null){
+					try {
+						token = credential.getToken();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					;}
+				System.out.println("      token = " + token);
 
 				try {
 					FileList file = service.files().list().execute();
 
-					List<File> files = retrieveAllFiles(service," and title = 'f1.txt'");
+					List<File> files = retrieveAllFiles(service);
 					Log.i(TAG, "size is " + files.size());
 					for (File file1 : files) {
 						Log.i(TAG, "title = " + file1.getTitle());
 						Log.i(TAG, "id = " + file1.getId());
-					//	System.out.println("      file1 = " + 	file1	);
-						JSONObject jsonObj = new JSONObject(file1);
-
-						System.out.println("\n\n\n");
-
-						try {System.out.println("      jsonObj = " + 	jsonObj.toString(3)	);} 
-						catch(Exception e) {e.printStackTrace();};
+						// System.out.println("      file1 = " + file1 );
+						
+						
+//						JSONObject jsonObj = new JSONObject(file1);
+//
+//						System.out.println("\n\n\n");
+//
+//						try {
+//							System.out.println("      jsonObj = "
+//									+ jsonObj.toString(3));
+//						} catch (Exception e) {
+//							e.printStackTrace();
+//						}
+//						;
+						
 
 					}
 
-
 					System.out.println("File " + file);
-					System.out.println("dlurl " + dlurl );
 
-					//  return file;
+					// return file;
 				} catch (UserRecoverableAuthIOException e) {
-					System.out.println("An UserRecoverableAuthIOException occured: " + e);
+					System.out
+					.println("An UserRecoverableAuthIOException occured: "
+							+ e);
 
 					startActivityForResult(e.getIntent(), REQUEST_AUTHORIZATION);
 
 				} catch (IOException e) {
 					System.out.println("An error occured: " + e);
 					System.out.println("    error  cause: " + e.getCause());
-					//    return null;
+					e.printStackTrace();
+					// return null;
 				}
 			}
 		});
@@ -401,11 +427,8 @@ public class DriveActivity extends Activity {
 	private java.io.File downloadGFileToJFolder(Drive drive, String token,
 			File gFile, java.io.File jFolder) throws IOException {
 
-		System.out
-		.println("======================================== downloadGFileToJFolder ================== entered");
-		String s = gFile.getDownloadUrl();
-		System.out.println(" s=" + s);
-		System.out.println(" gFile=" + gFile);
+		System.out.println(" downloadGFileToJFolder            gFile=" + gFile);
+
 		//
 		// if (gFile.getDownloadUrl() != null && gFile.getDownloadUrl().length()
 		// > 0 ) {
@@ -418,9 +441,6 @@ public class DriveActivity extends Activity {
 			HttpClient client = new DefaultHttpClient();
 			HttpGet get = new HttpGet(gFile.getDownloadUrl());
 
-			System.out.println("   downloadGFileToJFolder   dlurl=" + dlurl);
-
-		//	HttpGet get = new HttpGet(dlurl);
 			System.out.println("   downloadGFileToJFolder   get=" + get);
 
 			get.setHeader("Authorization", "Bearer " + token);
@@ -438,8 +458,10 @@ public class DriveActivity extends Activity {
 			// jFolder.getAbsolutePath() + "/" + getGFileName(gFile)); //
 			// getGFileName() is my own method... it just grabs originalFilename
 			// if it exists or title if it doesn't.
-			java.io.File jFile = new java.io.File(
-					"/storage/emulated/legacy/Download/f1.txt");
+
+			System.out.println("   downloadGFileToJFolder   Environment.getExternalStorageDirectory()=" + Environment.getExternalStorageDirectory());
+
+			java.io.File jFile = new java.io.File(TEMP_LOCAL_STORAGE_DIR + "f1.txt");
 			System.out.println("   downloadGFileToJFolder   jFile=" + jFile);
 
 			FileOutputStream fileStream = new FileOutputStream(jFile);
@@ -475,18 +497,30 @@ public class DriveActivity extends Activity {
 	}
 
 	/**
-	 * Retrieve a list of File resources.
+	 * Retrieve a list of all File resources.
 	 * 
 	 * @param service
 	 *            Drive API service instance.
 	 * @return List of File resources.
 	 */
-	private static List<File> retrieveAllFiles(Drive service, String q) {
+	private static List<File> retrieveAllFiles(Drive service ) {
+		return retrieveFilterQFiles(  service, "");
+	}
+	/**
+	 * Retrieve a list of filtered File resources.
+	 * 
+	 * @param service
+	 *            Drive API service instance.
+	 * @param q
+	 *            query string.
+	 * @return List of File resources.
+	 */
+	private static List<File> retrieveFilterQFiles(Drive service, String q) {
 		List<File> result = new ArrayList<File>();
 		Files.List request = null;
 		try {
-		//	request = service.files().list().setQ("title=f1.txt");  
-			request = service.files().list().setQ("mimeType = 'text/plain' and trashed = false" + q);  
+			request = service.files().list().setQ(q);
+			//				.setQ("mimeType = 'text/plain' and trashed = false" + q);
 		} catch (IOException e) {
 			Log.e(TAG, "", e);
 			e.printStackTrace();
@@ -507,4 +541,87 @@ public class DriveActivity extends Activity {
 				&& request.getPageToken().length() > 0);
 		return result;
 	}
+	
+	
+	private void postFileToWeb(final String ftitle) {
+		Thread t = new Thread(new Runnable() {
+			@Override
+			public void run() {
+
+				if (token==null){
+					try {
+						token = credential.getToken();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					;}
+				System.out.println("      token = " + token);
+
+				try {
+				//	java.io.File myFile = new java.io.File(TEMP_LOCAL_STORAGE_DIR + "f1.txt");  
+					java.io.File myFile = new java.io.File(TEMP_LOCAL_STORAGE_DIR + ftitle);  
+					myFile.createNewFile();
+					FileOutputStream fOut = new FileOutputStream(myFile);
+					OutputStreamWriter myOutWriter = new OutputStreamWriter(
+							fOut);
+//					String plansjson = Utilities.plansToJSON().toString(5);
+//					String tasksjson = Utilities.tasksToJSON().toString(5);
+//
+//					myOutWriter.append(plansjson);
+//					myOutWriter.append(tasksjson);
+					
+					myOutWriter.append("<!doctype html>\n<html lang=\"en\">\n<head>");
+					myOutWriter.append("<title>TEST</title>\n</head>\n<body>");
+					myOutWriter.append("<h2>PAPA information here.</h2>");
+					myOutWriter.append("</body>");
+
+					 
+					myOutWriter.close();
+					fOut.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				;
+
+				// File's metadata.
+				File body = new File();
+				//body.setTitle("f1.txt");
+				body.setTitle(ftitle);
+				body.setDescription("");
+				body.setMimeType("text/plain");
+
+				java.io.File fileContent = new java.io.File(TEMP_LOCAL_STORAGE_DIR + ftitle);
+				FileContent mediaContent = new FileContent("text/plain",
+						fileContent);
+
+				System.out.println("fileContent =/" + fileContent + "/");
+				System.out.println("mediaContent =/" + mediaContent + "/");
+
+				try {
+					File file = service.files().insert(body, mediaContent)
+							.execute();
+
+					// Uncomment the following line to print the File ID.
+					System.out.println("File ID: %s" + file.getId());
+ 					System.out.println("File " + file);
+
+					// return file;
+				} catch (UserRecoverableAuthIOException e) {
+					System.out
+					.println("An UserRecoverableAuthIOException occured: "
+							+ e);
+
+					startActivityForResult(e.getIntent(), REQUEST_AUTHORIZATION);
+
+				} catch (IOException e) {
+					System.out.println("An error occured: " + e);
+					System.out.println("    error  cause: " + e.getCause());
+					e.printStackTrace();
+					// return null;
+				}
+			}
+		});
+		t.start();
+	}
+	
 }
