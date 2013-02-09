@@ -12,10 +12,10 @@
 
         <TextView
             android:id="@+id/textView1"
+            style="@style/App_EditTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-             android:text="Adventure Planner"
-             style="@style/App_EditTextStyle"
+            android:text="Adventure Planner"
             android:textSize="42px" />
     </LinearLayout>
 
@@ -71,21 +71,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Add Activity" />
-              <Button
+
+            <Button
                 android:id="@+id/removeActivity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Remove Activity(s)" />
-              <Button
+
+            <Button
                 android:id="@+id/btnUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Move Up" />
-              <Button
+
+            <Button
                 android:id="@+id/btnDown"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Move Down" />
+
+            <Button
+                android:id="@+id/btnDWD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DWD" />
         </LinearLayout>
 
         <ScrollView

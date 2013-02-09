@@ -14,5 +14,8 @@ public class BasicActy extends Acty {
 		super.name = name;
 		super.actyType="B";
 	}
-
+	public void printout(){
+		System.out.println(String.format("Basic name= %s type=%s",  name, actyType ));
+		super.printout();
+	}
 }

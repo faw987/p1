@@ -14,4 +14,8 @@ public class PlanActy extends Acty {
 		super.actyType="P";
 
 	}
+	public void printout(){
+		System.out.println(String.format("Plan name= %s type=%s",  name, actyType ));
+		super.printout();
+	}
 }

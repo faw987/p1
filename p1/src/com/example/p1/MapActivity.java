@@ -99,6 +99,12 @@ public class MapActivity extends Activity {
 							+ a.getLongitude());
 					lat =  new Float(a.getLatitude()) ;
 					lng = new Float(a.getLongitude());
+					
+					String adminArea = a.getAdminArea();
+					String postalCode = a.getPostalCode();
+					System.out.println(">>>>>>>>>>>>>>>>  adminArea=" + adminArea);
+					System.out.println(">>>>>>>>>>>>>>>>  postalCode=" + postalCode);
+
 				}
 				;
 			} catch (Exception e) {

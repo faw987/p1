@@ -11,5 +11,6 @@
 			<attribute name="javadoc_location" value="file:/C:/adt/adt-bundle-windows-x86_64/sdk/add-ons/addon-google_apis-google-17/docs/reference"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Frank/workspace/jsoup-1.7.2.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

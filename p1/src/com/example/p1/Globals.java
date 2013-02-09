@@ -23,11 +23,15 @@ public class Globals extends Application {
 	public static Globals getInstance() {
 		return sInstance;
 	}
-	
+
 	public static Boolean debugVerbose() {			// HACK until put in preferences
 		return false;
 	}
 	
+	public static Boolean debugPrintHttpResults() {			// HACK until put in preferences
+		return false;
+	}
+
 	private String myState;
 
 	public String getState() {
@@ -46,21 +50,17 @@ public class Globals extends Application {
 	};
 
 	public Plan getPlan(String p) {
-
 		return planMap.get(p);
 
 	}
 
 	public ArrayList<Task> getPlanTaskAL(String ps) {
 		Plan p = getPlan(ps);
-		System.out.println("getPlanTaskAL -- ps=" + ps);
 		ArrayList<Task> a = p.arrayListOfTasks;
- 
- 	//	if (a != null && !a.isEmpty()) {
-			if (a != null ) {
-  			return a;
+		if (a != null ) {
+			return a;
 		} else {
- 			return new ArrayList<Task>();
+			return new ArrayList<Task>();
 		}
 	}
 
@@ -98,14 +98,13 @@ public class Globals extends Application {
 		System.out.println(" >>>>>>>>>>>>>>> added task=" + t.name);
 
 	}
-	
+
 	public Task getTask(String t) {
 		Task r = taskMap.get(t);
 		System.out.println("*** getTask t=" + t + ", result=" + r);
 		return r;
-
 	}
-	
+
 	public int tasksSize() {
 		return tasks.size();
 	}

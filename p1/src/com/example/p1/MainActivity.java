@@ -10,6 +10,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
@@ -19,20 +25,19 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
-import android.location.Address;
 import android.location.Criteria;
-import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -64,6 +69,10 @@ public class MainActivity extends Activity {
 			e.printStackTrace();
 		}
 
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+		.permitAll().build();
+		StrictMode.setThreadPolicy(policy);
+
 		SimpleDateFormat sdf = new SimpleDateFormat(
 				"yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.US);
 		String theDate = sdf.format(new Date());
@@ -71,65 +80,35 @@ public class MainActivity extends Activity {
 
 		Log.i(TAG, "version " + version);
 		System.out
-				.println(">>>>>>                                                            >>>>>>>>>> Starting MainActivity.");
+		.println(">>>>>>                                                            >>>>>>>>>> Starting MainActivity.");
 
 		//
 		// experimenting
 		//
-		
-		
-		// try {
-		// Geocoder gc = new Geocoder(this, Locale.US); // create new geocoder
-		// instance
-		// List<Address> foundAdresses =
-		// gc.getFromLocationName("174 Rutgers Rd, Piscataway, Nj, 08854", 1);
-		// // Search addresses
-		// for (Address a : foundAdresses ){
-		// System.out.println(">>>>>>>>>>>>>>>>  a=" + a);
-		// System.out.println(">>>>>>>>>>>>>>>>  a=" + a.getLatitude());
-		// System.out.println(">>>>>>>>>>>>>>>>  a=" + a.getLongitude());
-		//
-		// };
-		// } catch (Exception e) {
-		// e.printStackTrace();
-		// }
-		// ;
-		// try {
-		// Geocoder gc = new Geocoder(this, Locale.US); // create new geocoder
-		// instance
-		// List<Address> foundAdresses = gc.getFromLocationName("08854", 1); //
-		// Search addresses
-		// for (Address a : foundAdresses ){
-		// System.out.println(">>>>>>>>>>>>>>>>  a=" + a);
-		// System.out.println(">>>>>>>>>>>>>>>>  a=" + a.getLatitude());
-		// System.out.println(">>>>>>>>>>>>>>>>  a=" + a.getLongitude());
-		// };
-		// } catch (Exception e) {
-		// e.printStackTrace();
-		// }
-		// ;
 
 		ActyTest.proto1(1, getApplicationContext());
-
-		Globals.delay1 = "abcdefg";
-
-		Globals g = Globals.getInstance();
-		g.setState("test1");
-		String s = g.getState();
 
 		//
 		// END experimenting
 		//
 
+		Globals g = Globals.getInstance();
+
 		PackageManager pm = getApplicationContext().getPackageManager();
 
-		String haves;
+		String haves = "";
 		boolean hasGps = pm
 				.hasSystemFeature(PackageManager.FEATURE_LOCATION_GPS);
 		if (hasGps) {
-			haves = "This device has a gps.";
+			haves += "This device has a gps.";
 		} else {
-			haves = "This device does not have a gps.";
+			haves += "This device does not have a gps.";
+		}
+		;
+		if (isNetworkAvailable()) {
+			haves += "The network is available.";
+		} else {
+			haves += "The network is not available.";
 		}
 		;
 		makeToast(haves);
@@ -138,15 +117,7 @@ public class MainActivity extends Activity {
 
 		Utilities.createByTaskArray();
 
-		ArrayList<Task> tal = g.getPlanTaskAL("plan01");
-		System.out.println("\"Sanity check\" for PLAN01  Task array list size="
-				+ tal.size());
-
 		setContentView(R.layout.activity_main);
-
-		// InputMethodManager imm = (InputMethodManager)
-		// getSystemService(Context.INPUT_METHOD_SERVICE);
-		// imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
 
 		getWindow().setSoftInputMode(
 				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -154,7 +125,6 @@ public class MainActivity extends Activity {
 		// gets the activity's default ActionBar
 
 		ActionBar actionBar = getActionBar();
-
 		actionBar.show();
 
 		// set the app icon as an action to go home
@@ -164,22 +134,6 @@ public class MainActivity extends Activity {
 
 		String t = getTitle().toString();
 		setTitle(t + " version " + version);
-
-		// Button startButton = (Button) findViewById(R.id.button1);
-		// startButton.setOnClickListener(new View.OnClickListener() {
-		//
-		// public void onClick(View v) {
-		// EditText text1 = (EditText) findViewById(R.id.editText1);
-		// String et1 = text1.getText().toString();
-		//
-		// InputMethodManager imm = (InputMethodManager)
-		// getSystemService(Context.INPUT_METHOD_SERVICE);
-		// imm.hideSoftInputFromWindow(text1.getWindowToken(), 0);
-		//
-		// Toast.makeText(getApplicationContext(),
-		// "Greetings, " + et1 + ".", Toast.LENGTH_SHORT).show();
-		// }
-		// });
 
 		Button startPlan = (Button) findViewById(R.id.btnPlan);
 		startPlan.setOnClickListener(new View.OnClickListener() {
@@ -204,7 +158,6 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// same as using a normal menu
 		Intent act;
 
 		switch (item.getItemId()) {
@@ -253,12 +206,48 @@ public class MainActivity extends Activity {
 
 			// DOES NOT WORK -- NPE -- listAssets();
 
-			processAssets();
-			act = new Intent(getBaseContext(), MapActivity.class);
-			act.putExtra("LATLNG", "40.5840 -74.522"); 					// PWAY
- 			// startActivity(act);
-			startActivityForResult(act, 1234);
+			// String
 
+			// String
+			// url="http://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&sensor=false";
+			//
+			// String result=Utilities.callHttp(url);
+			//
+			// System.out.println(TAG + SPLAT + " result=" + result);
+			//
+			
+//			JSONObject jsonObj = null;
+//			try {
+////				jsonObj = new JSONObject(Utilities.callDirections(
+////						"40.7251,-73.9943", "40.7227,-73.9920");
+////			
+//				jsonObj =  Utilities.callDirections("08854", "10012");
+//				
+//				System.out.println(TAG + SPLAT + " result="
+//						+ jsonObj.toString(5));
+//				
+//				int meter = Utilities.directionsGetDistance(jsonObj);
+//				int seconds = Utilities.directionsGetDuration(jsonObj);
+//				  double miles = meter * 0.00062137119;
+//				  System.out.println("Miles: " + miles);
+//				  System.out.println("seconds: " + seconds);
+//				  System.out.println("minutes: " + seconds/60);
+//				
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//			;
+
+			
+			String data = Utilities.callCityData("Camden", "New-Jersey");
+			
+			 //  System.out.println("data: " + data);
+			
+			String cd = Utilities.cityDataGetCrime(data);
+			
+			System.out.println(" crime data: " + cd);
+
+			
 			break;
 		}
 		return true;
@@ -432,4 +421,16 @@ public class MainActivity extends Activity {
 			// We didn't receive an image...
 		}
 	}
+
+	public boolean isNetworkAvailable() {
+		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo networkInfo = cm.getActiveNetworkInfo();
+		// if no network is available networkInfo will be null
+		// otherwise check if we are connected
+		if (networkInfo != null && networkInfo.isConnected()) {
+			return true;
+		}
+		return false;
+	}
+
 }

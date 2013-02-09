@@ -3,6 +3,8 @@ package com.example.p1;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONObject;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -36,8 +38,7 @@ public class MainPlanActivity extends Activity {
 	Spinner spinner1, spinner2;
 
 	public void onResume() {
-
-		super.onResume(); // Always call the superclass method first
+		super.onResume(); 				// Always call the superclass method first
 		refreshPlansTasks();
 	}
 
@@ -47,8 +48,11 @@ public class MainPlanActivity extends Activity {
 
 		Log.i(TAG, "===== ENTER onCreate =====");
 
-		System.out.println("      Plan Act");
 		setContentView(R.layout.activity_plan);
+
+		//		TextView text1 = (TextView) findViewById(R.id.textView11);
+		//		text1.setSelected(true);
+
 
 		addListenerOnSpinnerItemSelection();
 
@@ -59,7 +63,7 @@ public class MainPlanActivity extends Activity {
 
 			public void onClick(View v) {
 				Log.i(TAG, "===== ENTER btnAdd clicked =====");
-				Globals.currentTaskName = ""; // HACK ? clear taskName for add
+				Globals.currentTaskName = ""; 										// HACK ? clear taskName for add
 				startAddActyActivity();
 			}
 		});
@@ -76,27 +80,16 @@ public class MainPlanActivity extends Activity {
 				Globals g = Globals.getInstance();
 				ArrayList<Task> tal = g.getPlanTaskAL(g.currentPlanName);
 				while (i >= 0) {
-
-					System.out.println("        i = " + i);
-
 					if (tl2.getChildAt(i) != null) {
 						View row = tl2.getChildAt(i);
 						CheckBox c = (CheckBox) ((ViewGroup) row).getChildAt(0);
 						if (c.isChecked()) {
-							System.out.println("      row i = checked");
 							tal.remove(i);
 						}
-
 					}
 					i--;
 				}
-
-				// for (Task a : tal) {
-				// System.out.println("      name = " + a.name);
-				// }
-
 				refreshTasks();
-
 			}
 		});
 
@@ -104,7 +97,6 @@ public class MainPlanActivity extends Activity {
 		btnUp.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
-				Log.i(TAG, "===== ENTER btnUp clicked =====");
 				moveActivityUp();
 			}
 		});
@@ -113,7 +105,6 @@ public class MainPlanActivity extends Activity {
 		btnDown.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
-				Log.i(TAG, "===== ENTER btnDown clicked =====");
 				moveActivityDown();
 			}
 		});
@@ -122,10 +113,18 @@ public class MainPlanActivity extends Activity {
 		btnAddPlan.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
-				Log.i(TAG, "===== ENTER btnAddPlan clicked =====");
 				startAddPlanActivity();
 			}
 		});
+
+		Button btnDWD = (Button) findViewById(R.id.btnDWD);
+		btnDWD.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View v) {
+				activityDWD();
+			}
+		});
+
 	}
 
 	public void addRecRow(TableLayout tl, String rowData) {
@@ -143,11 +142,9 @@ public class MainPlanActivity extends Activity {
 
 				TableRow tr = (TableRow) v.getParent();
 				TextView c = (TextView) tr.getChildAt(2);
-
 				String s = c.getText().toString();
 
 				// System.out.println("      s = " + s); // so this IS what we
-
 			}
 		});
 
@@ -182,10 +179,8 @@ public class MainPlanActivity extends Activity {
 				String s = c.getText().toString();
 
 				// System.out.println("      s = " + s); // so this IS what we
-				//
 
-				Globals.currentTaskName = s; 			// HACK - for now ASSUME row IS A
-				// simple task name
+				Globals.currentTaskName = s; 			// HACK - for now ASSUME row IS A simple task name
 				startAddActyActivity();
 			}
 		});
@@ -298,18 +293,22 @@ public class MainPlanActivity extends Activity {
 		}
 	}
 
-	public void makeToast(String message) {	
+	public void makeToastShort(String message) {	
 		Toast.makeText(this, message, Toast.LENGTH_SHORT).show();		 
+	}
+	
+	public void makeToast(String message) {	
+		Toast.makeText(this, message, Toast.LENGTH_LONG).show();		 
 	}
 
 	private void moveActivityUp() {
 		int selectedRow = -1;
-		
+
 		if (nbrSelectedRows() != 1){ 
-			makeToast("You must move exactly one activity at a time in this version.");
+			makeToastShort("You must move exactly one activity at a time in this version.");
 			return;
 		};
-		
+
 		Globals g = Globals.getInstance();
 		ArrayList<Task> tal = g.getPlanTaskAL(g.currentPlanName);
 		int i = 0;
@@ -321,22 +320,18 @@ public class MainPlanActivity extends Activity {
 				if (c.isChecked()) {
 					System.out.println("      row checked, i=" + i);
 					selectedRow = i;
-					break; // HACK - take first one found
+					break; 														// SIMPLIFICATION - take first one found
 				}
 				i++;
 			}
 		}
 
-		System.out.println("        selectedRow =  " + selectedRow);
-
 		if (selectedRow == 0){ 
-			makeToast("You are at the beginning, can not move up");
+			makeToastShort("You are at the beginning, can not move up");
 			return;
 		};
 
 		Task t = tal.get(selectedRow - 1);
-		System.out.println("        sr-1 name =  " + t.name);
-
 		tal.set(selectedRow - 1, tal.get(selectedRow));
 		tal.set(selectedRow, t);
 
@@ -350,8 +345,8 @@ public class MainPlanActivity extends Activity {
 				CheckBox c = (CheckBox) ((ViewGroup) row).getChildAt(0);
 				if (i == (selectedRow - 1)) {
 					c.setChecked(true);
-					System.out.println("      row checked, i=" + i);
-					break; // HACK - take first one found
+					System.out.println("      row set to checked, i=" + i);
+					break; 															// HACK - take first one found
 				}
 				i++;
 			}
@@ -361,12 +356,12 @@ public class MainPlanActivity extends Activity {
 	private void moveActivityDown() {
 		int i = 0;
 		int selectedRow = -1;
-		
+
 		if (nbrSelectedRows() != 1){ 
-			makeToast("You must move exactly one activity at a time in this version.");
+			makeToastShort("You must move exactly one activity at a time in this version.");
 			return;
 		};
-		
+
 		Globals g = Globals.getInstance();
 		ArrayList<Task> tal = g.getPlanTaskAL(g.currentPlanName);
 		while (i < tl2.getChildCount()) {
@@ -374,9 +369,9 @@ public class MainPlanActivity extends Activity {
 				View row = tl2.getChildAt(i);
 				CheckBox c = (CheckBox) ((ViewGroup) row).getChildAt(0);
 				if (c.isChecked()) {
-					System.out.println("      row checked, i=" + i);
+					System.out.println("      row is checked, i=" + i);
 					selectedRow = i;
-					break; // HACK - take first one found
+					break; 														// HACK - take first one found
 				}
 				i++;
 			}
@@ -385,13 +380,11 @@ public class MainPlanActivity extends Activity {
 		System.out.println("        selectedRow =  " + selectedRow);
 
 		if (selectedRow == tl2.getChildCount()-1){ 
-			makeToast("You are at the end, can not move down");
+			makeToastShort("You are at the end, can not move down");
 			return;
 		};
 
 		Task t = tal.get(selectedRow + 1);
-		System.out.println("        sr+1 name =  " + t.name);
-
 		tal.set(selectedRow + 1, tal.get(selectedRow));
 		tal.set(selectedRow, t);
 
@@ -405,8 +398,8 @@ public class MainPlanActivity extends Activity {
 				CheckBox c = (CheckBox) ((ViewGroup) row).getChildAt(0);
 				if (i == (selectedRow + 1)) {
 					c.setChecked(true);
-					System.out.println("      row checked, i=" + i);
-					break; // HACK - take first one found
+					System.out.println("      row set ot checked, i=" + i);
+					break; 													// HACK - take first one found
 				}
 				i++;
 			}
@@ -425,16 +418,131 @@ public class MainPlanActivity extends Activity {
 				View row = tl2.getChildAt(i);
 				CheckBox c = (CheckBox) ((ViewGroup) row).getChildAt(0);
 				if (c.isChecked()) {
-					System.out.println("      row checked, i=" + i);
 					r++;
 				}
 				i++;
 			}
 		}
-
-		System.out.println("        nbrSelectedRows r=  " + r);
 		return r;
 	}
 
+	private void activityDWD() {
+		int selectedRow = -1;
+
+		if (nbrSelectedRows() != 1){ 
+			makeToastShort("You must move exactly one activity at a time in this version.");
+			return;
+		};
+
+		Globals g = Globals.getInstance();
+		ArrayList<Task> tal = g.getPlanTaskAL(g.currentPlanName);
+		int i = 0;
+
+		while (i < tl2.getChildCount()) {
+			if (tl2.getChildAt(i) != null) {
+				View row = tl2.getChildAt(i);
+				CheckBox c = (CheckBox) ((ViewGroup) row).getChildAt(0);
+				if (c.isChecked()) {
+					System.out.println("      row checked, i=" + i);
+					selectedRow = i;
+					break; 														// SIMPLIFICATION - take first one found
+				}
+				i++;
+			}
+		}
+
+		if (selectedRow == -1){ 
+			makeToastShort("You must select an activity to use DWD.");
+			return;
+		};
+		
+		String toast="";
+		
+		Task t = tal.get(selectedRow);
+		String location = t.location;
+
+	
+		//
+		// DWD -- D = Distance
+		//
+		
+		JSONObject jsonObj = null;
+		try {
+//			jsonObj = new JSONObject(Utilities.callDirections(
+//					"40.7251,-73.9943", "40.7227,-73.9920");
+//		
+			jsonObj =  Utilities.callDirections(location, "10012");
+			
+			System.out.println(TAG +   " result="
+					+ jsonObj.toString(5));
+			
+			int meter = Utilities.directionsGetDistance(jsonObj);
+			int seconds = Utilities.directionsGetDuration(jsonObj);
+			  double miles = meter * 0.00062137119;
+			  System.out.println("Miles: " + miles);
+			  System.out.println("seconds: " + seconds);
+			  System.out.println("minutes: " + seconds/60);
+				
+			  toast += "Distance to 10012   activity, miles = " + miles + "\n";
+			  toast += "Time to 10012   activity, minutes = " + seconds/60 + "\n";
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		;
+		
+		//
+		// DWD -- W = Weather
+		//
+	
+		System.out.println("      selected activity location=" + location);
+		try {
+			JSONObject o = Utilities.callWeather("NJ", "08854"); // HARD CODE HACK
+			System.out.println("      selected activity weather="
+					+ o.toString(5));
+			double tempf = Utilities.weatherGetTempF(o);
+			toast += "Current temperature, degrees Fahrenheit = " + tempf + "\n";
+		} catch (Exception e) {
+			System.err.printf("Exception: %s\n", e.getMessage());
+			e.printStackTrace();
+		}
+		
+		//
+		// DWD -- D = Danger
+		//
+		
+		String data = Utilities.callCityData("Camden", "New-Jersey");
+		String cd = Utilities.cityDataGetCrime(data);
+		
+		System.out.println(" crime data: " + cd);
+		
+		toast += "Most recent murder rate per 100k = " + cd + "\n";
+
+		
+		// tell user whats what for now
+		
+		makeToast(toast);
+
+		
+		//		tal.set(selectedRow - 1, tal.get(selectedRow));
+		//		tal.set(selectedRow, t);
+		//	
+		//		refreshTasks();
+		//	
+		//		i = 0;
+		//	
+		//		while (i < tl2.getChildCount()) {
+		//			if (tl2.getChildAt(i) != null) {
+		//				View row = tl2.getChildAt(i);
+		//				CheckBox c = (CheckBox) ((ViewGroup) row).getChildAt(0);
+		//				if (i == (selectedRow - 1)) {
+		//					c.setChecked(true);
+		//					System.out.println("      row set to checked, i=" + i);
+		//					break; 															// HACK - take first one found
+		//				}
+		//				i++;
+		//			}
+		//		}
+	}
 
 }

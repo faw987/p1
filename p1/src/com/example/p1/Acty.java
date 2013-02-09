@@ -12,7 +12,11 @@ public abstract class Acty {
 	public String actyKind;				// T=template I=instance
 	//public ArrayList<Acty> arrayListOfTasks=new ArrayList<Acty>();
 	public void printout(){
-		System.out.println(" name=" + name);
+	
+		//	System.out.println(" name=" + name + "type=" + actyType);
+		
+		System.out.println(String.format("Acty name= %s type=%s",  name, actyType ));
+
 	}
 }
 

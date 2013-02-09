@@ -3,17 +3,22 @@ package com.example.p1;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.GestureDetector;
+import android.view.GestureDetector.OnGestureListener;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class AddActyActivity extends Activity {
+public class AddActyActivity extends Activity implements OnGestureListener {
 	Boolean isNewTask=true, isUpdateTask=false;
 	String taskName="";
+	private GestureDetector gDetector ;
+
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,9 @@ public class AddActyActivity extends Activity {
 		System.out.println("*** AddActyActivity taskName=" + taskName);
 
 		setContentView(R.layout.activity_addacty);
+
+		gDetector = new GestureDetector(this);
+
 
 		isNewTask = "".equals(taskName);
 		isUpdateTask = !isNewTask;
@@ -93,6 +101,11 @@ public class AddActyActivity extends Activity {
 		toast.setGravity(Gravity.CENTER, toast.getXOffset() / 2, toast.getYOffset() / 2);
 		toast.show();
 	}
+	public void makeToastShort(String message) {	
+		Toast toast = Toast.makeText( this, message, Toast.LENGTH_SHORT);
+		toast.setGravity(Gravity.CENTER, toast.getXOffset() / 2, toast.getYOffset() / 2);
+		toast.show();
+	}
 
 	private void addUpdateActy(  Boolean isNewTask,   Globals g, View v) {
 
@@ -134,8 +147,9 @@ public class AddActyActivity extends Activity {
 
 		act.putExtra("URL", ta.urls);
 		startActivity(act);
-		v.invalidate();
-		finish();
+
+		//v.invalidate();
+		//finish();
 	}
 
 	private void doMap(final Globals g, View v) {
@@ -151,8 +165,59 @@ public class AddActyActivity extends Activity {
 
 		act.putExtra("LATLNG", ta.location);		// PWAY
 		startActivity(act);
+		// startActivityForResult(act, 1234);
 
-		v.invalidate();
-		finish();
+		// v.invalidate();
+		// finish();
+	}
+
+	@Override
+	public boolean onDown(MotionEvent arg0) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onFling(MotionEvent start, MotionEvent finish, float velocityX,
+			float velocityY) {
+		if (start.getRawY() < finish.getRawY()) {
+			System.out.println("*** >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    FLICK LEFT");
+			makeToastShort("left");
+
+		} else {
+			System.out.println("*** >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    FLICK RIGHT");
+			makeToastShort("right");
+		}
+		return true;		 
+	}
+
+	@Override
+	public void onLongPress(MotionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
+			float distanceY) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void onShowPress(MotionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean onSingleTapUp(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent me) {
+		return gDetector.onTouchEvent(me);
 	}
 }

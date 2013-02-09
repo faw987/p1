@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -16,19 +16,18 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.widget.Toast;
 
- 
 public class Utilities {
 
-	
- 
 	static public String donotdisturb(String input) {
-
 		return input;
 	}
 
@@ -44,7 +43,6 @@ public class Utilities {
 		return new String(data);
 	}
 
-
 	static public JSONObject plansToJSON() {
 		Globals g = Globals.getInstance();
 		int sz = g.plansSize();
@@ -53,17 +51,17 @@ public class Utilities {
 		g.sortPlans();
 
 		ArrayList<Plan> planz = g.getPlansArray();
+
 		JSONObject jsonObj = null;
 		JSONArray list = new JSONArray();
 		for (Plan x : planz) {
-
 			try {
 				JSONObject jo = new JSONObject();
 
 				jo.put("name", x.name);
 				jo.put("desc", x.desc);
+
 				list.put(jo);
-				// JSONArray plans = jsonObj.getJSONArray("plans"); }
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -73,6 +71,7 @@ public class Utilities {
 		jsonObj = new JSONObject();
 		try {
 			jsonObj.put("plans", list);
+
 			// System.out.println("jsonObj: " + jsonObj.toString(5));
 
 		} catch (Exception e) {
@@ -92,6 +91,7 @@ public class Utilities {
 		g.sortTasks();
 
 		ArrayList<Task> taskz = g.getTasksArray();
+
 		JSONObject jsonObj = null;
 		JSONArray list = new JSONArray();
 		for (Task x : taskz) {
@@ -118,15 +118,10 @@ public class Utilities {
 			;
 		}
 
-		// try {
-		// System.out.println("tasks list: " + list.toString(5));
-		// } catch (Exception e) {
-		// e.printStackTrace();
-		// }
-		// ;
 		jsonObj = new JSONObject();
 		try {
 			jsonObj.put("tasks", list);
+
 			// System.out.println("tasks jsonObj: " + jsonObj.toString(5));
 
 		} catch (Exception e) {
@@ -210,6 +205,7 @@ public class Utilities {
 
 		String plansStr = sharedPrefs.getString("plans1", sampleplans);
 		String tasksStr = sharedPrefs.getString("tasks1", sampletasks);
+
 		JSONObject jsonObj = null;
 
 		g.plansClear();
@@ -227,8 +223,9 @@ public class Utilities {
 				p.desc = plans.getJSONObject(i).getString("desc").toString();
 				p.arrayListOfTasks = new ArrayList<Task>();
 				g.addPlan(p);
-				
-				PlanActy pa =  new PlanActy(p.name);
+
+				PlanActy pa = new PlanActy(p.name);
+				pa.printout();
 			}
 
 		} catch (Exception e) {
@@ -250,9 +247,12 @@ public class Utilities {
 				t.duration = tasks.getJSONObject(i).getString("duration")
 						.toString();
 				t.urls = tasks.getJSONObject(i).getString("urls").toString();
-				t.location = tasks.getJSONObject(i).getString("location").toString();
+				t.location = tasks.getJSONObject(i).getString("location")
+						.toString();
 				g.addTask(t);
 
+				BasicActy ba = new BasicActy(t.name);
+				ba.printout();
 			}
 
 		} catch (Exception e) {
@@ -261,32 +261,32 @@ public class Utilities {
 	}
 
 	static public void writePlansTasks(Context c) {
+
 		String plansjson = Utilities.plansToJSON().toString();
 		String tasksjson = Utilities.tasksToJSON().toString();
 
 		SharedPreferences prefs = PreferenceManager
 				.getDefaultSharedPreferences(c);
-		prefs.edit().putString("plans1", plansjson).commit();
 
+		prefs.edit().putString("plans1", plansjson).commit();
 		prefs.edit().putString("tasks1", tasksjson).commit();
+
 	}
 
 	static public String callHttp(String url) {
 
+		System.out.println(" == getParam:" + url);
+
 		HttpClient httpclient = new DefaultHttpClient();
-
-		System.out.println(" == postParam:" + url);
-
 		HttpGet httpget = new HttpGet(url);
 
 		try {
 
 			HttpResponse response;
-
 			response = httpclient.execute(httpget);
 
-			System.out.println(" == httppost:" + httpget);
-			System.out.println(" == response:" + response);
+			System.out.println(" == httpget:" + httpget);
+			// / System.out.println(" == response:" + response);
 
 			BufferedReader in = null;
 
@@ -301,37 +301,39 @@ public class Utilities {
 			in.close();
 			String result = sb.toString();
 
-			System.out.println(" == result:" + result);
+			if (Globals.debugPrintHttpResults())
+				System.out.println(" == result:" + result);
 
 			return result;
 
 		} catch (ClientProtocolException e) {
-
 			e.printStackTrace();
-
 		} catch (IOException e) {
-
 			e.printStackTrace();
-
 		}
 
 		return null;
 
 	}
 
+	// go thru ALL tasks and filter those for planName
+
 	static private void populateTasks(String planName, ArrayList<Task> tasks) {
+
 		System.out.println("populateTasks for: " + planName);
+
 		Globals g = Globals.getInstance();
 
 		ArrayList<Task> taskz = g.getTasksArray();
 
 		for (Task x : taskz) {
 			if (planName.equals(x.plan)) {
-				System.out.println("found task for: " + planName
-						+ " task name:" + x.name);
+				System.out.println("task IS  for: " + planName + " task name:"
+						+ x.name);
 				tasks.add(x);
 			} else {
-				System.out.println("task NOT for: " + planName);
+				System.out.println("task NOT for: " + planName + " task name:"
+						+ x.name);
 			}
 			;
 		}
@@ -341,7 +343,6 @@ public class Utilities {
 	static public void createByTaskArray() {
 
 		Globals g = Globals.getInstance();
-		List<String> list = new ArrayList<String>();
 
 		int sz = g.plansSize();
 		System.out.println("createByTaskArray -- plans sz=" + sz);
@@ -361,7 +362,8 @@ public class Utilities {
 			} else {
 				tasks = (ArrayList<Task>) x.arrayListOfTasks;
 				int szt = tasks.size();
-				System.out.println("createByTaskArray -- have list, size:"
+				System.out
+				.println("createByTaskArray -- have   list for plan, size:"
 						+ szt);
 			}
 			;
@@ -389,35 +391,217 @@ public class Utilities {
 		;
 
 	}
-	
 
 	static public void printFile(File f) {
-	// 	File sourceFile = new File (f);
-		String f_name=f.getName();
-		String f_path=f.getPath();
-        System.out.printf ("name= %s  path=%s \n", f_name, f_path);
+		// File sourceFile = new File (f);
+		String f_name = f.getName();
+		String f_path = f.getPath();
 
-	      FileReader fr = null;
-	      try {
-	         fr = new FileReader (f);
-	         int inChar;
+		System.out.printf("name= %s  path=%s \n", f_name, f_path);
 
-	         while ( (inChar = fr.read()) != -1 ) {
-	            System.out.printf ("%c", inChar);
-	         }
-	      } catch (IOException e) {
-	         System.err.printf ("Failure while reading %s: %s\n",
-	                            f, e.getMessage());
-	         e.printStackTrace ();
-	      } finally {
-	         try {
-	            if (fr != null) { fr.close (); }
-	         } catch (IOException e) {
-	            System.err.printf ("Error closing file reader: %s\n",
-	                               e.getMessage());
-	            e.printStackTrace ();
-	         }
-	      }
-	   }
+		FileReader fr = null;
+		try {
+			fr = new FileReader(f);
+			int inChar;
+
+			while ((inChar = fr.read()) != -1) {
+				System.out.printf("%c", inChar);
+			}
+		} catch (IOException e) {
+			System.err.printf("Failure while reading %s: %s\n", f,
+					e.getMessage());
+			e.printStackTrace();
+		} finally {
+			try {
+				if (fr != null) {
+					fr.close();
+				}
+			} catch (IOException e) {
+				System.err.printf("Error closing file reader: %s\n",
+						e.getMessage());
+				e.printStackTrace();
+			}
+		}
 	}
 
+	static public JSONObject callDirections(String from, String to) {
+		String url = "http://maps.googleapis.com/maps/api/directions/json?origin="
+				+ from + "&destination=" + to + "&sensor=false";
+
+		String result = Utilities.callHttp(url);
+
+		JSONObject r = null;
+		try {
+			r = new JSONObject(result);
+		} catch (Exception e) {
+			System.err.printf("Exception: %s\n", e.getMessage());
+			e.printStackTrace();
+		}
+		return r;
+
+	}
+
+	static public JSONObject callWeather(String state, String zip) {
+
+		String url="http://api.wunderground.com/api/9b834783bd345d99/conditions/q/" + state + "/" + zip + ".json";
+
+		String result = Utilities.callHttp(url);
+
+		JSONObject r = null;
+		try {
+			r = new JSONObject(result);
+		} catch (Exception e) {
+			System.err.printf("Exception: %s\n", e.getMessage());
+			e.printStackTrace();
+		}
+		return r;
+
+	}
+
+
+
+	static public String callCityData(String city, String state) {
+
+		// 		String url="http://api.wunderground.com/api/9b834783bd345d99/conditions/q/" + state + "/" + zip + ".json";
+		String url="http://www.city-data.com/city/" + city + "-" + state + ".html";
+		String result = Utilities.callHttp(url);
+
+		//		JSONObject r = null;
+		//		try {
+		//			r = new JSONObject(result);
+		//		} catch (Exception e) {
+		//			System.err.printf("Exception: %s\n", e.getMessage());
+		//			e.printStackTrace();
+		//		}
+		return result;
+
+	}
+
+
+
+	static public int directionsGetDistance(JSONObject directions) {
+
+		JSONObject jsonObj = null;
+
+		try {
+			JSONArray routes = directions.getJSONArray("routes");
+			for (int i = 0; i < routes.length(); i++) {
+				JSONArray legs = routes.getJSONObject(i).getJSONArray("legs");
+				for (int j = 0; j < legs.length(); j++) {
+
+					String d = legs.getJSONObject(j).getJSONObject("distance")
+							.getString("value").toString();
+					System.out.println(">>>>>>>>>>>> " + " j=" + j + " d=" + d);
+					int meter = Integer.parseInt(d);
+
+					return meter; // HACK happens to work but not general
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return 0; // HACK s/b unreachable
+
+	}
+
+	static public int directionsGetDuration(JSONObject directions) {
+
+		// TOTAL HACK HACK just a cut and paste and edit
+
+		JSONObject jsonObj = null;
+
+		try {
+
+			JSONArray routes = directions.getJSONArray("routes");
+			for (int i = 0; i < routes.length(); i++) {
+				JSONArray legs = routes.getJSONObject(i).getJSONArray("legs");
+				for (int j = 0; j < legs.length(); j++) {
+					String l = legs.getJSONObject(j).getJSONObject("duration")
+							.getString("value").toString();
+
+					System.out.println(">>>>>>>>>>>> " + " j=" + j + " l=" + l);
+					int duration = Integer.parseInt(l);
+
+					return duration; // HACK for some reason 1st route 1st leg
+					// works BUT IS NOT geneal
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return 0; // HACK
+	}
+
+
+
+	static public double weatherGetTempF(JSONObject weather) {
+
+		// TOTAL HACK HACK just a cut and paste and edit
+		JSONObject jsonObj = null;
+
+		try {
+
+			JSONObject co = weather.getJSONObject("current_observation");
+			String t= co.getString("temp_f").toString();
+
+			System.out.println(">>>>>>>>>>>> " + " t=" + t);
+			double t_double = Double.parseDouble(t);
+			return t_double;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return 0; // HACK
+	}
+	static public String cityDataGetCrime(String crimeHtml) {
+
+		String p1 = ".*<strong>Murders</strong>.*";
+		System.out.println("matches: " + crimeHtml.matches(p1));
+		System.out.println("indexOf: " + crimeHtml.indexOf("<strong>Murders</strong>"));
+
+
+		Document doc = Jsoup.parse(crimeHtml);
+		Element body = doc.body();
+		//  System.out.println("body: " + body);
+
+		//crime tabBlue
+
+		Elements ct = body.getElementsByClass("crime");
+		System.out.println("ct: " + ct.text());
+
+
+
+	//	Element table = body.select("table[class=crime]").first();
+	//	Element table = body.select("table[class=\"crime\"]").first();
+		Element table = body.select("tr[class=norm2]").first();
+		System.out.println("table: " + table);
+
+		//			 Iterator<Element> ite = table.select("td[class=norm2]").iterator();
+		//Elements tableRows = table.select("tr");
+	//	Elements tableRows = table.getElementsByClass("tr[class=norm2]");
+	//	Elements tableRows = table.getElementsByClass("td");
+		String hack_stat="";
+		
+		Elements tableRows = table.select("td");
+		for (Element tableRow : tableRows){
+			if (tableRow.hasText()){
+				String rowData = tableRow.text();
+				System.out.println("rowData: " + rowData);
+				hack_stat = rowData;						// HACK upon hack - most recent murder number
+				//			                    if(rowData.contains(testString)){
+				//			                            tableRowStrings.add(rowData);
+			}
+		}
+
+		//			 System.out.println("Value 1: " + ite.next().text());
+		//			 System.out.println("Value 2: " + ite.next().text());
+		//			 
+		// return ct.text();
+		return hack_stat;
+	}
+
+}
