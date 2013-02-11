@@ -23,8 +23,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Looper;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.Gravity;
 import android.widget.Toast;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -274,6 +276,7 @@ public class DriveActivity extends Activity {
 		Thread t = new Thread(new Runnable() {
 			@Override
 			public void run() {
+				  String fileList="";
 
 				if (token==null){
 					try {
@@ -283,15 +286,21 @@ public class DriveActivity extends Activity {
 					}
 					;}
 				System.out.println("      token = " + token);
+				
+			    Looper.prepare(); 
 
 				try {
 					FileList file = service.files().list().execute();
-
+					int i=0;
 					List<File> files = retrieveAllFiles(service);
 					Log.i(TAG, "size is " + files.size());
 					for (File file1 : files) {
 						Log.i(TAG, "title = " + file1.getTitle());
+						
 						Log.i(TAG, "id = " + file1.getId());
+						i++;
+						fileList += i + ": " + file1.getTitle() + "  " + file1.getId();
+						
 						// System.out.println("      file1 = " + file1 );
 						
 						
@@ -310,6 +319,8 @@ public class DriveActivity extends Activity {
 
 					}
 
+					// HACK - not so easy .... makeToast(fileList);
+					
 					System.out.println("File " + file);
 
 					// return file;
@@ -327,6 +338,9 @@ public class DriveActivity extends Activity {
 					// return null;
 				}
 			}
+			// HACK - not so easy .... public void onStart( ) {
+			// HACK - not so easy ....     Looper.prepare(); 
+			// HACK - not so easy .... }
 		});
 		t.start();
 	}
@@ -556,6 +570,7 @@ public class DriveActivity extends Activity {
 					}
 					;}
 				System.out.println("      token = " + token);
+				
 
 				try {
 				//	java.io.File myFile = new java.io.File(TEMP_LOCAL_STORAGE_DIR + "f1.txt");  
@@ -620,8 +635,17 @@ public class DriveActivity extends Activity {
 					// return null;
 				}
 			}
+			
+			public void onStart( ) {
+			    Looper.prepare(); 
+			}
+			
 		});
 		t.start();
 	}
-	
+	// HACK - not so easy .... public void makeToast(String message) {	
+	// HACK - not so easy .... 	Toast toast = Toast.makeText( getApplicationContext(), message, Toast.LENGTH_LONG);
+	// HACK - not so easy .... 	toast.setGravity(Gravity.CENTER, toast.getXOffset() / 2, toast.getYOffset() / 2);
+	// HACK - not so easy .... 	toast.show();
+	// HACK - not so easy .... }
 }

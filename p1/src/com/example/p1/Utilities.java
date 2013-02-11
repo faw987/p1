@@ -22,6 +22,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
@@ -286,7 +287,6 @@ public class Utilities {
 			response = httpclient.execute(httpget);
 
 			System.out.println(" == httpget:" + httpget);
-			// / System.out.println(" == response:" + response);
 
 			BufferedReader in = null;
 
@@ -458,21 +458,29 @@ public class Utilities {
 
 	}
 
+	static public JSONObject callWeather( String zip) {
+
+		String url="http://api.wunderground.com/api/9b834783bd345d99/conditions/q/"  + zip + ".json";
+
+		String result = Utilities.callHttp(url);
+
+		JSONObject r = null;
+		try {
+			r = new JSONObject(result);
+		} catch (Exception e) {
+			System.err.printf("Exception: %s\n", e.getMessage());
+			e.printStackTrace();
+		}
+		return r;
+
+	}
+
 
 
 	static public String callCityData(String city, String state) {
 
-		// 		String url="http://api.wunderground.com/api/9b834783bd345d99/conditions/q/" + state + "/" + zip + ".json";
 		String url="http://www.city-data.com/city/" + city + "-" + state + ".html";
 		String result = Utilities.callHttp(url);
-
-		//		JSONObject r = null;
-		//		try {
-		//			r = new JSONObject(result);
-		//		} catch (Exception e) {
-		//			System.err.printf("Exception: %s\n", e.getMessage());
-		//			e.printStackTrace();
-		//		}
 		return result;
 
 	}
@@ -488,20 +496,17 @@ public class Utilities {
 			for (int i = 0; i < routes.length(); i++) {
 				JSONArray legs = routes.getJSONObject(i).getJSONArray("legs");
 				for (int j = 0; j < legs.length(); j++) {
-
 					String d = legs.getJSONObject(j).getJSONObject("distance")
 							.getString("value").toString();
-					System.out.println(">>>>>>>>>>>> " + " j=" + j + " d=" + d);
 					int meter = Integer.parseInt(d);
-
-					return meter; // HACK happens to work but not general
+					return meter; 					// HACK happens to work but not general
 				}
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return 0; // HACK s/b unreachable
+		return 0; 									// HACK s/b unreachable
 
 	}
 
@@ -519,11 +524,9 @@ public class Utilities {
 				for (int j = 0; j < legs.length(); j++) {
 					String l = legs.getJSONObject(j).getJSONObject("duration")
 							.getString("value").toString();
-
-					System.out.println(">>>>>>>>>>>> " + " j=" + j + " l=" + l);
 					int duration = Integer.parseInt(l);
 
-					return duration; // HACK for some reason 1st route 1st leg
+					return duration; 	// HACK for some reason 1st route 1st leg
 					// works BUT IS NOT geneal
 				}
 			}
@@ -532,7 +535,7 @@ public class Utilities {
 			e.printStackTrace();
 		}
 
-		return 0; // HACK
+		return 0; 						// HACK
 	}
 
 
@@ -540,17 +543,13 @@ public class Utilities {
 	static public double weatherGetTempF(JSONObject weather) {
 
 		// TOTAL HACK HACK just a cut and paste and edit
-		JSONObject jsonObj = null;
 
 		try {
 
 			JSONObject co = weather.getJSONObject("current_observation");
 			String t= co.getString("temp_f").toString();
-
-			System.out.println(">>>>>>>>>>>> " + " t=" + t);
 			double t_double = Double.parseDouble(t);
 			return t_double;
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -559,49 +558,63 @@ public class Utilities {
 	}
 	static public String cityDataGetCrime(String crimeHtml) {
 
-		String p1 = ".*<strong>Murders</strong>.*";
-		System.out.println("matches: " + crimeHtml.matches(p1));
-		System.out.println("indexOf: " + crimeHtml.indexOf("<strong>Murders</strong>"));
-
-
 		Document doc = Jsoup.parse(crimeHtml);
 		Element body = doc.body();
-		//  System.out.println("body: " + body);
-
-		//crime tabBlue
 
 		Elements ct = body.getElementsByClass("crime");
 		System.out.println("ct: " + ct.text());
 
+		//	Element table = body.select("table[class=crime]").first();
+		//	Element table = body.select("table[class=\"crime\"]").first();
 
-
-	//	Element table = body.select("table[class=crime]").first();
-	//	Element table = body.select("table[class=\"crime\"]").first();
 		Element table = body.select("tr[class=norm2]").first();
+		
+		if (table  == null) return "9999";				// hack 
+
 		System.out.println("table: " + table);
 
 		//			 Iterator<Element> ite = table.select("td[class=norm2]").iterator();
-		//Elements tableRows = table.select("tr");
-	//	Elements tableRows = table.getElementsByClass("tr[class=norm2]");
-	//	Elements tableRows = table.getElementsByClass("td");
+		//  Elements tableRows = table.select("tr");
+		//	Elements tableRows = table.getElementsByClass("tr[class=norm2]");
+		//	Elements tableRows = table.getElementsByClass("td");
+
 		String hack_stat="";
-		
+
 		Elements tableRows = table.select("td");
+		
+		if (tableRows == null) return "9999";				// hack 
+		
 		for (Element tableRow : tableRows){
 			if (tableRow.hasText()){
 				String rowData = tableRow.text();
 				System.out.println("rowData: " + rowData);
 				hack_stat = rowData;						// HACK upon hack - most recent murder number
-				//			                    if(rowData.contains(testString)){
-				//			                            tableRowStrings.add(rowData);
+				//             			if(rowData.contains(testString)){
+				//	               		tableRowStrings.add(rowData);
 			}
 		}
 
-		//			 System.out.println("Value 1: " + ite.next().text());
-		//			 System.out.println("Value 2: " + ite.next().text());
-		//			 
-		// return ct.text();
 		return hack_stat;
+	}
+
+
+
+
+	static public String cityDataCityFromLocation(String location) {
+ 		if ( "08854".equals(location)) return "Society-Hill";
+ 		if ( "10012".equals(location)) return "New-York";
+ 		if ( "44256".equals(location)) return "Medina";
+ 		if ( "44119".equals(location)) return "Cleveland";
+ 		return "Camden";
+	}
+
+
+	static public String cityDataStateFromLocation(String location) {
+ 		if ( "08854".equals(location)) return "New-Jersey";
+ 		if ( "10012".equals(location)) return "New-York";
+ 		if ( "44256".equals(location)) return "Ohio";
+ 		if ( "44119".equals(location)) return "Ohio";
+ 		return "New-Jersey";
 	}
 
 }

@@ -6,8 +6,14 @@ import java.util.List;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,9 +42,16 @@ public class MainPlanActivity extends Activity {
 	TableLayout tl2;
 	String et1;
 	Spinner spinner1, spinner2;
+    ProgressDialog progressDialog;
+    private static final int DIALOG_ALERT = 10;
+	String toast = "";
+
+
+	final Globals g = Globals.getInstance();
+
 
 	public void onResume() {
-		super.onResume(); 				// Always call the superclass method first
+		super.onResume(); // Always call the superclass method first
 		refreshPlansTasks();
 	}
 
@@ -50,10 +63,12 @@ public class MainPlanActivity extends Activity {
 
 		setContentView(R.layout.activity_plan);
 
-		//		TextView text1 = (TextView) findViewById(R.id.textView11);
-		//		text1.setSelected(true);
+		// TextView text1 = (TextView) findViewById(R.id.textView11);
+		// text1.setSelected(true);
 
-
+//		progressDialog = new ProgressDialog(v.getContext());
+		progressDialog = new ProgressDialog( this);
+		
 		addListenerOnSpinnerItemSelection();
 
 		refreshPlansTasks();
@@ -63,7 +78,7 @@ public class MainPlanActivity extends Activity {
 
 			public void onClick(View v) {
 				Log.i(TAG, "===== ENTER btnAdd clicked =====");
-				Globals.currentTaskName = ""; 										// HACK ? clear taskName for add
+				Globals.currentTaskName = ""; // HACK ? clear taskName for add
 				startAddActyActivity();
 			}
 		});
@@ -121,7 +136,7 @@ public class MainPlanActivity extends Activity {
 		btnDWD.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
-				activityDWD();
+				activityDWD2();
 			}
 		});
 
@@ -165,7 +180,7 @@ public class MainPlanActivity extends Activity {
 
 		Button btnInfo = new Button(this);
 		btnInfo.setText("Open");
-		btnInfo.setTextSize(10.0f);
+		btnInfo.setTextSize(20.0f);
 		btnInfo.setTextColor(Color.BLACK);
 
 		btnInfo.setBackgroundResource(R.color.yellow);
@@ -180,7 +195,8 @@ public class MainPlanActivity extends Activity {
 
 				// System.out.println("      s = " + s); // so this IS what we
 
-				Globals.currentTaskName = s; 			// HACK - for now ASSUME row IS A simple task name
+				Globals.currentTaskName = s; // HACK - for now ASSUME row IS A
+												// simple task name
 				startAddActyActivity();
 			}
 		});
@@ -193,13 +209,36 @@ public class MainPlanActivity extends Activity {
 		tl.invalidate(); // This line does not work
 
 		TextView t1 = new TextView(this);
-		t1.setTextSize(16.0f);
+		t1.setTextSize(24.0f);
 		t1.setText(rowData);
 		t1.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
 				LayoutParams.WRAP_CONTENT));
 
 		tr2.addView(t1); // Add Button to row.
 
+		
+		// experimental
+		
+		TextView t2 = new TextView(this);
+		t2.setTextSize(12.0f);
+		
+		
+		Task ta = g.getTask(rowData);				// HACK
+		
+		
+		t2.setText("  / " + ta.location + " / " + ta.urls + " / " + ta.duration + " / " + ta.desc);
+		
+		t2.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,
+				LayoutParams.WRAP_CONTENT));
+		tr2.addView(t2); // Add Button to row.
+
+//		ViewGroup v1 ;
+//		TextView t2 = new TextView(this);
+//		t2.setTextSize(16.0f);
+//		t2.setText(rowData);
+//		t2.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
+//				LayoutParams.WRAP_CONTENT));
+//		v1.addView(t2);
 	}
 
 	public void addListenerOnSpinnerItemSelection() {
@@ -257,7 +296,7 @@ public class MainPlanActivity extends Activity {
 		ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, list);
 		dataAdapter
-		.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner2.setAdapter(dataAdapter);
 
 		int index = list.indexOf(Globals.currentPlanName);
@@ -266,9 +305,9 @@ public class MainPlanActivity extends Activity {
 		} else {
 			spinner2.setSelection(0);
 
-			// set current plan to whatever  at 0
+			// set current plan to whatever at 0
 
-			Globals.currentPlanName = spinner2.getItemAtPosition(0).toString(); 
+			Globals.currentPlanName = spinner2.getItemAtPosition(0).toString();
 		}
 		;
 
@@ -293,21 +332,22 @@ public class MainPlanActivity extends Activity {
 		}
 	}
 
-	public void makeToastShort(String message) {	
-		Toast.makeText(this, message, Toast.LENGTH_SHORT).show();		 
+	public void makeToastShort(String message) {
+		Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
 	}
-	
-	public void makeToast(String message) {	
-		Toast.makeText(this, message, Toast.LENGTH_LONG).show();		 
+
+	public void makeToast(String message) {
+		Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 	}
 
 	private void moveActivityUp() {
 		int selectedRow = -1;
 
-		if (nbrSelectedRows() != 1){ 
+		if (nbrSelectedRows() != 1) {
 			makeToastShort("You must move exactly one activity at a time in this version.");
 			return;
-		};
+		}
+		;
 
 		Globals g = Globals.getInstance();
 		ArrayList<Task> tal = g.getPlanTaskAL(g.currentPlanName);
@@ -320,16 +360,17 @@ public class MainPlanActivity extends Activity {
 				if (c.isChecked()) {
 					System.out.println("      row checked, i=" + i);
 					selectedRow = i;
-					break; 														// SIMPLIFICATION - take first one found
+					break; // SIMPLIFICATION - take first one found
 				}
 				i++;
 			}
 		}
 
-		if (selectedRow == 0){ 
+		if (selectedRow == 0) {
 			makeToastShort("You are at the beginning, can not move up");
 			return;
-		};
+		}
+		;
 
 		Task t = tal.get(selectedRow - 1);
 		tal.set(selectedRow - 1, tal.get(selectedRow));
@@ -346,7 +387,7 @@ public class MainPlanActivity extends Activity {
 				if (i == (selectedRow - 1)) {
 					c.setChecked(true);
 					System.out.println("      row set to checked, i=" + i);
-					break; 															// HACK - take first one found
+					break; // HACK - take first one found
 				}
 				i++;
 			}
@@ -357,10 +398,11 @@ public class MainPlanActivity extends Activity {
 		int i = 0;
 		int selectedRow = -1;
 
-		if (nbrSelectedRows() != 1){ 
+		if (nbrSelectedRows() != 1) {
 			makeToastShort("You must move exactly one activity at a time in this version.");
 			return;
-		};
+		}
+		;
 
 		Globals g = Globals.getInstance();
 		ArrayList<Task> tal = g.getPlanTaskAL(g.currentPlanName);
@@ -371,7 +413,7 @@ public class MainPlanActivity extends Activity {
 				if (c.isChecked()) {
 					System.out.println("      row is checked, i=" + i);
 					selectedRow = i;
-					break; 														// HACK - take first one found
+					break; // HACK - take first one found
 				}
 				i++;
 			}
@@ -379,10 +421,11 @@ public class MainPlanActivity extends Activity {
 
 		System.out.println("        selectedRow =  " + selectedRow);
 
-		if (selectedRow == tl2.getChildCount()-1){ 
+		if (selectedRow == tl2.getChildCount() - 1) {
 			makeToastShort("You are at the end, can not move down");
 			return;
-		};
+		}
+		;
 
 		Task t = tal.get(selectedRow + 1);
 		tal.set(selectedRow + 1, tal.get(selectedRow));
@@ -399,13 +442,12 @@ public class MainPlanActivity extends Activity {
 				if (i == (selectedRow + 1)) {
 					c.setChecked(true);
 					System.out.println("      row set ot checked, i=" + i);
-					break; 													// HACK - take first one found
+					break; // HACK - take first one found
 				}
 				i++;
 			}
 		}
 	}
-
 
 	private int nbrSelectedRows() {
 		int r = 0;
@@ -426,123 +468,329 @@ public class MainPlanActivity extends Activity {
 		return r;
 	}
 
-	private void activityDWD() {
-		int selectedRow = -1;
+//	private void activityDWD() {
+//		int selectedRow = -1;
+//
+//		if (nbrSelectedRows() == 0) {
+//			makeToastShort("You must select one or more activities to use DWD.");
+//			return;
+//		}
+//		;
+//
+//		Globals g = Globals.getInstance();
+//		ArrayList<Task> tal = g.getPlanTaskAL(g.currentPlanName);
+//		int i = 0;
+//
+//		while (i < tl2.getChildCount()) {
+//			if (tl2.getChildAt(i) != null) {
+//				View row = tl2.getChildAt(i);
+//				CheckBox c = (CheckBox) ((ViewGroup) row).getChildAt(0);
+//				if (c.isChecked()) {
+//					System.out.println("      row checked, i=" + i);
+//					selectedRow = i;
+//					break; // SIMPLIFICATION - take first one found
+//				}
+//				i++;
+//			}
+//		}
+//
+//		if (selectedRow == -1) {
+//			makeToastShort("You must select an activity to use DWD.");
+//			return;
+//		}
+//		;
+//
+//		String toast = "";
+//
+//		Task t = tal.get(selectedRow);
+//		String location = t.location;
+// 
+//		new MyTask().execute(toast, location);
+// 
+//	}
 
-		if (nbrSelectedRows() != 1){ 
-			makeToastShort("You must move exactly one activity at a time in this version.");
-			return;
-		};
+	private String calcDanger(String location) {
+		//
+		// DWD -- D = Danger
+		//
+		String toast = "";
 
-		Globals g = Globals.getInstance();
-		ArrayList<Task> tal = g.getPlanTaskAL(g.currentPlanName);
-		int i = 0;
+		// String data = Utilities.callCityData("Camden", "New-Jersey");
+		
+		String city = Utilities.cityDataCityFromLocation(location);
+		String state = Utilities.cityDataStateFromLocation(location);
 
-		while (i < tl2.getChildCount()) {
-			if (tl2.getChildAt(i) != null) {
-				View row = tl2.getChildAt(i);
-				CheckBox c = (CheckBox) ((ViewGroup) row).getChildAt(0);
-				if (c.isChecked()) {
-					System.out.println("      row checked, i=" + i);
-					selectedRow = i;
-					break; 														// SIMPLIFICATION - take first one found
-				}
-				i++;
-			}
+		String data = Utilities.callCityData(city, state);
+		String cd = Utilities.cityDataGetCrime(data);
+
+		System.out.println(" crime data: " + cd);
+
+		toast += "At location " + location + " murders per 100k = " + cd + "\n";
+		return toast;
+	}
+
+	private String calcWeather(String location) {
+		//
+		// DWD -- W = Weather
+		//
+		String toast = "";
+		System.out.println("Weather for location=" + location);
+		
+		String dwcoRequests = Globals.dwcoRequests;
+		System.out.println("MyTask2, dwcoRequests=" + dwcoRequests);
+		String dwcoReplies = Globals.dwcoReplies;
+		System.out.println("MyTask2, dwcoReplies=" + dwcoReplies);
+		
+		try {
+ 			JSONObject o = Utilities.callWeather(location); 
+  
+			if (dwcoReplies.contains("W")) System.out.println("      selected activity weather="
+					+ o.toString(5));
+			
+			double tempf = Utilities.weatherGetTempF(o);
+			
+			toast += "Current temperature at " + location + ", degrees Fahrenheit = " + tempf
+					+ "\n";
+			
+		} catch (Exception e) {
+			System.err.printf("Exception: %s\n", e.getMessage());
+			e.printStackTrace();
 		}
+		return toast;
+	}
 
-		if (selectedRow == -1){ 
-			makeToastShort("You must select an activity to use DWD.");
-			return;
-		};
-		
-		String toast="";
-		
-		Task t = tal.get(selectedRow);
-		String location = t.location;
-
-	
+	private String calcDistance(String locationfrom, String locationto) {
 		//
 		// DWD -- D = Distance
 		//
-		
+		String toast = "";
 		JSONObject jsonObj = null;
 		try {
-//			jsonObj = new JSONObject(Utilities.callDirections(
-//					"40.7251,-73.9943", "40.7227,-73.9920");
-//		
-			jsonObj =  Utilities.callDirections(location, "10012");
-			
-			System.out.println(TAG +   " result="
-					+ jsonObj.toString(5));
-			
+			//
+			// callDirections("40.7251,-73.9943", "40.7227,-73.9920");
+			// callDirections("08854", "10012");
+			//
+			jsonObj = Utilities.callDirections(locationfrom, locationto);
+
+			// System.out.println(TAG + " result="
+			// + jsonObj.toString(5));
+
 			int meter = Utilities.directionsGetDistance(jsonObj);
 			int seconds = Utilities.directionsGetDuration(jsonObj);
-			  double miles = meter * 0.00062137119;
-			  System.out.println("Miles: " + miles);
-			  System.out.println("seconds: " + seconds);
-			  System.out.println("minutes: " + seconds/60);
-				
-			  toast += "Distance to 10012   activity, miles = " + miles + "\n";
-			  toast += "Time to 10012   activity, minutes = " + seconds/60 + "\n";
+			double miles = meter * 0.00062137119;
+
+			System.out.println("Miles: " + miles);
+			System.out.println("seconds: " + seconds);
+			System.out.println("minutes: " + seconds / 60);
+
+			toast += "Distance from " + locationfrom + " to " + locationto
+					+ ", miles = " + miles + "\n";
+			toast += "Time from " + locationfrom + " to " + locationto
+					+ ", minutes = " + seconds / 60 + "\n";
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		;
-		
-		//
-		// DWD -- W = Weather
-		//
-	
-		System.out.println("      selected activity location=" + location);
-		try {
-			JSONObject o = Utilities.callWeather("NJ", "08854"); // HARD CODE HACK
-			System.out.println("      selected activity weather="
-					+ o.toString(5));
-			double tempf = Utilities.weatherGetTempF(o);
-			toast += "Current temperature, degrees Fahrenheit = " + tempf + "\n";
-		} catch (Exception e) {
-			System.err.printf("Exception: %s\n", e.getMessage());
-			e.printStackTrace();
-		}
-		
-		//
-		// DWD -- D = Danger
-		//
-		
-		String data = Utilities.callCityData("Camden", "New-Jersey");
-		String cd = Utilities.cityDataGetCrime(data);
-		
-		System.out.println(" crime data: " + cd);
-		
-		toast += "Most recent murder rate per 100k = " + cd + "\n";
-
-		
-		// tell user whats what for now
-		
-		makeToast(toast);
-
-		
-		//		tal.set(selectedRow - 1, tal.get(selectedRow));
-		//		tal.set(selectedRow, t);
-		//	
-		//		refreshTasks();
-		//	
-		//		i = 0;
-		//	
-		//		while (i < tl2.getChildCount()) {
-		//			if (tl2.getChildAt(i) != null) {
-		//				View row = tl2.getChildAt(i);
-		//				CheckBox c = (CheckBox) ((ViewGroup) row).getChildAt(0);
-		//				if (i == (selectedRow - 1)) {
-		//					c.setChecked(true);
-		//					System.out.println("      row set to checked, i=" + i);
-		//					break; 															// HACK - take first one found
-		//				}
-		//				i++;
-		//			}
-		//		}
+		return toast;
 	}
 
+	private void activityDWD2() {
+		int selectedRow = -1;
+	//	String toast = "";
+
+		String location = "X";
+ 
+		new MyTask2().execute(toast, location);
+
+	}
+
+//	private class MyTask extends AsyncTask<String, Integer, String> {
+//		String toast = "";
+//
+//		protected String doInBackground(String... in) {
+// 
+//			String location = in[1];
+//
+// 			publishProgress(1);
+//
+//			toast += calcDistance(location, "10012");
+//			publishProgress(30);
+//
+//			toast += calcWeather(location);
+//			publishProgress(60);
+//
+//			toast += calcDanger(location);
+//			publishProgress(90);
+//
+//			// totalSize += Downloader.downloadFile(urls[i]);
+//			// publishProgress((int) ((i / (float) count) * 100));
+//			// // Escape early if cancel() is called
+//
+//			if (isCancelled())
+//				return "canceled";
+//			// }
+//			return toast;
+//		}
+//
+//		protected void onProgressUpdate(Integer... progress) {
+//			// setProgressPercent(progress[0]);
+//			System.out.println("      MyTask, progress =" + progress[0]);
+//		//	makeToastShort("      MyTask, progress =" + progress[0]);
+//			progressDialog.setProgress(progress[0]);
+//
+//		}
+//
+//		protected void onPostExecute(String result) {
+//			// showDialog("Downloaded " + result + " bytes");
+//			// makeToast("onPostExecute, result=" + result);
+//			makeToast("onPostExecute, toast=" + toast);
+//			System.out.println("onPostExecute, toast=" + toast);
+//
+//		}
+//	}
+
+	private class MyTask2 extends AsyncTask<String, Integer, String> {
+		//String toast = "";
+		String dwco;
+		 @Override
+         protected void onPreExecute()
+         {
+ 
+             progressDialog.setCancelable(true);
+             progressDialog.setMessage("Updating distances, weather, demographics, etc for selected activities...");
+             progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+             progressDialog.setProgress(0);
+             progressDialog.setMax(100);
+             progressDialog.show();
+  
+         }
+
+		protected String doInBackground(String... in) {
+	 
+			String location = in[1];
+			Task tNextActivity;
+			int nbrSelectedRows = nbrSelectedRows();
+			int nbrRowsProcessed=0;
+ 
+			int selectedRow = -1;
+			toast="";							// clear 
+
+			if (nbrSelectedRows == 0) {
+				makeToastShort("You must select one or more activities to use DWD.");
+				return "canceled";
+			}
+			;
+
+			dwco = Globals.dwco;
+			System.out.println("MyTask2, dwco=" + dwco);
+ 
+			Globals g = Globals.getInstance();
+			ArrayList<Task> tal = g.getPlanTaskAL(g.currentPlanName);
+			int i = 0;
+ 
+			while (i < tl2.getChildCount()) {
+				if (tl2.getChildAt(i) != null) {
+					View row = tl2.getChildAt(i);
+					CheckBox c = (CheckBox) ((ViewGroup) row).getChildAt(0);
+					if (c.isChecked()) {
+						int n = tl2.getChildCount() - 1;
+						nbrRowsProcessed++;
+						
+						int percent1 = (int)(((float)nbrRowsProcessed/(float)nbrSelectedRows)*100);
+
+						System.out.println("    >>>>>>>>>>>>>>>>>>>>>>>> row checked, i=" + i);
+						System.out.println("    >>>>>>>>>>>>>>>>>>>>>>>> n=" + n);
+						System.out.println("    >>>>>>>>>>>>>>>>>>>>>>>> percent1=" + percent1 );
+
+						selectedRow = i;
+						Task t = tal.get(selectedRow);
+						if (i < n) {
+							tNextActivity = tal.get(selectedRow + 1);
+						} else {
+					//		makeToastShort("Calculating distance for last activity to first activity.");
+							tNextActivity = tal.get(0);
+						}
+						;
+
+						String locationfrom = t.location;
+						String locationto = tNextActivity.location;
+
+						System.out.println("     from=" + locationfrom + " to="
+								+ locationto);
+						 publishProgress(percent1);
+						  
+						  if (dwco.contains("D")) toast += calcDistance( locationfrom, locationto);
+						  publishProgress(percent1+30);
+						  
+						  if (dwco.contains("W")) toast += calcWeather( locationfrom);
+						  publishProgress(percent1+60);
+						  
+						  if (dwco.contains("C")) toast += calcDanger( locationfrom);
+						  publishProgress(percent1+90);
+						 
+						// // Escape early if cancel() is called
+					}
+					i++;
+				}
+			}
+//
+//			if (selectedRow == -1) {
+//				makeToastShort("You must select one or more activities to use DWD.");
+//				return "error";
+//			}
+//			;
+
+			if (isCancelled())
+				return "canceled";
+			return toast;
+		}
+
+		protected void onProgressUpdate(Integer... progress) {
+			System.out.println("      MyTask2, progress =" + progress[0]);
+			progressDialog.setProgress(progress[0]);
+
+		}
+
+		@SuppressWarnings("deprecation")
+		protected void onPostExecute(String result) {
+		  	
+            progressDialog.dismiss();
+
+			makeToast( toast);
+			System.out.println("onPostExecute, toast=" + toast);
+			showDialog(DIALOG_ALERT);
+		} 
+		}
+	
+	@Override
+	protected Dialog onCreateDialog(int id) {
+	  switch (id) {
+	    case DIALOG_ALERT:
+	    // Create out AlterDialog
+	    Builder builder = new AlertDialog.Builder(this);
+	    builder.setMessage("Your Results:\n" + toast);
+	    builder.setCancelable(true);
+	    builder.setPositiveButton("OK", new OkOnClickListener());
+	  //  builder.setNegativeButton("No, no", new CancelOnClickListener());
+	    AlertDialog dialog = builder.create();
+	    dialog.show();
+	   }
+	  return super.onCreateDialog(id);
+	}
+
+	private final class CancelOnClickListener implements
+	  DialogInterface.OnClickListener {
+	  public void onClick(DialogInterface dialog, int which) {
+	  Toast.makeText(getApplicationContext(), "Activity will continue",
+	    Toast.LENGTH_LONG).show();
+	  }
+	}
+
+	private final class OkOnClickListener implements
+	    DialogInterface.OnClickListener {
+	  public void onClick(DialogInterface dialog, int which) {
+	//  AlertExampleActivity.this.finish();
+	  }
+	} 
 }

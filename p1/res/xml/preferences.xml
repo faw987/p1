@@ -17,5 +17,31 @@
             android:summary="JSON of users tasks."
             android:title="Tasks 1" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="Debug Category" >
+        <EditTextPreference
+            android:name="Log http requests/responses"
+            android:defaultValue="false"
+            android:key="log_http"
+            android:summary="Log http."
+            android:title="Log http" />
+        <EditTextPreference
+            android:name="Activity Distance, Weather, Crime, etc."
+            android:defaultValue="DWC"
+            android:key="dwco"
+            android:summary="Distance, Weather, Crime."
+            android:title="dwco" />
+        <EditTextPreference
+            android:name="Log requests Distance, Weather, Crime, etc."
+            android:defaultValue="DWC"
+            android:key="dwcoRequest"
+            android:summary="Request Distance, Weather, Crime."
+            android:title="dwcoRequest" />
+        <EditTextPreference
+            android:name="Log replies Distance, Weather, Crime, etc."
+            android:defaultValue="DWC"
+            android:key="dwcoReplies"
+            android:summary="Replies Distance, Weather, Crime."
+            android:title="dwcoReplies" />
+    </PreferenceCategory>
 
 </PreferenceScreen>

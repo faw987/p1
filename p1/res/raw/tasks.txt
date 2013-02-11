@@ -5,8 +5,8 @@
          "plan":"plan01",
          "desc":"Desc of task 01",
          "duration":"10",
-         "urls":"http://www.metmuseum.org/",         
-         "location":"40.77830 -73.96299",         
+         "urls":"http://www.metmuseum.org/",
+         "location":"40.77830 -73.96299",
          "notes":{
             "notesitem":[
                {
@@ -26,9 +26,9 @@
          "name":"task02",
          "plan":"plan01",
          "desc":"Desc of task 02",
-         "duration":"20",   
-         "urls":"http://www.rockefellercenter.com/",      
-         "location":"40.75864 -73.98133",         
+         "duration":"20",
+         "urls":"http://www.rockefellercenter.com/",
+         "location":"40.75864 -73.98133",
          "notes":{
             "notesitem":[
                {
@@ -41,12 +41,78 @@
          }
       },
       {
-         "name":"task03",
+         "name":"task03a",
          "plan":"plan02",
          "desc":"Desc of task 03",
-         "duration":"30",        
-         "urls":"", 
-         "location":"",                          
+         "duration":"30",
+         "urls":"",
+         "location":"08854",
+         "notes":{
+            "notesitem":[
+               {
+                  "value":"New",
+                  "person":"frank"
+               },
+               {
+                  "value":"Open"
+               },
+               {
+                  "value":"Close"
+               }
+            ]
+         }
+      },
+      {
+         "name":"task03b",
+         "plan":"plan02",
+         "desc":"Desc of task 03",
+         "duration":"30",
+         "urls":"",
+         "location":"10012",
+         "notes":{
+            "notesitem":[
+               {
+                  "value":"New",
+                  "person":"frank"
+               },
+               {
+                  "value":"Open"
+               },
+               {
+                  "value":"Close"
+               }
+            ]
+         }
+      },
+      {
+         "name":"task03c",
+         "plan":"plan02",
+         "desc":"Desc of task 03",
+         "duration":"30",
+         "urls":"",
+         "location":"10014",
+         "notes":{
+            "notesitem":[
+               {
+                  "value":"New",
+                  "person":"frank"
+               },
+               {
+                  "value":"Open"
+               },
+               {
+                  "value":"Close"
+               }
+            ]
+         }
+      },
+      {
+         "name":"task03d",
+         "plan":"plan02",
+         "desc":"Desc of task 03",
+         "duration":"30",
+         "urls":"",
+         "location":"08854",
          "notes":{
             "notesitem":[
                {
@@ -68,7 +134,7 @@
          "desc":"Desc of task 04",
          "duration":"40",
          "urls":"",
-         "location":"",         
+         "location":"",
          "notes":{
             "notesitem":[
                {

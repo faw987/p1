@@ -9,14 +9,18 @@ import android.app.Application;
 import android.util.Log;
 
 public class Globals extends Application {
-	static String delay1;
+
+	static String dwco;					// if D then Distance, if W then weather if C then crime demogrphics
+										// expect to expand with Yelp FOursquare etc.
+	static String dwcoRequests;					// if D then Distance, if W then weather if C then crime demogrphics
+	static String dwcoReplies;					// if D then Distance, if W then weather if C then crime demogrphics
+
 	private static Globals sInstance;
 	static ArrayList<Plan> plans = new ArrayList<Plan>();
 	static ArrayList<Task> tasks = new ArrayList<Task>();
 	static String currentPlanName = "";
 	static String currentTaskName = "";		// HACK - is this unique enough ??
-	// static View planView ;
-
+ 
 	HashMap<String, Plan> planMap = new HashMap<String, Plan>();
 	HashMap<String, Task> taskMap = new HashMap<String, Task>();
 

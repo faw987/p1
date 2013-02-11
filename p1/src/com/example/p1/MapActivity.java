@@ -71,8 +71,15 @@ public class MapActivity extends Activity {
 
 		if (slatlng == null)
 			return null;
-
-		if (slatlng.matches("[0123456789+-. ]*")) {
+		if (slatlng.matches("[0123456789][0123456789][0123456789][0123456789][0123456789]")) {
+			//String zip = Integer.parseInt(slatlng);
+		//	System.out.println(TAG + " -- zip=" + zip);
+ 			latlng = new LatLng(1,1 );
+ 			latlng = geoCodeIt(latlng, slatlng);
+		}
+		else if (slatlng.matches("[0123456789+-. ]*")) {
+			
+		
 
 			// Boolean looksLikeLatLon=true;
 			// for (int curs=slatlng.length()-1;curs>=0;curs--){
@@ -82,41 +89,51 @@ public class MapActivity extends Activity {
 			String[] splits = slatlng.split(" ");
 			lat = Float.parseFloat(splits[0]);
 			lng = Float.parseFloat(splits[1]);
-	
+			System.out.println(TAG + " -- lat=" + lat);
+			System.out.println(TAG + " -- lng=" + lng);
+			latlng = new LatLng(new Double(lat), new Double(lng));
 		} else {
-			try {
-				Geocoder gc = new Geocoder(this, Locale.US); // create new
-																// geocoder
-																// instance
-				List<Address> foundAdresses = gc.getFromLocationName(
-						slatlng, 3); // Search
-																		// addresses
-				for (Address a : foundAdresses) {
-					System.out.println(">>>>>>>>>>>>>>>>  a=" + a);
-					System.out
-							.println(">>>>>>>>>>>>>>>>  a=" + a.getLatitude());
-					System.out.println(">>>>>>>>>>>>>>>>  a="
-							+ a.getLongitude());
-					lat =  new Float(a.getLatitude()) ;
-					lng = new Float(a.getLongitude());
-					
-					String adminArea = a.getAdminArea();
-					String postalCode = a.getPostalCode();
-					System.out.println(">>>>>>>>>>>>>>>>  adminArea=" + adminArea);
-					System.out.println(">>>>>>>>>>>>>>>>  postalCode=" + postalCode);
-
-				}
-				;
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			latlng = geoCodeIt(latlng, slatlng);
 		}
 		;
 
-		System.out.println(TAG + " -- lat=" + lat);
-		System.out.println(TAG + " -- lng=" + lng);
-		latlng = new LatLng(new Double(lat), new Double(lng));
+		System.out.println(TAG + " -- latlng=" + latlng);
 
+
+		return latlng;
+	}
+
+	private LatLng geoCodeIt(LatLng latlng, String slatlng) {
+		float lat;
+		float lng;
+		try {
+			Geocoder gc = new Geocoder(this, Locale.US); // create new
+															// geocoder
+															// instance
+			List<Address> foundAdresses = gc.getFromLocationName(
+					slatlng, 3); // Search
+																	// addresses
+			for (Address a : foundAdresses) {
+				System.out.println(">>>>>>>>>>>>>>>>  a=" + a);
+				System.out
+						.println(">>>>>>>>>>>>>>>>  a=" + a.getLatitude());
+				System.out.println(">>>>>>>>>>>>>>>>  a="
+						+ a.getLongitude());
+				lat =  new Float(a.getLatitude()) ;
+				lng = new Float(a.getLongitude());
+				System.out.println(TAG + " -- lat=" + lat);
+				System.out.println(TAG + " -- lng=" + lng);
+				latlng = new LatLng(new Double(lat), new Double(lng));
+				String adminArea = a.getAdminArea();
+				String postalCode = a.getPostalCode();
+				System.out.println(">>>>>>>>>>>>>>>>  adminArea=" + adminArea);
+				System.out.println(">>>>>>>>>>>>>>>>  postalCode=" + postalCode);
+
+			}
+			;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return latlng;
 	}
 }

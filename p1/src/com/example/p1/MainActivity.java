@@ -20,6 +20,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -32,6 +33,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -142,7 +144,22 @@ public class MainActivity extends Activity {
 				startPlan();
 			}
 		});
+		
+		SharedPreferences sharedPrefs = PreferenceManager
+				.getDefaultSharedPreferences(getApplicationContext());
 
+		String dwco = sharedPrefs.getString("dwco", "");
+		Globals.dwco = dwco;
+		System.out.println(TAG + " setting Globals.dwco = " + dwco);
+
+		String dwcoRequests = sharedPrefs.getString("dwcoRequests", "");
+		Globals.dwcoRequests = dwcoRequests;
+		System.out.println(TAG + " setting Globals.dwco = " + dwcoRequests);
+		
+		String dwcoReplies = sharedPrefs.getString("dwcoReplies", "");
+		Globals.dwcoReplies = dwcoReplies;
+		System.out.println(TAG + " setting Globals.dwcoReplies = " + dwcoReplies);
+		
 		Log.i(TAG, "Exiting MainActivity.");
 		System.out.println(TAG + " -- Exiting MainActivity.");
 
@@ -238,15 +255,16 @@ public class MainActivity extends Activity {
 //			}
 //			;
 
-			
-			String data = Utilities.callCityData("Camden", "New-Jersey");
-			
-			 //  System.out.println("data: " + data);
-			
-			String cd = Utilities.cityDataGetCrime(data);
-			
-			System.out.println(" crime data: " + cd);
+//			
+//			String data = Utilities.callCityData("Camden", "New-Jersey");
+//			
+//			 //  System.out.println("data: " + data);
+//			
+//			String cd = Utilities.cityDataGetCrime(data);
+//			
+//			System.out.println(" crime data: " + cd);
 
+			Task.generateFieldCode();
 			
 			break;
 		}
