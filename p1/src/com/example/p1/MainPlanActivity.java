@@ -220,7 +220,7 @@ public class MainPlanActivity extends Activity {
 		// experimental
 		
 		TextView t2 = new TextView(this);
-		t2.setTextSize(12.0f);
+		t2.setTextSize(16.0f);
 		
 		
 		Task ta = g.getTask(rowData);				// HACK
@@ -243,6 +243,7 @@ public class MainPlanActivity extends Activity {
 
 	public void addListenerOnSpinnerItemSelection() {
 		spinner1 = (Spinner) findViewById(R.id.planslist);
+
 		spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
 	}
 
@@ -295,8 +296,14 @@ public class MainPlanActivity extends Activity {
 
 		ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, list);
+//		dataAdapter
+//				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		
 		dataAdapter
-				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		.setDropDownViewResource(R.layout.spinner_layout);
+		
+		//spinner2.setDropDownViewResource(R.layout.spinner_layout);
+
 		spinner2.setAdapter(dataAdapter);
 
 		int index = list.indexOf(Globals.currentPlanName);
@@ -559,6 +566,45 @@ public class MainPlanActivity extends Activity {
 		return toast;
 	}
 
+	private String calcWeatherHourly(String location) {
+		//
+		// DWD -- W = Weather
+		//
+		String toast = "";
+		System.out.println("Weather for location=" + location);
+		
+		String dwcoRequests = Globals.dwcoRequests;
+		System.out.println("calcWeatherHourly, dwcoRequests=" + dwcoRequests);
+		String dwcoReplies = Globals.dwcoReplies;
+		System.out.println("calcWeatherHourly, dwcoReplies=" + dwcoReplies);
+
+		
+		try {
+ 			JSONObject o = Utilities.callWeatherHourly(location); 
+ 			// System.out.println("calcWeatherHourly, o=" + o.toString(5));
+
+ 			Globals g = Globals.getInstance();
+
+ 			//Utilities.hourlyWeatherGetFeelsLike(o);
+ 		//	g 			g.addHourlyForecast(location,"fcast");
+ 			toast=g.addHourlyFeelsLike(location,o);
+ 			System.out.println("calcWeatherHourly, toast=" + toast);
+
+//			if (dwcoReplies.contains("W")) System.out.println("      selected activity weather="
+//					+ o.toString(5));
+//			
+//			double tempf = Utilities.weatherGetTempF(o);
+//			
+//			toast += "Current temperature at " + location + ", degrees Fahrenheit = " + tempf
+//					+ "\n";
+			
+		} catch (Exception e) {
+			System.err.printf("Exception: %s\n", e.getMessage());
+			e.printStackTrace();
+		}
+		return toast;
+	}
+	
 	private String calcDistance(String locationfrom, String locationto) {
 		//
 		// DWD -- D = Distance
@@ -723,7 +769,8 @@ public class MainPlanActivity extends Activity {
 						  if (dwco.contains("D")) toast += calcDistance( locationfrom, locationto);
 						  publishProgress(percent1+30);
 						  
-						  if (dwco.contains("W")) toast += calcWeather( locationfrom);
+					///	  if (dwco.contains("W")) toast += calcWeather( locationfrom);
+						  if (dwco.contains("W")) toast += calcWeatherHourly( locationfrom);
 						  publishProgress(percent1+60);
 						  
 						  if (dwco.contains("C")) toast += calcDanger( locationfrom);

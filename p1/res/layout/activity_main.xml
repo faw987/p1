@@ -92,7 +92,7 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="200sp"
+        android:layout_width="300sp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView10"
@@ -104,7 +104,7 @@
         android:focusableInTouchMode="true"
         android:marqueeRepeatLimit="marquee_forever"
         android:singleLine="true"
-        android:text="Your Personal Activity Planning Assistant"
+        android:text="Your Personal Activity Planning Assistant . . . . . . . "
         android:textColor="#00FF7F"
         android:textSize="24sp" />
 

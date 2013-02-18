@@ -108,6 +108,9 @@ public class Utilities {
 				jo.put("name", x1.name);
 				jo.put("desc", x1.desc);
 				jo.put("plan", x1.plan);
+				
+				System.out.println("\n\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM   x1.plan=" +  x1.plan + "\n\n");
+
 				jo.put("duration", x1.duration);
 				jo.put("urls", x1.urls);
 				jo.put("location", x1.location);
@@ -462,6 +465,8 @@ public class Utilities {
 
 		String url="http://api.wunderground.com/api/9b834783bd345d99/conditions/q/"  + zip + ".json";
 
+	//	http://api.wunderground.com/api/9b834783bd345d99/hourly/q/08854.json
+		
 		String result = Utilities.callHttp(url);
 
 		JSONObject r = null;
@@ -475,6 +480,22 @@ public class Utilities {
 
 	}
 
+	static public JSONObject callWeatherHourly( String zip) {
+
+		String url="http://api.wunderground.com/api/9b834783bd345d99/hourly/q/"  + zip + ".json";
+		
+		String result = Utilities.callHttp(url);
+
+		JSONObject r = null;
+		try {
+			r = new JSONObject(result);
+		} catch (Exception e) {
+			System.err.printf("Exception: %s\n", e.getMessage());
+			e.printStackTrace();
+		}
+		return r;
+
+	}
 
 
 	static public String callCityData(String city, String state) {
@@ -556,6 +577,33 @@ public class Utilities {
 
 		return 0; // HACK
 	}
+	
+	static public String hourlyWeatherGetFeelsLike(JSONObject weatherHourly) {
+
+			String r="";
+		// TOTAL HACK HACK just a cut and paste and edit 
+//		"year": "2013","mon": "2","mon_padded": "02","mon_abbrev": "Feb","mday": "17","mday_padded": "17","yday": "47"
+
+		try {
+
+			JSONArray hourlyf = weatherHourly.getJSONArray("hourly_forecast");
+ 			for (int i = 0; i < hourlyf.length(); i++) {
+ 				String t=  hourlyf.getJSONObject(i).getJSONObject("feelslike").getString("english").toString();
+ 				String h=  hourlyf.getJSONObject(i).getJSONObject("FCTTIME").getString("hour").toString();
+ 				String mon_padded=  hourlyf.getJSONObject(i).getJSONObject("FCTTIME").getString("mon_padded").toString();
+ 				String mday_padded=  hourlyf.getJSONObject(i).getJSONObject("FCTTIME").getString("mday_padded").toString();
+ 				System.out.println("hourlyWeatherGetFeelsLike --  h=" + h + "  t=" + t + " mon_padded=" + mon_padded + " mday_padded=" + mday_padded);
+ 				String reading = mon_padded + "/" + mday_padded + "@" + h + "=" + t + "\n" ;
+ 				r += reading;
+ 			}
+			return r ;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return r;
+	}
+	
 	static public String cityDataGetCrime(String crimeHtml) {
 
 		Document doc = Jsoup.parse(crimeHtml);

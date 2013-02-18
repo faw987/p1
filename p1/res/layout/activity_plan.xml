@@ -15,7 +15,7 @@
             style="@style/App_EditTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Adventure Planner"
+            android:text="Activity Planner"
             android:textSize="42px" />
     </LinearLayout>
 
