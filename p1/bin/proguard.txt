@@ -1,0 +1,40 @@
+# view AndroidManifest.xml #generated:71
+-keep class com.example.p1.AddActyActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:63
+-keep class com.example.p1.AddPlanActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:93
+-keep class com.example.p1.DriveActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:29
+# view AndroidManifest.xml #generated:46
+-keep class com.example.p1.Globals { <init>(...); }
+
+# view AndroidManifest.xml #generated:37
+-keep class com.example.p1.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:58
+-keep class com.example.p1.MainPlanActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:99
+-keep class com.example.p1.MapActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:79
+-keep class com.example.p1.PlayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:87
+-keep class com.example.p1.Preferences { <init>(...); }
+
+# view AndroidManifest.xml #generated:90
+-keep class com.example.p1.ShowSettingsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:50
+-keep class com.example.p1.VendActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:96
+-keep class com.example.p1.WebHelperActivity { <init>(...); }
+
+# view res/layout/activity_map.xml #generated:7
+-keep class com.google.android.gms.maps.MapFragment { <init>(...); }
+
