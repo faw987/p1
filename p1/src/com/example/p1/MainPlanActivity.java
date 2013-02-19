@@ -583,11 +583,11 @@ public class MainPlanActivity extends Activity {
  			JSONObject o = Utilities.callWeatherHourly(location); 
  			// System.out.println("calcWeatherHourly, o=" + o.toString(5));
 
- 			Globals g = Globals.getInstance();
+ 			// Globals g = Globals.getInstance();
 
  			//Utilities.hourlyWeatherGetFeelsLike(o);
  		//	g 			g.addHourlyForecast(location,"fcast");
- 			toast=g.addHourlyFeelsLike(location,o);
+ 			toast=WeatherInfo.addHourlyFeelsLike(location,o);
  			System.out.println("calcWeatherHourly, toast=" + toast);
 
 //			if (dwcoReplies.contains("W")) System.out.println("      selected activity weather="
