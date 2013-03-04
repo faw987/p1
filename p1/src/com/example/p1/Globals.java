@@ -8,7 +8,7 @@ import java.util.HashMap;
 import android.app.Application;
 import android.util.Log;
 
-import com.example.p1.WeatherInfo.LocationForcastInfo;
+//import com.example.p1.WeatherInfo.LocationForcastInfo;
 
 public class Globals extends Application {
 
@@ -29,7 +29,6 @@ public class Globals extends Application {
 	static HashMap<String, Plan> planMap = new HashMap<String, Plan>();
 	static HashMap<String, Task> taskMap = new HashMap<String, Task>();
 
-	static HashMap<String, LocationForcastInfo> locationForcasts = new HashMap<String, LocationForcastInfo>();
 
 
 

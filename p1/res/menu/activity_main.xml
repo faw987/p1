@@ -30,6 +30,23 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="Preferences"/>
+     <item
+        android:id="@+id/dumpForecasts"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Dump Forecasts"/>
+     
+      <item
+        android:id="@+id/presentForecasts"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Present Forecasts"/>
+     
+     <item
+        android:id="@+id/reference1"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Ref1"/>
       <item
         android:id="@+id/x1"
         android:orderInCategory="100"

@@ -26,6 +26,12 @@
 # view AndroidManifest.xml #generated:87
 -keep class com.example.p1.Preferences { <init>(...); }
 
+# view AndroidManifest.xml #generated:102
+-keep class com.example.p1.PresentForecastsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:105
+-keep class com.example.p1.Ref1Activity { <init>(...); }
+
 # view AndroidManifest.xml #generated:90
 -keep class com.example.p1.ShowSettingsActivity { <init>(...); }
 

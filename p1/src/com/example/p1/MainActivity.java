@@ -4,27 +4,25 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import org.json.JSONObject;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.location.Criteria;
 import android.location.Location;
@@ -48,6 +46,9 @@ public class MainActivity extends Activity {
 
 	private final String TAG = "MainActivity";
 	private final String SPLAT = " ->->->->->->->->->-> ";
+	private static final int DIALOG_ALERT = 20;
+
+	String toast = "";
 
 	public void onRestart(Bundle savedInstanceState) {
 
@@ -144,7 +145,7 @@ public class MainActivity extends Activity {
 				startPlan();
 			}
 		});
-		
+
 		SharedPreferences sharedPrefs = PreferenceManager
 				.getDefaultSharedPreferences(getApplicationContext());
 
@@ -155,11 +156,11 @@ public class MainActivity extends Activity {
 		String dwcoRequests = sharedPrefs.getString("dwcoRequests", "");
 		Globals.dwcoRequests = dwcoRequests;
 		System.out.println(TAG + " setting Globals.dwco = " + dwcoRequests);
-		
+
 		String dwcoReplies = sharedPrefs.getString("dwcoReplies", "");
 		Globals.dwcoReplies = dwcoReplies;
 		System.out.println(TAG + " setting Globals.dwcoReplies = " + dwcoReplies);
-		
+
 		Log.i(TAG, "Exiting MainActivity.");
 		System.out.println(TAG + " -- Exiting MainActivity.");
 
@@ -218,6 +219,27 @@ public class MainActivity extends Activity {
 			startActivity(act);
 			break;
 
+
+
+		case R.id.dumpForecasts:
+			toast=WeatherInfo.dumpForecastsToString();
+			makeToast("Forecasts:\n\n" + toast);
+			showDialog(DIALOG_ALERT);
+
+			break;
+		case R.id.presentForecasts:
+			makeToast("presentForecasts...");
+			act = new Intent(getBaseContext(), PresentForecastsActivity.class);
+			startActivity(act);
+			break;
+		case R.id.reference1:
+			makeToast("reference1...");
+			act = new Intent(getBaseContext(), Ref1Activity.class);
+			startActivity(act);
+			break;
+
+
+
 		case R.id.x1:
 			makeToast("X1 ... ? ? ? ...");
 
@@ -232,43 +254,74 @@ public class MainActivity extends Activity {
 			//
 			// System.out.println(TAG + SPLAT + " result=" + result);
 			//
-			
-//			JSONObject jsonObj = null;
-//			try {
-////				jsonObj = new JSONObject(Utilities.callDirections(
-////						"40.7251,-73.9943", "40.7227,-73.9920");
-////			
-//				jsonObj =  Utilities.callDirections("08854", "10012");
-//				
-//				System.out.println(TAG + SPLAT + " result="
-//						+ jsonObj.toString(5));
-//				
-//				int meter = Utilities.directionsGetDistance(jsonObj);
-//				int seconds = Utilities.directionsGetDuration(jsonObj);
-//				  double miles = meter * 0.00062137119;
-//				  System.out.println("Miles: " + miles);
-//				  System.out.println("seconds: " + seconds);
-//				  System.out.println("minutes: " + seconds/60);
-//				
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//			;
 
-//			
-//			String data = Utilities.callCityData("Camden", "New-Jersey");
-//			
-//			 //  System.out.println("data: " + data);
-//			
-//			String cd = Utilities.cityDataGetCrime(data);
-//			
-//			System.out.println(" crime data: " + cd);
+			//			JSONObject jsonObj = null;
+			//			try {
+			////				jsonObj = new JSONObject(Utilities.callDirections(
+			////						"40.7251,-73.9943", "40.7227,-73.9920");
+			////			
+			//				jsonObj =  Utilities.callDirections("08854", "10012");
+			//				
+			//				System.out.println(TAG + SPLAT + " result="
+			//						+ jsonObj.toString(5));
+			//				
+			//				int meter = Utilities.directionsGetDistance(jsonObj);
+			//				int seconds = Utilities.directionsGetDuration(jsonObj);
+			//				  double miles = meter * 0.00062137119;
+			//				  System.out.println("Miles: " + miles);
+			//				  System.out.println("seconds: " + seconds);
+			//				  System.out.println("minutes: " + seconds/60);
+			//				
+			//			} catch (Exception e) {
+			//				e.printStackTrace();
+			//			}
+			//			;
 
-			Task.generateFieldCode();
-			
+			//			
+			//			String data = Utilities.callCityData("Camden", "New-Jersey");
+			//			
+			//			 //  System.out.println("data: " + data);
+			//			
+			//			String cd = Utilities.cityDataGetCrime(data);
+			//			
+			//			System.out.println(" crime data: " + cd);
+
+			// 		Task.generateFieldCode();	// 
+
+			//processAssets();
+			processFile();
+
 			break;
 		}
 		return true;
+	}
+
+	private void processFile() {
+		try {
+			//	URL yahoo = new URL("file:///android_asset/ref1_lte_acro.html");
+			AssetManager am = getApplicationContext().getAssets();
+			InputStream ist = am.open("ref1_lte_acro.html");
+			InputStreamReader is = new InputStreamReader(ist);
+			BufferedReader in = new BufferedReader(is);
+
+
+			//			BufferedReader in = new BufferedReader(
+			//					new InputStreamReader(
+			//							yahoo.openStream()));
+
+			String inputLine;
+			int i=0;
+			while ((inputLine = in.readLine()) != null){
+				System.out.println("i=" + i + " in=/"+inputLine + "/ len=" + inputLine.length());
+ 				if (inputLine.indexOf("</p>")>-1) {
+ 					inputLine = in.readLine();
+					while (inputLine.length()==0 && (  inputLine = in.readLine()) != null){
+						System.out.println("skip");
+					};
+					System.out.println("SPECIAL:" + inputLine);
+				};
+			}
+			in.close(); } catch (Exception e) {e.printStackTrace();};
 	}
 
 	private void processAssets() {
@@ -276,9 +329,9 @@ public class MainActivity extends Activity {
 		final String BDAY_TUNE = "Chipmunks - Happy Birthday to You!!!.mp4.mp3";
 
 		try {
-			InputStream ist = am.open(BDAY_TUNE);
-			AssetFileDescriptor fd = am.openFd(BDAY_TUNE);
-			ist = am.open("test.txt");
+			//			InputStream ist = am.open(BDAY_TUNE);
+			//			AssetFileDescriptor fd = am.openFd(BDAY_TUNE);
+			InputStream ist = am.open("test.txt");
 
 			InputStreamReader is = new InputStreamReader(ist);
 			StringBuilder sb = new StringBuilder();
@@ -451,4 +504,26 @@ public class MainActivity extends Activity {
 		return false;
 	}
 
+	// copied  from MainPlanActivity - hack - nb also deprecated - hack
+	@Override
+	protected Dialog onCreateDialog(int id) {
+		switch (id) {
+		case DIALOG_ALERT:
+			// Create out AlterDialog
+			Builder builder = new AlertDialog.Builder(this);
+			builder.setMessage("Your Results:\n" + toast);
+			builder.setCancelable(true);
+			builder.setPositiveButton("OK", new OkOnClickListener());
+			//  builder.setNegativeButton("No, no", new CancelOnClickListener());
+			AlertDialog dialog = builder.create();
+			dialog.show();
+		}
+		return super.onCreateDialog(id);
+	}
+	private final class OkOnClickListener implements
+	DialogInterface.OnClickListener {
+		public void onClick(DialogInterface dialog, int which) {
+			//  AlertExampleActivity.this.finish();
+		}
+	} 
 }

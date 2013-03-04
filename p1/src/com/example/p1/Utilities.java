@@ -578,6 +578,9 @@ public class Utilities {
 		return 0; // HACK
 	}
 	
+	
+	// IS THIS STILL USED ??????????????????????????????????????????????????????????????????????
+	
 	static public String hourlyWeatherGetFeelsLike(JSONObject weatherHourly) {
 
 			String r="";
@@ -589,11 +592,13 @@ public class Utilities {
 			JSONArray hourlyf = weatherHourly.getJSONArray("hourly_forecast");
  			for (int i = 0; i < hourlyf.length(); i++) {
  				String t=  hourlyf.getJSONObject(i).getJSONObject("feelslike").getString("english").toString();
+ 				String pop=  hourlyf.getJSONObject(i).getString("pop").toString();
+
  				String h=  hourlyf.getJSONObject(i).getJSONObject("FCTTIME").getString("hour").toString();
  				String mon_padded=  hourlyf.getJSONObject(i).getJSONObject("FCTTIME").getString("mon_padded").toString();
  				String mday_padded=  hourlyf.getJSONObject(i).getJSONObject("FCTTIME").getString("mday_padded").toString();
  				System.out.println("hourlyWeatherGetFeelsLike --  h=" + h + "  t=" + t + " mon_padded=" + mon_padded + " mday_padded=" + mday_padded);
- 				String reading = mon_padded + "/" + mday_padded + "@" + h + "=" + t + "\n" ;
+ 				String reading = mon_padded + "/" + mday_padded + "@" + h + "=" + t + "," + pop + "\n" ;
  				r += reading;
  			}
 			return r ;

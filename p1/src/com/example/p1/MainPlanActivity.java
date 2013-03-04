@@ -588,6 +588,10 @@ public class MainPlanActivity extends Activity {
  			//Utilities.hourlyWeatherGetFeelsLike(o);
  		//	g 			g.addHourlyForecast(location,"fcast");
  			toast=WeatherInfo.addHourlyFeelsLike(location,o);
+ 			
+ 			 WeatherInfo.dumpForecasts( );
+
+ 			
  			System.out.println("calcWeatherHourly, toast=" + toast);
 
 //			if (dwcoReplies.contains("W")) System.out.println("      selected activity weather="
@@ -804,7 +808,7 @@ public class MainPlanActivity extends Activity {
 		  	
             progressDialog.dismiss();
 
-			makeToast( toast);
+			// no longer of value what with dialog -----      makeToast( toast);
 			System.out.println("onPostExecute, toast=" + toast);
 			showDialog(DIALOG_ALERT);
 		} 
