@@ -134,12 +134,13 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int LinearLayout03=0x7f06002f;
-        public static final int VideoView=0x7f06002a;
-        public static final int add1=0x7f060030;
+        public static final int LinearLayout03=0x7f060031;
+        public static final int VideoView=0x7f06002c;
+        public static final int add1=0x7f060032;
         public static final int addActivity=0x7f06001d;
         public static final int addPlan=0x7f06001a;
-        public static final int browse=0x7f06003b;
+        public static final int autocomplete=0x7f060028;
+        public static final int browse=0x7f06003d;
         public static final int btnComplex=0x7f060025;
         public static final int btnDWD=0x7f060021;
         public static final int btnDown=0x7f060020;
@@ -149,14 +150,14 @@ containing a value of this type.
         public static final int btnSimple=0x7f060024;
         public static final int btnUp=0x7f06001f;
         public static final int btnVend=0x7f06000d;
-        public static final int button1=0x7f060028;
+        public static final int button1=0x7f06002a;
         public static final int calculator=0x7f060027;
-        public static final int cancel=0x7f06003e;
-        public static final int dumpForecasts=0x7f060037;
+        public static final int cancel=0x7f060040;
+        public static final int dumpForecasts=0x7f060039;
         public static final int duration=0x7f060006;
         public static final int editText1=0x7f06000c;
         public static final int formula=0x7f060023;
-        public static final int foursquare=0x7f06003c;
+        public static final int foursquare=0x7f06003e;
         public static final int linearLayout2=0x7f060018;
         public static final int linearLayout4=0x7f060019;
         public static final int linearLayout41=0x7f06000f;
@@ -164,27 +165,27 @@ containing a value of this type.
         public static final int linearLayout416=0x7f060013;
         public static final int linearLayout421=0x7f060010;
         public static final int linearLayout6=0x7f06001c;
-        public static final int listDrive=0x7f060032;
+        public static final int listDrive=0x7f060034;
         public static final int location=0x7f06000a;
         public static final int map=0x7f060017;
-        public static final int menu_settings1=0x7f060031;
+        public static final int menu_settings1=0x7f060033;
         public static final int none=0x7f060000;
         public static final int normal=0x7f060001;
         public static final int ok=0x7f06000e;
         public static final int planslist=0x7f06001b;
-        public static final int play_pause=0x7f060029;
-        public static final int postToWeb=0x7f060035;
-        public static final int preferences=0x7f060036;
-        public static final int presentForecasts=0x7f060038;
-        public static final int readDrive=0x7f060033;
+        public static final int play_pause=0x7f06002b;
+        public static final int postToWeb=0x7f060037;
+        public static final int preferences=0x7f060038;
+        public static final int presentForecasts=0x7f06003a;
+        public static final int readDrive=0x7f060035;
         public static final int recTable=0x7f060022;
-        public static final int reference1=0x7f060039;
+        public static final int reference1=0x7f06003b;
         public static final int removeActivity=0x7f06001e;
         public static final int satellite=0x7f060002;
-        public static final int search1=0x7f06002d;
-        public static final int searchInput=0x7f06002c;
-        public static final int select1=0x7f06002e;
-        public static final int spinnerTarget=0x7f06002b;
+        public static final int search1=0x7f06002f;
+        public static final int searchInput=0x7f06002e;
+        public static final int select1=0x7f060030;
+        public static final int spinnerTarget=0x7f06002d;
         public static final int taskName=0x7f060005;
         public static final int terrain=0x7f060003;
         public static final int textView1=0x7f060004;
@@ -194,9 +195,10 @@ containing a value of this type.
         public static final int textView3=0x7f060009;
         public static final int textView4=0x7f06000b;
         public static final int urls=0x7f060008;
-        public static final int writeDrive=0x7f060034;
-        public static final int x1=0x7f06003a;
-        public static final int yelp=0x7f06003d;
+        public static final int voiceIn=0x7f060029;
+        public static final int writeDrive=0x7f060036;
+        public static final int x1=0x7f06003c;
+        public static final int yelp=0x7f06003f;
     }
     public static final class layout {
         public static final int activity_addacty=0x7f030000;
@@ -205,11 +207,13 @@ containing a value of this type.
         public static final int activity_map=0x7f030003;
         public static final int activity_plan=0x7f030004;
         public static final int activity_presentforecast=0x7f030005;
-        public static final int activity_vend=0x7f030006;
-        public static final int main_audiobasics=0x7f030007;
-        public static final int show_settings_layout=0x7f030008;
-        public static final int spinner_layout=0x7f030009;
-        public static final int web_helper=0x7f03000a;
+        public static final int activity_ref1=0x7f030006;
+        public static final int activity_vend=0x7f030007;
+        public static final int list_item=0x7f030008;
+        public static final int main_audiobasics=0x7f030009;
+        public static final int show_settings_layout=0x7f03000a;
+        public static final int spinner_layout=0x7f03000b;
+        public static final int web_helper=0x7f03000c;
     }
     public static final class menu {
         public static final int activity_main=0x7f0a0000;

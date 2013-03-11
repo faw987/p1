@@ -4,12 +4,13 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -73,7 +74,7 @@ public class MainActivity extends Activity {
 		}
 
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
-		.permitAll().build();
+				.permitAll().build();
 		StrictMode.setThreadPolicy(policy);
 
 		SimpleDateFormat sdf = new SimpleDateFormat(
@@ -83,7 +84,7 @@ public class MainActivity extends Activity {
 
 		Log.i(TAG, "version " + version);
 		System.out
-		.println(">>>>>>                                                            >>>>>>>>>> Starting MainActivity.");
+				.println(">>>>>>                                                            >>>>>>>>>> Starting MainActivity.");
 
 		//
 		// experimenting
@@ -159,7 +160,8 @@ public class MainActivity extends Activity {
 
 		String dwcoReplies = sharedPrefs.getString("dwcoReplies", "");
 		Globals.dwcoReplies = dwcoReplies;
-		System.out.println(TAG + " setting Globals.dwcoReplies = " + dwcoReplies);
+		System.out.println(TAG + " setting Globals.dwcoReplies = "
+				+ dwcoReplies);
 
 		Log.i(TAG, "Exiting MainActivity.");
 		System.out.println(TAG + " -- Exiting MainActivity.");
@@ -219,10 +221,8 @@ public class MainActivity extends Activity {
 			startActivity(act);
 			break;
 
-
-
 		case R.id.dumpForecasts:
-			toast=WeatherInfo.dumpForecastsToString();
+			toast = WeatherInfo.dumpForecastsToString();
 			makeToast("Forecasts:\n\n" + toast);
 			showDialog(DIALOG_ALERT);
 
@@ -237,8 +237,6 @@ public class MainActivity extends Activity {
 			act = new Intent(getBaseContext(), Ref1Activity.class);
 			startActivity(act);
 			break;
-
-
 
 		case R.id.x1:
 			makeToast("X1 ... ? ? ? ...");
@@ -255,73 +253,111 @@ public class MainActivity extends Activity {
 			// System.out.println(TAG + SPLAT + " result=" + result);
 			//
 
-			//			JSONObject jsonObj = null;
-			//			try {
-			////				jsonObj = new JSONObject(Utilities.callDirections(
-			////						"40.7251,-73.9943", "40.7227,-73.9920");
-			////			
-			//				jsonObj =  Utilities.callDirections("08854", "10012");
-			//				
-			//				System.out.println(TAG + SPLAT + " result="
-			//						+ jsonObj.toString(5));
-			//				
-			//				int meter = Utilities.directionsGetDistance(jsonObj);
-			//				int seconds = Utilities.directionsGetDuration(jsonObj);
-			//				  double miles = meter * 0.00062137119;
-			//				  System.out.println("Miles: " + miles);
-			//				  System.out.println("seconds: " + seconds);
-			//				  System.out.println("minutes: " + seconds/60);
-			//				
-			//			} catch (Exception e) {
-			//				e.printStackTrace();
-			//			}
-			//			;
+			// JSONObject jsonObj = null;
+			// try {
+			// // jsonObj = new JSONObject(Utilities.callDirections(
+			// // "40.7251,-73.9943", "40.7227,-73.9920");
+			// //
+			// jsonObj = Utilities.callDirections("08854", "10012");
+			//
+			// System.out.println(TAG + SPLAT + " result="
+			// + jsonObj.toString(5));
+			//
+			// int meter = Utilities.directionsGetDistance(jsonObj);
+			// int seconds = Utilities.directionsGetDuration(jsonObj);
+			// double miles = meter * 0.00062137119;
+			// System.out.println("Miles: " + miles);
+			// System.out.println("seconds: " + seconds);
+			// System.out.println("minutes: " + seconds/60);
+			//
+			// } catch (Exception e) {
+			// e.printStackTrace();
+			// }
+			// ;
 
-			//			
-			//			String data = Utilities.callCityData("Camden", "New-Jersey");
-			//			
-			//			 //  System.out.println("data: " + data);
-			//			
-			//			String cd = Utilities.cityDataGetCrime(data);
-			//			
-			//			System.out.println(" crime data: " + cd);
+			//
+			// String data = Utilities.callCityData("Camden", "New-Jersey");
+			//
+			// // System.out.println("data: " + data);
+			//
+			// String cd = Utilities.cityDataGetCrime(data);
+			//
+			// System.out.println(" crime data: " + cd);
 
-			// 		Task.generateFieldCode();	// 
+			// Task.generateFieldCode(); //
 
-			//processAssets();
-			processFile();
+			// processAssets();
+			
+			System.out.println("html=" + processFile());
 
 			break;
 		}
 		return true;
 	}
 
-	private void processFile() {
+	 public String processFile() {
 		try {
-			//	URL yahoo = new URL("file:///android_asset/ref1_lte_acro.html");
+			// URL yahoo = new URL("file:///android_asset/ref1_lte_acro.html");
 			AssetManager am = getApplicationContext().getAssets();
 			InputStream ist = am.open("ref1_lte_acro.html");
 			InputStreamReader is = new InputStreamReader(ist);
 			BufferedReader in = new BufferedReader(is);
 
-
-			//			BufferedReader in = new BufferedReader(
-			//					new InputStreamReader(
-			//							yahoo.openStream()));
+			// BufferedReader in = new BufferedReader(
+			// new InputStreamReader(
+			// yahoo.openStream()));
+			
+			StringBuffer result = new StringBuffer();
 
 			String inputLine;
-			int i=0;
-			while ((inputLine = in.readLine()) != null){
-				System.out.println("i=" + i + " in=/"+inputLine + "/ len=" + inputLine.length());
- 				if (inputLine.indexOf("</p>")>-1) {
- 					inputLine = in.readLine();
-					while (inputLine.length()==0 && (  inputLine = in.readLine()) != null){
+			int i = 0;
+			while ((inputLine = in.readLine()) != null) {
+				i++;
+				System.out.println("i=" + i + " in=/" + inputLine + "/ len="
+						+ inputLine.length());
+				result.append(processSpecial(inputLine));
+
+				if (inputLine.indexOf("</p>") > -1) {
+					inputLine = in.readLine();
+					while (inputLine.length() == 0
+							&& (inputLine = in.readLine()) != null) {
 						System.out.println("skip");
-					};
+					}
+					;
 					System.out.println("SPECIAL:" + inputLine);
-				};
+					result.append(processSpecial(inputLine));
+				}
+				;
 			}
-			in.close(); } catch (Exception e) {e.printStackTrace();};
+			in.close();
+			System.out.println(" r:" + result);
+			return result.toString();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		;
+		return "?";
+	}
+
+	// :<a name="ABM">ABM</a><p> Asynchronous Balanced Mode. A mode of packet
+	// data transfer u
+	private String processSpecial(String input) {
+		Pattern p = Pattern
+				.compile("^([A-Za-z0-9]*)[ \t]*([A-Za-z0-9 ]*[.])(.*)$");
+		Matcher m = p.matcher(input);
+
+		StringBuffer result = new StringBuffer();
+		while (m.find()) {
+			System.out.println("1: " + m.group(1));
+			System.out.println("2: " + m.group(2));
+			System.out.println("3: " + m.group(3));
+			// m.appendReplacement(result, m.group(1) + "***masked***");
+			result.append("<a name=\"" + m.group(1) + "\">" + m.group(1)
+					+ "</a><p><b>" + m.group(2) + "</b>" + m.group(3));
+		}
+		// m.appendTail(result);
+		System.out.println(" r:" + result);
+		return result.toString();
 	}
 
 	private void processAssets() {
@@ -329,8 +365,8 @@ public class MainActivity extends Activity {
 		final String BDAY_TUNE = "Chipmunks - Happy Birthday to You!!!.mp4.mp3";
 
 		try {
-			//			InputStream ist = am.open(BDAY_TUNE);
-			//			AssetFileDescriptor fd = am.openFd(BDAY_TUNE);
+			// InputStream ist = am.open(BDAY_TUNE);
+			// AssetFileDescriptor fd = am.openFd(BDAY_TUNE);
 			InputStream ist = am.open("test.txt");
 
 			InputStreamReader is = new InputStreamReader(ist);
@@ -504,7 +540,7 @@ public class MainActivity extends Activity {
 		return false;
 	}
 
-	// copied  from MainPlanActivity - hack - nb also deprecated - hack
+	// copied from MainPlanActivity - hack - nb also deprecated - hack
 	@Override
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
@@ -514,16 +550,17 @@ public class MainActivity extends Activity {
 			builder.setMessage("Your Results:\n" + toast);
 			builder.setCancelable(true);
 			builder.setPositiveButton("OK", new OkOnClickListener());
-			//  builder.setNegativeButton("No, no", new CancelOnClickListener());
+			// builder.setNegativeButton("No, no", new CancelOnClickListener());
 			AlertDialog dialog = builder.create();
 			dialog.show();
 		}
 		return super.onCreateDialog(id);
 	}
+
 	private final class OkOnClickListener implements
-	DialogInterface.OnClickListener {
+			DialogInterface.OnClickListener {
 		public void onClick(DialogInterface dialog, int which) {
-			//  AlertExampleActivity.this.finish();
+			// AlertExampleActivity.this.finish();
 		}
-	} 
+	}
 }

@@ -1,0 +1,1332 @@
+
+10-GigE - 10-Gigabit Ethernet 
+1xEV-DO - 1x Evolution for Data Optimized
+3GPP - Third-Generation Partnership Project
+3GPP2 - Third Generation Partnership Project 2
+4G - Fourth Generation wireless systems
+A&C - Access and Control
+A/NM Administration/Network Management
+A/V - Audio/Video
+AA - Associate Administrator
+AAA - Authentication, Authorization and Accounting
+AADS - Ameritech Advanced Data Services
+AAF - Army Air Field
+AAL1 - ATM Adaptation Layer 1
+AARNET - Australian Academic & Research Network
+AAS - Adaptive Antenna System
+AATT - Advanced Aircraft Transportations Technologies
+ABM - Asynchronous Balanced Mode
+ABQP - Aggregate Base Station Subsystem Quality of Service Profile
+AC - Access Class
+AC - Authentication Center 
+ACC - Automatic Congestion Control
+ACD - Active Circuits Directory
+ACE - Advanced Composition Explorer
+ACI - Adjacent Channel Interference
+ACIR - Adjacent Channel Interference Ratio
+ACK - Acknowledge or Acknowledgement
+ACK - ACKnowledgment
+ACL - Access Control List
+ACLR - Adjacent Channel Leakage Ratio
+ACM - Attitude Control Motor
+ACMS - Automated Communications Management System 
+ACO - Access Control Officer
+ACRR - Adjacent Channel Rejection Ratio
+ACS - Adjacent Channel Selectivity
+ACTD - Advanced Concept Technology Demonstration 
+AD - Active Directory
+ADC - Analogue to Digital Converter
+ADD - Architecture Description Document
+ADIMSS - Advanced DSN Integrated Management Support System
+ADM - Add Drop Multiplex
+ADM - Asynchronous Disconnected Mode
+ADSL - Asymmetric Digital Subscriber Line
+AEHF - Advanced Extremely High Frequency 
+AES - Advance Encryption System
+AES - Advanced Encryption Standard
+AF - Application Function
+AF - Assured Forwarding
+AFB - Air Force Base
+AFI -  - Air Force Instruction
+AFIP - Armed Forces Institute of Pathology
+AFIS - American Forces Information Services
+AFMAN - Air Force Manual
+AFNOC - Air Force Network Operations Center
+AFSCN - Air Force Satellite Control Network 
+AG - Access Gateway
+AGMEMS - AT&T Government Markets Enterprise Management System
+AGS - Poker Flat Research Range
+aGW - access gateway 
+AHAMS - Automated Health and Morale System
+AIDE - Automated Intrusion Detection Environment
+AIS - Alarm Indication Signal
+AIS - Automated Information System
+AIS-L - Line AIS
+AIS-P - STS Path AIS
+AIS-V - VT Path AIS
+AKA - Authentication and Key Agreement
+ALA - Active Line Access
+ALHAT - Autonomous Landing and Hazard Avoidance Technology
+ALIT - Automatic Line Insulation Test
+ALNP - Aggregated Line and Node Protection
+AM - Acknowledged Mode
+AM - Acknowledged Mode
+AMA - Automatic Message Accounting
+AMBR - Aggregate Maximum Bit rate
+AMBR - Aggregated Maximum Bit-Rate
+AMC - Adaptive Modulation and Coding
+AMC - Adaptive Modulation and Coding
+AMD - Acknowledged Mode Data
+AMN - Artificial Mains Network
+AMO - Advanced Modeling Object (GRANITE)
+AMR - Adaptive Multi-Rate
+AMR - Automatic Meter Reading 
+AMX - AMX is the name of a company now known as Panja
+AN - Access Network
+ANC - Active Nutation Control 
+ANDVT Advanced Narrowband Digital-Voice Terminal
+ANI - Automatic Number Identification
+ANR - Automatic Neighbour Relation
+ANRF - automatic neighbor relation function
+ANSI - American National Standards Institute
+ANTL - NREN Laboratory at ARC
+AO - Area of Operations
+AOPNS - Activity & Outage Posting & Notification System
+AOR - Area of Responsibility
+AP - Access Point 
+AP - Application Protocol
+AP - Application Protocol
+APAN - Asian Pacific Area Network
+APAS - Androgynous Peripheral Assembly System
+APC - Adaptive Protective Coding
+APC - Hardware - Advanced processed control
+APC - Vendor - American Power Conversion
+APCP - Application Protection Constraint Policy
+APD - Avalanche Photo-Diode 
+APDA - Androgynous Peripheral Docking Assembly
+API - applications programming interface 
+APL - Applied Physics Laboratory
+APL - Approved Product(s) List
+APN - Access Point Name
+APP - Application Layer
+APP - Application Layer, Application Services Layer
+APS - Automatic Protection Switching
+APS - reference ECANS project
+APU - Auxiliary Power Unit
+AR&D - Automated Rendezvous & Docking
+ARC - American Red Cross
+ARC - Ames Research Center
+ARFCN - Absolute Radio Frequency Channel Number
+ARI - Accessibility/Retainability/Integrity
+ARIB - Association of Radio Industries and Businesses
+ARIN - American Registry for Internet Numbers
+ARO - Authorized Requesting Official
+ARP - Address Resolution Protocol
+ARP - Allocation and Retention Priority
+ARQ - Automatic Repeat Request
+ARQ - Automatic Repeat reQuest
+ARSTRAT - Army Forces Strategic Command (see SMDC/ARSTRAT) 
+ARTS - Assured Real Time Services
+ARTS-SS - Assured Real Time Services  SoftSwitch
+AS - Access Stratum
+AS - Access Stratum
+AS - Angular Spread
+AS-SIP - Assured Service Session Control Protocol
+ASA - Automatic Security Authentication
+ASAC - Assured Service Admission Control 
+ASAP - As soon as possible
+ASCC - Academia Sinica Computing Centre
+ASCLAN - Assured Services Converged Local Area Network
+ASIC - Application Specific Integrated Circuit 
+ASLAN - Assured Service LAN
+ASME - Access Security Management Entity
+ASN - Autonomous System Number
+ASN.1 - Abstract Syntax Notation 1
+ASP - Active Server Pages (web-scripting developed by Microsoft)
+ASP - Application Server Process 
+ASP - Application Service Provider
+ASP - Attached Satellite Payload
+ASRS - Automated Support Requirement System
+ASU - Arizona State University
+ATC - Authority to Connect
+ATCS - Active Thermal Control System
+ATIS - Alliance for Telecommunications Industry Solutions 
+ATM - Asynchronous Transfer Mode 
+ATO - Authority to Operate
+ATT - Attenuator
+AU - Administrative Unit
+AUC - authentication center
+AUTOVON - Automatic Voice Network
+AVC - Advanced Video Coding
+AWGN - Additive White Gaussian Noise
+AWINS - Agency Widows Internet Naming Services
+AXT - Alien Crosstalk 
+B-ONT - business optical network terminal 
+B/P/C/S - Base/Post/Camp/Station
+B2BUA - Back-to-Back User Agent
+BA - Billing Agent
+BAA - Broad Agency Announcement
+BADD - Battlefield Awareness Data Dissemination
+BAF - Billing AMA Format
+BASP - Ball AeroSpace
+BBC - British Broadcasting Corporation
+BBE - Background Block Error
+BBER - Background Block Error Ratio
+BC - Boundary Controller
+BCC - Base station Colour Code
+BCCH - Broadcast Control CHannel
+BCH - Broadcast CHannel
+BCM - Bearer Control Mode
+BCT - Brigade Combat Team
+BCU - Booster Controller Unit/Booster Control Unit
+BE - Block Error
+BEM - Bandwidth Efficient Modem 
+BER - Bit Error Rate
+BERK - University of California, Berkeley
+BFP - Branch Flow Point
+BFS - reference ECANS project
+BGP - Border Gateway Protocol
+BI - Backoff Indicator
+BID - Bridge ID
+BIDWH - Business Intelligence & Data WareHouse
+BIND - Berkeley Internet Name Daemon 
+BIP - Bit Interleaved Parity
+BITS - Building Integrated Timing Supply
+BLDR - University of Colorado at Boulder
+BLER - Block Error Rate
+BLER - Block Error Rate
+BLOS - Bigelow Laboratory for Ocean Sciences
+BLSR - Bidirectional Line-Switched Ring
+BM-SC - Broadcast-Multicast Service Centre
+BMC - Company that provides Remedy Software
+BMC - Name of Company
+BMCC - Boeing Mission Control Center, El Segundo, CA
+BNCC - Base Network Control Center
+BO - Business Object Database
+BP - Bandwidth Part
+BP - Bandwidth Profile
+BPA - Blocked Precedence Announcement
+BPC - Boost Protective Cover
+BPDU - Bridge Protocol Data Unit(s)
+BPL - Broadband Power Line Communications 
+BPSK - Binary Phase Shift Keying
+BPSK - Binary Phase Shift Keying modulation
+BR-FP - Branch Flow Point
+BRAS - Broadband Remote Access Server
+BRI - Basic Rate Interface
+BS - Base Station
+BSC - base station controller 
+BSIC - Base Station Identification Code
+BSM - Booster Separation Motor
+BSR - Buffer Status Report
+BSS - Base Station Subsystem
+BSS - Business Support System
+BSTU - Base SHDSL Termination Unit
+BTA - Business Transformation Agency
+BTP - backhaul transport provider 
+BTS - Base Transceiver Station
+BVI - Bridge Virtual Interface
+BW - BandWidth
+BWP - BandWidth Profile
+BYOB - Bring Your Own Behaviour
+BYOD - Bring Your Own Device
+C&A - Certification and Accreditation
+C&T Networks - Command & Telemetry
+C-RNTI - Cell Radio Network Temporary Identity
+C-SAFS - Central Standard Autonomous File Server 
+C-VLAN - Customer VLAN
+C/S/A - COCOM / Service / Agency 
+C/S/A - Combatant Commands, Services, and Agencies
+C2 - Command and Control
+C3 Command, Control, and Communications
+C3I - Command, Control, Communications, and Intelligence
+C3I - Communication, Command, Control & Information
+C4I - Command, Control, Communications, Computers, and Intelligence
+C4ISR - Command, Control, Communications, Computers, Intelligence, Surveillance & Reconnaissance
+CA - Certificate Authority
+CA - Certification Authority
+CAAP - Critical Asset Assurance Program
+CAC - Call Admission Control
+CAC - Common Access Card
+CAD - Computer Aided Design
+CAGR - Cumulative Average Growth Rate 
+CAIL - reference ECANS project
+CaLV - Cargo Launch Vehicle
+CAMB - Cambridge, MA
+CAN - Campus Area Network
+CANET*4 - Canadian Research Network - Autonomous System Number (ASN) 4
+CANF - Cancel From
+CANT - Cancel To
+CAP - Command and Attitude Processor
+CARD - Constellation Architecture Description Document
+CAS - Conditional Access System - content protection [IPTV] see DRM
+CAS - Channel Associated Signaling
+CASI - Center for Aerospace Information
+CAT - Category
+CAT - Crisis Action Team
+CAT7 - Category 7 cable 
+CATV - Cable Television 
+CAW - Certificate Authority Workstation
+CAZAC - Constant Amplitude Zero Auto-Correlation
+CB - Circular Buffer
+CBACS - Center Badging and Access Control System
+CBC - Cell Broadcast Centre
+CBE - Cell Broadcast Entity
+CBE - Current Best Estimate
+CBH - Cell BackHaul
+CBS - Cell Broadcast Service
+CBS - Committed Burst Size
+CBT - Computer Based Training
+CC - Combatant Commander
+CC - Convolutional Code
+CCA - C3I Communications Adaptor
+CCA - Call Connection Agent
+CCB - Configuration Control Board
+CCB - Configuration Control Boards
+CCCH - Common Control CHannel
+CCE - Control Channel Element
+CCIR - Critical Command Intelligence Requirements
+CCM - Continuity Check Message
+CCO - Cell Change Order
+CCS - Cambridge Communications Systems (small cell backhaul product)
+CCS - Common Channel Signaling
+CCSA - China Communications Standards Association
+CCSD - command communications service designator
+CCV - Common Communications Vehicle 
+CD - Chromatic Dispersion 
+CD - Conversion Device
+CDATA - (unparsed) Character DATA [ XML (#CDATA) ]
+CD&SC - Communications Distribution and Switching Center
+CDD - Cyclic Delay Diversity
+CDF - Cumulative Distribution Function
+CDL - Clustered Delay Line
+CDM - Code Division Multiplex(ed/ing)
+CDMA - Code Division Multiple Access
+CDMGR - Conversion Device Manager
+CDN - Coupling/Decoupling Network
+CDP - Commander's Dissemination Policy
+CDR - Call Detail Recording
+CDR - Critical Design Review
+CDRM - Conceptual Data Reference Model
+CDSCC - Canberra Deep Space Control Center
+CDTI - Comsat Digital Teleport Incorporated
+CE - Carrier Ethernet
+CE - Circuit Emulation
+CE - Customer Edge
+CE - Customer Equipment
+CE - Cyclic Extension
+CEC - Collaborative Engagement Capability
+CEN - Carrier Ethernet Network
+CEM - Customer Experience Management (formerly DV/SEA)
+CENTCOM - United States Central Command
+CEPCA - Consumer Electronics Communications Alliance 
+CER - Customer Edge Router
+CERN - Conseil Européen pour la Recherche Nucléaire" (CERN)- European Organization for Nuclear Research
+CERS - Contractor Equipment Relocation System
+CERT - Computer Emergency Response Team
+CES - Circuit Emulated Services 
+CESoETH - Circuit Emulated Services over ETHernet 
+CEU channel encryption unit
+CEV - Crew Exploration Vehicle
+CF - Contention-Free
+CF - Coupling Flag
+CFES - Compact Flash Evaporator
+CFI - Canonical Format Indicator
+CFI - Channel Format Indicator
+CFI - Control Format Indicator
+CFM - Connectivity Fault Management
+CFO - Carrier Frequency Offset
+CG - Center of Gravity
+CGI - Cell Global Identification
+CHAP - Challenge Handshake Authentication Protocol
+CHLI - Consecutive High Loss Interval
+CI - Characteristic Information
+CI - Collection Interval
+CI - Contaminant Insensitive
+CI - Customer Installation
+CIC - Circuit Identification Code
+CICS - Customer Information Control System
+CID - Cell IDentifier
+CID - Context IDentifier
+CID - Craft Interface Device
+CIDR - Classless Inter-Domain Routing 
+CIEF - Carrier Independent Exchange Facility
+CIFA - Counterintelligence Field Activity
+CIMS - Cyber Identity Management System (DCNSS)
+CINR - Carrier-to-Interference-and-Noise Ratio
+CIO - Chief Information Officer
+CIO - Corporate Information Officer
+CIR - Channel Impulse Response
+CIR - Committed Information Rate
+CITS - Combat Information Transport System
+CJCS - Chairman of the Joint Chiefs of Staff
+CJCSI - Chairman of the Joint Chiefs of Staff Instruction
+CKSN - Ciphering Key Sequence Number
+CLAN - Converged Local Area Network
+CLE - Customer Located Equipment
+CLI - Command Line Interface
+CLIPS - Clientless IP Service Selection
+CLV - Crew Launch Vehicle
+CM (Color Mode) - CM is a Bandwidth Profile parameter -either "color blind" or "color aware"
+CM - Command Module
+CM - Configuration Management
+CMC - Connection Mobility Control
+CMDB - Customer Management DataBase
+CMDB - Configuration Management DataBase
+CMHH - Constant Modulus Householder
+CMOS - Complementary Metal Oxide Silicon 
+CMS - Calix {Compass?} Management System
+CMTS - Cable Modem Termination System
+CN - Core Network
+CN - Core Network
+CNA - Computer Network Attack
+CND - Computer Network Defense
+CNE - Center Network Environment
+CNES - Centre National d'Etudes Spatiales
+CNPS - Common Network Planning System 
+CO - Central Office
+CoA - Care Of Address
+COA - Course of Action
+COB - Close of Business
+COCOM - Combatant Command (Command Authority)
+CODEC - Coder Decoder
+COE - Common Operating Environment
+COFDM - Coded Orthogonal Frequency Division Multiplexing
+COI - Community of Interest
+COLA - Center for Ocean-Land-Atmosphere Studies
+COM - Continuous Operations Messaging
+COMINT - Communications intelligence (Communications and Intelligence)
+COMPUSEC - computer security
+COMSEC - Communications Security
+CONEX - CONtingency Employment eXercise 
+CONEXPLAN - contingency and exercise plan
+CONOPS - Concept of Operations
+CONPLAN - operation plan in concept format
+CONUS - Continental United States 
+COOP - Continuity of Operations
+COP - Common Operating Picture
+COP - Common Operational Picture 
+COPS - Common Open Policy Service
+CORBA - Common Objective Request Broker Architecture 
+CoS - Class of Service
+CoS ID - Class of Service Identifier
+COTR - Contracting Officer's Technical Representative
+COTS - Commercial Off The Shelf
+CP - Cyclic Prefix
+CPE customer premises equipment
+CPI - Computational Physics Incorporated
+CPICH - Common PIlot CHannel
+CPM - Capability Portfolio Manager 
+CPO - CoS Performance Objective
+CPT - Control Protocol Data Unit Type
+CPU - Central Processing Unit
+CQI - Channel Quality Indicator
+CQI - Channel Quality Indicator
+CR - Change Request
+CR - Clock Recovery
+CRAN - Converged Regional Area Network
+CRC - Cyclic Redundancy Check
+CRC-2 - reference ECANS project
+CRL - Certificate Revocation List
+CRM - Customer Relationship Manager
+CRTS - Compressed Real time Transport protocol
+CS - Circuit Switched
+CS - Computing Services (DISA) 
+CS-ACELP - Conjugate-Structure Algebraic-Code-Excited Linear-Prediction
+CS-CN - Circuit Switched Core Network
+CSA - Canadian Space Agency
+CSCF - Call Session Control Function
+CSCI - Computer Software Configuration Item
+CSFB - Circuit Switched FallBack
+CSG - Carrier Strike Group
+CSG - Closed Subscriber Group
+CSI - Channel State Information
+CSI - Cryptographic Support Infrastructure
+CSIT - Channel State Information at the Transmitter
+CSMA - Carrier Sense Multiple Access aka CSMA-CD (Collision Detect)
+CSN - Connected Sub-Network
+CSPF - Constraint based Shortest Path First
+CSR - Customer Service Representative
+CST - Component Subtype
+CSU - Channel Service Unit
+CTAM - Cable & Telecommunications Association for Marketing
+CTF - Channel Transfer Function
+CTF - coalition task force
+CTO - Chief Technology Office
+CTO - Chief Technology Officer
+CTPM - Common Tactical Picture Manager
+CUI - Controlled Unclassified Information
+CV - Coding Violations
+CVAS - ConVerged Application Server
+CVI - CITS Virtualization Infrastructure
+CVLAN - Customer VLAN (tag) - refers to Q-in-Q, 1 VLAN tag can carrry another 4096 VLAN tags (see SVLAN)
+CVPN - Corporate Virtual Private Network
+CW - Continuous-Wave
+CWDM - Coarse Wavelength Division Multiplexing 
+CWM - Cisco WAN Manager 
+Cx - Constellation
+CxCB - Constellation Control Board
+CxP - Constellation Program
+DAA - Designated Approval Authorities
+DAA - Designated Approval Authority
+DAA - Designated Approving Authority
+DAC - Design Analysis Cycle
+DAC - Digital to Analogue Converter
+DACS - Directory Access Control System
+DAI - Downlink Assignment Index
+DAM - diagnostic acceptability measure
+DAMA - Demand Assigned Multiple Access
+DARPA - Defense Advanced Research Projects Agency
+DAS - Demand Access System
+DAU - Data Acquisition Unit
+DAU - Defense Acquisition Agency
+DAV - Descent Ascent Vehicle (ECANS)
+DAV - Desktop Appliance Video (ViTS)
+DB - Database
+dB - decibel
+dBm - decibel (refers to 1 Milliwatt)
+DC - District of Columbia
+DCAA - Defense Contract Audit Agency
+DCC - Data Communications Channel
+DCCC - Defense Cyber Crime Center
+DCCH - Dedicated Control Channel
+DCE - Data Circuit terminating Equipment
+DCF - DISN Customer Forum
+DCF - Dispersion Compensated Fiber 
+DCI - Downlink Control Information
+DCMA - Defense Contract Management Agency
+DCN - Data Communications Network 
+DCNSS - Data Center Network and Security Services
+DCP - Docking Control Panel
+DCS - Digital Cross-Connect System
+DCSS - Digital Communications Satellite Subsystems 
+DDMS - DoD Discovery Metadata Standard
+DDOE - DISN Direct Order Entry 
+DECA - Defense Commissary Agency
+DECC - Defense Enterprise Computing Center 
+DEI - Discard Eligibility Indicator
+DES - Data Encryption Standard
+DFAS - Defense Finance Accounting Agency
+DFB - Distributed FeedBack Laser 
+DFRC - Dryden Flight Research Center
+DFT - Discrete Fourier Transform
+DFT-SOFDM - Discrete Fourier Transform- Spread- Orthogonal Frequency Division Multi-plexing
+DFTS - Defense Fixed Telecommunications Service
+DHCP - Dynamic Host Configuration Protocol
+DHRA - Defense Human Resources Activity
+DI - Data Instance
+DIA - Defense Intelligence Agency
+DIACAP - Department of Defense Information Assurance Certification and Accreditation Process
+DICE - Department of Defense Interoperability Communications Exercise
+DID - Direct Inward Dialing
+DiD/DoD - Direct In-Dial/Direct Out-Dial
+DiffServ - Differentiated Services
+DII - Defense Information Infrastructure
+DIMS - DSCS Integrated Management System 
+DIRNSA - Director, National Security Agency
+DISA - Defense Information Systems Agency
+DISAC - Defense Information Systems Agency Circular
+DISN - Defense Information System Network
+DISN - Defense Information Systems Network
+DISO-UNRRA - United National Relief and Rehabilitation Administration
+DISR - Dod Information technology Standards Registry
+DITCO - Defense Information Technology Contracting Office
+DITSCAP - DoD Information Technology Security Certification and Accreditation Process
+DL - DownLink
+DL - TFT Downlink TFT
+DL-SCH - DownLink Shared CHannel
+DLA - Defense Logistics Agency
+DLC - Data Link Control
+DLC - Digital Loop Carrier
+DLC - Domestic Leased Circuit
+DLCI - Data Link Connection Identifier (A number attached to a data frame that identifies the PVC for the data frame)
+DLSA - Defense Legal Services Agency
+DLT/DAT - Tape Formats
+DM - RS DeModulation Reference Signal
+DMDC - Defense Manpower Data Center
+DMEA - Defense Microelectronics Activity
+DMS - Defense Message System
+DMS - Defense Messaging Service
+DMZ - Demilitarized Zone
+DN - Directory Number
+DNCCB - DISA NetOps Configuration Control Board
+DNPS - Defense Satellite Communications System Network Planning Software 
+DNS - Domain Name Service
+DNS - Domain Name System
+DOCSIS - Data Over Cable Service Interface Specification
+DOD - Department Of Defense
+DoD - Department of Defense
+DOD - Direct - Outward - Dialing
+DOD-IG - Department of Defense - Inspector General
+DODAF - DOD Architecture Framework
+DODEA - DOD Education Activity
+DODMVA - DOD Military Vaccine Agency
+DODTRMC - DOD Test Resource Management Center
+DOF - Degree of Freedom
+DP - Discard Priority
+DP - Dynamic Pricing
+DPA - Dual Phone Adapter
+DPC - Destination Point Code
+DPM - digital phone multiplexers
+DPMO - Defense Prisoner of War/Missing Personnel Office
+DPS - Descent Propulsion System
+DQPSK - Differential Quadrature Phase-shift Keying 
+DR - Discrepancy Report
+DRA - Dynamic Resource Allocation
+DRB - Data Radio Bearer
+DREN - Defense Research and Education Network
+DRM - Design Reference Missions
+DRM - Digital Rights Management - content protection [IPTV] see CAS
+DRSN - Defense Red Switch Network
+DRT - diagnostic rhyme test
+DRX - Discontinuous Reception
+Dserver - Distribution Server
+DS - Data Set
+DS - Descent Stage
+DS - Direct Spread
+DS-CDMA - Direct Sequence- Code Division Multiple Access
+DS0 - Digital Signal Level 0 
+DS1 - Digital Signal Level 1
+DS3 - Digital Signal Level 3
+DSAC - Domain Specific Access Control
+DSAWG - Security Accreditation Working Group
+DSCA - Defense Security Cooperation Agency
+DSCP - Differentiated Service Code Point
+DSCP - Differentiated Services Code Point
+DSCS - Defense Satellite Communications System 
+DSF - Data Service Frame (A Service Frame that is Unicast, Multicast, or Broadcast)
+DSL - Digital Subscriber Line 
+DSMC - Data Services Management Center
+DSN - Deep Space Network
+DSN - Defense Switched Network
+DSn - Digital Signal at level 'n'
+DSP - Descent Stage Propulsion
+DSP - Digital Signal Processor
+DSS - Defense Security Service
+DSS - Destination Surface Segment
+DSTM - Derived System Timing Mode
+DSU - Data Services Unit
+DT - Developmental Testing
+DTA - Dual Trunk Adaptor
+DTAU - Digital Test Access Unit 
+DTC - Digital Telecommunications Conferencing
+DTCH - Dedicated Traffic CHannel
+DTD - Document Type Definition
+DTG - Date/Time Group
+DTIC - Defense Technical Information Center
+DTM - Derived Timing Mode
+DTMF - Dual Tone Multi - Frequency
+DTRA - Defense Threat Reduction Agency
+DTSA - Defense Technology Security Administration
+DTX - Discontinuous Transmission
+DUT - Device Under Test
+DVA - Desktop ViTS Appliance
+DVB - Digital Video Broadcast 
+DVB-S - Digital Video Broadcast Satellite 
+DVD - Digital Video Disk
+DVD - Digital Video Diskette, Digital Versatile Disk 
+DVR - Digital Video Recorder
+DVS - Defense Video Services
+DVX - Deployable Voice Exchange
+DVX - Deployable Voice Switch
+DWCF - Defense Working Capital Fund
+DWDM - Dense Wavelength Division Multiplexing 
+E&M - Ear and Mouth Signaling
+E-LAN - Ethernet LAN - An MEF Ethernet LAN (E-LAN) Service Type is any Ethernet service that is based on a Multipoint-to-Multipoint EVC
+E-Line - Ethernet line service 
+E-LMI - Ethernet Layer Management Interface
+E-Mail - Electronic Mail
+E-NNI - ethernet External Network to Network Interface
+E-TREE - Ethernet Tree - An MEF Ethernet LAN (E-Tree) Service Type is any Ethernet service that is based on a  Rooted-Multipoint-to-Multipoint EVC
+E-UTRA - Evolved UMTS Terrestrial Radio Access
+E-UTRAN - Evolved UMTS Terrestrial Radio Access Network
+E-UTRAN - Evolved UTRAN
+E-WAN - Ethernet WAN (An MEF defined ETH services aware network that provides connectivity between two or more MENs via ENNIs)
+E2E - End-to-End
+EA - electronic attack 
+EA - Enterprise Architecture
+EA-ILM - Electro-Absorptive Integrated Laser Modulator 
+EAF - ETH (Ethernet) Adaptation Function
+EAM - Electro-Absorptive Modulator 
+EAN - Ethernet Access Node
+EARFCN - E-UTRA Absolute Radio Frequency Channel Number
+EBC - Edge Boundary Controller
+EBEM - Enhanced Bandwidth Efficient Modem 
+EBNET - EOSDIS Backbone Network
+EBS - Excess Burst Size
+EC - Echo Canceller
+EC - ETH (Ethernet) Connection
+ECANS - Exploration Communication & Navigation Systems
+ECDX - Emulated Circuit De/Multiplexing Function
+ECF - Ethernet Connection Function
+ECGI - E-UTRAN Cell Global Identifier
+ECI - E-UTRAN Cell Identifier
+ECID - Emulated Circuit Identifier
+ECLSS - Environmental Control and Life Support System
+ECM - EPS Connection Management
+ECM - Evolved Packet System Connection Management
+ECM-EPS - Connection Management 
+ECN - Ethernet Controller Node (Ericsson)
+ECOC - European Conference on Optical Communication 
+ECS - Environment Control Service
+ECT - Ethernet Connectionless Trail
+EDA - Ethernet Distribution Area
+EDC - Electronic Dispersion Compensation 
+EDC - EROS Data Center
+EDI - Ethernet Dedicated Internet
+EDIA - Ethernet Dedicated Internet Access
+EDS - Earth Departure Stage
+EEA - Evolved Packet System Encryption Algorithm
+EEC - Ethernet Equipment Clock
+EELV - reference ECANS project
+EEPP - End to End Path Protection
+EESM - Exponential Effective Signal to Interference plus Noise Ratio Mapping
+EETF - Ethernet EVC Terminating Function
+EF - Expedited Forwarding
+EFCF - Ethernet flow Conditioning Function
+EFD - Ethernet Flow Domain
+EFM - Ethernet in the First Mile 
+EFN - Ethernet Fiber Node (e.g. Ericsson EFN324)
+EFP - Ethernet Flow Point
+EFT - Ethernet Flow Termination
+EFTF - Ethernet Flow Termination Function
+EHF - extremely high frequency 
+EHPLMN - Equivalent Home Public Land Mobile Network
+EI - End Instrument
+EIA - Electronics Industry Association
+EIA - Evolved Packet System Integrity Algorithm
+EIR - Equipment Identity Register
+EIR - Excess Information Rate
+EKMS - Electronic Key Management System
+ELI - Electric Lightwave Network
+EM - Enterprise Management
+EM - Equipment Manufacturer 
+EMA - Electromechanical Actuator
+EMAN - Ecological Monitoring and Assessment Network (Canadian)
+EMC - ElectroMagnetic Compatibility
+EMC - Emergency Management Center
+EMERALDS - Enterprise Management with Enhanced Resource Allocation Database System 
+EMI - ElectroMagnetic Interference 
+EMM - EPS Mobility Management
+EMM - Evolved Packet System Connection Management
+EMN - Ethernet Metro Node
+EMP - Ericsson Mobile Platform
+EMP - EDA Management Proxy (EMP)
+EMS - Electronic Maintenance Section
+EMS - Element Management System
+EMSS - Enhanced Mobile Satellite Service
+eNB - E-UTRAN Node B
+ENIQ - Ericsson Network Intelligent Quotient
+ENMC - Enterprise Network Management Center
+ENNI - External (ethernet) Network to Network Interface
+eNodeB - Evolved NodeB
+ENPL - Earth Observatory System (EOS) Laboratory
+ENS - Ethernet Network Service
+EO - End Office
+EOC - Embedded Operations Channel
+EOD - Ethernet Over DOCSIS
+EoDWDM  - Ethernet over DWDM 
+EOI - Earth Orbit Injection
+EOL - End of Life
+EoMPLS  - Ethernet over MPLS 
+EOR - Earth Orbit Rendezvous
+EOS - Earth Observation System
+EOS - Ethernet Over SONET 
+EP - Elementary Procedure
+EP-LAN - Ethernet Private LAN (Service)
+EP-TREE - Ethernet Private Tree (Service)
+EPA - Extended Pedestrian A
+EPC - Enhanced Pentagon Capability
+EPC - Evolved Packet Core
+EPG - Electronics Product Group 
+EPGN - Earth Polar Ground Network
+EPL - Ethernet Private Line (Service)
+EPOCC - Enhanced Photo Optic Control Center
+EPON - Ethernet Passive Optical Network 
+EPP - Enhanced Planning Process
+EPRE - Energy Per Resource Element
+EPS - Electrical Power System
+EPS - Evolved Packet System
+ER - Extended Reach 
+ERBS - Earth Radiation Budget Satellite
+EROS - Earth Radiation Observatory Satellite
+ES - Errored Seconds
+ESA - European Space Agency
+ESAS - Exploration Systems Architecture Study
+ESB - enterprise service bus 
+ESC - Ethernet Service Construct
+ESCON - Enterprise Systems Connectivity 
+ESD - Electrostatic discharge
+ESD - Ethernet Services Definition
+ESF - Extended Super Frame
+ESM - Ethernet Services Model
+ESM - Evolved Packet System Session Management
+ESMD - reference ECANS project
+ESN - Ethernet SubNetwork
+ESNC - Ethernet SubNetwork Connection
+ESNET - Energy Sciences Network
+ESOC - ESA Space Operations Center
+ESP - Encapsulating Security Payload
+ESP - Essential Service Protection
+ESR - Errored Second Ratio
+ESTEC - ESA Science and Technology Center
+ESTL - Electronic System Test Laboratory
+ESU - Enterprise Services Unit
+ET - External Tank
+ETDP - Exploration Technology Development Program
+ETH - Ethernet
+ETL - Extract / Transform / Load (SD/EEM)
+eTOM - Enhanced Telecommunications Operations Map 
+ETSI - European Telecommunications Standards Institute
+ETTV - External Tank Television
+ETU - Extended Typical Urban
+ETWS - Earthquake and Tsunami Warning System
+EUCOM - United States European Command
+EUNI - External Network Interface
+EUT - Equipment Under Test
+EUTRAN - Evolved UMTS Terrestrial Radio Access Network 
+EUTRAN - Evolved UTRAN
+EV-DO - Evolution for Data Optimized
+EVA - Extended Vehicular A
+EVA - Extravehicular Activity
+EVC - Ethernet virtual circuit 
+EVCS - Enterprise Voice Consolidation System
+EVDO - Evolution Data Optimized 
+EVM - Error Vector Magnitude
+EVP-LAN - Ethernet Virtual Private Lan (Service)
+EVP-TREE - Ethernet Virtual Private Tree (Service)
+EVPL - Ethernet Virtual Private Line (Service)
+EW-SE - enterprise-wide systems engineering 
+ExTF - reference ECANS project
+F - FLASH
+FA - Foreign Agent
+FAA - Federal Aviation Administration
+FACCH - Fast Associated Control Channel
+FAMA - Fixed Assignment Multiple Access 
+FastE - Fast Ethernet
+FAX - facsimile
+FBG - Fiber Bragg Grating 
+FC - Fibre Channel 
+FCAPS - Fault, Configuration, Accounting, Performance, and Security 
+FCC - Federal Communications Commission
+FCC - Flight Critical Computers (ECANS)
+FCS - Frame Check Sequence
+FCS - Future Combat System
+FD - Frame Delay
+FDD - Frequency Division Duplex
+FDDI - Fiber Distributed Data Interface 
+FDE - Frequency-Domain Equalizer
+FDF - Flight Dynamics Facility
+FDIR - Fault Detection, Isolation and Recovery
+FDL - Facility Data Link
+FDM - Frequency Division Multiplexing
+FDMA - Frequency Division Multiple Access
+FDR - Frame Delay Range
+FDSS - Frequency Domain Spectral Shaping
+FDV - Frame Delay Variation (often misquoted as jitter)
+FDW - Financial Data Worksheet
+FDX - Full DupleX
+FE - Far End
+FE - Functional Element
+FEA - Federal Enterprise Architecture (FEA)
+FEC - Forward Error Correction
+FEMTOCELLS - small cellular base station
+FER - Frame Error Ratio 
+FEXT - Far-end Crosstalk 
+FFR - Fast (Flow?) Reroute
+FFRDC - Federally Funded Research & Development Center
+FFS - For Further Study
+FFSC - Full-flow Staged Combustion
+FFT - Fast Fourier Transform
+FFT - Fast Fourier Transform
+FI - Framing Info
+FIPS - Federal Information Processing Standard
+FIR - Finite Impulse Response
+FISMA - Federal Information Security Management Act
+FISU - Fill - In Signaling Unit
+FIX - Federal Internet Exchange
+FLR - Frame Loss Ratio
+FM - Fault Management
+FMC - Fixed Mobile Convergence
+FMS - First Missing Service Data Unit
+FMS foreign military sales
+FN - First Name
+FO - FLASH OVERRIDE
+FOC - Final Operational Capability
+FOO - Flash Override Override
+FP - Fabry-Perot 
+FPDS - Fire Protection, Detection, and Suppression
+FPI - First Production Instance
+FPP - Flow Point Pool
+FPR - Flight Propellant Reserve
+FTTC - Fiber To The Cell
+FTTC - Fiber To The Curb
+FTTCS - Fiber To The Cell Site
+FTTH - Fiber To The Home
+FQDN - Fully Qualified Domain Name
+FQP - Firm Quote Price
+FRC - Fixed Reference Channel
+FS - First Stage
+FS - Frame Structure
+FSAL - Fixed Security Access Level
+FSO - Field Security Office
+FSTD - Frequency Switched Transmit Diversity
+FT - Fault Tolerance
+FTP - File Transfer Protocol
+FTP - File Transport Protocol
+FTS - Federal Telecommunications Services
+FTS - Federal Telecommunications System
+FTTX - Fiber To The (Home, Desk, Building) 
+FUSE - Far Ultraviolet Spectroscopic Explorer
+FW - Firewall
+FY - Fiscal Year 
+GAA - gateway access authorization 
+GaAs - Gallium Arsenide 
+GAR - Gateway Access Request
+GARP - Generic Attribute Registration Protocol
+GbE - Gigabit Ethernet
+Gbps - Giga bits per second
+GBR - Guaranteed Bit Rate
+GBS - Global Broadcast Service
+GBS - Global Broadcast System 
+GCCS - Global Command and Control System
+GCL - Generalized Chirp-Like sequences
+GCMP - GIG Convergence Master Plan 
+GCSS - Global Combat Support System
+GCTC - Gagarin Cosmonaut Training Center
+GDS - Deep Space Network Goldstone Tracking Facility
+GDSCC - Goldstone Deep Space Control Center
+GEI - reference ECANS project
+GERAN - GSM/EDGE Radio Access Network
+GETS Government Emergency Telecommunications Service
+GFE - Government Furnished Equipment
+GGND - GIG Network Defense
+GGSG - Geodynamics Geophysics and Space Geodessy
+GGSN - Gateway GPRS Support Node
+GHz - Gigahertz 
+GI - Guard Interval
+GI-POF - Graded Index Plastic Optical Fiber 
+GIG - Global Information Grid
+GIG-BE - Global Information Grid Bandwidth Expansion 
+GigE - Gigabit Ethernet
+GIWF - Generic InterWorking Function
+GLOW - Gross Liftoff Weight
+GMC - GCCS Management Center
+GN - Ground Network
+GN&C - Guidance, Navigation and Control
+GNC - Global NetOps Center 
+GNOSC - Global NetOps and Security Center
+GNSC - Global NetOps Support Center
+GNSS - Global Navigation Satellite System
+GO - GIG Operations
+GO - Ground Operations
+GOES - Geosynchronous Operational Environmental Satellite
+GOS - Grade of Service
+GOTS - Government Off The Shelf
+GOX - Gaseous Oxygen
+GP - Guard Period
+GPB - Gravity Probe B
+GPON - Gigabit Passive Optical Network 
+GPRS - General Packet Radio Service
+GPS - General Purpose Segment
+GPS - Global Positioning System
+GRC - Glenn Research Center
+GRC-TL - Glenn Research Center Technology Laboratory 
+GRE - Generic Routing Encapsulation
+GRGT - Guam Remote Ground Terminal
+GSA - General Services Administration
+GSCR - Generic Switching Center Requirements
+GSE - Ground Support Equipment
+GSFC - Goddard Space Flight Center
+GSM - Global System for Mobile Communication
+GSM - Global System for Mobile Communications
+GSM/EDGE - Radio Access Network (GERAN) or UTRAN CS infrastructure UTRAN coverage is overlapped by GERAN or UTRAN coverage
+GSN - GPRS Support Node
+GSR - Generic System Requirements
+GSS - Generic System Specification
+GSSC - Global SATCOM Support Center 
+GST - GIG Standard Ticketing 
+GSU - Geographically Separated Unit
+GT - Guard Time
+GTP - GPRS Tunneling Protocol
+GTP-C - GTP-Control plane
+GTP-U - GPRS Tunneling Protocol-User plane
+GTP-U - GTP User plane
+GUID - Globally Unique IDentifier (RFC 4112)
+GUMMEI - Globally Unique MME Identity 
+GUMMEI - Globally Unique Mobility Management Entity Identifier
+GUTI - Globally Unique Temporary Identity
+GUTI - Globally unique Temporary UE identity
+GW - GateWay
+GWAC - Government-Wide Acquisition Contract 
+H-ARQ - Hybrid ARQ
+H-FDD - Half-Frequency Division Duplex
+H-PCRF - Home Policy and Charging Rules Function
+HA - Home Agent
+HAIPE - High Assurance Internet Protocol Encryptor
+HAIPE - High Assurance IP Encryptor
+Hanger AE - Building designation
+HARQ - ACK/NACK HARQ ACKnowledgement/Negative ACKnowledgement information
+HARQ - Hybrid ARQ
+HBA - Host Bus Adapter 
+HD-FDD - Half-Duplex Frequency Division Duplex
+HDTV - Hi Definition TV
+HDX - Half DupleX
+HE - HeadEnd
+HE - Home Environment
+HEMI - Headquarters Enterprise Messaging Initiative
+HEMP High-Altitude Electromagnetic Pulse
+HFC - Hybrid Fiber Coax 
+HFN - Hyper Frame Number
+HI - HARQ Indicator
+HII - High Interference Indicator
+HLI - High Loss Interval
+HLN - High Leverage Network 
+HLR - Home Location Register
+HMW health, morale, and welfare
+HNBID - Home eNodeB IDentifier
+HO - HandOver
+HOVC - Higher Order Virtual Container
+HPC - High Performance Computing 
+HPCMO - High Performance Computing Modernization Office
+HPLMN - Home PLMN
+HPLMN - Home Public Land Mobile Network
+HPOV - HP Openview
+HPR - High Performance Router 
+HPU - Hydraulic Power Unit
+HQ - Headquarters
+HQ - NASA Headquarters
+HRPD - High Rate Packet Data
+HRSI - High-Temperature Reusable Surface Insulation
+HSBI - High Speed Backplane Initiative 
+HSDPA - High Speed Downlink Packet Access 
+HSF - Human Space Flight
+HSIR - reference ECANS project
+HSPA - High-Speed Packet Access
+HSPA+ - High-Speed Packet Access Evolution
+HSS - Home Subscriber Server
+HST - Hubble Space Telescope
+HSUPA - High Speed Uplink Packet Access
+HTML - Hypertext Markup Language
+HTR - Hard To Reach
+HTTP - Hyper Text Transfer Protocol
+httpcodes - Informational 1xx
+httpcodes - 100 Continue
+httpcodes - 101 Switching Protocols
+httpcodes - Successful 2xx
+httpcodes - 200 OK
+httpcodes - 201 Created
+httpcodes - 202 Accepted
+httpcodes - 203 Non-Authoritative Information
+httpcodes - 204 No Content
+httpcodes - 205 Reset Content
+httpcodes - 206 Partial Content
+httpcodes - Redirection 3xx
+httpcodes - 301 Moved Permanently
+httpcodes - 305 Use Proxy
+httpcodes - 307 Temporary Redirect
+httpcodes - Client Error 4xx
+httpcodes - 400 Bad Request
+httpcodes - 401 Unauthorized
+httpcodes - 402 Payment Required
+httpcodes - 403 Forbidden
+httpcodes - 404 Not Found
+httpcodes - 405 Method Not Allowed
+httpcodes - 406 Not Acceptable
+httpcodes - 407 Proxy Authentication Required
+httpcodes - 408 Request Timeout
+httpcodes - 409 Conflict
+httpcodes - 410 Gone
+httpcodes - 411 Length Required
+httpcodes - 412 Precondition Failed
+httpcodes - 413 Request Entity Too Large
+httpcodes - 414 Request-URI Too Long
+httpcodes - 415 Unsupported Media Type
+httpcodes - 416 Requested Range Not Satisfiable
+httpcodes - 417 Expectation Failed
+httpcodes - Server Error 5xx
+httpcodes - 500 Internal Server Error
+httpcodes - 501 Not Implemented
+httpcodes - 502 Bad Gateway
+httpcodes - 503 Service Unavailable
+HTTPS - Hyper Text Transfer Protocol Secure
+HW - Hardware
+HWCI - HardWare Configuration Item
+Hz - Hertz
+I - IMMEDIATE
+I&W - Indications and Warnings
+i-mode - mobile internet (as opposed to wireless internet) !WAP
+I-NNI - Internal NNI (Network to Network Interface)
+I-NOSC - Integrated Network Operations Security Centers
+i-TRM - The Air Force Infostructure Technology Reference Model
+IA - Implementation Agreement
+IA - Information Assurance
+IAA - Information Assurance Accreditation
+IAAS - Infrastructure As A Service
+IAD - Integrated Access Device
+IAM - Initial Address Message
+IANA - Internet Assigned Number Authority
+IAP - Internet Access Point
+IAS Integrated access Switch/System
+IATF - Information Assurance Technical Framework
+IATO - interim authority to operate
+IATP - Information Assurance Test Plan
+IATT - Information Assurance Test Team
+IAVA - Information Assurance Vulnerability Alert
+IAW - In Accordance With
+IBMP - Institute of Biomedical Problems
+IC - Integrated Circuit 
+IC - Intelligence Community
+ICATS Integrated Configuration And Tracking System
+ICE - Refers to the monitoring of actual ice on the orbital prior to launch.
+ICI - Inter-Carrier Interference
+ICI - Interexchange Carrier Interconnection
+ICIC - Inter-Cell Interference Coordination
+ICMP - Internet Control Message Protocol
+ICOM - Input-Control-Output-Mechanism
+ICPR - Initial Constellation Program Review
+ICS - Implementation Conformance Statement
+ICS - In-Channel Selectivity
+ID - Identification
+ID - IDentity
+ID/IR - Intrusion Detection/Incident Response
+IDAC - Integrated Design Analysis Cycle
+IDD - Interface Definition Document
+iDEN - integrated Digital Enhanced Network
+IDFT - Inverse Discrete Fourier Transform
+IDIQ - Indefinite Demand/Indefinite Quantity
+IDLC - Integrated Digital Loop Carrier
+IDMS - Information and Data Management System
+IDNNS - Intra-Domain Non-Access Stratum Node Selector
+IDNX - Integrated Digital Network Exchange
+IDS - Intrusion Detection System
+IDT - Integrated Digital Terminal
+IE - Information Element
+IEA - reference ECANS project
+IEEE - Institute of Electrical and Electronics Engineers
+IEM - Integrated Enterprise Management
+IEMP - Integrated Enterprise Management Program
+IER - In Effect Report
+IER - Information Exchange Requirements
+IETF - Internet Engineering Task Force
+IFDMA - Interleaved Frequency Division Multiple Access
+IFDV - Inter Frame Delay Variation
+IFFT - Inverse Fast Fourier Transform
+IGMP - Internet Group Management Protocol
+IGP - Interior Gateway Protocol
+IIEP - Integrated Inventory Express Pack (NE <=> GRANITE)
+IIJ - Internet Initiative Japan 
+IL - Insertion Loss 
+ILEC - Incumbent Local Exchange Carrier 
+IM - Implementation Margin
+IM - Information Management
+IM - Instant Meeting
+IMA - Inverse Multiplexing over ATM 
+IMD - InterModulation Distortion
+IMEI - International Mobile Equipment Identity
+IMEISVN - International Mobile Equipment Identity Software Version number
+IMS - Internet Protocol Multimedia Subsystem
+IMS - IP Multimedia Subsystem
+IMSI - International Mobile Subscriber Identity
+IMT - International Mobile Telecommunication
+IMT - International Mobile Telecommunications
+IN - Intelligent Networks
+INFOCON - Information Operations Threat/Alert Conditions
+INFOSEC - Information Security
+INMD - In - service Non - intrusive Measurement Device
+INMS - Integrated Network Management System 
+INNI - Internal Network to Network Interface
+InP - Indium Phosphide 
+IO - Interoperability
+IOC - Initial Operational Capability
+IONet - Internet Protocol Operational Network
+IOV-UI - Input Offset Value - Unconfirmed Information
+IP - Internet Protocol
+IP-CAN - Internet Protocol Connectivity Access Network
+IPAM - Internet Protocol Address Management
+IPD - Integrated Powerhead Demonstrator
+IPDV - Ip Packet Delay Variation [ITU-T Y.1541]
+IPER - Ip Packet Error Ratio [ITU-T Y.1541]
+IPLC - International Private Leased Circuit 
+IPLR - Ip Packet Loss Ratio [ITU-T Y.1541]
+IPMSAN - IP Multi Service Access Network
+IPMSAN - IP Multi Service Access  Node
+IPNOC - Internet Protocol Network Operating Center
+IPOT - Octet based IP packet Throughput [ITU-T Y.1541]
+IPPT - IP Packet Through put [ITU-T Y.1541]
+IPS - Integrated Planning System
+IPSC - IP Stream Connect
+IPSec - Internet Protocol Security
+IPSec - IP Security 
+IPTD - Ip Packet Transfer Delay (commonly referred to as latency)  [ITU-T Y.1541]
+IPTV - Internet Protocol Television
+iPV - internet based manual Procedure Viewer
+IPv4 - Internet Protocol version 4
+IPv4 - IP Version 4
+IPv6 - IP Version 6
+IQ - In-phase - Quadrature phase
+IR - Incremental Redundancy
+IRC - Infra-red Cameras
+IRC - Interference Rejection Combining
+IRD - Interface Requirements Document
+IRIS - Internet Protocol Router in Space 
+IRV - Incremental Redundancy Version
+ISA - Industry Standard Architecture
+ISAM - Intelligent Services Access Manager
+iSCSI - IP Small Computer System Interface 
+ISD - Inter-Site Distance
+ISDN - Integrated Service Digital Network
+ISDNUP - Integrated Services Digital Network User Part
+ISHM - Integrated System Health Management
+ISI - Inter-Symbol Interference
+ISIS - Intermediate System to Intermediate System protocol
+ISP - Information Support Plans
+ISP - Internet Service Provider 
+ISPAN - Integrated Strategic Planning and Analysis Network 
+ISR - Idle state Signalling Reduction
+ISR - Intelligence, Surveillance, and Reconnaissance
+ISR - Internet Screening Router
+ISRAU - Inter Sgsn Routing Area Update
+ISRU - In-Situ Resource Utilization
+ISS - International Space Station
+IST - interswitch trunk
+ISTC - Information Systems Technical Control
+ISUP - Integrated Services Digital Network User Part
+ISUP - ISDN Signaling User Part 
+ISUP - ISDN User Part
+IT - Information Technology
+ITA-PENTCIRT - Information Technology Agency
+ITIL - IT Infrastructure Library
+ITIL® - Information Technology Infrastructure Library 
+ITMC - International Telecommunications Management Center
+ITS - Information Transport System
+ITSM - Information Technology Security Manager
+ITT - Integrated Test Team
+ITU - International Telecommunication Union
+ITU - International Telecommunications Union
+ITU-R - International Telecommunication Union Radiocommunication sector
+ITU-T - Telecommunications Standardization Sector
+IU - Instrument Unit
+IUA - ISDN User Adaptation
+IV&V - Independent Verification and Validation Facility
+IVA - Intravehicular Activity
+IWF - Interworking Function
+IXC - Inter-exchange Carrier 
+IXIT - Implementation eXtra Information for Testing
+JASON-1 - The JASON Project is an organization engages students in scientific research and expeditions led by leading scientists. Named after the mythical character Jason of the Argonauts.
+JAXA - Japan Aerospace Exploration Agency
+JBC - Joint Battle Center
+JBOD - Just a Bunch Of Disks 
+JBS - Joint Broadcast Service
+JCCC - Joint Communications Control Center
+JCS - Joint Chiefs of Staff
+JCSE - Joint Communications Support Element
+JCTD - Joint Capabilities Technology Demonstration 
+JDAWS - JCS Data Access Web Server 
+JDBC - Java DataBase Connectivity
+JET - Joint Engineering Team
+JFCOM - Joint Forces Command
+JHU - John Hopkins University
+JIC - Joint Interoperability Certification
+JIEO - Joint Information and Engineering Organization
+JIPM - Joint IP modem 
+JISE - Joint Intelligence Support Element
+JIST-NET - Joint Integrated System Technology Network 
+JITC - Joint Interoperability Test Command
+JMOS - Joint Management Operations Subsystem 
+JNMS - Joint Network Management System 
+JNO - Joint Net-Centric Operations 
+JOC - Joint Operations Center
+JOIN - Joint On-demand Interoperability Network
+JOPES - Joint Operations Planning and Execution System
+JPL - Jet Proportion Laboratory
+JS - Joint Staff
+JSC - Johnson Space Center
+JSC - Joint Spectrum Center 
+JSCP - Joint SATCOM Communications Plan 
+JSMPS - Joint SATCOM Management and Planning System 
+JSOTF - Joint Special Operations Task Force
+JTA - Joint Technical Architecture
+JTDLMP Joint Tactical Data Link Management Plan
+JTF - Joint Task Force 
+JTF-GNO - Joint Task Force - Global Network Operations 
+JUICE - Joint User's Interoperability Communications Exercise
+JV2010 - Joint Vision 2010
+JWCA - Joint Warfighter Capability Assessment
+JWICS - Joint Worldwide Intelligence Communications System
+KAFB - Kirtland Air Force Base
+Kb - Kilobits
+Kbps - Kilo bits per second
+Kg - Kilogram
+KHSC - Khrunichev Space Center
+KHz - Kilo Hertz
+KHz - KiloHertz
+KIV (not an acronym) K (cryptographic) the I (data comm) V (removable)
+km - kilometer 
+KMI - Key Management Infrastructure
+KMIEN - KMI Enclave Node
+kN - KiloNewton
+KP - Key Processor
+KPP - Key Performance Parameters
+KPI - Key Performance Indicator
+KQI - Key Quality Indicator
+KSC - Kennedy Space Center
+KSI - Key Set Identifier
+KSOE - Key Systems Operation Exchange
+L/D - Lift to Drag Ratio
+L1 - Layer 1 (physical layer)
+L2 - Layer 2
+L2+ - Layer(s) above L2
+L2CP - Layer 2 Control Protocols
+L2TP - Layer 2 Tunneling Protocol
+L2VPN - Layer 2 VPN
+L3 - Layer 3
+L3 - Layer 3 (network layer)
+LA - Location Area
+LAC - Location Area Code
+LACP - Link Aggregation Control Protocol
+LAG - Link Aggregation Group
+LAI - Location Area Identity
+LAN - Local Area Network
+LANE - ATM LAN Emulation
+LANM - LANDSAT, Lanham, MD
+LaRC - Langley Research Center
+LAS - Launch Abort System
+LASD - Local Assured Service Domain
+LASP - Laboratory for Atmospheric and Space Physics
+LAT - Launch Abort Tower
+LATA - Local Access and Transport Area
+LAV - Launch Abort Vehicle
+LB - Load Balancing
+LB - Loop Back
+Lbf - Pound Force
+LBI - Linked Evolved Packet System Bearer ID
+LBM - LoopBack Message
+LBR - LoopBack Reply
+LBRM - Limited-Buffer Rate Matching
+LC-39 - Launch Complex-39
+LCAS - Link Capacity Adjustment Scheme
+LCC - Local Control Center
+LCG - Logical Channel Group
+LCID - Logical Channel ID
+LCK - LoCKed - used in reference to LCK PDU
+LCMT - Lockheed Martin facility
+LCR - Low Chip Rate
+LD - Long Distance
+LDAP - Lightweight Directory Access Protocol
+LDBP - Logistics Data Bank
+LDIF - LDAP Interchange Format
+LDPC - Low-Density Parity Check
+LDS - Local Digital Switch
+LEO - Low Earth Orbit
+LES - Launch Escape System
+LH2 - Liquid Hydrogen
+LI - Lawful Intercept
+LI - Length Indicator
+Li-Ion - Lithium-Ion
+LIDAR - Light Detection and Ranging
+LIDS - Low Impact Docking System
+LIPPS - LANDSAT IP Processing System
+LISN - Line Impedance Stabilizing Network
+LITT - Littleton, Colorado
+LLC - Logical Link Control

@@ -1,0 +1,3406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>LTE Acronyms - reference ... e</title>
+</head>
+<body></p>
+ 
+1xRTT 1x Radio Transmission Technology. The original version of the
+CDMA2000 system. It operates using a single (hence ‘1x’) Radio Frequency
+(RF) carrier in each direction, each occupying the same bandwidth (1.25 MHz)
+as the earlier Interim Standard-95 (IS-95). See www.cdg.org.
+
+3GPP 3rd Generation Partnership Project. The joint standardization partnership re-
+sponsible for standardizing UMTS, HSPA and LTE. See www.3gpp.org.
+
+3GPP2 3rd Generation Partnership Project 2. The joint standardization partner-
+ship responsible for standardizing <a href="#CDMA2000">CDMA2000</a> and its derivatives. See
+www.3gpp2.org.<
+
+AAA Authentication, Authorization and Accounting. These processes involve es-
+tablishing a terminal’s identity, configuring authorizations to access particu-
+lar types of service, and monitoring traffic volumes for each user. See 3GPP
+TS29.273, and TS23.002 Sections 4.1.4.6 and 4.1.4.7.</p>
+
+ABM Asynchronous Balanced Mode. A mode of packet data transfer used, for
+example, by the Logical Link Control (LLC) layer for acknowledged bi-
+directional communication between a mobile station and a Serving GPRS
+Support Node (SGSN), which includes error recovery procedures and provides
+in-sequence delivery. Balanced mode implies that the station at either end of
+the link has the right to set-up, reset, or disconnect a link at any time (i.e. there
+is no master/slave relationship). See 3GPP TS44.064.
+
+ABQP Aggregate Base Station Subsystem Quality of Service Profile. Defines the
+Quality of Service (QoS) profile for a Base Station Subsystem (BSS) packet
+flow context. See 3GPP TS48.018 Section 11.3.43 and TS24.008 Section
+10.5.6.5.
+
+AC Access Class. All UEs are randomly allocated to one of ten ACs, the allocated
+AC being stored in the Subscriber Identity Module/Universal Subscriber Iden-
+tity Module (SIM/USIM). In addition, UEs may belong to a special AC (e.g.
+for emergency services or network operators). The AC is used in determin-
+ing whether the UE may attempt to access the network. See 3GPP TS22.011
+Section 4.
+
+ACI Adjacent Channel Interference. Received interference arising from transmis-
+sions in an adjacent Radio Frequency (RF) channel.
+
+ACIR Adjacent Channel Interference Ratio. The ratio of the total power transmitted
+from a source to the total interference power affecting a victim receiver, re-
+sulting from both transmitter and receiver imperfections. It is a function of the
+Adjacent Channel Leakage Ratio (ACLR) and the Adjacent Channel Selectiv-
+ity (ACS), i.e. ACIR ~= 11ACLR+ 1ACS.
+
+ACK ACKnowledgment. A signal transmitted to indicate that one or more blocks of
+data have been successfully received and decoded. It is used in Hybrid Auto-
+matic Repeat reQuest (HARQ), as well as in Radio Link Control (RLC) level
+ARQ.
+
+ACLR Adjacent Channel Leakage Ratio. A measure of the power which leaks into cer-
+tain specific nearby Radio Frequency (RF) channels as a result of transmitting
+in a given channel. It provides an estimate of how much a neighbouring radio
+receiver will be affected by the Out Of Band (OOB) emissions from a trans-
+mitter. It is defined as the ratio of the filtered mean power in a set bandwidth
+within the wanted channel to the filtered mean power in an adjacent channel.
+See 3GPP TS36.101 Section 6.6.2.3.
+
+ACRR Adjacent Channel Rejection Ratio. Used in the context of repeaters. It is the ra-
+tio of the Root Raised Cosine (RRC) weighted gain per carrier of the repeater in
+the pass band to the RRC weighted gain of the repeater on an adjacent channel.
+See 3GPP TS 36.106 Section 13.
+
+ACS Adjacent Channel Selectivity. A measure of a receiver’s ability to receive a
+wanted signal at its assigned channel frequency in the presence of an adjacent
+channel interfering signal at a given frequency offset from the centre frequency
+of the assigned channel, without the interfering signal causing a degradation
+of the receiver performance beyond a specified limit. ACS is predominantly
+defined by the ratio of the receive filter attenuation on the assigned channel
+frequency to the receive filter attenuation on the adjacent channel. See 3GPP
+TS36.101 Section 7.5.</p>
+
+ADC Analogue to Digital Converter. A processor which samples and quantizes an
+analogue input signal to convert it to a digital output signal.
+
+ADM Asynchronous Disconnected Mode. A mode of packet data transfer used by
+the Logical Link Control (LLC) layer for unacknowledged communication be-
+tween a mobile station and a Serving GPRS Support Node (SGSN), without
+prior establishment of a logical connection. Error recovery procedures are not
+provided, and in-sequence delivery is not guaranteed. See 3GPP TS44.064.
+
+ADSL Asymmetric Digital Subscriber Line. It is a means of providing high-speed
+data transmission over conventional twisted-pair copper telephone lines, by
+frequency-division multiplexing with analogue voice traffic. Higher download
+speeds are provided than upload speeds.
+
+AES Advanced Encryption Standard. See Federal Information Processing Standards
+Publication 197, available from www.csrc.nist.gov.
+
+AF Application Function. An element offering applications that require the control
+of Internet Protocol (IP) bearer resources, such as dynamic policy or charging
+control. See for example 3GPP TS23.207 Section 5.2.4 and TS23.203 Section
+6.2.3.
+
+AKA Authentication and Key Agreement. The process by which the Authentication
+Centre (AuC) and UE exchange information by which they can each verify a
+secret key held by the other, and then calculate keys to be used for ciphering
+and integrity protection of data transmitted between the UE and the network.
+See 3GPP TS33.102 Section 6.3 and TS33.401 Section 6.1.
+
+AM Acknowledged Mode. One of three Radio Link Control (RLC) modes (the
+other two being Transparent Mode (TM) and Unacknowledged Mode (UM)). It
+includes Automatic Repeat reQuest (ARQ) for error-free packet delivery. See
+3GPP TS36.322.
+
+AMBR Aggregated Maximum Bit-Rate. The upper limit on the aggregate bit rate that
+can be expected to be provided across all non-Guaranteed Bit Rate (GBR)
+bearers. Excess traffic may, for example, be discarded by a rate-shaping func-
+tion. Each non-GBR bearer could potentially utilize the entire AMBR, for
+example when the other non-GBR bearers are not carrying any traffic. See
+3GPP TS23.401 Section 4.7.3.
+
+AMC Adaptive Modulation and Coding. A form of link adaptation which adjusts
+the transmitted information data rate by varying the modulation order and the
+Forward Error Correction (FEC) code rate. This is typically done to match an
+estimate of the instantaneous radio channel capacity.
+
+AMD Acknowledged Mode Data. The type of Protocol Data Unit (PDU) used to
+carry user plane data in Radio Link Control (RLC) Acknowledged Mode (AM).
+The PDU header contains special fields to support the RLC Automatic Repeat
+reQuest (ARQ) mechanism. See 3GPP TS36.322 Section 6.
+
+AMN Artificial Mains Network. A model of the mains electricity supply to which
+equipment is connected, used for ElectroMagnetic Compatibility (EMC) emis-
+sions testing. See 3GPP TS36.113 Section 8.3.2 and www.iec.ch.
+
+A-MPR Additional Maximum Power Reduction. An additional value of maximum al-
+lowed uplink power reduction used to meet additional adjacent carrier leakage
+ratio and spectrum emission requirements which are signalled by the network
+in a specific deployment scenario. See 3GPP TS36.101 Section 6.2.4.
+
+AMR Adaptive Multi-Rate. A type of source coding, often used for digital speech
+transmission, whereby the bit rate of the generated data stream is adapted by
+varying the encoded quality of the signal. The different output data rates are
+provided by switching between different source codecs. See 3GPP TS26.071
+and TS26.171.
+
+ANR Automatic Neighbour Relation. A function by which eNodeBs can automati-
+cally determine which cells are their neighbours. See 3GPP TS36.300 Section
+22.3.2.
+
+AoA Angle-of-Arrival. The angle (usually azimuth) from which a signal arrives rel-
+ative to a reference angle of an antenna array.
+AoD Angle-of-Departure. The angle (usually azimuth) at which a signal is transmit-
+ted relative to a reference angle of an antenna array.
+
+AP Application Protocol. Many APs are part of the Control-plane of E-UTRAN
+and operate across the S1 and X2 interfaces (S1-AP and X2-AP respectively),
+performing functions such as setting up Evolved Packet System (EPS) bearers.
+See 3GPP TS36.401 Section 11.1.2.
+
+APN Access Point Name. Identifies a Gateway GPRS Support Node (GGSN) or
+Packet Data Network GateWay (P-GW). It includes an APN network identi-
+fier which defines the Packet Data Network (PDN) to which the UE requests
+connectivity, and may also include an APN operator identifier which defines in
+which Public Land Mobile Network (PLMN) the P-GW or GGSN is located.
+See 3GPP TS23.003 Sections 9 and 19.4.2.2.
+
+ARFCN Absolute Radio Frequency Channel Number. An ARFCN defines a pair of
+Radio Frequency (RF) channel frequencies for uplink and downlink use. See
+3GPP TS45.005 Section 2 for the ARFCN for GSM, TS25.101 Section 5.4 for
+the UARFCN for UMTS and TS36.101 Section 5.4 for the EARFCN for LTE.
+ARFCN and UARFCN are based on a 200 kHz channel raster, while EARFCN
+is based on a 100 kHz channel raster.
+
+ARIB Association of Radio Industries and Businesses. One of the Japanese Stan-
+dards Development Organisations (SDOs) in 3GPP (the other being TTC). See
+www.arib.or.jp.
+
+ARP Allocation and Retention Priority. A parameter of the Quality of Service (QoS)
+profile of an Evolved Packet System (EPS) bearer. It is designed to facilitate
+decisions as to whether a bearer establishment/modification request can be ac-
+cepted. See 3GPP TS23.401 Section 4.7.3.
+
+ARQ Automatic Repeat reQuest. A scheme whereby the receiving terminal requests
+retransmission of packets which are detected to be erroneous. It is used in
+Radio Link Control (RLC) Acknowledged Mode (AM), as well as being a
+component of Hybrid ARQ (HARQ).
+
+AS Access Stratum. Consists of the functions and protocols used to transfer infor-
+mation across a specific Radio Access Technology (RAT).
+
+AS Angular Spread. A measure of the width of a transmitted (or received) signal
+beam or set of signal paths, usually in the azimuth plane.
+
+A-SEM Additional Spectrum Emission Mask. Specifies additional spectral emission
+constraints for particular deployment scenarios. A UE is instructed when it has
+to apply an A-SEM by signalling from the network, typically as part of a cell
+handover/broadcast message. See 3GPP TS36.101 Section 6.6.2.2.
+
+ASME Access Security Management Entity. The entity which receives the top-level
+keys in an access network from the Home Subscriber Server (HSS). For E-
+UTRAN access networks, the role of the ASME is assumed by the Mobility
+Management Entity (MME). See 3GPP TS33.401.
+
+ASN.1 Abstract Syntax Notation 1. A standardized notation used to describe structures
+for representing, encoding, transmitting, and decoding data; it is used for some
+UMTS and LTE protocol specifications (e.g. Radio Resource Control (RRC)
+signalling definition. See 3GPP TS36.331.
+
+ATIS Alliance for Telecommunications Industry Solutions. The North American
+Standards Development Organization (SDO) in 3GPP. See www.atis.org.
+
+ATT Attenuator. Used in conformance testing, to set the desired power of received
+signals or interference, for example modelling propagation loss. See 3GPP
+TS36.508 Annex A and TS36.141 Annex I.
+
+AuC Authentication Centre. Can be considered to be a subset of a Home Subscriber
+Server (HSS). It stores an identity key for each mobile subscriber registered
+with a Home Location Register (HLR). This key is used to generate security
+data. See 3GPP TS23.002.
+
+AWGN Additive White Gaussian Noise. Noise with a flat power spectrum and Gaus-
+sian amplitude distribution. It is generally added to a received signal to simulate
+the effect of thermal noise and other sources of noise or interference.
+BCC Base station Colour Code. The least-significant 3 bits of a Base Station Identi-
+fication Code (BSIC). See 3GPP TS23.003.
+
+BCCH Broadcast Control CHannel. In LTE, it represents the logical channel carrying
+broadcast system information. See 3GPP TS36.321.
+
+BCH Broadcast CHannel. In LTE, the transport channel carrying broadcast system
+information except that which is contained in the Master Information Block
+(MIB). See 3GPP TS36.321.</p>
+
+BCM Bearer Control Mode. BCM can indicate ‘mobile station only’ or ‘mobile sta-
+tion / network’. When the BCM is ‘mobile station only’, the mobile station
+requests any additional Packet Data Protocol (PDP) contexts for the PDP Ad-
+dress / Access Point Name (APN) pair. In the case of ‘mobile station/network’
+, both the mobile station and the Packet Data Network GateWay (P-GW) or
+Gateway GPRS Support Node (GGSN) may request additional PDP contexts.
+See 3GPP TS29.060 Section 7.7.83.</p>
+
+BER Bit Error Rate. A measure of received signal quality: the proportion of received
+bits which is decoded erroneously.</p>
+
+BI Backoff Indicator. Indicates the upper limit for a random backoff period by
+which a UE has to delay a new random access attempt if a response has not
+been received to a first random access attempt. The BI may be used for example
+in network overload situations. See 3GPP TS36.321 Sections 5.1 and 7.2.
+
+BLER Block Error Rate. A measure of received signal quality: the proportion of
+received data blocks which is decoded erroneously. Usually this refers to trans-
+port blocks, and the errors are detected by Cyclic Redundancy Check (CRC)
+failure.</p>
+
+BM-SC Broadcast-Multicast Service Centre. The interface between external broad-
+cast/multicast content providers and the core network. See 3GPP TS23.246
+Section 5.1.</p>
+
+BP Bandwidth Part. A part of the total downlink system bandwidth, which is
+further subdivided into a number of sub-bands. It is applicable to periodic ‘UE-
+selected sub-band’ Channel Quality Indicator (CQI) reporting on the Physical
+Uplink Control CHannel (PUCCH). The UE selects one sub-band from the
+BP and the corresponding CQI value is reported. See 3GPP TS36.213 Section
+7.2.2.</p>
+
+BPSK Binary Phase Shift Keying modulation. A modulation scheme conveying one
+bit per symbol, whereby the values of the bit are represented by opposite phases
+of the carrier.</p>
+
+BS Base Station. The entity in a radio access network responsible for radio trans-
+mission and reception in one or more cells to and from the UE. In LTE the BS
+is known as the eNodeB.</p>
+
+BSIC Base Station Identification Code. A 6-bit code which allows a mobile station to
+distinguish between different neighbouring GSM base stations. It is made up
+of a Network Colour Code (NCC) and a Base station Colour Code (BCC). See
+3GPP TS23.003.</p>
+
+BSR Buffer Status Report. Medium Access Control (MAC)-level messages trans-
+mitted by the UE to the serving eNodeB to provide the eNodeB with infor-
+mation about the amount of data in the uplink buffers of the UE. See 3GPP
+TS36.321 Section 5.4.5.</p>
+
+ BSS Base Station Subsystem. Either a full GSM/EDGE Radio Access Network
+(GERAN) network, or only the access part of a GERAN, offering the allo-
+cation, release and management of specific radio resources to establish means
+of connection between a mobile station and the GERAN.
+BTS Base Transceiver Station. The base station in a GSM system.
+BW Bandwidth. A measure of the width of a range of frequencies, measured in
+Hertz.</p>
+
+C/I Carrier-to-Interference Ratio. The ratio between the power of the Radio Fre-
+quency (RF) carrier bearing the wanted signal and the total power of interfering
+signals.</p>
+
+CAC Call Admission Control. The process by which the network decides whether or
+not to admit a new call.</p>
+
+CAZAC Constant Amplitude Zero Auto-Correlation. A property exhibited by certain
+sequences, such as Zadoff-Chu (ZC) sequences, whereby the sequences have
+constant amplitude and zero circular autocorrelation at all points except zero
+lag.</p>
+
+CB Circular Buffer. A buffer in which data is read in and out cyclically, such that
+when the end of the buffer is reached the process continues at the beginning.
+See 3GPP TS36.212 Section 5.1.4.1.2.
+
+CBC Cell Broadcast Centre. The part of the Core Network (CN) which manages Cell
+Broadcast Service (CBS) messages. See 3GPP TS23.002 Section 4a.5.1.
+
+CBE Cell Broadcast Entity. An information source, external to the 3GPP system,
+which provides the content of a Cell Broadcast Service (CBS). This may
+include emergency public warnings. See 3GPP TS23.401 Section 5.12 and
+TS23.041 Section 4.</p>
+
+
+CBS Cell Broadcast Service. A service analogous to Teletex, which broadcasts un-
+acknowledged messages to all mobile terminals within a particular region. See
+3GPP TS23.041.</p>
+
+CC Convolutional Code. A type of Forward Error Correction (FEC) code in which
+k input bits to be encoded are fed into a shift register with a number stages
+corresponding to the memory of the CC, and n output bits are taken from the
+shift register as a linear combination of the content of the shift register. The
+code rate is given by k/n.
+
+CCCH Common Control CHannel. In LTE, a logical channel used to deliver control
+information (in both uplink and downlink directions) during connection estab-
+lishment. See 3GPP TS36.321.</p>
+
+CCE Control Channel Element. A set of 36 resource elements to which part or all of
+a Physical Downlink Control CHannel (PDCCH) message can be mapped. See
+3GPP TS36.211 Section 6.8.1.</p>
+
+CCO Cell Change Order. A message from E-UTRAN to a UE in
+RRC_CONNECTED mode, instructing it to move to a GSM/EDGE Ra-
+dio Access Network (GERAN), including information facilitating access to
+and/or connection establishment in the target cell. See 3GPP TS36.331 Section
+5.4.3.</p>
+
+CCSA China Communications Standards Association. The Chinese Standards Devel-
+opment Organization (SDO) in 3GPP. See www.ccsa.org.cn.
+
+CDD Cyclic Delay Diversity. A form of transmit diversity whereby a different phase
+shift is applied to each Orthogonal Frequency Division Multiplexing (OFDM)
+subcarrier on at least one of the multiple transmit antennas from which the sub-
+carrier is transmitted, thereby increasing the frequency selectivity of the radio
+channel. In the time domain this is equivalent to introducing a delay which is
+cyclic because it is applied before insertion of the Cyclic Prefix (CP).
+
+CDL Clustered Delay Line. A type of channel model in which the received signal is
+composed of a number of separate delayed clusters. Each cluster comprises a
+number of multipath components with the same delay but different Angle of
+Departure (AoD) and Angle of Arrival (AoA).</p>
+
+
+CDM Code Division Multiplex(ed/ing). A method of multiplexing different data sig-
+nals by means of different codes, rather than different frequencies or timeslots.
+The codes used for different signals may be orthogonal to each other, or may
+be pseudo-random. They have a wider bandwidth than the data signals. CDM
+is the main multiplexing mode in UMTS.</p>
+
+CDMA Code Division Multiple Access. A scheme allowing multiple users to access
+a given radio channel by the use of CDM to multiplex the data signals of the
+different users. CDMA is the main multiple access mode of UMTS.
+
+CDN Coupling/Decoupling Network. A capacitor/inductor network used to connect
+equipment being tested for ElectroMagnetic Compatibility (EMC) compliance
+to a power supply. The coupling network allows Radio Frequency (RF) com-
+mon mode current disturbance signals through the various conductors to the
+equipment under test, while the decoupling network is designed to handle sig-
+nals emitted by the equipment under test. See 3GPP TS36.113 and IEC 61000
+(www.iec.ch).</p>
+
+CF Contention-Free. Referring to the random access procedure, CF is an access
+mode in which only one user has permission to access a given transmission
+resource. CF random access operates in LTE by assigning a dedicated Random
+Access CHannel (RACH) preamble signature to a particular UE for transmis-
+sion in a particular RACH slot. This is in contrast to contention-based random
+access, where multiple users may transmit a signal in the same time-frequency
+resources, and a contention resolution procedure is then required to separate
+the different users. See 3GPP TS36.321 Section 10.1.5.2.
+Referring to turbo-code interleaver design, CF describes an interleaver in which
+the turbo-decoder can operate to perform the necessary exchanges of mutual in-
+formation between the consitutent decoders without reading and writing from
+the same memory block at the same time. The turbo-code interleaver adopted
+for LTE is CF.</p>
+
+CFI Control Format Indicator. Indicates the number of Orthogonal Frequency Divi-
+sion Multiplexed (OFDM) symbols used for control signalling in each down-
+link subframe. See 3GPP TS36.212 Section 5.3.4.
+
+CFO Carrier Frequency Offset. The difference between a reference frequency and
+the frequency of a received Radio Frequency (RF) carrier. Typically the refer-
+ence frequency is provided by a local oscillator in the radio receiver.</p>
+
+
+CGI Cell Global Identification. The globally unique identity of a cell in GSM/EDGE
+Radio Access Network (GERAN) or CDMA2000.</p>
+
+CHAP Challenge Handshake Authentication Protocol. Used by the Point-to-Point Pro-
+tocol (PPP) to validate the identity of users. See IETF RFC1994, www.ietf.org.</p>
+
+CID Cell IDentifier. In LTE, an identifier of a particular cell, either a Physical CID
+or a Global CID. Up to 504 Physical CIDs are available.</p>
+
+CID Context IDentifier. A RObust Header Compression (ROHC) parameter which
+is associated with each compressed data flow and which identifies the
+state maintained by the compressor and decompressor in order to com-
+press/decompress the headers of the packet stream. The CID is transmitted
+together with the compressed headers and feedback information. See IETF
+RFC3095, www.ietf.org.</p>
+
+CINR Carrier-to-Interference-and-Noise Ratio. The ratio between the power of the
+Radio Frequency (RF) carrier bearing the wanted signal and the total power of
+interfering signals and thermal noise.</p>
+
+CIR Channel Impulse Response. The time-domain complex signal received at the
+output of a radio propagation channel in response to the transmission of a single
+signal impulse of vanishingly short duration. It provides information on the
+power, phase and delay of the different paths of the channel.</p>
+
+CKSN Ciphering Key Sequence Number. In a UMTS authentication challenge, the
+CKSN enables the network to verify the instance of the ciphering key and
+integrity key which are stored in the mobile terminal without invoking the au-
+thentication procedure. See 3GPP TS24.008 Section 10.5.1.2.
+
+CM Cubic Metric. The CM of a given signal is a measure of the transmit power
+de-rating needed to enable a Power Amplifier (PA) to transmit the signal com-
+pared to the de-rating required for transmission of a reference signal for the
+same Adjacent Carrier Leakage Ratio (ACLR). The CM characterizes the ef-
+fects of the third-order (cubic) non-linearity of the PA. See for example 3GPP
+TS25.101 Section 6.2.2.</p>
+
+
+CMC Connection Mobility Control. Comprises the functions executed by the eN-
+odeB to manage mobility and handover in both idle and connected modes. See
+3GPP TS36.300 Section 16.1.3 and TS36.133.</p>
+
+CMHH Constant Modulus Householder. A Householder matrix is given byWH = I - 2uuH/uHu where I is the identity matrix and u is a predefined column vector.
+If all the column vectors in the matrix have equal magnitude, the matrix is said
+to possess the constant modulus property. Codebooks comprised of CMHH
+matrices were considered for precoding in LTE. In such an application, the
+constant modulus property limits the Peak to Average Power Ratio (PAPR) of
+the transmitted signals.</p>
+
+CN Core Network. The part of the 3GPP system which is independent of the con-
+nection technology (e.g. the Radio Access Technology (RAT)) of the terminals.
+The terminals connect to the core network via the access network (which is
+RAT-specific).</p>
+
+COFDM Coded Orthogonal Frequency Division Multiplexing. An OFDM scheme asso-
+ciated with a Forward Error Correction (FEC) code.
+
+CP Cyclic Prefix. A set of samples which are duplicated from the end of a trans-
+mitted symbol and appended cyclically to the beginning of the symbol. This
+can form a type of guard interval to absorb Inter-Symbol Interference (ISI).
+The cyclic construction preserves orthogonality of the subcarriers in an OFDM
+transmission.</p>
+
+CPICH Common PIlot CHannel. A Wideband Code Division Multiple Access
+(WCDMA) downlink physical channel transmitted from every NodeB to pro-
+vide the default phase reference for demodulation of the other downlink chan-
+nels. It is used for signal quality measurements for handover from an LTE cell
+to a WCDMA cell. See 3GPP TS25.211 Section 5.3.3.</p>
+
+CPICHEc/No Common PIlot CHannel (CPICH) Ec/No. The CPICH received energy per chip
+divided by the noise power density in the band. A measurement used for han-
+dover toWideband Code Division Multiple Access (WCDMA) cells. See 3GPP
+TS25.215 Section 5.1.5.</p>
+
+
+C-plane Control-plane. Carries signalling (for example for Radio Resource Control
+(RRC)), as opposed to user data, which is carried by the User-plane (U-plane).
+See 3GPP TS36.300 Section 4.3.2.</p>
+
+CPT Control Protocol Data Unit Type. A field in the header of LTE Radio Link
+Control (RLC) Control Protocol Data Units (PDUs), indicating the type of the
+RLC Control PDU. In Release 8, the only type of RLC Control PDU defined
+is the STATUS PDU; the CPT field allows more types to be defined in a later
+release. See 3GPP TS36.322 Section 6.2.1.6.
+
+CQI Channel Quality Indicator. Information signalled by a UE to the base station
+to indicate a suitable data rate (typically a Modulation and Coding Scheme
+(MCS) value) for downlink transmissions, usually based on a measurement
+of the received downlink Signal to Interference plus Noise Ratio (SINR) and
+knowledge of the UE’s receiver characteristics. See 3GPP TS36.213 Section
+7.2.3.</p>
+
+CR Change Request. A formal description of a proposed or agreed change to a
+3GPP specification. Any change to a 3GPP specification v3.0.0 or above needs
+to be formulated and agreed by means of a CR.
+
+CRC Cyclic Redundancy Check. An error detecting code appended to a block of
+data to be transmitted. The value of the CRC is calculated only from the block
+of data itself. The length of the CRC determines the number of errors which
+can be detected in the block of data on reception. A CRC is not able to correct
+errors or determine which bits are erroneous.
+
+C-RNTI Cell Radio Network Temporary Identifier. A UE identifier allocated by an eN-
+odeB and unique within one cell controlled by that eNodeB. The C-RNTI can
+be reallocated when a UE moves to a new cell. See 3GPP TS36.321 Section
+7.1.
+
+CS Circuit Switched. A CS connection reserves dedicated transmission resources
+for data transfer at a fixed rate for the duration of the communication session.
+The reserved resources are not accessible to any other user.
+
+CSFB Circuit Switched FallBack. CSFB in the Evolved Packet System (EPS) en-
+ables the provisioning of voice and other CS-domain services by reuse of
+GSM/EDGE Radio Access Network (GERAN) or UTRAN CS infrastructure
+when the UE is served by E-UTRAN. This function is only available if E-
+UTRAN coverage is overlapped by GERAN or UTRAN coverage.
+
+CSG Closed Subscriber Group. A set of subscribers who are permitted to access a
+particular cell to which access is restricted. See 3GPP TS25.367 and TS36.304.
+CSI Channel State Information. A general term for information describing charac-
+teristics of the radio channel, typically indicating the complex transfer function
+matrix between one or more transmit antennas and one or more receive anten-
+nas.
+
+CSIT Channel State Information at the Transmitter. Channel State Information (CSI)
+which is available at the transmitter side of the channel, for example as a result
+of feedback signalling from the receiver (closed loop) or open loop estimation
+exploiting reciprocity.
+
+CTF Channel Transfer Function. A set of coefficients describing the complex im-
+pulse response (or frequency-domain characteristic) of a radio channel from
+one or more transmit antennas to one or more receive antennas.
+CW Continuous-Wave. An unmodulated Radio Frequency (RF) carrier of constant
+amplitude and frequency, used to model interference in some RF performance
+requirements. See 3GPP TS36.101.
+
+d.c. direct current. In general, a signal of fixed polarity (i.e. non-oscillating). Used
+to refer to the subcarrier corresponding to zero-frequency in a baseband Or-
+thogonal Frequnecy Domain Multiplexed (OFDM) signal.
+
+DAC Digital to Analogue Converter. A processor which converts a sampled, quan-
+tized digital input signal into a continuous-time analogue-valued output signal.
+
+DAI Downlink Assignment Index. A field in the downlink resource grant signalled
+to a UE, indicating how many subframes in a previous time window have
+contained transmissions to that UE. This is applicable only when LTE is op-
+erated in Time Domain Duplex (TDD) mode, and enables the UE to deter-
+mine whether it has received all the downlink transport blocks for which it
+should transmit a combined ACKnowledgement/Negative ACKnowledgement
+(ACK/NACK). See 3GPP TS36.213 Section 7.3.</p>
+
+DCCH Dedicated Control CHannel. In LTE, a logical channel used to deliver dedicated
+control information relating to a specific UE (in both uplink and downlink di-
+rections), when the UE has a Radio Resource Control (RRC) connection with
+the eNodeB. See 3GPP TS36.321.</p>
+
+DCI Downlink Control Information. The term used to describe the control signalling
+messages transmitted on the Physical Downlink Control CHannel (PDCCH),
+including for example downlink resource assignments (for the Physical Dwon-
+link Shared CHannel (PDSCH)) and uplink transmission grants (for the Physi-
+cal Uplink Shared CHannel (PUSCH)). See 3GPP TS36.212 Section 5.3.3.
+
+DFT Discrete Fourier Transform. A transformation which acts on a sampled time-
+domain signal of finite duration to give the corresponding series of frequency-
+domain components. For a series of time-domain samples x0, . . . , xN-1, the
+DFT X0, . . . ,XN-1 is given by Xk = PN-1n=0 xne-j 2knN .</p>
+
+DFT-SOFDM
+Discrete Fourier Transform- Spread- Orthogonal Frequency Division Multi-
+plexing. A transmission scheme similar to Orthogonal Frequency Division
+Multiplexing (OFDM), but with a Discrete Fourier Transform (DFT) precoding
+stage applied before the Inverse Fast Fourier Transform (IFFT) at the transmit-
+ter, resulting in a single-carrier signal with significantly lower Peak to Average
+Power Ratio (PAPR) than OFDM. It is also known as Single Carrier-Frequency
+Division Multiplexing (SC-FDM), and is the basis of the LTE uplink.
+DHCP Dynamic Host Configuration Protocol. A protocol used to allocate Internet Pro-
+tocol (IP) addresses and other configuration parameters to devices in an IP
+network. See IETF RFC1531, www.ietf.org.</p>
+
+
+Diffserv Differentiated Services. Diffserv is a coarse-grained mechanism for classifying
+data traffic into classes depending on the Quality of Service (QoS) require-
+ments of each data traffic flow. It facilitates interoperability between different
+networks, enabling data from each class to be handled with appropriate priority
+and latency. See IETF RFC2475, www.ietf.org.
+
+DL DownLink. The radio link in the direction from the base station to the mobile
+terminal.</p>
+
+DL-SCH DownLink Shared CHannel. An LTE transport channel used to transport down-
+link user data or Radio Resource Control (RRC) messages, as well as system
+information which are not transported via the Broadcast CHannel (BCH). See
+3GPP TS36.321.</p>
+
+DM RS DeModulation Reference Signal. Reference Signals (RS) which are embed-
+ded in the Physical Uplink Control CHannel (PUCCH) and Physical Uplink
+Shared CHannel (PUSCH) transmissions to provide the phase reference for
+demodulation of the PUCCH/PUSCH data. See 3GPP TS36.211 Section 5.5.2.
+
+DoA Direction of Arrival. The angle (usually azimuth) from which a signal arrives
+relative to a reference angle of an antenna array.</p>
+
+DRA Dynamic Resource Allocation. The process of assigning resource blocks to dif-
+ferent radio bearers in each subframe. This function is managed by the eNodeB.
+See 3GPP TS36.300 Section 16.1.4.</p>
+
+DRB Data Radio Bearer. A radio bearer which carriers user data as opposed to con-
+trol plane signalling.</p>
+
+DRX Discontinuous Reception. The periodic switching off of a receiver, usually to
+save energy. DRX cycles can be configured in the LTE downlink so that the UE
+does not have to decode the Physical Downlink Control CHannel (PDCCH) or
+receive Physical Downlink Shared CHannel (PDSCH) transmissions in certain
+subframes. See 3GPP TS36.321 Section 5.7 for connected mode, and TS36.304
+Section 7.1 for idle mode.</p>
+
+
+DSAC Domain Specific Access Control. A mechanism which allows the utilization
+of a specific Core Network (CN) domain resource while another domain is
+restricted, for example when a natural disaster occurs. See 3GPP TR23.898.
+
+DS-CDMA Direct Sequence- Code Division Multiple Access. A method of Code Division
+Multiple Access (CDMA) whereby the signal of each user is spread in fre-
+quency by multiplying it by a wideband code sequence of ‘chips’. This is used
+in UMTS.</p>
+
+DSP Digital Signal Processor. A processor for manipulating digital signals.
+DTCH Dedicated Traffic CHannel. A logical channel used in LTE to deliver dedicated
+user data for a specific UE (in both uplink and downlink directions). See 3GPP
+TS36.321.
+
+DTX Discontinuous Transmission. The periodic switching off of a transmitter, usu-
+ally to save energy.
+
+DUT Device Under Test. Typically refers to a device undergoing conformance test-
+ing.
+
+DwPTS Downlink Pilot TimeSlot. A special downlink timeslot occurring in the second
+(and in some configurations the 7th) subframe of each radio frame when LTE
+is operated in Time Division Duplex (TDD). Its length is variable, to allow for
+different DownLink (DL) – UpLink (UL) switching periods to be configured.
+The name DwPTS originates from Time Division Synchronous Code Division
+Multiple Access (TD-SCDMA). See 3GPP TS36.211 Section 4.2.
+E Extension bit. A bit used in the header of Radio Link Control Protocol Data
+Units (RLC PDU), to indicate whether a data field or further header informa-
+tion follows. See TS36.322 Section 6.2.2.4.
+
+EARFCN E-UTRA Absolute Radio Frequency Channel Number. See ARFCN.
+eBMSC evolved Broadcast-Multicast Service Centre. The interface between external
+broadcast/multicast content providers and the core network in LTE / System
+Architecture Evolution (SAE). See 3GPP TS36.300 Section 15.1.1.
+
+ECGI E-UTRAN Cell Global Identifier. The globally unique identity of a cell in E-
+UTRA.</p>
+
+ECI E-UTRAN Cell Identifier. Used to identify a cell uniquely within a Public Land
+Mobile Network (PLMN). The ECI has a length of 28 bits and contains the
+eNodeB-IDentifier (eNB-ID). The ECI can address either 1 or up to 256 cells
+per eNodeB, depending on the length of the eNB-ID. See 3GPP TS36.300
+Section 8.2.
+
+ECM Evolved Packet System Connection Management. A Non-Access Stratum
+(NAS) state which reflects the connectivity (either ‘Idle’ or ‘Connected’) of
+a UE with the Evolved Packet Core (EPC).
+
+EEA Evolved Packet System Encryption Algorithm. Used for ciphering, this may
+be either Advanced Encryption Standard (AES), SNOW 3G or null. All algo-
+rithms use a 128-bit input key. See 3GPP TS33.401.
+
+EEC Ethernet Equipment Clock. The clock used for synchronizing network equip-
+ment that uses synchronous ethernet. The requirements for such clocks are
+specified by International Telecommunication Union (ITU) recommendations
+G.8262/Y.1362. See www.itu.int/itu-t.
+
+EESM Exponential Effective Signal to Interference plus Noise Ratio Mapping. A
+method for predicting an SINR level which in an Additive White Gaussian
+Noise (AWGN) channel would give equivalent demodulation performance to
+that of a frequency-selective channel whose per subcarrier SINR values are
+known. The technique is particularly useful for evaluating the BLock Error
+Rate (BLER) performance of multicarrier transmission schemes. The effective
+SINR, eff, is given by eff = - · ln  1N PNk=1 e- k , where N is the num-ber of subcarriers, k is the SINR for the kth subcarrier, and  is a parameter
+determined by link-level simulation.
+
+EHPLMN Equivalent Home Public Land Mobile Network. Any PLMN which is listed
+in the Universal Subscriber Identity Module (USIM) of a mobile terminal as
+being equivalent to the Home PLMN (HPLMN). Any EHPLMN is treated as
+the HPLMN in all network and cell selection procedures. See 3GPP TS22.011
+Section 3.2.2.1.</p>
+
+
+EIA Evolved Packet System Integrity Algorithm. Used for integrity protection of
+Radio Resource Control (RRC) and Non-Access Stratum (NAS) signalling,
+this may be either Advanced Encryption Standard (AES) or SNOW 3G. Both
+algorithms use a 128-bit input key. See 3GPP TS33.401.
+
+EIR Equipment Identity Register. Stores the International Mobile Equipment Iden-
+tities (IMEIs) of mobile stations in the GERAN/UTRAN/E-UTRAN systems,
+either white-listed, grey-listed or black-listed. It allows a mobile terminal’s
+identity to be checked for blacklisting, e.g. for stolen or known-to-be-faulty
+terminals. See 3GPP TS23.002 Section 4.1.1.4.
+
+EMC ElectroMagnetic Compatibility. EMC between two pieces of equipment im-
+plies that each is not unduly affected by electromagnetic radiation emitted by
+the other. Electromagnetic compatibility may be achieved by control of emis-
+sions, or control of susceptibility to emissions, or both.
+
+EMM Evolved Packet System Connection Management. A Non-Access Stratum
+(NAS) state which reflects whether a UE is registered with the Mobile Manage-
+ment Entity (MME) – either ‘registered’ or ‘deregistered’. See 3GPP TS24.301
+Section 5.</p>
+
+eNB see eNodeB.</p>
+
+eNB-ID evolved NodeB IDentifier. Used to identify an eNodeB uniquely within a Pub-
+lic Land Mobile Network (PLMN). The eNB-ID can have either 20 bits or 28
+bits. It is also comprised within the Global eNB-ID, which uniquely identi-
+fies an eNodeB globally. The Global eNB-ID is constructed from the Mobile
+Country Code (MCC), Mobile Network Code (MNC) and eNB-ID. See 3GPP
+TS36.300 Section 8.2.</p>
+
+eNodeB evolved NodeB. The base station in LTE systems. Each eNodeB serves one or
+more E-UTRAN cells.</p>
+
+
+EP Elementary Procedure. A basic interaction between two nodes (such as two
+eNodeBs via the X2 interface, or between an eNodeB and the Evolved Packet
+Core (EPC) via the S1 interface. An EP consists of an initiating message and
+sometimes a response. An example of an EP over the X2 interface is Handover
+Preparation. See 3GPP TS36.413 and TS36.423.
+
+EPA Extended Pedestrian A. A propagation channel model based on the Interna-
+tional Telecommunication Union (ITU) Pedestrian A model, extended to a
+wider bandwidth of 20 MHz. The pedestrian channel model represents a UE
+speed of 3 km/h, while the vehicular model (Extended Vehicular A (EVA)),
+represents UE speeds higher than 30 km/h.
+
+EPC Evolved Packet Core. The Core Network (CN) in the LTE / System Architec-
+ture Evolution (SAE) system. The EPC is responsible for the overall control of
+the UE and establishment of the bearers. The main logical nodes of the EPC
+are the Packet Data Network GateWay (P-GW), Serving-GateWay (S-GW) and
+Mobility Management Entity (MME).</p>
+
+EPRE Energy Per Resource Element. The transmitted energy per Resource Element
+(RE).</p>
+
+EPS Evolved Packet System. The term describing LTE and System Architecture
+Evolution (SAE) together, comprising both an evolved core network and an
+evolved radio access network.</p>
+
+E-RAB E-UTRAN Radio Access Bearer. The concatenation of an S1 bearer and the
+corresponding radio bearer. See 3GPP TS23.401 Section 4.7.2.2.</p>
+
+ESD Electrostatic discharge. A sudden transfer of electric charge between two ob-
+jects in close proximity, due to the two objects being at different relative poten-
+tials. ESD can cause failure of semiconductor devices. Base stations and UEs
+are tested for their ability to withstand ESD. See for example 3GPP TS36.113
+Section 9.4 and TS36.124 Section 9.3.</p>
+
+ESM Evolved Packet System Session Management. A Non-Access Stratum (NAS)
+state which reflects whether an EPS bearer context is active or inactive. See
+3GPP TS24.301 Section 6.
+
+ESP Encapsulating Security Payload. The ESP header is part of the Internet Protocol
+Security (IPsec) suite of Internet Engineering Task Force (IETF) protocols.
+It is designed to provide security services in IPv4 and IPv6, including origin
+authenticity, integrity, and encryption for data packets. See IETF RFC2406,
+www.ietf.org.</p>
+
+E-TM E-UTRA Test Model. A test model used for LTE conformance testing. See
+3GPP TS36.141, Section 6.1.1.</p>
+
+ETSI European Telecommunications Standards Institute. The European Standards
+Development Organisation (SDO) in 3GPP. See www.etsi.org.</p>
+
+ETU Extended Typical Urban. A propagation channel model based on the GSM
+Typical Urban model, extended to a wider bandwidth of 20 MHz. It models
+a scattering environment which is considered to be typical in a urban area.
+ETWS Earthquake and Tsunami Warning System. A type of Public Warning System
+that broadcasts warnings of earthquakes and tsunamis to any UE which is ca-
+pable of receiving them. The warnings are initiated by Warning Notification
+Providers, and delivered by means of cell broadcast messages. The informa-
+tion provided can include the type of emergency, as well as advice on action to
+take. See 3GPP TS23.828 and TS22.268.</p>
+
+EUT Equipment Under Test. Typically refers to equipment undergoing conformance
+testing.</p>
+
+E-UTRA Evolved Universal Terrestrial Radio Access. The LTE radio access technology.</p>
+
+E-UTRAN Evolved Universal Terrestrial Radio Access Network. Consists of eNodeBs,
+providing the User-plane (Packet Data Convergence Protocol (PDCP), Radio
+Link Control (RLC), Medium Access Control (MAC) and PHYsical (PHY)
+layers) and Control-plane (Radio Resource Control (RRC)) protocol termina-
+tions towards the UE. The eNodeBs can be interconnected with each other
+by means of the X2 interface. The eNodeBs are connected by means of the
+S1 interface to the Evolved Packet Core (EPC). See 3GPP TS23.002 Section
+4.2.3.2.</p>
+
+
+EVA Extended Vehicular A. A propagation channel model based on the International
+Telecommunication Union (ITU) Vehicular A model, extended to a wider
+bandwidth of 20 MHz. The vehicular channel model represents UE speeds of
+30, 120 km/h and higher, while the pedestrian model (Extended Pedestrian A
+(EPA)), represents a UE speed of 3 km/h.</p>
+
+EVM Error Vector Magnitude. A measure of the distortion introduced in a transmit-
+ted signal by the Radio Frequency (RF) imperfections of practical implemen-
+tations. It is defined as the square root of the ratio of the mean error vector
+power between a reference signal (i.e. the signal defined by the physical layer
+specification equations) and the actual transmitted signal, normalized by the
+mean reference signal power, expressed as a percentage. See 3GPP TS36.101
+Section 6.5.2.1 and TS36.104 Section 6.5.2.</p>
+
+FDD Frequency Division Duplex. A mode of bidirectional communication in which
+transmission and reception take place at the same time on different carrier fre-
+quencies.</p>
+
+FDE Frequency-Domain Equalizer. An equalizer which compensates for the transfer
+function of the radio propagation channel by filtering the received signal in the
+frequency domain. An FDE provides a low-complexity means for compensat-
+ing frequency-selective channel gains for an Orthogonal Frequency Division
+Multiplexed (OFDM) signal.</p>
+
+FDM Frequency-Division Multiplexing. A method of multiplexing different data sig-
+nals for transmission on a single communications channel, whereby each signal
+is assigned a non-overlapping frequency range within the main channel.
+
+FDMA Frequency Division Multiple-Access. FDMA is an access method allowing
+multiple users to share the same frequency band by subdividing the band
+into different frequency channels. Each user is allocated a different frequency
+channel, thus allowing them to utilize the allocated radio spectrum without
+interfering with each other.</p>
+
+FDSS Frequency Domain Spectral Shaping. A pulse-shaping filtering process imple-
+mented in the frequency domain by element-wise multiplication of the filter
+coefficients and the spectrum of a transmitted signal.</p>
+
+
+FEC Forward Error Correction. A type of digital signal processing which improves
+data reliability by introducing parity information (redundancy) into a data se-
+quence prior to transmission. This enables a receiver to detect and correct
+transmission errors.</p>
+
+FFS For Further Study. A term used in 3GPP to indicate that a topic will be dis-
+cussed further, and any agreements will be based on further analysis.</p>
+
+FFT Fast Fourier Transform. An efficient algorithm to compute the Discrete Fourier
+Transform (DFT) and its inverse. Many such algorithms exist, but the most
+popular is the Radix-2 Cooley-Tukey which requires the number of points in
+the input sequence to be a power of 2.</p>
+
+FI Framing Info. A field in a Radio Link Control (RLC) Protocol Data Unit (PDU)
+header, which indicates whether the RLC Service Data Units (SDU) at the
+beginning and/or end of the Data field are segmented—i.e. it indicates whether
+the first byte of the Data field corresponds to the first byte of an RLC SDU, and
+whether the last byte of the Data field corresponds to the last byte of a RLC
+SDU. See 3GPP TS36.322 Section 6.2.2.6.</p>
+
+FIR Finite Impulse Response. The impulse response is a filter’s response to a Kro-
+necker delta input. The impulse response is said to be ‘finite’ when it settles to
+zero in a finite number of samples.</p>
+
+FMS First Missing Service Data Unit. The Sequence Number (SN) of the first miss-
+ing Packet Data Convergence Protocol (PDCP) Service Data Unit (SDU). It
+is used in a PDCP Status Report to indicate which PDCP SDUs need to be
+retransmitted in a lossless handover. See 3GPP TS36.323 Section 6.3.9.</p>
+
+FQDN Fully Qualified Domain Name. An FQDN may be included in the identity of
+a Packet Data Network GateWay (PDN-GW). It is used to derive the Internet
+Protocol (IP) address of the PDN-GW by means of the Domain Name Service
+(DNS) function, taking into account the protocol type on the S5/S8 interfaces.
+See 3GPP TS23.003 Section 19.4.2.
+
+FRC Fixed Reference Channel. A set of parameters used to describe a configura-
+tion for packet-based performance evaluation of 3GPP systems in which the
+adaptation of modulation and coding rate is in principle possible (e.g. LTE or
+HSDPA). In a FRC test, the modulation and coding scheme are fixed, i.e. they
+are not adapted based on UE feedback. The performance requirements spec-
+ify minimum throughput which is to be met under this condition. See 3GPP
+TS36.101 Sections 8.2.1, 8.2.2, A.3.</p>
+
+FS Frame Structure. The term used to describe the pattern of subdivisions of radio
+frames in the time domain. In LTE, the frame structure can be type 1 or type
+2; type 1 is applicable to both full duplex and half duplex Frequency Division
+Duplex (FDD), while type 2 is applicable to Time Division Duplex (TDD). See
+3GPP TS36.211 Section 4.</p>
+
+FSTD Frequency Switched Transmit Diversity. General FSTD schemes transmit sym-
+bols from each antenna on a different set of subcarriers. In LTE, FSTD is only
+used in combination with Space Frequency Block Codes (SFBC) for the case of
+4 transmit antennas at the eNodeB, in order to provide a suitable transmit diver-
+sity scheme where no orthogonal rate-1 block code exists. See 3GPP TS36.211
+Section 6.3.4.3.</p>
+
+FTP File Transfer Protocol. A communication protocol used to exchange files
+through a Transmission Control Protocol / Internet Protocol (TCP/IP) network.
+See IETF RFC959, www.ietf.org.</p>
+
+GBR Guaranteed Bit Rate. A minimum bit rate requested by an application. In LTE,
+minimum GBR bearers and non-GBR bearers may be provided. Minimum
+GBR bearers are typically used for applications like Voice over Internet Pro-
+tocol (VoIP), with an associated GBR value; higher bit rates can be allowed
+if resources are available. Non-GBR bearers do not guarantee any particular
+bit rate, and are typically used for applications as web-browsing. See 3GPP
+TS36.300 Sections 11.4 and 13.</p>
+
+GCL Generalized Chirp-Like sequences, better known as Zadoff-Chu (ZC) se-
+quences. These are polyphase, non-binary unit-amplitude sequences which
+satisfy a Constant Amplitude Zero Autocorrelation (CAZAC) property. Such
+sequences exist for both odd and even sequence lengths. They are used in a
+number of instances in LTE, including the Random Access CHannel (RACH)
+and the uplink reference signals.</p>
+
+
+GERAN GSM/EDGE Radio Access Network. The radio part of GSM/EDGE, together
+with the network that connects the base stations and the base station con-
+trollers. GERAN also refers to a Technical Specification Group (TSG) within
+3GPP which maintains and develops the GSM/EDGE specifications. See 3GPP
+TS43.051.</p>
+
+GGSN Gateway GPRS Support Node. A network node that acts as a gateway between
+a GPRS wireless data network and other networks. The GGSN stores sub-
+scriber data received from the Home Location Register (HLR) and the Serving
+GPRS Support Node (SGSN), as well as the address of the SGSN where each
+mobile station is registered. See 3GPP TS23.002 Section 4.1.3.2.
+
+GNSS Global Navigation Satellite System. A general term for a satellite-based
+positioning system, consisting of a network of satellites transmitting high-
+frequency radio signals that can be picked up by a receiver and used to de-
+termine its location. Examples include GPS, GLONASS and Galileo.
+
+GP Guard Period. A time period used to prevent overlap between two different
+signals. It may consist of a transmission gap or be filled with a signal whose
+correct reception is not essential. In LTE half-duplex Frequency Division Du-
+plex (FDD) operation, a guard period is created by the UE by not receiving
+the last part of a downlink subframe immediately preceding an uplink sub-
+frame from the same UE. In Time Division Duplex (TDD) or half-duplex FDD
+systems, a guard period is used to prevent overlap between transmission and
+reception. See for example TS 36.211, Sections 6.2.5 and 6.2.6. In Orthog-
+onal Frequency Division Multiplexed (OFDM) transmissions, a guard period
+filled with a cyclic prefix is used at the start of each data symbol to prevent
+Inter-Symbol Interference (ISI).
+
+GPRS General Packet Radio Service. A mobile data service extension to the GSM
+system. It is often described as “2.5G”. See 3GPP TS43.064 and TS23.060.
+GRE Generic Routing Encapsulation. Used for Proxy Mobile Internet Protocol
+(PMIP)-based S5/S8 at the Packet Data Network GateWay (PDN-GW) for up-
+link traffic. See IETF RFC2784, www.ietf.org.
+
+GSM Global System for Mobile communications. A globally-deployed standardized
+digital mobile communication system, considered to be a second generation
+(“2G”) system. The specifications are maintained and developed by 3GPP. See
+www.3gpp.org.
+
+GSN GPRS Support Node. A network node which supports the use of the GPRS in
+the Core Network (CN). See TS 23.401.
+
+GTP GPRS Tunnelling Protocol. An Internet Protocol (IP)-based protocol used in
+GSM, UMTS and LTE networks. It consists of GTP for both User plane and
+Control plane (GTP-U and GTP-C respectively). See 3GPP TS29.274 for GTP
+within LTE networks.
+
+GTP-C GTP-Control plane. This protocol tunnels signalling messages between the
+Serving GPRS Support Node (SGSN) and Mobility Management Entity
+(MME) over the S3 interface, between the SGSN and Serving Gateway
+(S-GW) over the S4 interface, between the S-GW and P-GW over the
+S5/S8interface, and betweens MMEs over the S10 interface. See 3GPP TS
+23.401 Section 5.1.1.</p>
+
+GTP-U GTP-User plane. This protocol tunnels user data between the eNodeB and the
+Serving GateWay (S-GW), as well as between the S-GW and the Packet Data
+Network GateWay (P-GW) in the backbone network. GTP encapsulates all end
+user Internet Protocol (IP) packets. See 3GPP TS23.401 Section 5.1.2.1.</p>
+
+GUMMEI Globally Unique Mobility Management Entity Identifier. This consists of a
+Public Land Mobile Network (PLMN) identity, a Mobility Management En-
+tity (MME) group identity and an MME code. The MME code is used in the
+eNodeB by the Non-Access Stratum (NAS) node selection function to select
+the MME. See 3GPP TS36.401 Section 6.2.3.</p>
+
+GUTI Globally Unique Temporary Identity. This is an unambiguous identification
+of the UE that does not reveal the UE or the user’s permanent identity in the
+Evolved Packet System (EPS). It also allows the identification of the Mobility
+Management Entity (MME) and network. It can be used by the network and the
+UE to establish the UE’s identity during signalling between them in the EPS.
+See 3GPP TS23.003 Section 2.8.</p>
+
+GW GateWay. A logical node in the Evolved Packet Core (EPC) network. GW
+nodes in the EPC include the Packet Data Network Gateway (P-GW), the
+Serving Gateway (S-GW) and the Multimedia Broadcast and Multicast Service
+(MBMS) GW. See 3GPP TS36.300.</p>
+
+
+HARQ Hybrid ARQ. The simultaneous combination of Automatic Retransmission re-
+Quest (ARQ) and Forward Error Correction (FEC). It enables the overhead of
+error correction to be adapted dynamically depending on the channel qual-
+ity. When HARQ is used, if the errors can be corrected by FEC then no
+retransmission is requested; if the errors can be detected but not corrected, a
+retransmission is requested.</p>
+
+HARQ ACK/NACK HARQ ACKnowledgement/Negative ACKnowledgement information. The in-
+formation a receiver feeds back to the transmitter in order to acknowledge
+the correct reception of a packet or ask for a new retransmission. See 3GPP
+TS36.212 Section 5.2.3.1.
+
+HD-FDD Half-Duplex Frequency Division Duplex. A duplex scheme whereby the uplink
+and downlink use different frequencies but not simultaneously, so as to avoid
+the need for a duplex filter in the receiver. It is not necessarily applicable in all
+frequency bands. See 3GPP TS36.211 Section 4.1.
+
+HE Home Environment. The HE of a subscriber is responsible for the overall pro-
+vision and control of the personal service environment to the subscriber.
+HFN Hyper Frame Number. A number which is incremented each time the Packet
+Data Convergence Protocol (PDCP) Sequence Number (SN) wraps around. It
+is used for bearers which require in-sequence delivery, and as part of the PDCP
+Protocol Data Unit (PDU) counter for ciphering. It is assigned by the target
+eNodeB. See 3GPP TS36.323 Section 6.3.5.
+
+HI HARQ Indicator. The indicator carried by the Physical Hybrid ARQ Indicator
+CHannel (PHICH) which indicates whether the eNodeB has correctly received
+a transmission on the Physical Uplink Shared CHannel (PUSCH). The indica-
+tor is set to 0 for a positive ACKnowledgement (ACK) and 1 for a Negative
+ACKnowledgement (NACK). See 3GPP TS36.212 Section 5.3.5.
+
+HII High Interference Indicator. An indicator sent on the X2 interface between eN-
+odeBs to indicate which resource blocks will be used for cell-edge UEs. See
+3GPP TS36.423 Section 9.2.18.</p>
+
+
+HLR Home Location Register. The HLR can be considered to be a subset of the
+Home Subscriber Server (HSS) that supports the Packet Switched (PS) domain
+entities such as the Serving GPRS Support Node (SGSN), Mobile Management
+Entity (MME) and Gateway GPRS Support Node (GGSN). It also supports the
+Circuit Switched (CS) domain entities such as the Mobile Switching Centre
+(MSC). It is needed to enable subscriber access to services and to support roam-
+ing to legacy GSM/UMTS networks. See 3GPP TS23.002 Section 4.1.1.1.1.
+
+HNBID Home eNodeB IDentifier. A free-text name to identify a Home NodeB or Home
+eNodeB, to aid the user in selecting the correct Closed Subscriber Group (CSG)
+cell when making a manual selection. See 3GPP TS22.011 Section 8.4.2 and
+36.331 Section 6.3.1.</p>
+
+HO HandOver. HO is a procedure by which a mobile terminal changes serving cells
+(within the same frequency or on different frequencies or even on different
+Radio Access Technologies (RAT)). See 3GPP TS36.133.
+
+H-PCRF Home Policy and Charging Rules Function. A functional element that encom-
+passes policy and charging control decision functionalities in the Home Public
+Land Mobile Network (HPLMN) and in a Visited PLMN (VPLMN). H-PCRF
+includes functionality for both home-routed access and visited access (local
+breakout). See 3GPP TS23.203 Section 6.2.1.4.</p>
+
+HPLMN Home Public Land Mobile Network. A Public Land Mobile Network (PLMN)
+where the Mobile Country Code (MCC) and Mobile Network Code (MNC) of
+the PLMN identity are the same as the MCC and MNC of the International Mo-
+bile Subscriber Identity (IMSI) or the defined Equivalent HPLMN (EHPLMN).
+See 3GPP TS36.304 Section 3.1.</p>
+
+HRPD High Rate Packet Data. Also known as 1xEV-DO, HRPD is a packet data en-
+hancement to the CDMA2000 Radio Access Technology (RAT). Inter-RAT
+handover performance requirements for an LTE UE to move to an HRPD cell
+are defined in 3GPP TS36.133.</p>
+
+HSDPA High-Speed Downlink Packet Access. A feature introduced in Release 5 of
+UMTS to improve downlink packet data transmission.</p>
+
+
+HSPA High-Speed Packet Access. The marketing term encompassing both HSDPA
+and HSUPA enhancements to Wideband Code Division Multiple Access,
+sometimes considered to be “3.5G”.
+
+HSPA+ High-Speed Packet Access Evolution. Corresponds to further enhancements to
+HSDPA and HSUPA beyond Release 7.
+
+HSS Home Subscriber Server. The entity containing the subscription-related in-
+formation to support the network entities handling calls/sessions. See 3GPP
+TS23.002 Section 4.1.1.1.
+
+HSUPA High-Speed Uplink Packet Access. A feature introduced in Release 6 of UMTS
+to improve uplink packet data transmission.
+
+HTTP Hyper Text Transfer Protocol. A client-server communication protocol devel-
+oped for World Wide Web. See IETF RFC2616, www.ietf.org.
+
+IANA Internet Assigned Number Authority. The body responsible for the global co-
+ordination of the Domain Name System (DNS) Root, Internet Protocol (IP)
+addressing, and other Internet protocol resources. See www.iana.org.
+
+ICI Inter-Carrier Interference. The interference between symbols transmitted on
+different (usually adjacent) subcarriers in an Orthogonal Frequency Division
+Multiplexing (OFDM) signal. It arises from a loss of inter-subcarrier orthogo-
+nality, for example due to a lack of synchronization accuracy or a large channel
+delay spread (larger than the Cyclic Prefix (CP)).
+
+ICIC Inter-Cell Interference Coordination. Techniques for the reduction of interfer-
+ence between cells, relying on exchange of information (for example on trans-
+mission resource scheduling) between different cells. ICIC techniques typically
+involve constraints on transmission resource allocations and/or power levels.
+In LTE ICIC may be static or semi-static, with different levels of associated
+communication required between eNodeBs.
+
+ICS In-Channel Selectivity. A measure of a receiver’s ability to receive a wanted
+signal at its assigned resource block locations in the presence of a co-channel
+interfering signal received at a larger power spectral density. Under this condi-
+tion a throughput requirement has to be met for a specified reference measure-
+ment channel. See 3GPP TS36.141 Sections 7.4 and I.2.3, TS36.104 Section
+7.4.1.
+
+ICS Implementation Conformance Statement. A statement made by the supplier
+of an implementation or system claimed to conform to a given specification,
+stating which capabilities have been implemented. See 3GPP TS36.521-2.
+ID IDentity.
+
+IDFT Inverse Discrete Fourier Transform. An IDFT transforms a finite frequency-
+domain sequence into a finite time-domain sequence. It is the inverse of the
+Discrete Fourier Transform (DFT). An IDFT can be efficiently computed via
+an Inverse Fast Fourier Transform (IFFT).
+
+IDNNS Intra-Domain Non-Access Stratum Node Selector. An information element
+provided in the Access Stratum (AS) part of the UTRAN Radio Resource Con-
+trol (RRC) ‘Initial Direct Transfer’ message. It contains a routing parameter
+which can be used to route the establishment of a signalling connection to a
+Core Network (CN) node within a CN domain. See 3GPP TS25.331 Section
+10.3.1.6 and TS23.236 Section 4.3.</p>
+
+IE Information Element. A parameter contained within a signalling message (e.g.
+Radio Resource Control (RRC)).</p>
+
+IETF Internet Engineering Task Force. A large open international community of
+network designers, operators, vendors and researchers concerned with the evo-
+lution of the Internet architecture and the smooth operation of the Internet. See
+www.ietf.org.</p>
+
+IFDMA Interleaved Frequency Division Multiple Access. A particular case of Orthog-
+onal Frequency Division Multiple Access (OFDMA) in which each user is
+assigned a set of non-contiguous subcarriers, typically equally-spaced and in-
+terleaved with the sets assigned to other users. This gives more frequency
+diversity than a set of contiguous subcarriers. In LTE it is used for the uplink
+Sounding Reference Signals (SRS). See 3GPP TS36.211 Section 5.5.3.2.
+
+IFFT Inverse Fast Fourier Transform. The inverse of the Fast Fourier Transform (see
+FFT).
+
+IM Implementation Margin. A margin taken into account in the performance re-
+quirements in order to allow for losses due to the non-idealities of practical
+implementations.
+
+IMD InterModulation Distortion. Signal distortion which results when two or more
+signals are present at the input of a non-linear device such as an amplifier in a
+receiver. Intermodulation products generated from mixing with a tone outside
+the wanted band may fall into the wanted band and cannot be removed by
+filtering. For performance requirements which constrain the permissible IMD,
+see 3GPP TS36.101 Sections 6.7 and 7.8, TS36.521-1 Sections 6.7 and 7.8,
+TS36.104 Sections 6.7 and 7.8 and TS36.141 Sections 6.7, 7.8, I.1 and I.2.
+
+IMEI International Mobile Equipment Identity. A unique number which is allocated
+to each individual mobile station. It is implemented by the mobile station man-
+ufacturer. See 3GPP TS 22.016.
+
+IMEISVN International Mobile Equipment Identity Software Version number. This field
+allows the mobile equipment manufacturer to identify different software ver-
+sions of a given mobile. The software version number is a separate field from
+the International Mobile Equipment Identity (IMEI), although it is associated
+with the IMEI. When the network requests the IMEI from the mobile sub-
+scriber, it may also request that the software version number is sent to the
+network. See 3GPP TS22.016.
+
+IMS Internet Protocol Multimedia Subsystem. An architectural framework for
+delivering Internet Protocol (IP) multimedia services via UTRAN and E-
+UTRAN. See 3GPP TS23.228 and TS23.406.
+
+IMSI International Mobile Subscriber Identity. A unique number associated with
+each mobile phone user. It is stored in the SIM inside the phone and is sent
+by the phone to the network. It is primarily intended for obtaining information
+on the use of the Public Land Mobile Network (PLMN) by subscribers. It is
+also used for other functions such as to compute the Paging Occasions (PO) in
+LTE. See 3GPP TS22.016 and TS23.003.
+
+IMT International Mobile Telecommunications. The name given to families of stan-
+dards defined by the International Telecommunication Union (ITU) to satisfy
+a certain set of requirements, for example in terms of data rate and mobility.
+Examples are IMT-2000, which encompasses third generation (3G) wireless
+communication systems, and IMT-Advanced which is designed to encompass
+the next major generation of systems.</p>
+
+IOV-UI Input Offset Value - Unconfirmed Information. Used in the GPRS cipher-
+ing process. It consists of a random 32-bit value generated by the Serving
+GPRS Support Node (SGSN). IOV-UI is intended for Unconfirmed Informa-
+tion frames, which carry information between Logical Link Control (LLC)
+entities of the GPRS mobile station to SGSN link. This parameter is involved in
+the E-UTRAN to GERAN inter- Radio Access Technology (inter-RAT) han-
+dover preparation phase. See 3GPP TS44.064 Sections 8.9.2 and 6.3.3, and
+TS23.401 Section 5.5.2.3.2.</p>
+
+IP Internet Protocol. A protocol which provides for transmitting blocks of data
+from sources to destinations over an interconnected system of networks (the
+internet). The sources and destinations are identified by fixed-length addresses.
+See IETF RFC791, www.ietf.org.</p>
+
+IP-CAN Internet Protocol Connectivity Access Network. The collection of network en-
+tities and interfaces that provides the underlying Internet Protocol (IP) transport
+connectivity between a UE and the IP Multimedia Subsystem (IMS)..
+
+IQ In-phase - Quadrature phase. The in-phase signal and quadrature signal are
+the signals modulating the cosine and sine of the complex carrier-frequency
+waveform.</p>
+
+IR Incremental Redundancy. A type of Hybrid Automatic Repeat reQuest
+(HARQ) scheme where the code rate is progressively reduced by transmitting
+additional parity information with each retransmission. At each retransmission
+the receiver thus acquires extra information, and the probability of correct de-
+coding increases. See 3GPP TS36.212 Section 5.1.4.
+
+IRC Interference Rejection Combining. An IRC receiver calculates and applies a
+set of antenna weights in the receiver to maximize the Signal to Interference
+plus Noise Ratio (SINR) of the signal post-combining, taking into account the
+instantaneous direction of arrival of the wanted and interfering signals.</p>
+
+IRV Incremental Redundancy Version. A particular set of systematic and parity bits
+used for retransmission when an Incremental Redundancy (IR) Hybrid Auto-
+matic Repeat reQuest (HARQ) protocol is implemented. In LTE, circular buffer
+Rate Matching (RM) is used, which generates puncturing patterns for any arbi-
+trary code rate. The IRV specifies a starting point in the circular buffer to start
+reading out the bits . See 3GPP TS36.212 Section 5.1.4.</p>
+
+ISD Inter-Site Distance. The distance between two eNodeBs in the network. Some
+indication of the effect of different values of ISD on the LTE system perfor-
+mance can be found in 3GPP TR36.942.</p>
+
+ISI Inter-Symbol Interference. A form of distortion of a signal in which one sym-
+bol interferes with subsequent symbols. ISI is usually caused by frequency
+selectivity in the propagation channel, giving rise to time-domain dispersion.
+ISR Idle state Signalling Reduction. Provides a mechanism to limit signalling dur-
+ing inter- Radio Access Technology (inter-RAT) cell reselection in idle mode.
+In particular, it aims at reducing the frequency of Tracking Area Update (TAU)
+and Routing Area Update (RAU) procedures caused by UEs reselecting be-
+tween E-UTRAN and GERAN/UTRAN. See 3GPP TS23.401 Annex J.</p>
+
+ITU International Telecommunication Union. The leading United Nations agency
+for information and communication technology issues, and the global focal
+point for governments and the private sector in developing networks and ser-
+vices. See www.itu.int.</p>
+
+ITU-R International Telecommunication Union Radiocommunication sector. The pri-
+mary role of the Radiocommunication sector of the ITU is to manage the radio
+spectrum to ensure interference-free operation between different radio services
+such as fixed, mobile, broadcast, amateur, emergency and global positioning
+systems. This is effected through radio regulations and regional agreements, as
+well as the establishment of recommendations to assure the necessary perfor-
+mance and quality in operating radiocommunication systems. The ITU-R also
+seeks to conserve spectrum and ensure flexibility for future expansion and new
+technological developments. See www.itu.int/itu-r.</p>
+
+IXIT Implementation eXtra Information for Testing. A statement made by a supplier
+or implementer of an Implementation Under Test (IUT) which contains or ref-
+erences all of the information (in addition to that given in the Implementation
+Conformance Statement (ICS)) related to the IUT and its testing environment,
+which will enable the test laboratory to run an appropriate test suite against the
+IUT. An IXIT can take several forms: protocol IXIT, profile IXIT, profile spe-
+cific IXIT, information object IXIT, and TMP implementation statement. See
+ISO/IEC 9646-1/X.290 Section 3.3.41.</p>
+
+KSI Key Set Identifier. An identifier used in the authentication process to enable
+communications with a mobile terminal to be ciphered without the continual
+need for reauthentication. See 3GPP TS33.401.</p>
+
+LA Location Area. An area in which a mobile station may move freely without
+updating the Visitor Location Register (VLR). A location area includes one or
+several GERAN/UTRAN/E-UTRAN cells.</p>
+
+LAC Location Area Code. The LAC is part of the Location Area Identity (LAI). The
+LAC identifies a Location Area (LA) within a Public Land Mobile Network
+(PLMN). It has a fixed length of 2 octets and is one of the parameters an LTE
+UE is requested to read when it detects UTRAN cells in the neighbourhood.
+See 3GPP TS23.003 Section 4.1.</p>
+
+LAI Location Area Identity. The LAI is composed of the Mobile Country Code
+(MCC), the Mobile Network Code (MNC) and the Location Area Code (LAC).
+See 3GPP TS23.003 Section 4.1.</p>
+
+LB Load Balancing. A function located in the eNodeB which handles uneven
+distribution of the traffic load over multiple cells. The purpose of LB is to
+influence the load distribution in such a manner that radio resources remain
+highly utilized and the Quality of Service (QoS) is maintained. LB may result
+in hand-over or cell reselection decisions. See 3GPP TS 36.300 Section 16.1.6.
+
+LB Loop Back. A method for testing the data reception functionality of a device,
+whereby received data is directly retransmitted back to the tester for compar-
+ison with the original data. In LTE, LB operates at the level of the Packet
+Data Convergence Protocol (PDCP) Service Data Units (SDUs). See 3GPP
+TS36.509, Sections 5.</p>
+
+ LBI Linked Evolved Packet System Bearer ID. The Evolved Packet System (EPS)
+Bearer Identity of the default bearer. See 3GPP TS23.401 Section 5.4.
+LBRM Limited-Buffer Rate Matching. A technique used to execute Hybrid Automatic
+Repeat reQuest (HARQ) with reduced requirements for soft buffer sizes while
+maintaining the peak data rates. LBRM shortens the length of the virtual circu-
+lar buffer of the code block segments for certain large sizes of Transport Block
+(TB), and therefore sets a lower bound on the code rate. It is applicable to UE
+categories 3, 4 and 5. See 3GPP TS36.212 Section 5.1.4.1.2 and TS36.306,
+Section 4.1.</p>
+
+LCG Logical Channel Group. A group of uplink logical channels for which a single
+joint buffer fill level is reported by the UE in Buffer Status Reports (BSR).
+The mapping of logical channels to LCGs is defined by the eNodeB. See 3GPP
+TS36.321 Section 6.1.3.1 and TS36.331 Section 6.3.2.
+
+LCID Logical Channel ID. A 5-bit value included in the Medium Access Control
+(MAC) header to identify the logical channel of the corresponding MAC Ser-
+vice Data Unit (SDU) or the type of the corresponding MAC control element.
+There is one LCID field for each MAC SDU, MAC control element or padding
+included in a MAC Protocol Data Unit (PDU). See 3GPP TS 36.321, Section
+6.2.1.</p>
+
+LDPC Low-Density Parity Check. LDPC codes are linear parity-check codes with a
+classical parity-check equation. The term ‘low-density’ refers to the fact that
+the parity-check matrix entries are mostly zeros (the density of ones is low).
+The parity-check matrix of an LDPC code can be represented graphically by
+a ‘Tanner graph’. In LTE, turbo codes were instead selected as the channel
+coding technique.</p>
+
+LI Length Indicator. A field in the Radio Link Control (RLC) header, indicating
+the length in bytes of a corresponding Data field element in a RLC data Proto-
+col Data Unit (PDU). It is applicable to both RLC Unacknowledged Mode
+(UM) and RLC Acknowledged Mode (AM). See 3GPP TS36.322 Section
+6.2.2.5.</p>
+
+ LISN Line Impedance Stabilizing Network. A low-pass filter network designed to
+isolate equipment under test from an external power source. It is used for
+example in the conducted emission d.c. power input/output port test method.
+See 3GPP TS34.124 Section 8.3.</p>
+
+LLC Logical Link Control. This protocol provides a reliable logical link between a
+mobile station and its Serving GPRS Support Node (SGSN). The LLC layer
+is situated below the Subnetwork Dependent Convergence (SNDC) layer. See
+3GPP TS23.060 Section 12.2.</p>
+
+LLR Log-Likelihood Ratio. The ratio of the probabilities of two different hypothe-
+ses. An LLR can be computed for each information bit (as opposed to parity
+bits), where each hypothesis corresponds to one possible value of the informa-
+tion bit. The LLR gives information about the most likely value of the bit and
+about the reliability of that estimate.</p>
+
+LMMSE Linear Minimum Mean Squared Error. A linear filtering process based on a
+Minimum Mean Squared Error (MMSE) strategy (see MMSE).</p>
+
+LMS Least Mean Square. An iterative optimization technique aimed at incremental
+minimization of a mean square metric for parameter estimation. It is a stochas-
+tic way of implementing the steepest descent method.</p>
+
+LNA Low Noise Amplifier. A type of amplifier which aims to amplify the desired
+signal while adding as little noise as possible and without distorting the desired
+signal. In a receiver chain, the total receiver Noise Figure (NF) is dominated
+by the NF of the first stages (according to the Friis equation), so an LNA is
+usually placed as close to the antenna as possible in order to control the NF of
+the total receive chain.
+
+LO Local Oscillator. An electronic device designed to generate a signal of a defined
+frequency locally within a receiver, as opposed to recovering the frequency
+from a received signal.
+
+LOS Line-Of-Sight. A type of propagation where most of the signal energy travels
+directly in a straight line from the transmitter to the receiver, without reflections
+or scattering.
+
+
+LR Location Registration. The process the UE undertakes to register its presence
+in a registration area when in Idle mode. As a result of LR, the Public Land
+Mobile Network (PLMN) selected by the UE becomes the Registered PLMN.
+This can be done regularly or when entering a new tracking area. See 3GPP
+TS36.304 Section 4.1.
+
+LS Least Squares. A parameter estimation criterion which aims to minimize the
+energy of the difference between an observed signal and a reconstruction of
+the signal generated using the parameter(s).
+
+LS Liaison Statement. A formal communication between Working Groups in
+3GPP, or from 3GPP to other bodies.
+
+LSB Least Significant Bit. The bit carrying the least weight in a binary word.
+LSF Last Segment Flag. A 1-bit field in the header of a Radio Link Control (RLC)
+Protocol Data Unit (PDU), used when the PDU contains a retransmitted seg-
+ment of a previously-transmitted Acknowledged Mode Data (AMD) PDU. It
+indicates whether or not the AMD PDU segment is the last segment of the
+original AMD PDU. See 3GPP TS36.322 Section 6.2.2.8.
+
+LTE Long-Term Evolution. A radical step in the development of UMTS beyond the
+original 3rd generation Wideband Code Division Multiple Access (WCDMA)
+radio access technology. LTE comprises a new radio interface and radio access
+network architecture.
+
+M1 User plane interface between Multimedia Broadcast and Multicast Service
+GateWay (MBMS GW) and eNodeB. See 3GPP TS36. 445 and TS36.446.
+
+M2 Control plane interface between Multicell/Multicast Coordination Entity
+(MCE) and eNodeB. See 3GPP TS36. 443.
+
+M3 Control plane interface between Evolved Packet Core (EPC) and E-UTRAN
+(Multimedia Broadcast and Multicast Service GateWay (MBMS GW) – Multi-
+Cell/Multicast Coordination Entity (MCE)). See 3GPP TS36.444.
+
+MAC Medium Access Control. The protocol sublayer above the physical layer and
+below the Radio Link Control (RLC) layer in the LTE protocol stack. The
+connection to the physical layer below is through transport channels, and the
+connection to the RLC layer above is through logical channels. The MAC
+layer performs data transmission scheduling and multiplexing/demultiplexing
+between logical channels and transport channels. In the UE, it is also responsi-
+ble for control of random access, timing advance and discontinuous reception.
+See 3GPP TS36.321.
+
+MAC-I Message Authentication Code for Integrity. A field added by the Packet Data
+Convergence Protocol (PDCP) layer to each RRC message, for the purpose
+of integrity protection. This code is calculated based on the Access Stratum
+(AS) keys, the message itself, the radio bearer ID, the direction (i.e. uplink or
+downlink) and the COUNT value. See 3GPP TS36.323 Sections 5.7 and 6.3.4.
+MAP Maximum A-posteriori Probability. A MAP estimator estimates the most likely
+transmitted sequence given an observed signal.
+
+MBMS Multimedia Broadcast and Multicast Service. A service which aims to provide
+an efficient mode of delivery for both broadcast and multicast services over
+the core network. MBMS specifications for LTE are not included in the first
+release of LTE. Nevertheless the LTE Release 8 physical layer has already been
+designed to support MBMS. See 3GPP TS36.300.
+
+MBMS GW Multimedia Broadcast and Multicast Service GateWay. The entity which re-
+ceives user-plane Multimedia Broadcast and Multicast Service (MBMS) traffic
+from the Broadcast/Multicast Service Centre (BM-SC), and hosts the Packet
+Data Convergence Protocol (PDCP) layer of the user plane for header compres-
+sion for MBMS data packets for both multi-cell and single-cell transmission.
+The MBMS GW forwards the user-plane traffic to the eNodeBs. See 3GPP
+TS36.300 Section 15.1.1.
+
+MBR Maximum Bit Rate. The upper limit on the bit rate which can be expected from
+a Guaranteed Bit Rate (GBR) bearer. See 3GPP TS23.203.
+
+MBSFN Multimedia Broadcast Single Frequency Network. A transmission mode which
+exploits the Orthogonal Frequency Division Multiplexed (OFDM) radio in-
+terface to send multicast or broadcast data as a multicell transmission over a
+synchronized single frequency network The transmissions from the multiple
+cells are sufficiently tightly synchronized for each to arrive at the UE within
+the OFDM Cyclic Prefix (CP) so as to avoid Inter-Symbol Interference (ISI).
+In effect, this makes the MBSFN transmission appear to a UE as a transmis-
+sion from a single large cell, dramatically increasing the Signal-to-Interference
+Ratio (SIR) due to the absence of inter-cell interference. See 3GPP TS36.201
+and TSs36.300.
+
+MCC Mobile Country Code. The MCC identifies uniquely the country of domicile
+of a mobile subscriber. It consists of three digits. In LTE it is used in the con-
+struction of network entity related identities such as the E-UTRAN Cell Global
+Identifier (ECGI), the Global eNodeB Identifier and the Tracking Area Identity
+(TAI). See 3GPP TS23.003 Section 2.2 and TS36.300 Section 8.2.
+
+MCCH Multicast Control CHannel. A downlink channel which is used to transmit con-
+trol information related to the reception of Multimedia Broadcast and Multicast
+Services (MBMS). See 3GPP TS36.300 Section 15.3.5.
+
+MCE Multi-Cell/Multicast Coordination Entity. This entity performs the manage-
+ment of both Multimedia Broadcast and Multicast Service (MBMS) content
+and resources. This includes allocating the time/frequency radio resources used
+by all eNodeBs in a Multimedia Broadcast Single Frequency Network (MB-
+SFN) area for a given service, and deciding the radio configuration. See 3GPP
+TS36.300 Section 15.1.1.
+
+MCH Multicast CHannel. The transport channel used to transport Multimedia Broad-
+cast/Multicast Service (MBMS) data using Multimedia Broadcast Single Fre-
+quency Network (MBSFN) combining. See 3GPP TS36.300 Sections 5 and
+15.
+
+MCS Modulation and Coding Scheme. A term encompassing the modulation order
+and code rate of a transmission. The MCS therefore describes the information
+data rate of a transmission . See for example 3GPP TS36.213 Section 7.1.7.
+
+ME Mobile Equipment. The physical mobile terminal. In the 3GPP specifications,
+an ME is technically defined as consisting of one or more ‘Mobile Termina-
+tions’ and one or more ‘Terminal Equipments’. A Mobile Termination sup-
+ports functions specific to the management of a Public Land Mobile Network
+(PLMN) interface, while a Terminal Equipment provides the functions neces-
+sary for the operation of the access protocols by the user. See 3GPP TR21.905.
+
+MIB Master Information Block. A block of system information which includes a
+limited number of the most frequently transmitted parameters which are es-
+sential for a UE’s initial access to the network – namely the downlink system
+bandwidth, an indicator of the resources allocated to HARQ acknowledgement
+signalling in the downlink, and the System Frame Number (SFN) . See 3GPP
+TS36.331 Section 6.2.2.
+
+MIMO Multiple-Input Multiple-Output. A transmission scheme between a transmitter
+and a receiver both equipped with multiple anntennas.
+
+MIP Mobile Internet Protocol. A communications protocol which allows users to
+move outside their home network while retaining their home Internet Protocol
+(IP) address. See IETF RFC3344, www.ietf.org.
+
+MISO Multiple-Input Single-Output. A transmission scheme between a transmitter
+equipped with multiple antennas and a receiver equipped with a single antenna.
+ML Maximum Likelihood. A form of an optimal estimator which, when applied to
+an observation, outputs the hypothesis that is most likely to have caused the
+current observation.
+
+MLD Maximum Likelihood Detector. A sequence detector which uses the Maximum
+Likelihood (ML) principle to output the sequence most likely to have been
+transmitted given an observed received signal.
+
+MM Mobility Management. The set of functions necessary to support mobile sta-
+tion mobility, including for example Non-Access Stratum (NAS) signalling and
+security, signalling between Core Network (CN) nodes for mobility between
+3GPP access networks, Packet Data Network GateWay (P-GW) and Serving
+GateWay (S-GW) selection, Serving GPRS Support Node (SGSN) selection
+for handovers, and roaming and authentication. See 3GPP TS24.301 Section 5.
+
+MME Mobility Management Entity. The control node which processes the signalling
+between the UE and the Core Network (CN) and provides Visitor Location
+Register (VLR) functionality for the Evolved Packet System (EPS). It supports
+functions related to bearer and connection management. See 3GPP TS23.002
+Section 4.1.4.1, TS24.301, TS36.300 Section 19 and TS36.401.
+
+MMEC Mobility Management Entity Code. Identifies a Mobility Management Entity
+(MME) within the scope of an MME Group within a Public Land Mobile Net-
+work (PLMN). See 3GPP TS24.301 Section 5.3 and TS23.003.
+
+MMSE Minimum Mean Squared Error. An MMSE estimator is a filtering process ap-
+plied to a signal, in which the filter coefficients are computed to minimize the
+Mean Squared Error (MSE) between the filtered version of the signal and a
+desired signal.
+
+MNC Mobile Network Code. In conjunction with the Mobile Country Code (MCC),
+the MNC uniquely identifies a mobile network operator/carrier. In LTE it is
+used in the construction of network entity related identities such as the E-
+UTRAN Cell Global Identifier (ECGI), the Global eNodeB Identifier, and the
+Tracking Area Identity (TAI). See 3GPP TS23.003 Section 2.2 and TS36.300
+Section 8.2.
+
+MOCN Multi-Operator Core Network. A network in which multiple Core Network
+(CN) nodes are connected to the same eNodeB (or, in the case of UTRAN, to
+the same Radio Network Controller (RNC)) and the CN nodes are operated by
+different operators. See 3GPP TS23.251 Sections 4.1, 7.1.4 and 7.1.5.
+
+MOP Maximum Output Power. The MOP of a UE is the minimum of the maximum
+allowed power configured by Radio Resource Control (RRC) signalling (see
+3GPP TS36.331 Section 6.3.2) and the maximum UE power depending on the
+UE power class (see 3GPP TS36.101 Section 6.2).
+
+MPR Maximum Power Reduction. The maximum allowed reduction in uplink trans-
+mit power to enable a UE to avoid non-linear transmission characteristics and
+hence to satisfy adjacent channel leakage requirements. The MPR is non-zero
+only for particular combinations of system bandwidth, transmit bandwidth con-
+figuration (resource blocks allocations) and modulation scheme which make
+it difficult to control sufficiently the adjacent channel leakage. See 3GPP
+TS36.101 Section 6.2.3.
+
+MRC Maximum Ratio Combining. A technique for combining multiple components
+of a signal (e.g. received at different times or by different antennas), whereby
+the amplitude of each combining weight is proportional to the Signal-to-Noise
+Ratio (SNR) of the corresponding signal component and where the phases of
+the combining weights are set to compensate for the phase of the complex
+propagation channel coefficients.
+
+MRP Mouth Reference Point. A point 25 mm in front of and on the axis of the lip
+position of a typical human mouth (or artificial mouth). See ITU-T Recom-
+mendation P.64 AMD 1.
+
+MRRU Maximum Reconstructed Reception Unit. A parameter of the RObust Header
+Compression (ROHC) protocol, representing the size of the largest recon-
+structed unit in octets that the decompressor is expected to reassemble from
+segments. See IETF RFC3095, www.ietf.org.
+
+MSAP Multicast channel Subframe Allocation Pattern. A pattern of subframes in
+which transmission resources are allocated for a specific Multicast CHannel
+(MCH). See 3GPP TS36.300 Section 15.3.3.
+
+MSB Most Significant Bit. The bit carrying the highest weight in a binary word.
+MSC Mobile Switching Centre. The MSC constitutes the interface between the radio
+system and the fixed networks. It performs all necessary functions in order
+to handle CS services to and from the mobile stations. See 3GPP TS23.002
+Section 4.1.2.1.
+
+
+
+MSD Maximum Sensitivity Degradation. A relaxation factor taken into account in
+the UE Reference Sensitivity (REFSENS) (in terms of the minimum received
+signal strength sufficient to satisfy a specified throughput requirement) for a
+particular transmission configuration. It is arises from the fact that the REF-
+SENS requirements are more challenging in some bands and duplex spacings
+than others. See 3GPP TS36.101 Section 7.3.2.
+
+MSE Mean Squared Error. The MSE is the second order moment of the difference
+between the estimate and the true value of the quantity being estimated. .
+MSISDN Mobile Station International Subscriber Directory Number. The telephone
+number of a mobile user. The MSISDN is included in the Evolved Packet Sys-
+tem (EPS) Bearer Context. See 3GPP TS 23.003 Section 3.3.
+
+MTCH Multicast Traffic CHannel. A logical channel used to transmit user data for
+Multimedia Broadcast and Multicast Services (MBMS) in the downlink. See
+3GPP TS36.300 Sections 6.1.2 and 6.1.3.
+
+M-TMSI M Temporary Mobile Subscriber Identity. A temporary identity used to pre-
+serve subscriber confidentiality. It identifies a user between the UE and the
+Mobility Management Entity (MME). The relationship between M-TMSI and
+International Mobile Subscriber Identity (IMSI) is known only in the UE and
+in the MME. See 3GPP TS23.003 Section 2.1 and TS23.401 Section 5.3.10.3.
+
+MTU Maximum Transfer Unit. The largest block of Internet Protocol (IP) data which
+may be transferred using a data link connection.
+
+MU-MIMO Multi-User Multiple-Input Multiple-Output. MU-MIMO involves multiple
+UEs communicating simultaneously with a common base station using the
+same frequency and time-domain resources, being separated only in the spa-
+tial domain by means of multiple antennas at the base station. The downlink
+transmission mode 5 in LTE is designed to support MU-MIMO. See 3GPP TS
+36.213 Section 7.1.5.
+
+NACC Network Assisted Cell Change. It is a procedure for mobility from LTE
+to GERAN with network assistance. See 3GPP TS48.018, TR25.901 and
+TS36.413 Sections 9.2.3.23 and 9.2.3.24.
+
+NACK Negative ACKnowledgment. A signal transmitted to indicate that one or more
+blocks of data have not been successfully received and decoded. Used in Hy-
+brid Automatic Repeat reQuest (HARQ), as well as in Radio Link Control
+(RLC)-level ARQ.
+
+NACS Non-Adjacent Channel Selectivity. A measure of a receiver’s ability to receive
+a wanted signal at its assigned channel frequency in the presence of unwanted
+interfering signals falling into the receive band beyond the adjacent channel or
+into the first 15 MHz below or above the receive band. See 3GPP TS36.101
+Section 7.6.1.
+
+NAS Non-Access Stratum. Comprises the protocols which operate between UE and
+the Core Network (CN) – i.e. the protocols which are not specific to a particular
+Radio Access Technology (RAT). In the Evolved Packet System (EPS), the
+NAS protocols consist mainly of the protocols for mobility management and
+session management between the UE and the Mobility Management Entity
+(MME). See 3GPP TS 23.122.
+
+NCC Network Colour Code. The most-significant 3 bits of a Base Station Identity
+Code (BSIC). The NCC is used to differentiate between mobile network op-
+erators utilizing the same frequencies, for example on an international border
+where more than one operator has been allocated the same carrier frequency.
+See 3GPP TS23.003 Sections 4.3.2 and A.3.
+
+NCL Neighbour Cell List. A list of neighbour cells provided by the network to the
+UE to facilitate mobility. In LTE the UE has to be able to perform cell search
+without an explicit neighbour cell list being provided. For handover to UTRAN
+or GSM, a UE camped on an LTE cell will receive a UMTS neighbour cell list
+containing up to 32 primary scrambling codes per UMTS carrier and a GSM
+neighbour cell list with at least 32 GSM carrier numbers. See 3GPP TS36.133
+and TS36.331.
+
+NDI New Data Indicator. A 1-bit sequence number, which is toggled to indicate
+when the first transmission of a new packet occurs. See 3GPP TS36.321
+Section 5.3.1 and TS36.212 Section 5.3.3.1.
+NDS Network Domain Security. A security architecture for network domain Internet
+Protocol (IP) based control planes, which is applied to NDS/IP-networks (i.e.
+3GPP and fixed broadband networks) to provide security in the Core Network
+(CN). See 3GPP TS33.210.
+
+
+NF Noise Figure. The receiver noise figure is a measure of the degradation of the
+SINR caused by components in the RF signal chain, i.e. the ratio of actual
+output noise to that which would remain if the receiver itself did not introduce
+noise. This includes the antenna filter losses, the noise and the degradation of
+the signal introduced by the analogue part of the receiver and by the analogue
+to digital converter and any other noise sources.
+
+NGMN Next Generation Mobile Networks. An alliance of network operators which
+aims to support the work in standardisation bodies by providing input regard-
+ing network operator requirements for next generation mobile systems. See
+www.ngmn.org.
+
+NITZ Network Information and Time Zone. This feature provides the means for serv-
+ing Public Land Mobile Networks (PLMN) to transfer current identity, time,
+daylight saving time and the local time zone to UEs, and for the UEs to store
+and use this information. See 3GPP TS22.042.
+
+NLMS Normalized Least-Mean-Square. See Least-Mean-Square (LMS). In the nor-
+malized version, the step size used for incrementation is normalized with re-
+spect to the input signal’s energy in order to improve stability of convergence.
+
+NLOS Non-Line-Of-Sight. A type of propagation where the signal energy travels from
+the transmitter to the receiver via indirect paths with reflections and/or scatter-
+ing, and no direct Line-of-Sight (LOS) path is present.
+
+NNSF NAS Node Selection Function. This functionality is located in the eNodeB to
+determine and establish an association between a given UE and one of the Mo-
+bility Management Entity (MME) nodes that comprise the pool area to which
+the eNodeB belongs. It enables proper routing via the S1-MME interface. See
+3GPP TS36.410 Section 5.7.2.
+
+NRI Network Resource Identifier. A parameter used to identify the Core Network
+(CN) node assigned to serve a mobile station. See 3GPP TS23. 236 Section
+4.3.
+
+NSAPI Network layer Service Access Point Identifier. An identifier used in GPRS to
+identify a Packet Data Protocol (PDP) context (a unique data session) in the
+Mobile Station (MS) and in the Serving GPRS Support Node (SGSN). The
+NSAPI is assigned when the MS initiates the PDP Context Activation function.
+See 3GPP TS 23.060.
+
+O&M Operation and Maintenance. Encompasses signalling to adapt, control and up-
+grade network nodes.
+
+OAM Operation and Maintenance. Otherwise known as O&M.
+
+OBW Occupied BandWidth. Defined as the bandwidth containing 99% of the total in-
+tegrated mean power of the transmitted spectrum on the assigned channel. The
+occupied bandwidth for all transmission bandwidth configurations (Resource
+Block allocations) is less than the channel bandwidth. See 3GPP TS36.101
+Section 6.6.1.
+
+OCNG Orthogonal Frequency Division Multiple Access Channel Noise Generator. A
+noise source that models a full cell load across the system bandwidth for testing
+scenarios, without having all resources allocated to a single UE. This enables
+a flat transmitted power spectral density to be achieved from the serving cell
+in the test setup, as well as modelling interference that may arise due to imper-
+fections or from neighbouring cells. See 3GPP TS36.133 Annex A.3.2.
+
+OD Optionally present, Discontinue. In relation to an Information Element (IE) in
+a signalling message (e.g. Radio Resource Control (RRC)), OD signifies that
+inclusion of the IE is optional, and that if the IE is absent the receiver should
+discontinue use of any existing value of that IE. See 3GPP TS36.331 Section
+6.1.
+
+ODB Operator Determined Barring. This allows the network operator or service
+provider to regulate access by the subscribers to services, by the barring of
+certain categories of outgoing or incoming calls or of roaming. See 3GPP
+TS22.041 and TS23.015.
+
+
+OFCS Offline Charging System. A process whereby charging information for network
+resource usage is collected concurrently with that resource usage. The charg-
+ing information is then passed through a chain of logical charging functions.
+Offline charging is a mechanism where charging information does not affect,
+in real-time, the service rendered. See 3GPP TS32.240 Section 4.1.1.
+
+OFDM Orthogonal Frequency Division Multiplexing. A signal transmission scheme
+using multiple subcarriers closely-spaced in the frequency domain such that
+adjacent subcarriers are orthogonal to each other; such schemes enable the
+symbol length to be increased compared to a single-carrier transmission and
+are therefore typically tolerant of multipath propagation. It is the radio access
+technology used for the LTE downlink. See 3GPP TS36.201 Section 4.2 and
+TS36.211 Section 6.12.
+
+OFDMA Orthogonal Frequency Division Multiple Access. A multiple access scheme
+relying on the use of Orthogonal Frequency Division Multiplexing (OFDM)
+where individual subcarriers (or groups of subcarriers) are assigned to distinct
+users, based on scheduling decisions. See 3GPP TS36.201 Section 4.2.
+
+OI Overload Indicator . An indicator sent on the X2 interface between eNodeBs
+to indicate physical layer measurements of the average uplink interference plus
+thermal noise for each Resource Block (RB).The OI can take three values,
+expressing low, medium, and high levels. It cannot be updated more often than
+every 20 ms. See 3GPP TS 36.423 Section 9.2.17.
+
+OMC Operation and Maintenance Centre. A central facility to provide fast and effi-
+cient administration and maintenance for a mobile network.
+
+ON Optionally present, No action. In relation to an Information Element (IE) in a
+signalling message (e.g. Radio Resource Control (RRC)), ON signifies that in-
+clusion of the IE is optional, and that if the IE is absent the receiver should con-
+tinue to use the existing value where applicable. See 3GPP TS36.331 Section
+6.1.
+
+OOB Out Of Band. Refers to emissions on a frequency or frequencies immediately
+outside the necessary bandwidth which results from the modulation process,
+but excluding spurious emissions. See 3GPP TS36.101, Sections 6.6.2 and
+7.6.2.
+
+OP Optionally Present. In relation to an Information Element (IE) in a signalling
+message (e.g. RRC), OP signifies that inclusion of the IE is optional, and that
+the relevant specification should specify the required behaviour in the event of
+the IE not being present in the message. See 3GPP TS36.331 Section 6.1.
+
+P Polling bit. The P field in the header of a Radio Link Control Acknowledged
+Mode Protocol Data Unit (RLC AM PDU) indicates whether or not the trans-
+mitting side of the AM RLC entity requests a STATUS report from its peer AM
+RLC entity. P is set to 1 if a STATUS report is requested, and 0 otherwise. See
+3GPP TS36.322, Section 6.2.2.11.
+
+P/S Parallel-to-Serial. The conversion of a parallel set of sequences of symbols to
+a single serial sequence, usually by mapping a symbol (or group of symbols)
+from each of the parallel sequences in turn to the serial sequence.
+
+PA Power Amplifier. An electronic device which amplifies a low-power radio-
+frequency signal. It is typically used to drive the antenna of a transmitter.
+
+PAPR Peak-to-Average Power Ratio. The ratio between the average transmit power of
+a signal and the maximum instantaneous transmit power. It is sometimes used
+as an indication of the extent of the linear region of operation that is required
+for the Power Amplifier (PA); however, the Cubic Metric (CM) of the signal is
+a more reliable predictor of the required PA characteristics.
+
+PB Pass Band. The range of signal frequencies intended to be passed without sig-
+nificant attenuation (e.g. not greater than 3 dB) from the input to the output of
+a filter.
+
+PBCH Physical Broadcast CHannel. The LTE physical channel which carries the
+Master Information Block (MIB), consisting of a limited number of the most
+frequently transmitted parameters essential for initial access to the cell. The
+PBCH is designed for early detection by the UE, and cell-wide coverage. See
+3GPP TS36.212 Section 5.3.1 and TS36.211 Section 6.6.
+
+PBR Prioritized Bit-Rate. The data rate provided to one logical channel before allo-
+cating any transmission resource to a lower-priority logical channel. Priorita-
+rization is designed to control how the UE divides the granted uplink resources
+between the different radio bearers. See 3GPP TS36.321 Section 5.4.3.
+
+PC Power Control. PC refers to the process of setting the transmission power, by
+either open-loop or closed-loop means. It can be used to counteract propagation
+effects such as path-loss, shadowing or fast fading, or to control interference to
+neighbouring cells. See 3GPP TS36.213 Section 5.
+
+PCC Policy Control and Charging. This encompasses flow based charging, including
+charging control and online credit control and policy control (e.g. gating con-
+trol, Quality of Service (QoS) control, QoS signalling). See 3GPP TS23.203.
+
+PCCC Parallel Concatenated Convolutional Code. A method to create turbo codes,
+where the constituent convolutional codes are parallely concatenated through
+an interleaver. In LTE the turbo code is constructed by two 8-state constituent
+encoders and one turbo code internal interleaver. The code rate of the turbo
+encoder is 1/3. See 3GPP TS36.212, Section 5.1.3.2.1.
+
+PCCH Paging Control CHannel. A downlink logical channel which is used to no-
+tify UEs of an incoming call or a change of system information. See 3GPP
+TS36.322 Section 4.2.1.1.1 and TS36.321, Section 4.5.2.
+
+PCEF Policy and Charging Enforcement Function. This encompasses Service Data
+Flow (SDF) detection, policy enforcement and flow-based charging function-
+alities. See 3GPP TS23.203 Section 6.2.2.
+
+PCFICH Physical Control Format Indicator CHannel. A downlink physical channel
+which carries a Control Format Indicator (CFI) which indicates the number
+of OFDM symbols (i.e. normally 1, 2 or 3) used for transmission of downlink
+control channel information in each subframe. See 3GPP TS36.211, Section
+6.7.
+
+PCG Project Coordination Group. The group responsible for the overall time-frame
+and management of the technical work in 3GPP to ensure that the 3GPP spec-
+ifications are produced in a timely manner as required by the market.
+
+PCH Paging CHannel. A downlink transport channel used to transport paging infor-
+mation to UEs. This channel is also used to inform UEs about updates of the
+system information. See 3GPP TS36.321 Sections 4 and 5.5.
+
+PCI (or PCID) Physical Cell Identifier. The identity of an LTE cell. It is included in the LTE
+X2 setup procedure. The eNodeB can choose the PCI within a list of possi-
+ble identity values. In LTE there are 504 unique physical layer cell identities,
+grouped into 168 groups of three identities. The Primary Synchronization Se-
+quence (PSS) and Secondary Synchronization Sequence (SSS) in a given cell
+are used to indicate the PCI to the UE. See 3GPP TS36.300, Section 22.3.
+
+PCO Protocol Configuration Options. Used to transfer parameters between the UE
+and the Packet Data Network Gateway (P-GW). They are sent transparently
+through the Mobility Management Entity (MME) and the Serving GW (S-
+GW). The PCO may include the address allocation preference indicating that
+the UE prefers to obtain an IPv4 address only after the default bearer activation.
+See 3GPP TS23.401 Section 5.3.2.
+
+PCRF Policy Control and Charging Rules Function. This encompasses policy control
+decision and flow-based charging control functionalities. See 3GPP TS23.203
+Section 6.2.1.
+
+PDB Packet Delay Budget. An upper bound on packet delay which needs to be sat-
+isfied when the UE has sufficient radio channel quality. The PDB is made up
+of a delay in the network between a Packet Data Network GateWay (P-GW)
+and an eNodeB and a delay in the radio interface itself. See 3GPP TS 23.203
+Section 6.1.7.2
+
+PDCCH Physical Downlink Control CHannel. A downlink control channel used to sup-
+port efficient data transmission in LTE. A PDCCH carries a message known
+as Downlink Control Information (DCI), which includes transmission resource
+assignments and other control information for a UE or group of UEs. Many
+PDCCHs can be transmitted in a subframe. See 3GPP TS36.212 Section 5.3.3
+and TS36.211 Section 6.8.
+
+PDCP Packet Data Convergence Protocol. The top sublayer of the LTE user plane
+layer 2 protocol stack, above the Radio Link Control (RLC) layer. The PDCP
+layer processes Radio Resource Control (RRC) messages in the control plane
+and Internet Protocol (IP) packets in the user plane. Depending on the radio
+bearer, the main functions of the PDCP layer are header compression, security
+(integrity protection and ciphering), and support for reordering and retransmis-
+sion during handover. See 3GPP TS36.323.
+
+PDN Packet Data Network. The network through which a UE obtains a packet data
+connection to the internet. See 3GPP TS29.274.
+
+PDP Power Delay Profile. The typical averaged distribution of power of a channel
+impulse response across the different path delays.
+
+PDP Packet Data Protocol. A network protocol (such as Internet Protocol (IP))
+which handles packet routing and transfer functionality. See 3GPP TS23.060,
+Section 9.
+
+PDSCH Physical Downlink Shared CHannel. The main downlink data-bearing channel
+in LTE. It is used for all user data, as well as for broadcast system informa-
+tion which is not carried on the Physical Broadcast CHannel (PBCH), and for
+paging messages. See 3GPP TS36.213 Section 7, TS36.212 Section 5.3.2 and
+TS36.211 Section 6.4.
+
+PDU Protocol Data Unit. At the transmitting side, a PDU of a layer is the output of
+that layer to the layer below. Each layer receives a Service Data Unit (SDU)
+from the layer above. At the receiving side, a layer receives its PDUs from the
+layer below.
+
+PF Paging Frame. A radio frame, known to the UE, in which E-UTRAN can page
+the UE. One paging frame may contain one or multiple subframe(s) in which
+a paging message may be transmitted, each such subframe being known as a
+Paging Occasion (PO). See TS 3GPP36.304 Section 7.1.
+
+PF Packet Flow. A specific user data flow carried through the Policy and Charging
+Enforcement Function (PCEF). A packet flow can be an Internet Protocol (IP)
+flow. See 3GPP TS23.203 Section 6.2.2.
+
+PFI Packet Flow Identifier. A PFI may be associated with a Packet Data Proto-
+col (PDP) context. Four PFIs are specified: one for best-effort services, one
+for SMS, one for message tunnelling and one for signalling. Others may be
+dynamically assigned. See 3GPP TS24.008 Section 10.5.6.11 and TS23.060
+Section 12.6.3.5..
+
+PFS Proportional Fair Scheduling. A proportional fair scheduler allocates transmis-
+sion resources to different users according to a metric which is proportional
+to their current instantaneous transmission capacity (taking into account radio
+channel conditions and typically also availability of data to transmit) but in-
+versely proportional to their average throughput over a past time window –
+in other words, the instantaneous user throughput at time ‘t’ normalized by
+the time-averaged user throughput up to time ‘t’. The normalization imposes a
+measure of fairness.
+
+P-GW Packet Data Network GateWay. The gateway which terminates the interface
+towards the Packet Data Network (PDN). If a UE is accessing multiple PDNs,
+there may be more than one P-GW for that UE. See 3GPP TS23.002 Section
+4.1.4.2.2.
+
+PH Power Headroom. The difference between the nominal UE maximum transmit
+power and the estimated power for Physical Uplink Shared CHannel (PUSCH)
+transmission in the current subframe, expressed in dB. This information can
+be reported to the eNodeB in configurable Power Headroom Reports (PHR).
+See 3GPP TS36.133 Section 9.1.8, TS36.213 Section 5.1.1.2 and TS36.321
+Section 5.4.6.
+
+PHICH Physical Hybrid ARQ Indicator CHannel. A downlink physical channel which
+carries the Hybrid ARQ (HARQ) ACK/NACK information indicating whether
+the eNodeB has correctly received a transmission on the Physical Uplink
+Shared CHannel (PUSCH). Multiple PHICHs (for different UEs) are mapped
+to the same set of downlink resource elements. These constitute a PHICH
+group, where different PHICHs within the same PHICH group are separated
+through different complex orthogonal Walsh sequences. See 3GPP TS36.211
+Section 6.9 and TS36.212 Section 5.3.5.
+
+PHR Power Headroom Report. The index reported by the UE to indicate the esti-
+mated power headroom. The power headroom reporting range is from -23 to
++40 dB. The eNodeB can use the power headroom reports to determine how
+much more uplink bandwidth per subframe a UE is capable of using. See 3GPP
+TS36.133 Section 9.1.8, TS36.213 Section 5.1.1.2 and TS36.321 Section 5.4.6.
+
+PHY Physical Layer. The lowest layer in the LTE user plane and control plane pro-
+tocol stacks. It defines the means of transmittting raw bits rather than logical
+data packets over a physical link. See 3GPP TS36.201, TS36.211, TS36.212,
+TS36.213 and TS36.214.
+
+PICS Protocol Implementation Conformance Statement. An Implementation Confor-
+mance Statement (ICS) for an implementation or system claimed to conform
+to a given protocol specification. See 3GPP TS36.521-2.
+
+PIXIT Protocol Implementation eXtra Information for Testing. A statement made
+by a supplier or implementer of an Implementation Under Test (IUT) which
+contains or references all of the information (in addition to that given in the
+Protocol Implementation Conformance Statements (PICS)) related to the IUT
+and its testing environment. See 3GPP TS36.521-2.
+
+PL Path-Loss. The attenuation of an electromagnetic wave as it propagates through
+free space. In LTE each UE measures the path-loss based on the serving cell’s
+Reference Signals (RSs) by averaging measurements of the downlink Refer-
+ence Signal Received Power (RSRP). This is used to determine the uplink
+transmission power needed to compensate for some or all of the path-loss.
+
+PLL Phase-Locked Loop. A control system which aims to fix the frequency of an
+oscillator to that of a received signal, by lowering or raising the frequency of
+the oscillator until it is matched to the reference signal in both frequency and
+phase. PLLs are typically used to lock a UE to the downlink carrier frequency
+received from the eNodeB.
+
+PLMN Public Land Mobile Network. Typically the mobile network run by one net-
+work operator in one country. See 3GPP TS23.002 Section 3.1.
+
+PLR Packet Loss Rate. The ratio between the number of packets which have not
+been correctly received and the total number of transmitted packets.
+
+P-MCCH Primary Multicast Control CHannel (MCCH). A downlink channel which is
+used to transmit control information related to the reception of Multimedia
+Broadcast and Multicast Services (MBMS). It may be able to point to optional
+additional Secondary-MCCH(s). The details will be finalized in a later release
+of LTE. See 3GPP TS 36.300, Section 15.3.5.
+
+PMCH Physical Multicast CHannel. The downlink physical channel which carries data
+originating from higher protocol layers for Multimedia Broadcast and Multi-
+cast Services (MBMS) using single-frequency network operation (MBSFN).
+See 3GPP TS36.211 Sections 6.3.2, 6.5 and 6.9.3, and TS36.300 Section 5.
+
+PMI Precoding Matrix Indicator. A signal fed back by the UE to support Multiple-
+Input Multiple-Output (MIMO) operation. It corresponds to the index of the
+precoder (within a codebook shared by the UE and eNodeB) that maximizes
+the aggregate number of data bits which could be received across all downlink
+spatial transmission layers. See 3GPP TS36.213 Section 7.2.4.
+
+PMIP Proxy Mobile Internet Protocol. A network-based mobility management mech-
+anism. It is an amendment to Mobile IPv6 which allows mobility control to be
+moved from the mobile node to a proxy in the network. LTE supports PMIP
+over the S2, S5 and S8 interfaces. See 3GPP TS23.402.
+
+PN Pseudo-Noise. A signal whose correlation characteristics are similar to noise.
+
+PN sequences typically consist of a deterministic sequence of pulses that re-
+peats itself after a long period.
+
+PO Paging Occasion. A subframe within a Paging Frame (PF) in which E-UTRAN
+can page a UE. The E-UTRAN configures which of the radio frames and sub-
+frames are used for paging, following a default or UE-specific paging cycle. In
+a PO configured for a UE, the UE will monitor the Physical Downlink Con-
+trol CHannel (PDCCH) for any transmissions of the Paging- Radio Network
+Temporary Identifier (P-RNTI). See 3GPP TS36.304 Section 7.1.
+
+PPF Paging Proceed Flag. A flag managed by the Mobility Management Entity
+(MME) in LTE; if set, it indicates that the UE was known to be within the cov-
+erage area within a previous time period, and the MME may initiate paging to
+the UE in the event of downlink data arrival. The PPF is typically cleared if the
+MME believes the UE to have gone out of coverage, in which case downlink
+data will be rejected. See 3GPP TS23.401 Section 4.3.5.2.
+
+PPP Point-to-Point Protocol. A data link protocol used to establish a direct con-
+nection between two networking nodes. It can provide connection authentica-
+tion, as well as offering transmission encryption and compression. See IETF
+RFC1661 and RFC2153, www.ietf.org.
+
+PRACH Physical Random Access CHannel. A physical channel used to carry the Ran-
+dom Access Channel (RACH). It consists of a preamble signature, which is
+either randomly selected or pre-assigned. By partitioning the signatures into
+two groups, the PRACH can carry one bit of higher layer information indi-
+cating the amount of resource needed for the next uplink message. See 3GPP
+TS36.211, section 5.7.
+
+PRB Physical Resource Block. A unit of transmission resource consisting of 12 sub-
+carriers in the frequency domain and 1 timeslot (0.5 ms) in the time domain.
+See 3GPP TS36.211, Sections 5.2.3 and 6.2.3.
+
+P-RNTI Paging-Radio Network Temporary Identifier. A fixed identifier used on the
+Physical Downlink Control CHannel (PDCCH) to indicate paging messages on
+the Physical Downlink Shared CHannel (PDSCH). It is transmitted as a scram-
+bling code applied to the Cyclic Redundancy Check (CRC) of the PDCCH
+transmission. See 3GPP TS36.321 Section 7.1.
+
+PS Packet Switched. In PS communication each data packet is labelled with the
+destination address and routed over a shared transmission resource. In contrast
+with Circuit Switching (CS) where dedicated transmission resources are re-
+served between network nodes to deliver a reliable transmission rate and delay,
+in a PS connection the transmission rate and delay may vary depending on the
+traffic load and the medium capacity, with packets being buffered if necessary.
+
+PSAP Public Safety Answering Point. An agency (typically in the United States of
+America) which receives emergency calls from the public for assistance from
+police, fire or ambulance services. It may also provide public warnings of emer-
+gencies which can be broadcast over the cellular network.
+
+PSD Power Spectral Density. PSD is a positive real function describing how the
+power of a signal is distributed with frequency. It provides the amount of energy
+per unit of frequency (dBm/Hz), and can be computed as the Fourier transform
+of the autocorrelation process.
+
+PSS Primary Synchronization Signal. A sequence transmitted by every LTE cell
+every 5 ms. It allows the UE to obtain slot synchronization and part of the
+physical layer cell IDentifier (cell ID). Three different sequences exist with
+a one-to-one mapping to three different cell IDs within each of 168 groups of
+cell IDs. The PSS is based on Zadoff-Chu (ZC) sequences. See 3GPP TS36.211
+Section 6.11.1.
+
+PSS_RA Primary Synchronization Signal to Reference Signal Energy Per Resource El-
+ement ratio. The ratio of the transmitted energy per resource element between
+the Primary Synchronization Signal (PSS) and the downlink RS, used in defin-
+ing performance requirements. See 3GPP TS36.101 Annex C.
+
+PTI Procedure Transaction IDentity. An identity which is dynamically allocated
+by the UE for the UE-requested bearer resource activation, modification and
+deactivation procedures. The PTI is released when the procedure is completed.
+See 3GPP TS29.274 section 8.40 and TS24.301 Sections 6.4–6.6.
+
+P-TMSI Packet Temporary Mobile Subscriber Identity (TMSI). A P-TMSI identifies a
+UE within a given Routing Area (RA) on a temporary basis and is used by the
+network to page the specified UE. See 3GPP TS23.003 Sections 2.7 and 2.8.2.
+
+PUCCH Physical Uplink Control CHannel. The LTE uplink physical channel carrying
+uplink control information including Channel Quality Indicators (CQI), Hy-
+brid Automatic Retransmission reQuest (HARQ) ACKnowledgment/Negative
+ACKnowledgment (ACK/NACK) and uplink scheduling requests. See 3GPP
+TS36.211 Section 5.4.
+
+PUSCH Physical Uplink Shared CHannel. The LTE uplink physical channel carrying
+scheduled data traffic, and control signalling if some is required to be transmit-
+ted in the same subframe. See 3GPP TS36.211 Section 5.3.
+
+PWS Public Warning System. A PWS provides the ability to broadcast warnings
+to alert the public to major emergencies, such as natural and other disasters.
+Such a system may also broadcast information allowing emergency services
+to request public assistance, for example when life is in danger. See 3GPP
+TS22.268.
+
+QAM Quadrature Amplitude Modulation. QAM involves modulating the amplitude
+of two separate carrier waves, exactly 90 degrees out of phase with each other
+(sine and cosine). These are therefore called quadrature carriers, from which
+the scheme derives its name. M-QAM conveys information by means of M
+different combinations of amplitudes of the two carriers (vM possible am-
+plitudes on each carrier), and hence log2(M) information bits are conveyed
+per QAM symbol. In LTE M=16 or 64 for both uplink and downlink (although
+M=64 is optional for the uplink). See 3GPP TS36.211 Sections 5.3.2 and 6.3.2.
+
+QCI Quality of Service (QoS) Class Identifier. A parameter of the QoS profile of an
+Evolved Packet System (EPS) bearer. It is a scalar which refers to access node-
+specific parameters that control bearer-level packet forwarding treatment (e.g.
+scheduling weights, admission thresholds, queue management thresholds, link
+layer protocol configuration). See 3GPP TS23.401 Section 4.7.3 and TS23.203
+Annex J.
+
+QoS Quality of Service. A descriptor of the level of performance provided in trans-
+mission of data. Typical QoS metrics include bit rate, delay, bit/block error
+rate, maximum blocking probability and outage probability. QoS guarantees
+are especially important for real-time streaming applications, such as Voice
+over Internet Protocol (VoIP), since these are often delay-sensitive.
+
+QPP Quadratic Permutation Polynomial. QPPs are used to define the turbo cod-
+ing interleavers in LTE. For an information block size K, a QPP interleaver
+is defined by the following polynomial: (i) = (f1i + f2i2) mod K, where
+i is the output index(0 = i = K - 1), (i) is the input index and f1 and f2
+are the coefficients that define the permutation, with f1 being relatively prime
+to the block size K and all prime factors of K also being factors of f2. 188
+such interleaver polynomials are defined for LTE. See 3GPP TS36.212 Section
+5.1.3.2.3.
+
+QPSK Quadrature Phase Shift Keying. QPSK is a modulation scheme in which in-
+formation is conveyed through phase variations of a carrier, while keeping a
+constant amplitude and frequency. The four phases are 0, /2, , 3/2, en-
+abling log2(4) = 2 information bits to be conveyed per QPSK symbol. See
+3GPP TS36.211 Sections 5.3.2 and 6.3.2.
+
+R Reserved. A bit field, usually in a message header, which is reserved for possi-
+ble use in a later version of the specifications.
+r.m.s root mean square. A statistical measure of the magnitude of a series of values.
+It is the square root of the mean of the squares of the values.
+
+RA Random Access. A procedure by which a UE can access the network, gen-
+erally by random selection of a transmission resource rather than by specific
+assignment. The random access procedure in LTE is used when a UE is not
+allocated with uplink radio resources but has data to transmit, or when the UE
+is not time-synchronized in the uplink direction. See 3GPP TS36.321, Section
+5.1 and TS36.213 Section 6.
+
+RA Resource Allocation. RA is part of the radio resource management functional-
+ity and is performed by the eNodeB. It comprises allocation and de-allocation
+of transmission resources for both user and control plane packets, including
+the selection of radio bearers whose packets are to be scheduled and determin-
+ing power levels and specific resource blocks to be used. It typically takes into
+account the Quality of Service (QoS) requirements, any channel quality infor-
+mation, buffer status reports and/or restrictions related to inter-cell interference
+coordination considerations. See 3GPP TS36.213, Sections 7.1.6 and 8.1.
+
+RA Routing Area. An area in which a mobile station, in certain operation modes,
+may move freely without updating the Serving GPRS Support Node (SGSN).
+An RA includes one or several GSM/EDGE Radio Access Network (GERAN)
+or UTRAN cells. An RA is always contained within a location area.
+
+RAB Radio Access Bearer. A service provided by the Access Stratum (AS) to the
+Non-Access Stratum (NAS) for the transfer of user data between the UE and
+the Core Network (CN).
+
+RAC Radio Admission Control. The RAC function is located in the eNodeB and
+controls admission or rejection of new radio bearer establishment requests. The
+goal of RAC is to maximize radio resource utilization while ensuring that the
+required Quality of Service (QoS) is achieved for sessions which are already
+established. RAC can take into account the overall resource situation in E-
+UTRAN, the QoS requirements, the priority levels, the provided QoS of in-
+progress sessions and the QoS requirements of new radio bearer requests. See
+3GPP TS36.300, Section 16.1.2.
+
+RAC Routing Area Code. The RAC is part of the Routing Area Identity (RAI). The
+RAC identifies a routing area within a location area. It has a fixed length of 1
+octet. See 3GPP TS23.003 Section 4.2.
+
+RACH Random Access CHannel. A transport channel used for access to the network
+when the UE does not have accurate uplink timing synchronization, or when
+the UE does not have any allocated uplink transmission resource. The RACH
+is normally contention-based, which may result in collisions between UEs. See
+3GPP TS36.321.
+
+RAI Routing Area Identity. Used for paging and registration purposes. It is com-
+posed of the Location Area Identity (LAI) and the Routing Area Code (RAC).
+See 3GPP TS23.003 Section 4.2.
+
+RAN Radio Access Network. A RAN consists of the ground-based infrastructure
+required for delivery of communication between UEs and the Core Network
+(CN). In LTE, the RAN consists of one or more base stations (i.e. eNodeBs).
+Examples of other RANs are UMTS, TD-SCDMA, GSM, CDMA2000 and
+WiMAX.
+
+RAPID Random Access Preamble IDentifier. A field of the Medium Access Control
+(MAC) header for the Random Access Response (RAR). The RAPID field
+identifies the transmitted random access preamble to which the RAR corre-
+sponds. See 3GPP TS36.321 Section 6.2.2.
+
+RAR Random Access Response. The message sent by the eNodeB in response to
+a random access preamble. The RAR is sent by the eNodeB on the Physical
+Downlink Shared CHannel (PDSCH), and addressed with the Random Access
+Radio Network Temporary Identifier (RA-RNTI), which identifies the time-
+frequency slot in which the preamble was detected. The RAR conveys the
+identity of the detected preamble, a timing alignment instruction to synchronize
+subsequent uplink transmissions from the UE, an initial uplink resource grant
+for transmission of the next uplink message, and an assignment of a Cell-RNTI
+(C-RNTI). The RAR message can also include a ‘backoff indicator’ which the
+eNodeB can set to instruct the UE to back off for a period of time before retry-
+ing a random access attempt. See 3GPP TS36.321 Sections 5.1.4 and 6.1.5.
+
+RA-RNTI Random Access Radio Network Temporary Identifier. The RA-RNTI is used to
+identify a message sent on the Physical Downlink Control CHannel (PDCCH)
+as a Random Access Response (RAR). It also indicates the time-frequency slot
+of the preamble to which the RAR corresponds. See 3GPP TS36.312 Section
+5.1.4 and TS36.401, Section 6.2.8.1.
+
+
+RAT Radio Access Technology. The RAT is the type of radio technology used in a
+Radio Access Network (RAN) to access the Core Network (CN), e.g. UMTS,
+GSM, CDMA2000, WiMAX.
+
+RAU Routing Area Update. A RAU is triggered when a UE crosses a routing area
+boundary from one routing area to another. A RAU can also be performed
+periodically, with the time interval being set by the network.
+
+RB Resource Block. A unit of transmission resource consisting of 12 subcarriers
+in the frequency domain and 1 timeslot (0.5 ms) in the time domain. See 3GPP
+TS36.211, Sections 5.2.3 and 6.2.3.
+
+RB Radio Bearer. A service provided by the Layer 2 for the transfer of data be-
+tween a UE and the E-UTRAN.
+
+RBC Radio Bearer Control. A function located in the eNodeB for the management
+(i.e. setting up, maintenance and release) of radio bearers. The setting up of
+a radio bearer for a service is based on the overall resource situation in E-
+UTRAN, and the Quality of Service (QoS) requirements of current sessions
+and the new service. RBC handles the maintenance of established radio bear-
+ers when the radio resource situation changes, for example due to mobility.
+RBC is involved in the release of radio resources associated with radio bearers,
+for example at session termination or handover. See 3GPP TS36.300, Section
+16.1.1.
+
+RBG Resource Block Group. A RBG consists of 1, 2, 3 or 4 Physical Resource
+Blocks (PRB), depending on the system bandwidth, which are consecutive in
+the frequency domain and are in the same timeslot. The grouping of PRBs in
+this way enables the signalling overhead to be reduced for downlink transmis-
+sion resource allocation. See 3GPP TS36.213 Section 7.1.6.1.
+
+RBG Radio Bearer Group. A RBG corresponds to a group of logical channels for
+the purposes of uplink buffer status reporting. By grouping logical channels in
+this way the signalling overhead for informing the eNodeB of arrival of high-
+priority data in the UE’s buffer is reduced. See 3GPP TS36.300 Section 11.3
+and TS36.321 Section 6.1.3.1.
+
+RE Resource Element. The RE is the smallest unit of transmission resource in
+LTE, in both uplink and downlink. An RE consists of 1 subcarrier in the fre-
+quency domain for a duration of 1, Orthogonal Frequency Division Multiplex-
+ing (OFDM) or Single Carrier- Frequency Division Multiplexing(SC-FDM),
+symbol in the time domain. See 3GPP TS36.211 Sections 5.2 and 6.2.
+
+REFSENS REFerence SENSitivity power level. It is the minimum mean received signal
+strength applied to both antenna ports at which there is sufficient SINR for a
+given modulation scheme to meet 95% of the maximum throughput of a refer-
+ence measurement channel. It is given by REFSENS = kTB + NF + SINR +
+IM - 3 (dBm), where kTB is the thermal noise level in dBm in the bandwidth
+B, NF is the prescribed maximum noise figure for the receiver, SINR is the
+requirement for the chosen Modulation and Coding Scheme (MCS), IM is an
+implementation margin and the -3 dB represents the diversity gain. See 3GPP
+TS36.101, Section 7.3.
+
+REG Resource Element Group. A group of four Resource Elements (REs). These
+groups are used to structure the mapping of the downlink physical control chan-
+nels (Physical Downlink Control CHannel (PDCCH), Physical Control Format
+Indicator CHannel (PCFICH) and Physical Hybrid ARQ Indicator CHannel
+(PHICH)) to resource elements in the first Orthogonal Frequency Domain Mul-
+tiplexing (OFDM) symbols of each subframe. See 3GPP TS36.211 Section
+6.2.4.
+
+RET Remote Electrical Tilting. A mechanism for changing electrically the overall
+tilt of a base station antenna by increasing the lengths of different antenna
+elements inside the antenna casing. This can be used to improve the over-
+all coverage and bandwidth distribution of cells, in particular where manual
+adjustment of the tilt of an antenna is expensive or impractical. RET allows
+network operators to respond to changing capacity requirements. For back-
+ground for UTRAN, see 3GPP TR25.802 and TS25.460, TS25.461, TS25.462,
+TS25.463 and TS25.466.
+
+RF Radio Frequency. Refers to signal oscillation frequencies such that if the signal
+is input to an antenna an electromagnetic field is generated suitable for wireless
+communication. These frequencies cover a significant part of the electromag-
+netic radiation spectrum, ranging from a few kilohertz to hundreds of gigahertz.
+See 3GPP TR36.942 for some discussion of related issues.
+
+RF Resegmentation Flag. A field in a Radio Link Control (RLC) header indicating
+whether the RLC Protocol Data Unit (PDU) is an Acknowledged Mode Data
+(AMD) PDU or an Unacknowledged Mode Data (UMD) PDU segment. If the
+RLC PDU is an AMD PDU segment, the RF field is set to 1, otherwise it is set
+to 0. See 3GPP TS36.322 Section 6.2.2.10.
+
+RFC Request for Comments. A type of memorandum that captures much of the
+output of the Internet Engineering Task Force (IETF). These memoranda de-
+scribe techniques and protocols related to the functioning of the internet and
+internet-connected systems.
+
+RFSP Radio Access Technology / Frequency Selection Priority. An index provided
+by the Mobility Management Entity (MME) to an eNodeB across the S1 in-
+terface to support radio resource management in E-UTRAN. The RFSP index
+is mapped by the eNodeB to a locally defined configuration in order to ap-
+ply specific Radio Resource Management (RRM) strategies. The RFSP index
+is UE-specific and applies to all the radio bearers for that UE. See 3GPP
+TS23.401 Section 4.3.6.
+
+RI Rank Indicator. A RI is signalled to the eNodeB by UEs configured for Physical
+Downlink Shared CHannel (PDSCH) transmission modes 3 (open-loop spatial
+multiplexing) and 4 (closed-loop spatial multiplexing). It corresponds to the
+number of useful transmission layers for spatial multiplexing (based on the
+UE’s estimate of the downlink channel), enabling the eNodeB to adapt the
+PDSCH transmissions accordingly. See 3GPP TS36.213 Section 7.2.
+
+RIM Radio Access Network Information Management. The RIM provides a generic
+method for the exchange of information between applications belonging to the
+Radio Access Network (RAN) nodes. The RAN information is transferred via
+the Mobility Management Entity (MME) and Serving GPRS Support Node
+(SGSN) node(s). The RAN information is included in a RIM container which
+is not interpreted by the Core Network (CN) nodes, such that the RAN infor-
+mation is transparent to the CN. See 3GPP TS36.300, Section 19.2.1.13.
+
+RIV Resource Indication Value. A field in Physical Downlink Control CHannel
+(PDCCH) messages indicating contiguous Physical Resource Block (PRB) al-
+locations to a UE; this includes all uplink resource grants, and some downlink
+resource assignments. The RIV indicates the starting resource block of the
+contiguous allocation and the length of the contiguous allocation of resource
+blocks. See 3GPP TS36.213 Sections 7.1.6.3 and 8.1.
+
+RL Radio Link. A logical communication link between a UE and an eNodeB, car-
+rying one or several radio bearers.
+
+RLC Radio Link Control. The RLC layer is located between the Packet Data Con-
+vergence Protocol (PDCP) layer and the Medium Access Control (MAC) layer
+in the LTE user plane protocol stack. The main functions of the RLC layer
+are segmentation and reassembly of upper layer packets in order to adapt them
+to the size which can actually be transmitted over the radio interface. For ra-
+dio bearers which need error-free transmission, the RLC layer also performs
+retransmission to recover from packet losses. Additionally, the RLC layer
+performs reordering to compensate for out-of-order reception due to Hybrid
+Automatic Repeat reQuest (HARQ) operation in the MAC layer. There is one
+RLC entity per radio bearer. See 3GPP TS36.322.
+
+RLF Radio Link Failure. An RLF occurs when a UE is considered to have lost syn-
+chronization with the downlink from the eNodeB, typically due to degradation
+of the air interface arising from unfavourable signal propagation conditions, i.e.
+when the received power level is lower than a predefined threshold, Qout. After
+radio link failure detection and the expiration of a timer (T310), the UE enters
+IDLE mode. See 3GPP TS36.300 Section 10.1.6, TS36.213 Section 4.2.1 and
+TS36.331 Section 5.3.11.
+
+RLP Radio Link Protocol. RLP covers the Layer 2 functionality of the ISO OSI
+Reference Model, between the UE and the interworking function located at
+the nearest Mobile Switching Centre (MSC). It is designed to support circuit
+switched data transmission within a Public Land Mobile Network (PLMN).
+See 3GPP TS24.022.
+
+RLS Recursive Least Squares. A technique used to find the coefficients of adaptive
+filters by recursively computing the smallest values of the squares of the error
+signal. This can be contrasted with Minimum Mean Squared Error (MMSE)
+filters, which aim to minimize the mean squared error. While MMSE filters
+depend on the statistics of the signal, RLS filters are dependent on the signals
+themselves.
+
+RM Rate Matching. The RM process adapts the code rate of the LTE data trans-
+missions such that the number of information and parity bits to be transmitted
+matches the resource allocation. Based on the 1/3 mother code rate of the turbo
+coder, the LTE RM uses a circular buffer to either repeat bits to decrease the
+code rate or puncture bits to increase the code rate. See 3GPP TS36.212 Section
+5.1.4.
+
+RMC Reference Measurement Channel. RMCs provide defined sets of parameters
+for transmitted channels to enable radio receiver performance to be analyzed
+in a consistent way. See 3GPP TS36.101 Annex A.
+
+RNC Radio Network Controller. The equipment in the UTRAN RNS in charge of
+controlling the use and the integrity of the radio resources.
+RNL Radio Network Layer. The RNL encompasses the radio network control plane
+and the radio network user plane. It handles all Radio Access Bearer-related
+functions.
+
+RNS Radio Network Subsystem. Either a full UTRAN network or only the access
+part of a UTRAN, offering the allocation and release of specific radio resources
+to establish means of connection in between a UE and the UTRAN. An RNS
+comprises a Radio Network Controller (RNC) and one or more NodeBs.
+
+RNTI Radio Network Temporary Identifier. RNTIs are used to identify UEs within E-
+UTRAN, in particular in signalling messages between the UE and E-UTRAN.
+Several types of RNTI exist, including Cell-RNTI (C-RNTI), Paging-RNTI
+(P-RNTI), Random Access-RNTI (RA-RNTI) and System Information-RNTI
+(SI-RNTI). See 3GPP TS36.321 Section 7.1.
+
+RNTP Relative Narrowband Transmit Power. RNTP indicates, per Physical Resource
+Block (PRB), whether or not the cell intends to keep the downlink transmit
+power in the PRB below a certain threshold. The value of this threshold, and
+the period for which the RNTP indicator is valid in the future, are configurable.
+This enables the neighbouring eNodeBs to take into account the expected level
+of interference in each RB when scheduling UEs in their own cells. See 3GPP
+TS36.213 Section 5.2.1.
+
+ROHC RObust Header Compression. A standardized method to compress the Internet
+Protocol (IP), User Datagram Protocol (UDP), Real-time Transport Protocol
+(RTP) and Transmission Control Protocol (TCP) headers of internet packets.
+ROHC header compression operates by allowing both the sender and the re-
+ceiver to store the static parts of the header (e.g. the IP addresses of the
+sender/receiver), and to update these only when they change. Dynamic parts
+(such as the timestamp in the RTP header) are compressed by transmitting
+only the difference from a reference maintained in both the transmitter and the
+receiver. See www.ietf.org.
+
+RoT Rise over Thermal. RoT is defined as the ratio between the total power received
+at a base station and the thermal noise at the base station. It provides a measure
+of the uplink load level in a cell.
+
+RPF RePetition Factor. A parameter defining the degree of repetition of time-
+domain samples of a Single Carrier Frequency Division Multiple Access (SC-
+FDMA) signal used in the LTE uplink. An RPF = n means that the time-domain
+samples are repeated n - 1 times (i.e. transmitted n times), resulting in the
+signal occupying one subcarrier every n subcarriers in the frequency domain.
+This can be used to generate Interleaved Frequency Division Multiple Access
+(IFDMA) signals from different UEs. In LTE, this is applied to transmission
+of the Sounding Reference Signals (SRS) in the uplink, with RPF = 2 allowing
+SRS from two UEs to be interleaved across a given bandwidth while retaining
+frequency-domain orthogonality.
+
+R-PLMN Registered Public Land Mobile Network. The PLMN on which the UE has
+performed a successful location registration.
+
+RRC Radio Resource Control. The RRC protocol handles the Layer 3 control plane
+signalling by which the E-UTRAN controls the UE behaviour. The RRC pro-
+tocol supports the transfer of both common and dedicated Non-Access Stra-
+tum information. It covers a number of functional areas including System
+Information (SI) broadcasting, connection control including handover within
+LTE, network-controlled inter-Radio Access Technology (RAT) mobility and
+measurement configuration and reporting. See 3GPP TS36.300 Section 7 and
+TS36.331.
+
+
+RRC Root Raised Cosine. A filter shape, frequently used for pulse-shaping because
+of its ability to minimize Inter-Symbol Interference (ISI) when used at both the
+transmitter and receiver – the two filters together having a Raised Cosine re-
+sponse. The frequency response of an RRC filter is a piecewise function equal
+to unity in the centre frequencies and approaching zero following the square-
+root of a raised cosine curve. The sharpness of the frequency-domain roll-off
+can be traded off against the amplitude of time-domain ripple in the filter im-
+pulse response by varying the ‘roll-off factor’, typically referred to as . For
+ = 0 the frequency response of the filter becomes a rectangular function, and
+for  = 1 it is a pure root raised cosine.
+
+RRM Radio Resource Management. RRM consists of the system-level control mech-
+anisms used to manage radio resources in the air interface. The objective of
+RRM is to maximize the system spectral efficiency and to support mobility for
+the users. RRM therefore involves strategies and algorithms for resource allo-
+cation, Modulation and Coding Scheme (MCS), transmission power selection,
+and mobility. See 3GPP TS36.133.
+
+RS Reference Signal. A signal, known to the receiver, that is inserted into a
+transmitted signal in order to facilitate channel estimation for coherent de-
+modulation and measurements. In the LTE downlink, Cell-specific RSs are
+provided which are available to all UEs in a cell; UE-specific RSs may be
+embedded in the data for specific UEs, and Multimedia Broadcast Single Fre-
+quency Network (MBSFN) -specific RSs are provided in case of MBSFN
+operation. These RSs occupy specified Resource Elements (REs) within an
+Orthogonal Frequency Division Multiplexed (OFDM) symbol. In the LTE up-
+link, Demodulation RSs (DM-RS) and Sounding RSs (SRS) are provided for
+channel estimation for demodulation and channel sounding respectively. See
+3GPP TS36.211 Sections 5.5 and 6.10.
+
+RSCP Received Signal Code Power. A measurement used for mobility to UTRA. It
+is the received power on the Primary Common PIlot CHannel (P-CPICH for
+UMTS Frequency Division Duplex (FDD)), or the Primary Common Con-
+trol Physical CHannel (for UMTS Time Division Duplex (TDD)) after de-
+spreading. See 3GPP TS36.214 Section 5.1.4.
+
+RSRP Reference Signal Received Power. An LTE measurement which provides a
+cell-specific signal strength metric. This measurement is mainly used to rank
+different LTE cells according to their signal strength as an input for handover
+and cell reselection decisions. The RSRP of a cell is defined as the linear av-
+erage over the power contributions (in Watts) of the Resource Elements (REs)
+which carry cell-specific RS within the considered measurement bandwidth.
+Normally the RSs transmitted on the first eNodeB antenna port are used for
+RSRP determination, but the RS on the second antenna port can also be used
+if the UE can determine that they are being transmitted. If the UE is equipped
+with multiple antennas, the reported RSRP value is not permitted to be lower
+than the RSRP computed on the individual branches. See 3GPP TS36.214
+Section 5.1.1.
+
+RSRQ Reference Signal Received Quality. RSRQ is an LTE measurement which pro-
+vides a cell-specific signal quality metric. Similarly to Reference Signal Re-
+ceived Power (RSRP), this measurement is mainly used to rank different LTE
+cells according to their signal quality as an input for handover and cell rese-
+lection decisions, for example in scenarios for which RSRP measurements do
+not provide sufficient information to perform reliable mobility decisions. The
+RSRQ is defined as the ratio N · RSRP/(LTE carrier RSSI), where N is the
+number of Resource Blocks (RBs) of the LTE carrier Received Signal Strength
+Indicator (RSSI) measurement bandwidth. While RSRP is an indicator of the
+wanted signal strength, RSRQ additionally takes the interference level into ac-
+count due to the inclusion of RSSI. RSRQ therefore enables the combined
+effect of signal strength and interference to be reported in an efficient way. If
+the UE is equipped with multiple antennas, the reported RSRQ value is not
+permitted to be lower than the RSRQ computed on the individual branches.
+See 3GPP TS36.214 Section 5.1.2.
+
+RSSI Received Signal Strength Indicator. A measurement defined as the total re-
+ceived wideband power observed by a UE from all sources, including co-
+channel serving and non-serving cells, adjacent channel interference and ther-
+mal noise within the measurement bandwidth. For LTE it is not reported as an
+independent measurement, but is an input to the derivation of RSRQ. For RSSI
+in UTRA and GSM, see 3GPP TS36.214 Sections 5.1.5, 5.1.7 and 5.1.8.
+
+RTCP Real-time Transport Control Protocol. RTCP provides control signalling func-
+tionality to support data packets transmitted by Real-time Transport Protocol
+(RTP). Its primary function is to monitor transmission statistics to provide
+Quality of Service (QoS) feedback for the RTP data. See IETF RFC3550,
+www.ietf.org.
+
+RTD Round-Trip Delay. RTD usually refers to twice the one-way propagation delay
+for a radio signal between a source node and a destination node. In some in-
+stances it may also include a processing time at the destination node, for the
+response signal to be generated.
+
+RTP Real-time Transport Protocol. RTP is a communication protocol which pro-
+vides end-to-end network transport functions suitable for applications transmit-
+ting real-time data, such as audio and video over multicast or unicast networks.
+See IETF RFC3550, www.ietf.org.
+
+RTT Round-Trip Time. RTT usually refers to the time between retransmissions in
+a Hybrid Automatic Repeat reQuest (HARQ) protocol. It therefore consists of
+the total time required for a packet to travel from a source node to a destina-
+tion node, for decoding and ACKnowledgement/Negative ACKnowledgment
+(ACK/NACK) generation at the destination, for transmission of a response
+back to the source, and for processing at the source to formulate the retrans-
+mission.
+
+RV Redundancy Version. An RV is a particular set of systematic and parity bits
+transmitted from a channel-coded data packet. In Incremental Redundancy (IR)
+schemes, successive retransmissions of the packet use different RVs. In LTE,
+each RV is defined by a particular starting point in the rate matching circular
+buffer filled from the output of the turbo coder. The RV of each retransmis-
+sion must be known by the receiver (either by explicit signalling or specified
+rules) in order to enable correct combining with other transmissions of the same
+packet. See 3GPP TS36.212 Section 5.1.4.1.2.
+
+Rx Receive.
+
+RxD Receive Diversity. The use of two or more physically separate antennas for
+reception.
+
+S/P Serial-to-Parallel. The conversion of a serial sequence of symbols into a paral-
+lel set of sequences, usually by mapping each symbol (or group of symbols) of
+the serial sequence to a different one of the parallel sequences in turn.
+S1 The interface between an eNodeB and the Core Network (CN). See 3GPP
+TS36.300 Section 19 and TS36.410 to TS36.414.
+
+
+S1-AP S1 Application Protocol. The radio network layer signalling protocol of the S1
+interface. See 3GPP TS36.413.
+
+S1-U S1-User plane. Provides non-guaranteed delivery of user plane Protocol Data
+Units (PDU) between the eNodeB and the Serving-GateWay (S-GW). It is built
+on Internet Protocol (IP) transport, and GPRS Tunnelling Protocol-User Plane
+(GTP-U) is used on top of User Data Protocol (UDP) / Internet Protocol (IP)
+to carry the user plane PDUs between the eNodeB and the S-GW. It supports
+inter-eNodeB path switching during handover. See 3GPP TS36.300 Section
+19.1 and TS36.414.
+
+S5 The interface between a Serving-GateWay (S-GW) and a Packet Data Network
+GateWay (P-GW) within the same Public Land Mobile Network (PLMN).
+
+S8 The interface between a Serving-GateWay (S-GW) and a Packet Data Network
+GateWay (P-GW) in different Public Land Mobile Networks (PLMN).
+
+SABM Set Asynchronous Balanced Mode. A message in the High-Level Data Link
+Control (HDLC) protocol, used to initiate Asynchronous Balanced Mode
+(ABM).
+
+SAE System Architecture Evolution. The part of the Evolved Packet System (EPS)
+which involves the non-radio aspects. It includes the Evolved Packet Core
+(EPC) network, and accompanies LTE.
+
+SAP Service Access Point. A point at which a higher layer application may access
+the services of a lower protocol layer. See 3GPP TS23.110.
+SAPI Service Access Point Identifier. An address field identifying a destination Ser-
+vice Access Point (SAP). See 3GPP TS23.110 Section 6.1.3.
+
+SAW Stop-And-Wait. A simple Automatic Repeat reQuest (ARQ) technique, in
+which, upon transmission of a transport block, the transmitter stops and awaits
+feedback from the receiver before making any further transmissions. If an AC-
+Knowledgment (ACK) does not reach the transmitter before a certain time has
+elapsed, or if a NegativeACK (NACK) is received, the transmitter retransmits
+the same transport block. Such a simple SAW operation cannot on its own uti-
+lize the transmission resources during the period between the first transmission
+and the retransmission. Therefore multiple SAWprocesses can be interlaced in
+time so that all the transmission resources can be used by one of the processes.
+Each SAW process is responsible for a separate SAW operation and manages
+a separate buffer.
+
+SC-FDMA Single-Carrier Frequency Division Multiple Access. SC-FDMA, like Orthogo-
+nal Frequency Division Multiplexing (OFDM), divides the transmission band-
+width into multiple parallel subcarriers, with the orthogonality between the
+subcarriers being maintained in frequency-selective channels by the use of
+a Cyclic Prefix (CP). The use of a CP prevents Inter-Symbol Interference
+(ISI) between SC-FDMA information blocks. However, unlike OFDM, in SC-
+FDMA the signal modulated onto a given subcarrier is a linear combination
+(typically via a DFT precoding operation) of all the data symbols transmitted at
+the same time instant. Thus in each symbol period, all the transmitted subcarri-
+ers of an SC-FDMA signal carry a component of each modulated data symbol.
+This gives SC-FDMA its single-carrier property, which results in the lower
+Cubic Metric (CM) and Peak to Average Power Ratio (PAPR) than pure mul-
+ticarrier transmission schemes such as OFDM. See 3GPP TS36.211 Section
+5.6.
+
+SCH Synchronization CHannel. A downlink channel in Wideband Code Division
+Multiple Access (WCDMA) (consisting of primary and secondary SCHs) al-
+lowing UEs to identify and synchronize to a cell. See 3GPP TS25.211 Section
+5.3.3.5.
+
+SCM Spatial Channel Model. A geometry-based stochastic channel model for
+Multiple-Input Multiple-Output (MIMO) systems developed jointly by 3GPP
+and 3GPP2. See 3GPP TR25.996.
+
+SCME Spatial Channel Model - Extension. SCME is an extension to the 3GPP/3GPP2
+SCM, developed in the IST-WINNER project. The extension was designed to
+increase the channel model bandwidth from 5MHz to 100MHz, while remain-
+ing simple and backward-compatible with the original SCM. See www.ist-
+winner.org.
+
+SCTP Stream Control Transmission Protocol. A reliable transport layer protocol, de-
+fined by the Internet Engineering Task Force (IETF), operating on top of a
+connectionless packet network such as Internet Protocol (IP). It was originally
+designed for transporting signalling messages for the Public Switched Tele-
+phone Network (PSTN) over IP networks. It ensures reliable, non-duplicated
+message delivery. In addition it can handle multiple streams and is tolerant
+of network-level faults through support of multi-homing. The design of SCTP
+also includes congestion avoidance and resistance to flooding and masquerade
+attacks. See IETF RFC4960, www.ietf.org.
+
+SDF Service Data Flow. An aggregate set of packet flows that matches a set of filters
+(based on packet headers such as source and destination Internet Protocol (IP)
+addresses) in a Policy and Charging Control rule. See 3GPP TS23.203.
+SDMA Spatial Division Multiple Access. A type of Multiple-Input Multiple-Output
+(MIMO) technology by which parallel streams are transmitted, with each
+stream being addressed to a different user. Each user is enabled to decode its
+own stream by virtue of its antenna(s) being spatially separated from those of
+other users, together with spatial decorrelation of the transmitting antennas.
+
+SDO Standards Development Organisation. An organisation whose primary ac-
+tivities are developing, managing and promulgating standards. 3GPP is a
+partnership of six regional SDOs, namely the Association of Radio Indus-
+tries and Businesses (ARIB), Alliance for Telecommunications Industry So-
+lutions (ATIS), China Communications Standards Association (CCSA), Eu-
+ropean Telecommunications Standards Institute (ETSI), Telecommunication
+Technology Association (TTA) and Telecommunication Technology Commit-
+tee (TTC).
+
+SDU Service Data Unit. At the transmitting side, an SDU is a unit data which a cer-
+tain protocol layer receives from a higher layer, for which the layer in question
+provides a transport service. The SDU of layer n is a Packet Data Unit (PDU)
+of layer n + 1. At the receiving side, the process is reversed: each layer passes
+SDUs up to the layer above, where they are received as PDUs.
+SEM Spectrum Emission Mask. A mask defined for out-of-channel emissions of
+a transmitter relative to the in-channel power. See 3GPP TS36.101 Section
+6.6.2.1.
+
+SFBC Space-Frequency Block Code. A frequency-domain version of the well-known
+Space-Time Block Codes (STBCs), also known as Alamouti codes. This fam-
+ily of codes is designed so that the transmitted diversity streams are orthogonal
+and achieve the optimal Signal to Noise Ratio (SNR) with a linear receiver.
+Such orthogonal codes only exist for the case of two transmit antennas. Gener-
+alizations are possible for higher dimensions.
+
+SFDR Spurious-Free Dynamic Range. The input power range in which the received
+signal can be detected in the presence of noise, and amplified, without being ex-
+posed to InterModulation Distortion (IMD) from the non-linear amplification
+of interfering signals.
+
+SFN System Frame Number. SFN identifies the 10 ms radio frames of a cell of an
+eNodeB. See 3GPP TS36.331 Section 6.2.2.7.
+
+SGSN Serving GPRS Support Node. The interface between the radio system and
+the fixed network for Packet Switched (PS) services, performing all neces-
+sary functions in order to handle packet transmission to and from the mobile
+stations. For each mobile station, the SGSN stores subscription and location
+information, including the cell or the Routing Area (RA) where the mobile
+station is registered. See 3GPP TS23.002 Sections 4.1.3.1 and 4.1.4.3.
+S-GW Serving GateWay. The gateway which terminates the interface towards E-
+UTRAN. For each UE associated with the Evolved Packet System (EPS), at
+a given point in time, there is a single S-GW. See 3GPP TS23.002 Section
+4.1.4.2.1.
+
+SI Study Item. A formal task in 3GPP addressing a specific topic, not intended
+to produce changes to normative specifications. A Technical Report may be
+produced to document the findings.
+
+SI System Information. SI consists of cell- and network-specific parameters which
+are broadcast to allow UEs to connect successfully to the network. SIs is struc-
+tured into System Information Blocks (SIB), each of which contains a set of
+functionally-related parameters. See 3GPP TS36.331 Sections 5.2, 6.2.2.7 and
+6.3.1.
+
+SIB System Information Block. The System Information (SI) is broadcast in SIBs,
+each of which contains a set of functionally-related parameters. In LTE, the SIB
+types include: the Master Information Block (MIB), which contains a limited
+number of the most frequently transmitted parameters which are essential for
+a UE’s initial access to the network; SIB1, which contains parameters needed
+to determine if a cell is suitable for cell selection, as well as information about
+the time domain scheduling of the other SIBs; SIB2, which includes common
+and shared channel information; SIB3 - SIB8, which include parameters used
+to control intra-frequency, inter-frequency and inter-Radio Access Technology
+(RAT) cell reselection. See 3GPP TS36.331 Sections 6.2.2.7 and 6.3.1.
+
+SIC Successive Interference Cancellation. A decoding technique where multiple
+data streams which are individually channel-coded and are received simultane-
+ously, are processed one by one, from the strongest to the weakest stream. The
+process is handled in a serial manner in contrast to Parallel Interference Can-
+cellation (PIC) where the streams are simultaneously processed at each stage.
+In SIC, the processing sequence typically consists of detection, decoding, re-
+modulating, re-encoding and subtraction from the total received signal.
+
+SIM Subscriber Identity Module. The entity that contains the International Mobile
+Subscriber Identity (IMSI) which uniquely identifies a subscriber. Without a
+valid IMSI, GSM service is not accessible. The main function of the SIM is to
+provide a means to authenticate the user, but it may also store other subscriber-
+related information or applications such as text messages and phone book
+contacts. The equivalent of a SIM in UMTS and LTE is a Universal Subscriber
+Identity Module (USIM). See 3GPP TS42.017.
+
+SIMO Single-Input Multiple-Output. A transmission scheme between a transmitter
+equipped with a single antenna and a receiver equipped with multiple antennas.
+
+SINR Signal to Interference plus Noise Ratio. The ratio of the average received mod-
+ulated carrier power to the sum of the average co-channel interference power
+(i.e. signals other than the wanted signal) and the noise power from other
+sources (typically thermal noise, modelled as Additive White Gaussian Noise
+(AWGN)), which are simultaneously-received.
+
+SIP Session Initiation Protocol. SIP is an Internet Engineering Task Force (IETF)
+application-layer signalling protocol. It is used for setting up, modifying, and
+terminating sessions with one or more participants consisting of one or several
+media streams. These sessions include two-way voice or video call, collabora-
+tive multi-media conference session, streaming multimedia distribution, instant
+messaging and online games. It allows parameters (e.g. addresses or ports,
+inviting more participants, adding or deleting media streams) to be changed
+in mid-session. See IETF RFC3261, www.ietf.org.
+
+SIR Signal to Interference Ratio. The ratio of the average received modulated
+carrier power to the average simultaneously-received co-channel interference
+power (i.e. signals other than the wanted signal). The SIR is also known as the
+Carrier to Interference Ratio (CIR).
+
+SI-RNTI System Information Radio Network Temporary Identifier (RNTI). A fixed
+identifier used on the Physical Downlink Control CHannel (PDCCH) to indi-
+cate broadcast System Information Blocks (SIBs) transmitted on the Physical
+Downlink Shared CHannel (PDSCH). The SI-RNTI is known a priori to all
+UEs and thus allows SIBs to be distinguished from UEs’ data transmitted on
+the same channel. It is transmitted as a scrambling code applied to the Cyclic
+Redundancy Check (CRC) of the PDCCH transmission. See 3GPP TS36.321
+Section 7.1.
+
+SISO Single-Input Single-Output. A transmission scheme between a transmitter
+equipped with a single antenna and a receiver equipped with a single antenna.
+SISO Soft-Input Soft-Output. A term applied to a Forward Error Correction (FEC)
+decoder, which processes soft (i.e. non-binary) input values to produce new soft
+output values (typically A-Posteriori Probabilities (APP)). A SISO decoder can
+be used to decode convolutional codes as well as turbo codes; in the latter case,
+two SISO decoders operate in parallel, each refining the outputs of the other
+and producing new extrinsic information to pass back to the other for the next
+iteration.
+
+SMC Security Mode Command. The SMC procedure consists of a round-trip of mes-
+sages between an eNodeB and a UE. It allows an active UE and a serving
+eNodeB to agree upon algorithms for Radio Resource Control (RRC) ciphering
+integrity protection, user-plane ciphering, Non-Access Stratum (NAS) cipher-
+ing integrity protection, and Key Derivation for the Evolved Packet System
+(EPS). See 3GPP TS33.401, Section 7.2.4.
+
+S-MCCH Secondary Multicast Control CHannel. A channel discussed for the implemen-
+tation of Multimedia Broadcast and Multicast Service (MBMS) in a future
+release of LTE. It would be responsible for signalling MBMS control infor-
+mation for a Multimedia Broadcast Single Frequency Network (MBSFN) area.
+See 3GPP TS36.300 Section 15.3.5.
+
+SMS Short Message Service. SMS (also commonly referred to as "text messaging")
+is a communications protocol allowing the interchange of short text messages
+of up to 160 characters between mobile devices. SMS is similar to paging, ex-
+cept that it is a store-and-forward system and therefore does not require the
+mobile phone to be active and within range. Messages are sent to a Short Mes-
+sage Service Centre (SMSC), stored and delivered to the mobile when it is
+connected to the network.
+
+SN Sequence Number. A label attached to a packet to indicate the order in which
+the packet was transmitted with respect to other packets. As an example, SNs
+are used in the headers of Radio Link Control (RLC) Protocol Data Units
+(PDUs) to enable reordering in the receiver. The SN is incremented by one for
+each PDU. In the case of an Acknowledged Mode Data (AMD) PDU segment,
+the SN indicates the sequence number of the original AMD PDU of which the
+AMD PDU segment is a part. See 3GPP TS36.322 Section 6.2.2.3.
+
+SND Sequence Number Down. A GPRS Tunnelling Protocol (GTP) sequence num-
+ber of the next downlink N- Protocol Data Unit (PDU) to be sent to the mobile
+station. See 3GPP TS29.060 Section 7.7.29.
+
+SNDCP SubNetwork Dependent Convergence Protocol. The SNDCP provides services
+to the higher layers which may include multiplexing of Packet Data Protocols
+(PDPs), compression/decompression of user data, compression/decompression
+of protocol control information, segmentation of network Protocol Data Units
+(PDUs) into Logical Link Control (LLC) PDUs, and re-assembly of LLC PDUs
+into network PDUs. See 3GPP TS44.065.
+
+SNOW3G A stream-cipher algorithm available in UMTS and LTE. See ETSI TC SAGE
+Specification ‘Specification of the 3GPP Confidentiality and Integrity Algo-
+rithms UEA2 and UIA2; Document 1: UEA2 and UIA2 specifications’, avail-
+able from portal.etsi.org and subject to licensing conditions.
+
+SN-PDU SubNetwork Dependent Convergence Protocol Protocol Data Unit. A Proto-
+col Data Unit (PDU) processed by the SubNetwork Dependent Convergence
+Protocol (SNDPC). See 3GPP TS44.065.
+
+SNR Signal-to-Noise Ratio. The ratio of the average received modulated carrier
+power to the noise power (typically thermal noise modelled as Additive White
+Gaussian Noise (AWGN)).
+
+SNU Sequence Number Up. A GPRS Tunnelling Protocol (GTP) sequence number
+of the next uplink N- Protocol Data Unit (PDU) to be sent to the Gateway
+GPRS Support Node (GGSN). See 3GPP TS29.060 Section 7.7.29.
+SO Segmentation Offset. A 15-bit field in the header of an Acknowledged Mode
+Data (AMD) Protocol Data Unit (PDU) segment indicating the starting position
+of the segment within the original AMD PDU. See 3GPP TS36.322 Section
+6.2.2.7.
+
+SON Self-Optimizing/Organizing Network. A feature of LTE which is designed to
+support self-configuration for newly-added cells and self-optimization for ex-
+isting ones (with minimal human involvement). Measurements (e.g. of radio
+channel reception levels and traffic loads) can be collected and processed to
+support these functions, for example to provide the targeted service availability
+and quality as efficiently as possible and to resolve capacity/coverage gaps in
+case of cell failure. See 3GPP TR36.902.
+
+SPID Subscriber Profile IDentity for Radio Access Technology / Frequency Selec-
+tion Priority. A parameter received by the eNodeB via the S1 interface which
+refers to user information (e.g. mobility profile, service usage profile). SPID is
+used to define camp priorities in Idle mode and to control inter- Radio Access
+Technology (inter-RAT) / inter-frequency handover in Connected mode. See
+3GPP TS36.300 Section 16.1.8.
+
+SPL Sound Pressure Level. A measure of the amplitude of a sound wave, measured
+in dBPa. Used in tests for audio noise arising from electromagnetic interfer-
+ence. See 3GPP TS36.124 Annex A.
+
+SPS Semi-Persistent Scheduling. SPS enables radio resources to be semi-statically
+configured and allocated to a UE for a longer time period than one subframe,
+avoiding the need for specific downlink assignment messages or uplink grant
+messages over the Physical Downlink Control CHannel (PDCCH) for each
+subframe. SPS is useful for services where the timing and amount of radio
+resources needed are predictable, such as Voice over Internet Protocol (VoIP),
+thus reducing considerably the overhead of the PDCCH compared to dynamic
+scheduling. See 3GPP TS36.321 Section 5.10.
+
+SPS-C-RNTI Semi-Persistent Scheduling Cell- Radio Network Temporary Identifier. An
+identifier of the scheduling messages transmitted on the Physical Downlink
+Control CHannel (PDCCH) for semi-persistently scheduled Physical Downlink
+Shared CHannel (PDSCH) data transmissions. It allows the UE to differentiate
+these messages from those used for dynamic scheduling messages identified
+by Cell- Radio Network Temporary Identifier (C-RNTI). It is transmitted as a
+scrambling code applied to the Cyclic Redundancy Check (CRC) of the PD-
+CCH transmission. See 3GPP TS36.321 Section 7.1.
+
+SR Scheduling Request. An SR is employed by the UE to request allocation of
+uplink resources when having data ready for transmission but no resource grant
+for use of the Physical Uplink Shared CHannel (PUSCH). It is transmitted on
+the Physical Uplink Control CHannel (PUCCH). See 3GPP TS36.312 Section
+5.4.4.
+
+SRB Signalling Radio Bearer. A radio bearer carrying Radio Resource Control
+(RRC) signalling messages. See 3GPP TS36.331 Section 4.2.2.
+SRS Sounding Reference Signals. Reference signals transmitted in the LTE Up-
+Link (UL) to enable the eNodeB to perform channel sounding, for example to
+support frequency-domain scheduling. See 3GPP TS36.211 Section 5.5.3.
+
+SRVCC Single Radio Voice Call Continuity (VCC). SRVCC refers to continuity
+between Internet Protocol (IP) Multimedia Subsystem (IMS)-over-Packet
+Switched (PS) access and Circuit Switched (CS) calls that are anchored in IMS
+when the UE is capable of transmitting/receiving on only one of those access
+networks at a given time. See 3GPP TS23.216.
+
+SS System Simulator. A simulator used for conformance testing of UEs. It models
+at least one eNodeB and often some interference sources, enabling the UE’s
+performance to be evaluated. See 3GPP TS36.508.
+
+SSC Secondary Synchronization Code. The code transmitted on the WCDMA
+Secondary Synchronization Channel (S-SCH). See 3GPP TS25.211 Section
+5.3.3.5.
+
+SSS Secondary Synchronization Signal. The SSS is used by the UE to detect the
+LTE frame timing and to obtain the physical layer cell identity group. It is trans-
+mitted twice in each 10 ms frame. The SSS sequences are based on maximum
+length sequences, known as M-sequences. Each SSS sequence is constructed
+by interleaving, in the frequency-domain, two length-31 Binary Phase Shift
+Keying (BPSK)-modulated sequences. These two codes are two different cyclic
+shifts of a single length-31 M-sequence. The cyclic shift indices of the M-
+sequences are derived from a function of the physical layer cell identity group.
+The two codes are alternated between the first and second SSS transmissions
+in each radio frame. This enables the UE to determine the 10 ms radio frame
+timing from a single observation of a SSS. See 3GPP TS36.211 Section 6.11.1.
+SSS_RA Secondary Synchronization Signal - to - Reference Signal Energy Per Resource
+Element ratio. The transmitted energy ratio (per resource element) between the
+Secondary Synchronization Signal (SSS) and the downlink Reference Signal
+(RS), used in defining performance requirements. See 3GPP TS36.101 Annex
+C.
+
+STBC Space-Time Block Code. A transmit diversity technique involving the trans-
+mission of multiple copies of a data stream using multiple antennas and multi-
+ple symbol periods, in order to improve the reliability of the received data. The
+best-known STBC technique is the Alamouti scheme, whereby the transmitted
+diversity streams are designed to be orthogonal and achieve the optimal Signal
+to Noise Ratio (SNR) with a linear receiver. Such orthogonal codes only exist
+for the case of two transmit antennas. Generalizations are possible for higher
+dimensions.
+
+S-TMSI System Architecture Evolution - Temporary Mobile Subscriber Identity. The
+S-TMSI is a unique identifier assigned to the UE by the Mobility Management
+Entity (MME) in order to identify the UE context while supporting subscriber
+identity confidentiality. See 3GPP TS23.003 Section 2.9.
+
+STTD Space-Time Transmit Diversity. The name given to a transmit diversity scheme
+used in WCDMA. It uses two transmit antennas, with the same data being
+transmitted from both NodeB antennas, using a space-time block code to en-
+sure orthogonality of the signals from the two transmit antennas. See 3GPP
+TS25.211 Section 5.3.1.1.1.
+
+SU-MIMO Single-User Multiple-Input Multiple-Output. In relation to the LTE downlink,
+SU-MIMO refers to the use of multiple transmit and receive antennas to trans-
+mit possibly multiple independent data streams simultaneously to a single UE
+using the same resource blocks. It corresponds to Physical Downlink Shared
+CHannel (PDSCH) transmission modes 3 and 4. See 3GPP TS36.213 Sections
+7.1.3 and 7.1.4.
+
+SVD Singular-Value Decomposition. A factorization of a rectangular matrix (real
+or complex). The SVD of an m × n matrix M is obtained as M = UVH,
+where U and V are m × m and n × n unitary matrices and the matrix  is
+an m × n diagonal matrix with non-negative real numbers on the diagonal.
+The diagonal entries of  are the singular values of M. The columns of U
+and V are, respectively, left- and right-singular vectors for the corresponding
+singular values. SVD can for example be used to construct the optimal transmit
+and receive beamforming matrices in Multiple-Input Multiple-Output (MIMO)
+applications.
+
+SVN Software Version Number.
+TA Tracking Area. A TA includes one or several E-UTRAN cells. The network
+allocates a list with one or more TAs to the UE. In certain operation modes,
+the UE may move freely in all TAs of the list without updating the Mobility
+Management Entity (MME).
+
+
+TA Timing Advance. A mechanism by which the uplink transmission timing is set
+earlier than the downlink timing as received at the UE, in order to compensate
+for propagation delay. The timing advance procedure in LTE is divided into
+Initial Timing Advance and Timing Advance Updates. The Initial TA is used
+after the UE first synchronizes its receiver to the downlink transmissions of the
+eNodeB and is set by means of the random access procedure: the eNodeB can
+estimate the uplink timing from the random access preamble and sends timing
+advance command within the Random Access Response (RAR) message. The
+TA Updates are needed from time to time to update the uplink transmission
+timing to counteract changes in the arrival time at the eNodeB; it is performed
+by a closed-loop mechanism whereby the eNodeB measures the received up-
+link timing and issues timing advance update commands to the UE by means of
+Medium Access Control (MAC) control elements. See 3GPP TS36.321 Section
+5.2 and TS36.213 Section 4.2.3.
+
+TA Time Alignment. The main role of time alignment is to counteract differing
+propagation delays between different UEs for uplink transmissions and have
+all UEs symbols time-aligned at the eNodeB is order to preserve the intra-cell
+orthogonality. This is achieved by applying a timing advance at the UE trans-
+mitter, relative to the received downlink timing. See 3GPP TS36.321 Section
+5.2 and TS36.213 Section 4.2.3.
+
+TAC Tracking Area Code. The TAC is part of the Tracking Area Identity (TAI). It is
+a 16-bit integer. See 3GPP TS23.003 Section 19.4.2.3.
+
+TAD Traffic Aggregate Description. The TAD consists of a description of the packet
+filter(s) for the traffic flow aggregate (where a traffic flow aggregate consists of
+data traffic for a particular destination).
+
+TAI Tracking Area Identity. This is the identity used to identify tracking areas. It
+is composed of a Tracking Area Code (TAC), a Mobile Network Code (MNC)
+and a Mobile Country Code (MCC). See 3GPP TS23.003 Section 19.4.2.3.
+
+TAT Timing Advance Timer. A timer whose duration is configured by the eNodeB,
+which is restarted each time a timing advance command is received. As long
+as the timer is running, the UE can consider that its uplink is synchronized and
+can transmit directly using the Physical Uplink Control CHannel (PUCCH) or
+Physical Uplink Shared CHannel (PUSCH). If the timer expires, the UE must
+use the Random Access CHannel (RACH) to reacquire uplink synchroniza-
+tion before any other uplink transmissions can be made. See 3GPP TS36.321
+Section 5.2.
+
+TAU Tracking Area Update. The procedure by which the UE updates the network as
+to its new location, either periodically or whenever it moves out of its current
+Tracking Area (TA). See 3GPP TS23.401 Section 4.3.5.2.
+
+TB Transport Block. A Medium Access Control (MAC) Protocol Data Unit (PDU)
+delivered to the physical layer. Each TB is individually protected by a Cyclic
+Redundancy Check (CRC) and encoded as a single codeword for transmission.
+
+TBD To Be Determined. A term used to indicate that an item needs to be decided in
+the future.
+
+TBF Temporary Block Flow. A physical connection used by two GPRS radio re-
+source entities to support the unidirectional transfer of upper layer Packet Data
+Units (PDUs) on packet data physical channels. See 3GPP TS44.060 Section
+5.2.1.
+
+TBS Transport Block Size. The number of bits in a Transport Block (TB). See 3GPP
+TS36.213 Sections 7.1.7.2 and 8.6.2.
+
+TC Test Case. A set of conditions and procedures under which a tester will deter-
+mine whether certain specification requirements are met.
+TCH Traffic CHannel. A channel carrying data traffic.
+
+TCP Transmission Control Protocol. TCP is a reliable host-to-host protocol used in
+packet-switched communication networks together with the Internet Protocol
+(IP). While IP handles the actual transmission of the packets, TCP takes care
+of the control of the packets, requesting retransmission of lost ones and rear-
+ranging out-of-order packets. It also helps minimize network congestion. See
+IETF RFC4614, www.ietf.org.
+
+TDD Time Division Duplex. A mode of bidirectional communication in which trans-
+missions in each direction take place on the same carrier frequency but in
+different time slots.
+
+TDL Tapped Delay Line. A model in which a signal is delayed in multiple successive
+stages, with outputs being taken at one or more points between the stages.
+Such models are frequently used to emulate the different delays of a multipath
+propagation channel. Similar structures are used in linear equalizer receivers,
+where the outputs from each tap are individually weighted and then combined.
+
+TDM Time Division Multiplexing. A method of multiplexing different data signals,
+whereby the channel is divided into multiple time slots and the different signals
+are mapped to different time slots.
+
+TDMA Time Division Multiple Access. An access scheme allowing multiple users to
+share the same frequency channel by dividing the channel into different time
+slots. Each user is allocated a different time slot.
+
+TD-SCDMA Time Division Synchronous Code Division Multiple Access. A 3G mobile
+telecommunications standard, based on the 1.28 Mcps Time Division Duplex
+(TDD) mode of UMTS. TD-SCDMA is termed “synchronous” as the uplink
+signals are synchronized at the base station receiver by means of regular timing
+adjustments.
+
+TE Terminal Equipment. Equipment that provides the functions necessary for the
+operation of access protocols by a user. See ITU-T I.112, www.itu.int/itu-t.
+
+TEID Tunnelling End IDentity. Uniquely identifies a tunnel endpoint in a receiving
+GPRS Tunnelling Protocol (GTP)-User-plane or GTP-Control plane entity. See
+3GPP TS29.281 Section 4.2.1.
+
+TF Transport Format. A term typically used to describe the modulation and coding
+scheme applied for the transmission of a transport block.
+
+TFT Traffic Flow Template. TFTs are used to discriminate between different user
+payloads. They use Internet Protocol (IP) header information such as source
+and destination IP addresses and Transmission Control Protocol (TCP) port
+numbers to filter packets such as Voice over Internet Protocol (VoIP) from web
+browsing traffic so that each can be sent down the respective bearers with ap-
+propriate Quality of Service (QoS). See 3GPP TS23.060 Section 15.3.
+
+TGRP Transmission Gap Repetition Period. LTE can provide regularly-spaced trans-
+mission gaps to enable a UE to identify and measure inter-frequency and/or
+inter- Radio Access Technology (inter-RAT) cells. During these gaps the UE
+does not transmit any data and is not expected to tune its receiver to the E-
+UTRAN serving carrier frequency. The TGRP is the time between the start of
+one transmission gap and the start of the next. See 3GPP TS36.133 Section
+8.1.2.
+TH Temperature High. Denotes the upper temperature at which extreme-condition
+conformance testing is carried out for a UE, namely +55?C (See also Temper-
+ature Low (TL)). See 3GPP TS36.508 Section 4.1.1.
+
+TI Transaction Identifier. The UE dynamically allocates a TI for UE-requested
+Packet Data Protocol (PDP) context activation. TIs for network-requested PDP
+context activation are dynamically allocated by the network. A corresponding
+allocation is also needed for Evolved Packet System (EPS) Bearers in or-
+der to successfully transfer Bearers to GERAN/UTRAN. See 3GPP TS23.401
+Section 5.2.1.
+
+TIN Temporary Identifier used in Next update. A parameter which identifies the
+UE identity that the UE is to indicate in the next Routing Area Update (RAU)
+Request or Tracking Area Update (TAU) Request message. The TIN also iden-
+tifies the status of Idle state Signalling Reduction (ISR) activation in the UE.
+See 3GPP TS23.401 Section 4.3.5.6.
+
+TL Temperature Low. Denotes the lower temperature at which extreme-condition
+conformance testing is carried out for a UE, namely -10?C (See also Temper-
+ature High (TH)). See 3GPP TS36.508 Section 4.1.1.
+
+TLLI Temporary Logical Link Identity. Used for addressing resources allocated for
+GPRS services at Radio Link Control (RLC)/Medium Access Control (MAC)
+layer communication between the mobile station and the Serving GPRS Sup-
+port Node (SGSN). Three types of TLLI exist: Local TLLI (for normal use),
+Foreign TLLI (for use when crossing a Routing Area boundary) and Random
+TLLI (used for initial access). See 3GPP TS23.060.
+
+TM Transparent Mode. One of three Radio Link Control (RLC) data transmission
+modes (the other two being Acknowledged Mode (AM) and Unacknowledged
+Mode (UM)). The TM RLC entity is transparent to the Protocol Data Units
+(PDU) that pass through it – no functions are performed and no RLC over-
+head is added; thus an RLC Service Data Unit (SDU) is directly mapped to an
+RLC PDU and vice versa. The use of TM RLC is very restricted: only Radio
+Resource Control (RRC) messages which do not need RLC configuration can
+utilize the TM RLC, such as broadcast system information messages and pag-
+ing messages. TM RLC is not used for user plane data transmission in LTE.
+See 3GPP TS36.322.
+
+TMA Tower Mounted Amplifier. A Low-Noise Amplifier (LNA) mounted as close as
+possible to the antenna in the base station. A TMA can enable the base station
+noise figure to be reduced and therefore improve the overall efficiency of the
+uplink transmission. See 3GPP TR25.818 and TS25.466 Section 6.8.
+TMD Transparent Mode Data. The type of Protocol Data Unit (PDU) used in Radio
+Link Control (RLC) Transparent Mode (TM). It consists only of a data field
+and does not have any RLC headers. Since no segmentation or concatenation
+is performed, an RLC Service Data Unit (SDU) is directly mapped to a TMD
+PDU. See 3GPP TS36.322 Section 9.2.1.2.
+TNL Transport Network Layer. The TNL establishes physical and logical connec-
+tions between the Radio Access Network (RAN) and the Core Network (CN).
+It comprises the transport network control plane and the transport network user
+plane.
+
+TPC Transmitter Power Control. The process of setting the transmission power, by
+either open-loop or closed-loop means. It can be used to counteract propagation
+effects such as path-loss, shadowing or fast fading, or to control interference to
+neighbouring cells. See 3GPP TS36.213 Section 5.
+
+TPCPUCCHRNTI TPCPUCCHRNTI.
+The Radio Network Temporary Identifier (RNTI) used for sending Transmitter
+Power Control (TPC) commands applicable to the Physical Uplink Control
+CHannel (PUCCH). See 3GPP TS36.321 Section 7.1.
+
+TPCPUSCHRNTI TPCPUSCHRNTI.
+The Radio Network Temporary Identifier (RNTI) used for sending Transmit-
+ter Power Control (TPC) commands applicable to the Physical Uplink Shared
+CHannel (PUSCH). See 3GPP TS36.321 Section 7.1.
+
+TPD Total Power De-rating. TPD is the total amount by which the power amplifier
+needs to be operated below its rated maximum output power in order to meet
+a given Adjacent Channel Leakage Ratio (ACLR) requirement. TPD is com-
+posed of an element corresponding to the occupied bandwidth (as a proportion
+of the channel bandwidth) and an element corresponding to the waveform of
+the transmitted signal.
+
+TPMI Transmitted Precoding Matrix Indicator. An indicator transmitted on the Phys-
+ical Downlink Control CHannel (PDCCH) to inform the UE as to which
+codebook (precoding matrix) index is used for transmission to that UE on the
+Physical Downlink Shared CHannel (PDSCH). It enables the UE to form the
+correct phase reference for demodulating the PDSCH data, based on the cor-
+rect linear combination of the common reference signals. See 3GPP TS36.212
+Section 5.3.3.1.
+
+TR Technical Report. A 3GPP output document containing mainly informative el-
+ements approved by a Technical Specification Group (TSG).
+
+TrCH Transport CHannel. A set of Transport Channels are offered by physical layer
+that can be used by the Medium Access Control (MAC) sublayer. A TrCH
+is used to transmit one data flow with a given Quality of Service (QoS) over
+the radio interface. A number of TrCHs can be active at the same time and
+multiplexed at the physical layer. The transport channels are configured at call
+setup by the network.
+
+TS Technical Specification. A 3GPP output document containing normative pro-
+visions approved by a Technical Specification Group (TSG).
+
+TSG Technical Specification Group. 3GPP is divided into four TSGs: TSG Service
+and System Aspects (SA), TSG Core network and Terminals (CT), TSG Ra-
+dio Access Network (RAN) and TSG GSM EDGE Radio Access Network
+(GERAN). Each TSG is comprised of a number of Working Groups (WGs)
+with responsibility for a specific aspect of the specifications.
+
+TSTD Time-Switched Transmit Diversity. TSTD is a multiple antenna transmission
+technique where a signal is transmitted from only a subset (usually one) of the
+available antennas at any time. The selected subset changes periodically such
+that a block of data is transmitted from different antennas at different times. It
+is used in the LTE uplink. See 3GPP TS36.213 Section 8.7.
+
+TT Test Tolerance. The amount by which a core specification performance require-
+ment is relaxed to take into account factors such as measurement uncertainty.
+The TT is the difference between the core specification value and the test limit.
+See 3GPP TS36.521 Annex F.3.
+
+TTA Telecommunications Technology Association. The Korean Standards Develop-
+ment Organization (SDO) in 3GPP. See www.tta.or.kr.
+
+TTC Telecommunication Technology Committee. One of the Japanese Standards
+Development Organisations (SDOs) in 3GPP (the other being ARIB). See
+www.ttc.or.jp.
+
+TTI Transmission Time Interval. The minimum time between Medium Access Con-
+trol (MAC) Protocol Data Units (PDUs) being passed down to the physical
+layer. It is usually also the time over which data blocks are encoded for physical
+transmission. It is a multiple of the radio subframe length.
+TU Typical Urban. Usually refers to a propagation model originally developed for
+GSM, representing deployment in an urban area. See www.etsi.org.
+Tx Transmit.
+
+TxD Transmit Diversity. The use of two or more physically separate antennas for
+transmission. A variety of TxD schemes are possible, such as the Space Fre-
+quency Block Code (SFBC)/ Frequency Switched Transmit Diversity (FSTD)
+schemes used in the LTE downlink, or Time Switched Transmit Diversity
+(TSTD) used in the LTE uplink. See 3GPP TS36.211 Section 6.3.4.3 and
+TS36.213 Section 8.7 respectively.
+UARFCN UTRA Absolute Radio Frequency Channel Number. See ARFCN.
+
+UCI Uplink Control Information. The term used to describe the control signalling
+(e.g. ACKnowledgement (ACK) / Negative ACK (NACK) and Channel Quality
+Indicator (CQI)) transmitted from the UE to the eNodeB. This information is
+usually transmitted using the Physical Uplink Control CHannel (PUCCH). See
+3GPP TS36.212 Sections 5.2.3 and 5.2.4.
+
+UDP User Datagram Protocol. A transport layer protocol used along with the Inter-
+net Protocol (IP). UDP is not designed to support reliable transfer, and therefore
+packets may arrive out of order, be duplicated, or be lost without notice. UDP
+assumes that error checking and correction is either not necessary or performed
+in the application. UDP does not use handshaking between sending and re-
+ceiving transport-layer entities prior to sending a packet and is therefore said
+to be connectionless. The simplicity of UDP keeps the overhead from using
+the protocol low. Common applications that use UDP include time-sensitive
+applications (where loss of packets is preferable to delayed packets) and broad-
+casting (where feedback is not supported). See IETF RFC768, www.ietf.org.
+UE User Equipment. The mobile unit which allows a user to access network ser-
+vices, connecting to the UTRAN or E-UTRAN via the radio interface. A UE
+can be subdivided into a Universal Integrated Circuit Card (UICC) and a Mo-
+bile Equipment (ME). See 3GPP TS21.905 Section 3.
+
+UEA2 A new ciphering algorithm. A new ciphering algorithm to be deployed in UMTS Release 7 as an insur-
+ance policy against the original UMTS Kasumi-based ciphering scheme being
+cracked in the future. See ETSI TC SAGE Specification ‘Specification of the
+3GPP Confidentiality and Integrity Algorithms UEA2 and UIA2; Document 1:
+UEA2 and UIA2 specifications’, available from portal.etsi.org and subject to
+licensing conditions.
+
+UE-AMBR UE Aggregate Maximum Bit-Rate. The Aggregate Maximum Bit-Rate
+(AMBR) for a specific UE.
+
+UEUT User Equipment Under Test. A UE undergoing conformance testing. See 3GPP
+TS36.521-2.
+
+UICC Universal Integrated Circuit Card. A physically-secure removable smart card
+used in mobile terminals, holding the Subscriber Identity Module (SIM) for
+GSM and the Universal SIM (USIM) for UMTS. See 3GPP TS31.101.
+
+UL UpLink. The radio link in the direction from the mobile to the base station.
+UL-SCH UpLink Shared Channel. A transport channel used for the uplink user data and
+control messages. See 3GPP TS36.321.
+UM Unacknowledged Mode. One of three Radio Link Control (RLC) modes (the
+other two being Acknowledged Mode (AM) and Transparent Mode (TM)). It
+provides a unidirectional data transfer service and is used when retransmission
+is not necessary, for example for delay-sensitive and error-tolerant real-time
+applications, especially Voice over Internet Protocol (VoIP), and other delay
+sensitive streaming services. Point-to-multipoint services such as Multime-
+dia Broadcast and Multicast Service (MBMS) also use UM RLC. See 3GPP
+TS36.322.
+
+UMD Unacknowledged Mode Data. The type of Protocol Data Unit (PDU) used to
+carry user-plane data in Radio Link Control (RLC) Unacknowledged Mode
+(UM). The PDU header includes a sequence number to support reordering and
+duplicate-detection. See 3GPP TS36.322.
+UMTS Universal Mobile Telecommunications System. A third-generation radio ac-
+cess technology standardized by 3GPP. It uses Wideband Code Division Mul-
+tiple Access (WCDMA) as the underlying air interface
+
+UP Unitary Precoding. A beamforming method to support multi-layer transmission
+in Multiple-Input Multiple-Output (MIMO) radio systems, where the beam-
+forming matrix is unitary. An N × N matrix G is unitary if GHG = GGH =
+IN where IN is the N × N identity matrix.
+
+UPE User Plane Entity. The entity managing protocols on the user plane. The main
+functions of the UPE include terminating, for idle state UEs, the downlink data
+path and triggering/initiating paging when downlink data arrive for the UE.
+It also stores and manages UE contexts and performs replication of the user
+traffic in case of interception.
+
+U-plane User plane. The user plane is the protocol stack carrying user data, as opposed
+to control signalling which is carried by the control plane. See 3GPP TS36.300
+Section 4.3.1.
+
+UpPTS Uplink Pilot TimeSlot. A special uplink timeslot occurring in the second (and
+in some configurations the 7th) subframes of each radio frame when LTE is
+operated in Time Division Duplex (TDD). It has a length of 1 or 2 Single
+Carrier Frequency Division Multiple Access (SC-FDMA) symbols and is used
+only for transmission of a shortened Random Access CHannel (RACH) pream-
+ble or Sounding Reference Signal (SRS). The name UpPTS is derived from
+Time Division-Synchronous Code Division Multiple Access (TD-SCDMA).
+See 3GPP TS36.211 Section 4.2.
+
+URRP-MME UE Reachability Request Parameter for the Mobility Management Entity
+(MME). A temporary parameter stored in the Home Subscriber Server (HSS)
+and MME, indicating that the HSS has requested the MME to provide notifica-
+tion of UE activity (for example the next Non-Access Stratum (NAS) activity
+by the UE). See 3GPP TS23.401.
+
+USIM Universal Subscriber Identity Module. The USIM is one component which can
+run on a Universal Integrated Circuit Card (UICC) smart card. It is the UMTS
+and LTE equivalent of the Subscriber Identity Module (SIM) used in GSM. The
+USIM stores the security key identifying a mobile service subscriber, enabling
+the subscriber to access the service. It can also store information such as text
+messages and phone book contacts.
+
+UTRA Universal Terrestrial Radio Access. The radio access solution for UMTS.
+UTRAN Universal Terrestrial Radio Access Network. UTRAN consists of Radio Net-
+work Controllers (RNCs) and NodeBs of a UMTS network. It allows connec-
+tivity between the UE and the core network.
+Uu The radio interface between the eNodeB and the User Equipment (or, in the
+case of UMTS, between the NodeB and the UE).
+
+VCB Virtual Circular Buffer. The Circular Buffer (CB) used for rate matching in
+LTE. It is ‘virtual’ in the sense that it does not require the implementation of
+any actual physical buffer; for any combination of Transport Block Sizes (TBS)
+and Redundancy Versions (RVs), the desired output bits for transmission can be
+obtained directly from the output of the turbo encoder using simple addressing
+based on sub-block permutation. See 3GPP TS36.212 Section 5.1.4.1.2.
+
+VCC Voice Call Continuity. A feature which allows a UE to move between different
+access technologies (in particular between the circuit-switched and packet-
+switched domains) while maintaining a voice call, in order to give a seamless
+user experience. See 3GPP TR23.806 and TS24.206.
+VCO Voltage-Controlled Oscillator. An oscillator whose frequency is determined by
+the level of a control voltage input.
+
+VH Higher extreme Voltage. The UE-manufacturer-declared supply voltage level
+(from a battery or mains) up to which a UE has to fulfil all the LTE specifica-
+tion requirements. If the supply voltage exceeds this value, the UE must take
+measures to ensure that it does not make ineffective use of the radio spectrum.
+See 3GPP TS36.101 Annex E.2.
+
+VL Lower extreme Voltage. The UE-manufacturer-declared supply voltage level
+(from a battery or mains) below which a UE has to fulfil all the LTE specifica-
+tion requirements. If the supply voltage falls below this value, the UE must take
+measures to ensure that it does not make ineffective use of the radio spectrum.
+See 3GPP TS36.101 Annex E.2.
+
+VLR Visitor Location Register. A database which stores information about all the
+mobiles that are currently under the jurisdiction of a Mobile Switching Centre
+(MSC) that it serves. See 3GPP TS23.002 Section 4.1.1.2.
+
+VoIP Voice over Internet Protocol. The transmission of packetized voice communi-
+cations using IP. VoIP is a thus a packet-switched technology.
+
+V-PCRF Visited Policy Control and Charging Rules Function. The Policy Control and
+Charging Rules Function (PCRF) which resides within the Visited Public Land
+Mobile Network (VPLMN).
+
+VPLMN Visited Public Land Mobile Network. A Public Land Mobile Network (PLMN)
+on which the mobile subscriber has roamed when leaving their Home PLMN
+(HPLMN).
+
+VRB Virtual Resource Block. A logical unit of transmission resource in the LTE
+downlink, associated with the same dimensions and number of Resource Ele-
+ments (REs) as a Physical Resource Block (RB). VRBs are mapped to PRBs
+in pairs. Two types of VRB exist: localized VRBs and distributed VRBs. A
+pair of localized VRBs is mapped to a pair of PRBs which occupy the same
+12 subcarriers in the same subframe. A pair of distributed VRBs is mapped to
+a pair of PRBs such that one of the PRBs occupies one set of 12 subcarriers
+in the first slot of a subframe and the other PRB occupies a different set of
+12 subcarriers in the second slot of the same subframe. Distributed VRBs are
+used for frequency diverse scheduling while localized VRBs may be used for
+frequency selective scheduling. See 3GPP TS36.211 Section 6.2.3.
+
+X2 The interface used to interconnect eNodeBs. See 3GPP TS36.300 Section 20
+and TS36.420 to TS36.424.
+
+X2-C X2 Control plane. The signalling interface between eNodeBs. See 3GPP
+TS36.422.
+
+xCH_RA xCHannel to Reference Signal Energy Per Resource Element ratio. The trans-
+mitted energy ratio (per Resource Element (RE)) between an arbitrary down-
+link channel ‘xCH’ and the downlink Reference Signal (RS), in all transmitted
+Orthogonal Frequency Division Multiplexed (OFDM) symbols not containing
+RS. Used in defining performance requirements. See 3GPP TS36.101 Annex
+C.
+
+xCH_RB xCHannel to Reference Signal Energy Per Resource Element ratio. The trans-
+mitted energy ratio (per Resource Element (RE)) between an arbitrary down-
+link channel ‘xCH’ and the downlink Reference Signal (RS), in all transmit-
+ted Orthogonal Frequency Division Multiplexing (OFDM) symbols containing
+RS. Used in defining performance requirements. See 3GPP TS36.101 Annex
+C.
+
+XID eXchange IDentification. An identifier that is exchanged between nodes to ne-
+gotiate parameters of the Radio Link Protocol (RLP) layer 2 Relay function.
+See 3GPP TS24.022 Section 5.2.2.6.
+
+X-MAC X Message Authentication Code. An X-MAC is calculated by the receiver of a
+Packet Data Convergence Protocol (PDCP) Protocol Data Unit (PDU) during
+the process of integrity verification for Signalling Radio Bearers (SRBs). If
+the calculated X-MAC value corresponds to the Message Authentication Code
+for Integrity (MAC-I), integrity protection has been verified successfully. See
+3GPP TS36.323 Section 5.7.
+
+ZC Zadoff-Chu. Non-binary
+ 

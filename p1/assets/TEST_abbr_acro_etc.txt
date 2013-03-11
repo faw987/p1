@@ -1,0 +1,86 @@
+AA - Associate Administrator
+AAA - Authentication, Authorization and Accounting
+AADS - Ameritech Advanced Data Services
+AAF - Army Air Field
+AAL1 - ATM Adaptation Layer 1
+AARNET - Australian Academic & Research Network
+AAS - Adaptive Antenna System
+AATT - Advanced Aircraft Transportations Technologies
+ABM - Asynchronous Balanced Mode
+ABQP - Aggregate Base Station Subsystem Quality of Service Profile
+AC - Access Class
+AC - Authentication Center 
+ACC - Automatic Congestion Control
+ACD - Active Circuits Directory
+ACE - Advanced Composition Explorer
+ACI - Adjacent Channel Interference
+ACIR - Adjacent Channel Interference Ratio
+ACK - Acknowledge or Acknowledgement
+ACK - ACKnowledgment
+ACL - Access Control List
+ACLR - Adjacent Channel Leakage Ratio
+ACM - Attitude Control Motor
+ACMS - Automated Communications Management System 
+AF - Assured Forwarding
+AFB - Air Force Base
+AFI -  - Air Force Instruction
+AFIP - Armed Forces Institute of Pathology
+AFIS - American Forces Information Services
+AFMAN - Air Force Manual
+AFNOC - Air Force Network Operations Center
+AFSCN - Air Force Satellite Control Network 
+AG - Access Gateway
+AGMEMS - AT&T Government Markets Enterprise Management System
+AGS - Poker Flat Research Range
+aGW - access gateway 
+AHAMS - Automated Health and Morale System
+AIDE - Automated Intrusion Detection Environment
+AIS - Alarm Indication Signal
+AIS - Automated Information System
+AIS-L - Line AIS
+AU - Administrative Unit
+AUC - authentication center
+AUTOVON - Automatic Voice Network
+AVC - Advanced Video Coding
+AWGN - Additive White Gaussian Noise
+AWINS - Agency Widows Internet Naming Services
+AXT - Alien Crosstalk 
+B-ONT - business optical network terminal 
+B/P/C/S - Base/Post/Camp/Station
+B2BUA - Back-to-Back User Agent
+BA - Billing Agent
+BAA - Broad Agency Announcement
+BADD - Battlefield Awareness Data Dissemination
+BAF - Billing AMA Format
+BASP - Ball AeroSpace
+BBC - British Broadcasting Corporation
+BBE - Background Block Error
+BBER - Background Block Error Ratio
+BC - Boundary Controller
+BCC - Base station Colour Code
+BCCH - Broadcast Control CHannel
+BCH - Broadcast CHannel
+BCM - Bearer Control Mode
+BCT - Brigade Combat Team
+BCU - Booster Controller Unit/Booster Control Unit
+BE - Block Error
+BEM - Bandwidth Efficient Modem 
+BER - Bit Error Rate
+BERK - University of California, Berkeley
+BFP - Branch Flow Point
+BFS - reference ECANS project
+BGP - Border Gateway Protocol
+BI - Backoff Indicator
+BID - Bridge ID
+BIDWH - Business Intelligence & Data WareHouse
+BIND - Berkeley Internet Name Daemon 
+BIP - Bit Interleaved Parity
+BITS - Building Integrated Timing Supply
+BLDR - University of Colorado at Boulder
+BPDU - Bridge Protocol Data Unit(s)
+BPL - Broadband Power Line Communications 
+BPSK - Binary Phase Shift Keying
+BPSK - Binary Phase Shift Keying modulation
+BR-FP - Branch Flow Point
+BRAS - Broadband Remote Access Server
+

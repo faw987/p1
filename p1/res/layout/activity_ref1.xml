@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <AutoCompleteTextView
+            android:id="@+id/autocomplete"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <!-- <EditText -->
+        <!-- android:id="@+id/formula" -->
+        <!-- android:layout_width="fill_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:text="" -->
+        <!-- android:visible="False" /> -->
+
+        <Button
+            android:id="@+id/btnSimple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clr" >
+        </Button>
+        
+        
+        <Button
+            android:id="@+id/voiceIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voice in" >
+        </Button>
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/calculator"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" />
+
+</LinearLayout>

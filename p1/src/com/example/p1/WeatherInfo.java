@@ -134,7 +134,7 @@ public class WeatherInfo {
 					if (t==null || t.equals("null") || t.length()==0){
 						System.out.println(">>>>>>>>>>>>>>>>>> addHourlyForecast  -- t= = NULL NULL NULL");
 					} else {
-						if (outputHourDetails)r += "<h3>HOUR: " + hour + "forecast=" + t ;
+						if (outputHourDetails)r += "<h3>HOUR: " + hour + " forecast=" + t ;
 						String[] forecast = t.split(" ");
 						String s2="";
 						for (int fi=0;fi<forecast.length;fi++){
